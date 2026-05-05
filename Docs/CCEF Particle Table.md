@@ -1,210 +1,223 @@
-# CCEF Particle Sector v0.2  
-### One‑Core and Two‑Core Soliton Families
+# CCEF Particle Sector v1.0  
+### Topology‑Consistent, Ontology‑Pure, Q‑Core, Kernel‑Locked, and Texture‑Excluded Solitons
 
-This file defines a minimal particle‑like sector inside CCEF using only:
+This document defines the corrected particle‑like sector inside CCEF.  
+It enforces strict topological conservation, avoids anti‑cores, avoids QFT imports, and preserves the continuum ontology of n(x,t).
 
-- the continuum field `n(x,t)`
-- soliton textures (one‑core and two‑core)
-- response kernels `K(k,a)`, `K2(k,a)`
-- variance sector `sigma_alpha^2(delta,a)`
-- density‑triggered RG flow
+Key structural principles:
 
-No QFT, no GR, no quantization.
+- Only baryons carry a conserved core number Q = 1.  
+- Leptons and photons have Q = 0.  
+- Electrons obey a texture‑based exclusion principle (no pile‑up).  
 
----
-
-## 1. One‑Core Soliton Species (v0.1)
-
-These are the simplest localized excitations (single‑core solitons) of `n(x,t)`.
-
-| Species       | Symbol    | Core Type   | Effective Mass Relation | Kernel Couplings (g_grav, g_EM, g_weak) | Notes                          |
-|--------------|-----------|------------|-------------------------|------------------------------------------|--------------------------------|
-| Electron‑like | `S_e`     | One‑core   | `m_e >> m_nu`           | `(1, +1, epsilon)`                       | Massive, charged, stable       |
-| Photon‑like   | `S_gamma` | One‑core (radiative mode) | `~ 0`             | `(0, 0, 0)` as a source; follows kernels as a probe | Massless/very light excitation |
-| Neutrino‑like | `S_nu`    | One‑core   | `m_nu << m_e`           | `(1, 0, g_weak)`                         | Neutral, weakly coupled        |
-
-**Interpretation**
-
-- All three species share the same one‑core morphology of `n(x,t)`.
-- Their differences arise from internal texture and kernel‑coupling patterns.
-- “Charge” is the pattern of kernel response, not a fundamental label.
+This resolves the beta‑decay anomaly, fixes the baryon/lepton structure, and prevents electron pile‑up.
 
 ---
 
-## 2. Kernel Sectors
+# 1. Ontological Foundations
 
-We conceptually partition the response kernels into three sectors:
+CCEF contains three fundamentally different classes of excitations:
 
-| Kernel Sector | Symbol        | Range      | Role                                                |
-|---------------|--------------|-----------|-----------------------------------------------------|
-| Grav‑like     | `K_grav(k,a)` | Long‑range | Universal attraction; couples to all massive solitons |
-| EM‑like       | `K_EM(k,a)`   | Long‑range | Sign‑sensitive; couples only to solitons with EM response |
-| Weak‑like     | `K_weak(k,a)` | Short‑range | Enables rare transitions; suppressed in low‑variance regions |
+## A. Q‑Core Solitons (Topological Sector)
+- Localized, stable solitons of n(x,t)
+- Carry a conserved integer core number Q
+- Q cannot change except via core–anticore annihilation (forbidden in CCEF)
+- Correspond to baryons
+- In v1.0, all baryons have Q = 1
 
-These are not gauge fields — they are structured response channels of the continuum.
+## B. Kernel‑Locked Solitons (Non‑Topological Sector)
+- Stable due to kernel‑energy minimization, not topology
+- Q = 0
+- Correspond to leptons
+- Electron stability comes from kernel locking and texture structure, not topology
 
----
-
-## 3. One‑Core Interaction Table (v0.1)
-
-| Process                              | Allowed? | Mediating Kernel(s)      | Notes                                      |
-|--------------------------------------|----------|--------------------------|--------------------------------------------|
-| `S_e + S_e -> S_e + S_e`             | Yes      | `K_EM`, `K_grav`         | Coulomb‑like + grav‑like scattering        |
-| `S_e + S_nu -> S_e + S_nu`           | Yes      | `K_weak`, `K_grav`       | Weak‑like + grav‑like                      |
-| `S_nu + S_nu -> S_nu + S_nu`         | Yes      | `K_weak`, `K_grav`       | Very weak scattering                       |
-| `S_e + S_e -> S_e + S_e + S_gamma`   | Yes      | `K_EM`                   | Radiative continuum excitation (bremsstrahlung‑like) |
-| `S_e -> S_e + S_gamma`               | Yes      | `K_EM`                   | Accelerated soliton emits photon‑like mode |
-| `S_e -> S_nu + ...`                  | Rare     | `K_weak`                 | Requires high variance; environment‑dependent |
+## C. Radiative Modes (Q = 0)
+- Propagating disturbances of the continuum
+- Correspond to photons
 
 ---
 
-## 4. Variance and Environment Dependence
+# 2. Corrected Species List
 
-The variance sector `sigma_alpha^2(delta,a)` modulates interaction sharpness:
+## Baryons (Q = 1)
 
-- Halos (high delta)  
-  - `sigma_alpha^2 -> 0`  
-  - interactions become sharp and classical‑like  
-  - soliton identities stable
+### Proton‑like Soliton (S_p)
+- Q = 1
+- EM coupling: +1
+- Weak coupling: small
+- Internal texture: orientation A
+- Mass: large (from continuum energy)
+- Stable
 
-- Voids (low delta)  
-  - `sigma_alpha^2` remains large  
-  - interactions noisy, rare, fuzzy  
-  - “quantum‑like” behaviour emerges naturally
+### Neutron‑like Soliton (S_n)
+- Q = 1
+- EM coupling: 0 (internal cancellation)
+- Weak coupling: moderate
+- Internal texture: orientation B
+- Mass: slightly larger than S_p
+- Metastable (beta decay allowed)
 
-This replaces the role of Planck’s constant and vacuum fluctuations.
-
----
-
-## 5. Example One‑Core Interaction  
-### `S_e + S_e -> S_e + S_e + S_gamma` (bremsstrahlung‑like)
-
-1. Two electron‑like solitons `S_e` approach with relative acceleration.  
-2. Their overlapping textures distort `n(x,t)` and strongly excite the EM‑like kernel `K_EM`.  
-3. The continuum develops a propagating disturbance that stabilizes into a photon‑like soliton `S_gamma`.  
-4. Outgoing state: two deflected `S_e` solitons + one emitted `S_gamma`.  
-5. Energy balance is enforced by the continuum energy functional for `n(x,t)`.  
-6. In halos (low variance), emission is sharp; in voids (high variance), emission is noisy and probabilistic.
-
-No quantization, no operators — just soliton dynamics, kernels, and variance inside CCEF.
+Key structural rule:  
+Proton and neutron differ only by internal texture orientation, not core count.
 
 ---
 
-## 6. Two‑Core Composite Soliton (Proton‑Like)  
-### CCEF Particle Sector v0.2 Extension
+## Leptons (Q = 0)
 
-We now add a two‑core composite soliton representing a proton‑like object.
+### Electron‑like Soliton (S_e)
+- Q = 0
+- EM coupling: -1
+- Weak coupling: small
+- Mass: small
+- Stability: kernel‑locked (not a breather)
+- Absolutely stable
+- Internal texture: chiral/phase‑structured, subject to texture exclusion (see Section 3)
 
-### 6.1 Species Definition
+### Neutrino‑like Soliton (S_nu)
+- Q = 0
+- EM coupling: 0
+- Weak coupling: moderate
+- Mass: extremely small
+- Weakly interacting
 
-| Species      | Symbol | Core Type | Description |
-|-------------|--------|-----------|-------------|
-| Proton‑like | `S_p`  | Two‑core  | A bound configuration of two one‑core solitons with a stable internal texture pattern |
-
-**Structural Notes**
-
-- `S_p` is not fundamental.  
-- It is a bound state of two one‑core solitons (e.g. two `S_e`‑like or mixed‑texture cores).  
-- Stability arises from a balance between:
-  - short‑range repulsion (internal texture pressure)
-  - long‑range attraction (grav‑like kernel)
-  - medium‑range binding (EM‑like or weak‑like kernel components)
-
----
-
-### 6.2 Effective Mass
-
-The effective mass of the composite soliton is:
-
-- `m_p = m_core1 + m_core2 + E_binding`
-
-Where:
-
-- `m_core1`, `m_core2` are the effective masses of the constituent one‑core solitons  
-- `E_binding` is negative (binding energy)  
-
-Hierarchy:
-
-- `m_p >> m_e`  
-- `m_p >> m_nu`  
-
-This matches the role of a proton‑like object without invoking QFT or quarks.
+### Photon‑like Mode (S_gamma)
+- Q = 0
+- EM coupling: none as a source
+- Propagating disturbance of the continuum
+- Massless or very light
 
 ---
 
-### 6.3 Kernel Coupling Pattern
+# 3. Texture Exclusion Principle (Pauli‑Like Behaviour)
 
-The composite soliton inherits and combines the kernel couplings of its constituents.
+Problem avoided:  
+If S_e has Q = 0 and no further structure, many electrons could pile up in the same proton trough.
 
-Example pattern:
+CCEF solution:  
+Electrons obey a texture‑based exclusion principle:
 
-- `g_p = (g_grav = 2, g_EM = +1, g_weak = small)`
+- S_e carries a specific internal texture (phase / helicity / chiral pattern).
+- When two S_e textures attempt to overlap in the same spatial region:
+  - their internal gradients interfere destructively,
+  - the gradient energy density spikes,
+  - kernel‑locking becomes unstable,
+  - the configuration is dynamically expelled.
 
-Interpretation:
+Result:
 
-- Grav‑like coupling doubles (two cores)  
-- EM‑like coupling sums to a net positive charge  
-- Weak‑like coupling is small but nonzero  
+- Two electrons cannot occupy the same local texture state on the same trough.
+- Exclusion is enforced by continuum mechanics (gradient stress), not by quantum antisymmetry.
+- Electron degeneracy and “Pauli‑like” behaviour emerge from texture incompatibility.
 
-This reproduces the role of a positively charged, massive, stable particle.
-
----
-
-### 6.4 Stability Conditions
-
-`S_p` is stable when:
-
-1. Binding kernel (medium‑range) provides net attraction  
-2. Internal texture pressure prevents collapse  
-3. Variance `sigma_alpha^2` is low enough to avoid decoherence  
-4. Density‑triggered RG drives the composite into a stable fixed point in halos  
-
-In voids, high variance can destabilize the composite, giving environment‑dependent behaviour.
+This prevents electron pile‑up and enables atomic structure without QFT.
 
 ---
 
-### 6.5 Interaction Table (Composite Included)
+# 4. Topology‑Correct Beta Decay
 
-| Process                            | Allowed? | Mediating Kernel(s) | Notes                                      |
-|------------------------------------|----------|----------------------|--------------------------------------------|
-| `S_p + S_e -> S_p + S_e`           | Yes      | `K_EM`, `K_grav`     | Coulomb‑like + grav‑like                   |
-| `S_p + S_gamma -> S_p + S_gamma`   | Yes      | `K_EM`               | Photon‑like scattering                     |
-| `S_p + S_nu -> S_p + S_nu`         | Yes      | `K_weak`, `K_grav`   | Weak‑like + grav‑like                      |
-| `S_p -> S_e + S_e + S_nu`          | Rare     | `K_weak`             | Requires high variance; unstable in voids  |
-| `S_p + S_e -> S_p + S_e + S_gamma` | Yes      | `K_EM`               | Radiative excitation                       |
-| `S_p + S_p -> bound state`         | Possible | `K_grav`, `K_EM`     | Larger composite (nucleus‑like)            |
+The corrected decay channel is:
 
-This gives the beginnings of nuclear‑like structure without any QFT or GR.
+S_n (Q = 1)  
+→ S_p (Q = 1) + S_e (Q = 0) + S_nu (Q = 0)
 
----
+Core number conserved:
 
-### 6.6 Example: Formation of the Composite Soliton  
-#### Process: `S_e + S_e -> S_p`
+1 → 1 + 0 + 0
 
-1. Two one‑core solitons approach.  
-2. Their textures overlap and excite medium‑range kernel components.  
-3. The continuum relaxes into a two‑core bound configuration.  
-4. Excess energy is shed as one or more `S_gamma` excitations.  
-5. The final state is a stable composite soliton `S_p`.  
-
-This is the CCEF analogue of forming a proton‑like object.
+No anti‑cores.  
+No core creation.  
+No violation of conservation.  
+Fully consistent with CCEF.
 
 ---
 
-## 7. Summary
+# 5. Hydrogen in CCEF (Corrected)
 
-The CCEF particle sector v0.2 provides:
+With the corrected ontology:
 
-- a minimal one‑core sector: `S_e`, `S_gamma`, `S_nu`  
-- a two‑core composite: `S_p` (proton‑like)  
-- masses from the continuum energy of `n(x,t)`  
-- charges as kernel‑coupling patterns  
-- interactions as soliton scattering and continuum excitations  
-- quantum‑like behaviour from variance and density‑triggered RG  
+- Proton: Q = 1
+- Electron: Q = 0
 
-All of this remains strictly within CCEF’s ontology:
+Hydrogen is not a 3‑body knotted system.
 
-- no QFT  
-- no GR  
-- no external structures  
-- everything emerges from the continuum, solitons, kernels, and variance.
+Instead:
+
+- The proton S_p creates a response trough via its kernels.
+- The electron S_e binds as a kernel‑locked surface state on this trough.
+- Texture exclusion prevents multiple electrons from occupying the same surface mode.
+
+This matches:
+
+- stationary electron density
+- no classical orbit
+- no Kepler motion
+- ptychography images
+- CCEF continuum mechanics
+
+The electron is a bound surface excitation, not a point particle.
+
+---
+
+# 6. Interaction Rules (Corrected)
+
+## Baryon–Baryon
+- Mediated by grav‑like and EM‑like kernels
+- Q always conserved (Q = 1 → Q = 1)
+
+## Baryon–Lepton
+- Mediated by EM‑like or weak‑like kernels
+- No change in core number
+- Texture exclusion restricts allowed electron configurations near baryons
+
+## Lepton–Lepton
+- Mediated by EM‑like or weak‑like kernels
+- No topology involved
+- Texture exclusion prevents overlapping S_e textures
+
+## Radiative Processes
+- Baryons and leptons can emit S_gamma modes
+- Q remains unchanged
+
+---
+
+# 7. Why This Version Works
+
+This corrected sector:
+
+- preserves topological conservation  
+- avoids anti‑cores  
+- avoids non‑physical core creation  
+- keeps electrons stable  
+- keeps neutrons metastable  
+- keeps hydrogen bound  
+- prevents electron pile‑up via texture exclusion  
+- avoids QFT imports  
+- stays fully inside CCEF’s ontology  
+- matches key phenomenological constraints  
+- keeps the theory clean and structurally minimal  
+
+---
+
+# 8. Summary Table
+
+| Species       | Symbol  | Q | EM Coupling | Weak Coupling | Texture Exclusion | Role              |
+|--------------|---------|---|-------------|----------------|-------------------|-------------------|
+| Proton‑like  | S_p     | 1 | +1          | small          | n/a               | Stable baryon     |
+| Neutron‑like | S_n     | 1 | 0           | moderate       | n/a               | Metastable baryon |
+| Electron‑like| S_e     | 0 | -1          | small          | Yes               | Stable lepton     |
+| Neutrino‑like| S_nu    | 0 | 0           | moderate       | No (very weak)    | Light lepton      |
+| Photon‑like  | S_gamma | 0 | 0           | 0              | No                | Radiative mode    |
+
+---
+
+# 9. Final Statement
+
+CCEF Particle Sector v1.0 is now:
+
+- topologically consistent  
+- texture‑consistent (exclusion enforced)  
+- phenomenologically plausible  
+- structurally minimal  
+- fully compatible with CCEF’s continuum ontology  
+- free of QFT and GR imports  
+- ready for extension to atomic architecture (electron surface modes and multi‑electron configurations)  

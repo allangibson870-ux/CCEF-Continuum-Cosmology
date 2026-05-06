@@ -1989,6 +1989,207 @@ Thus the **Isotropic Vacuum** is the global attractor of the continuum.
 - **Stability:**  
   The isotropic vacuum (\(\Phi=\Psi\)) is the universal RG fixed point of any chaotic soliton gas.
 
+---
+# Appendix Ω — Transverse π‑Modes and Quadrupolar Response Geometry  
+*(Fully CCEF‑internal, geometry only as projection)*
+
+---
+
+## Ω1. Background: Coherent Response Regime
+
+In a homogeneous coherent phase, the response kernel is isotropic:
+
+
+
+\[
+R_0(x,x') = R_0(|x - x'|).
+\]
+
+
+
+Define the **local response distance projection**:
+
+
+
+\[
+D(x) = -\ln |\Phi_K(x)|,
+\qquad
+\Phi_K = K * \rho.
+\]
+
+
+
+The **effective response‑geometry proxy** is:
+
+
+
+\[
+g^{ij}_{\text{eff}} = \delta^{ij} + h^{ij},
+\qquad
+h^{ij} \propto \partial_i \partial_j D.
+\]
+
+
+
+This is a *projection*, not a geometric ontology.
+
+---
+
+## Ω2. Transverse π‑Mode Excitation
+
+A small excitation of the continuum field:
+
+
+
+\[
+n = n_0 + \pi, \qquad n_0 \cdot \pi = 0,
+\]
+
+
+
+supports **transverse modes**:
+
+
+
+\[
+\pi(x,t) = \Re[\pi_0 e^{i(k\cdot x - \omega t)} e_p],
+\qquad
+k\cdot e_p = 0.
+\]
+
+
+
+This is a **shear‑like distortion** of the internal state.
+
+---
+
+## Ω3. Kernel Perturbation from Transverse π
+
+The kernel perturbs as:
+
+
+
+\[
+R = R_0 + \delta R.
+\]
+
+
+
+To leading order:
+
+
+
+\[
+\delta R(x,x';t)
+  = \Re\!\left[
+      \pi_0\, e^{i(k\cdot x_c - \omega t)}\,
+      \mathcal{A}(L; k, e_p)
+    \right],
+\]
+
+
+
+with midpoint \(x_c = (x+x')/2\) and separation \(L = x'-x\).
+
+By isotropy, the lowest‑order anisotropy is:
+
+
+
+\[
+\mathcal{A}(L) \propto \cos(2\varphi),
+\]
+
+
+
+where \(\varphi\) is the angle between \(L\) and the polarization axis.
+
+---
+
+## Ω4. Response Distance Perturbation
+
+The response distance:
+
+
+
+\[
+D(x,x';t) = -\ln |R(x,x';t)|
+\]
+
+
+
+perturbs as:
+
+
+
+\[
+\delta D(L,\varphi,t)
+  \propto \cos(2\varphi)\,
+           \cos(\omega t - k\cdot x_c).
+\]
+
+
+
+This is a **quadrupolar modulation** of the response distance.
+
+---
+
+## Ω5. Quadrupolar Strain Proxy
+
+Define the strain proxy:
+
+
+
+\[
+S_{ij}(t)
+  =
+  \frac{\partial^2}{\partial L_i \partial L_j}
+  \delta D(L,t)
+  \Big|_{L=L_0}.
+\]
+
+
+
+Evaluating yields:
+
+
+
+\[
+S_{ij}(t)
+  \propto
+  Q_{ij}(\varphi)\,
+  \cos(\omega t - k\cdot x_c),
+\]
+
+
+
+with:
+
+
+
+\[
+Q_{ij}(\varphi)
+  =
+  \begin{pmatrix}
+    \cos 2\varphi & \sin 2\varphi & 0 \\
+    \sin 2\varphi & -\cos 2\varphi & 0 \\
+    0 & 0 & 0
+  \end{pmatrix}.
+\]
+
+
+
+This is a **pure quadrupole** in the plane transverse to \(k\).
+
+---
+
+## Ω6. Executive Summary
+
+- Transverse π‑modes generate anisotropic kernel perturbations.  
+- These induce **quadrupolar oscillations** in the response distance \(D(x,x')\).  
+- The Hessian of \(\delta D\) defines a **quadrupolar strain proxy** \(S_{ij}\).  
+- No geometry, no spin‑2 field, no GR structure is assumed.  
+- The quadrupole is a **kernel‑induced anisotropic response** of the soliton gas.
+
 
 
 

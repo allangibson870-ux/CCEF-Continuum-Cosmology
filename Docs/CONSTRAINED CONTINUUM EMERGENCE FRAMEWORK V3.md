@@ -1453,6 +1453,66 @@ not form part of the ontology.
 
 ---
 
+### 119. The Dual-Response Principle
+
+The propagation speed of wave-like solitons (“photons”) is determined by the local refractive index of the continuum. This index is modified by two distinct internal response channels:
+
+- **Density Response (Φ):** Mass concentrations compress the surrounding soliton gas, increasing the optical density.  
+- **Stiffness Response (Ψ):** Mass concentrations induce tension in the kernel connectivity, modifying the effective bulk modulus (stiffness) of the vacuum.
+
+The effective refractive index is the sum of these contributions:
+
+`n(x) ≈ 1 + Φ(x) + Ψ(x)`.
+
+---
+
+### 120. The Isotropization Theorem
+
+In the Long-Range Coherent Phase (Phase I), the continuum behaves as an ideal, isotropic fluid. Static anisotropic shear stresses are RG-irrelevant: under coarse-graining, shear modes decay and the medium approaches an isotropic stress state.
+
+In this limit, the energy cost of density deformation (Φ) must equilibrate with the energy cost of stiffness deformation (Ψ). This imposes an equipartition constraint on the RG flow:
+
+`lim_{b → ∞} [ Φ(b) - Ψ(b) ] = 0`.
+
+Equivalently, in the infrared coherent vacuum:
+
+`Φ = Ψ`.
+
+---
+
+### 121. The Shapiro Mechanism
+
+Under the isotropization condition `Φ = Ψ`, the refractive index becomes
+
+`n(x) ≈ 1 + 2 Φ(x)`.
+
+The total time delay `Δt` for a soliton traversing a potential well is then
+
+`Δt = ∫ (n(x) - 1) dl ≈ 2 ∫ Φ(x) dl`.
+
+The factor of 2 arises from the dual loading of the medium: density compression and stiffness tension contribute equally to the slowing of soliton propagation in the coherent vacuum.
+
+---
+
+### 122. Slip RG Flow and Effective γ
+
+Externally, observers fit light-propagation data using a parameter `γ` (the Shapiro delay parameter). Internally, CCEF defines an effective deviation parameter as the ratio of stiffness to density response:
+
+`γ_eff = Ψ / Φ = 1 / η`.
+
+The RG flow of slip (Section 73) induces a flow for `γ_eff`:
+
+`dγ_eff / d ln b = -β_γ (γ_eff - 1)`,
+
+with `β_γ > 0` in the coherent vacuum. This drives
+
+`γ_eff → 1`
+
+at macroscopic scales, while deviations (`γ_eff ≠ 1`) persist only near defects or in screened phases.
+
+In this way, the coherent vacuum of CCEF reproduces the observed Shapiro delay (numerically equivalent to γ = 1) as a consequence of hydrodynamic isotropization, without invoking spacetime curvature as a fundamental entity.
+
+
 # APPENDIX Z  
 INTERPRETIVE MAPPINGS FOR GEOMETRIC AND FORCE‑BASED FRAMEWORKS  
 NON‑ONTOLOGICAL, FOR TRANSLATION ONLY

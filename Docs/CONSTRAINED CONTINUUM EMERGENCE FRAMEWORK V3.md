@@ -1591,18 +1591,27 @@ kernel structure and does not modify the ontology.
 
 ---
 
-# Z16. Response Distance and Kernel
+### Z16. Response Distance and Kernel
 
 From the core:
 
 `D(x,x') = -log |R(x,x')|`.
 
-In coherent phases, `D(x,x')` becomes approximately quadratic. Define:
+The metric‑like projection is **not** defined for all kernel regimes.  
+In the long‑range Newtonian phase (`K ∼ 1/r`),  
+`D ∼ log r` and the second derivative `∂_i ∂_j D` produces a non‑flat asymptotic form and a singularity at the origin.  
+No background geometry can be inferred in this regime.
 
-`h_ij(x) ∝ ∂_i ∂_j D(x,x')`.
+The projection is therefore restricted to the **Screened (Yukawa) Phase**, where
 
-This `h_ij` is a bookkeeping device summarising local curvature of the response
-distance.
+`K(r) ∼ e^{-r/ξ_R} / r`.
+
+In this phase, `D(x,x')` becomes approximately quadratic near the coherence peak, and the second derivative
+
+`h_ij(x) ∝ ∂_i ∂_j D(x,x')`
+
+acts as a valid **local** curvature proxy.  
+This `h_ij` remains a bookkeeping device only, summarising the curvature of the response distance in coherent, screened regimes.
 
 ---
 
@@ -1663,16 +1672,20 @@ None of these objects exist in the ontology.
 
 ---
 
-# Z21. Mapping of CCEF Quantities
+### Z21. Mapping of CCEF Quantities
 
 1. **Nonlocal Response Term**  
    `G_eff(□)` ↔ `K(k,a)`  
    External observers interpret scale‑dependent response as a running coupling.
 
 2. **Metric Projection**  
-   `g_{00} ≈ -[1 + 2Φ]`  
-   `g_{ii} ≈ a^2 [1 - 2Ψ]`  
-   Slip `η ≠ 1` produces propagation differences.
+   In a scalar continuum, the projection satisfies  
+   `g_{00} ≈ -(1 + 2Φ)` and `g_{ii} ≈ (1 - 0Φ)`,  
+   which yields only half of the GR light‑bending result.  
+   CCEF avoids this by **Kernel Splitting**: slip `η ≠ 1` generates the spatial response channel.  
+   The spatial metric proxy becomes  
+   `g_{ii} ≈ a^2 [1 - 2η Φ]`.  
+   Full GR‑equivalent lensing occurs only when `η = 1`.
 
 3. **Stochastic Term**  
    `ħ_eff = σ_α^2 ρ_0`  
@@ -1691,7 +1704,7 @@ behaviour in projected form.
 
 ---
 
-# Z23. Observable Mismatch Calculations
+### Z23. Observable Mismatch Calculations
 
 1. **Early‑time expansion:**  
    `T^{response}` does not scale as `a^{-4}`, producing early‑time mismatches.
@@ -1700,7 +1713,7 @@ behaviour in projected form.
    Slip `η ≠ 1` implies different propagation speeds for different excitations.
 
 3. **Ringdown:**  
-   `T^{stoch}` introduces non‑smooth corrections, producing grainy ringdown.
+   CCEF supports a scalar longitudinal radiation channel. Perturbations of the continuum field relax through scalar quasi‑normal modes, producing a breathing‑mode strain pattern rather than GR’s tensorial plus/cross modes. The observable signature is therefore **scalar breathing‑mode dominance**, not graininess, and detectors optimized for spin‑2 tensor modes exhibit reduced sensitivity to this channel.
 
 4. **Lensing:**  
    `Φ_lens` inherits stochastic fluctuations, producing noisy lensing maps.

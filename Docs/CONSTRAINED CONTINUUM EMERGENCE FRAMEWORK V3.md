@@ -1636,6 +1636,361 @@ with `β_γ > 0` in the coherent vacuum.
 
 Thus the coherent phase of CCEF reproduces the empirical Shapiro delay as a **hydrodynamic consequence** of the isotropic IR fixed point.
 
+---
+# Appendix Y — Wave Response, Detector Projection, and RG Stability  
+*(Fully CCEF‑internal, geometry only as projection)*
+
+---
+
+## Y1. From π‑Modes to Effective Strain in the Response Geometry
+
+### Y1.1 Background Response State  
+In a homogeneous coherent regime, the response kernel is translationally invariant:
+
+
+
+\[
+R_0(x,x') = R_0(|x - x'|).
+\]
+
+
+
+Define the **local response distance field** relative to the homogeneous background:
+
+
+
+\[
+D(x) \equiv -\ln |\Phi_K(x)|,
+\]
+
+
+
+where
+
+
+
+\[
+\Phi_K(x) = (K * \rho)(x)
+\]
+
+
+
+is the kernel‑projected density.  
+This is **not** a geometric distance; it is a **projection** of the internal response.
+
+The **effective response‑geometry proxy** is defined by the Hessian:
+
+
+
+\[
+g^{ij}_{\text{eff}} = \delta^{ij} + h^{ij}, \qquad  
+h^{ij} \propto \partial_i \partial_j D.
+\]
+
+
+
+This is a *projection layer object*, not part of the ontology.
+
+---
+
+### Y1.2 Scalar Density Perturbation  
+Let the soliton ensemble carry a small density fluctuation:
+
+
+
+\[
+\rho(x,t) = \rho_0 \,[1 + \epsilon(x,t)].
+\]
+
+
+
+To linear order:
+
+
+
+\[
+\Phi_K(x,t) = \Phi_0 \,[1 + \epsilon(x,t)].
+\]
+
+
+
+Thus:
+
+
+
+\[
+D(x,t) = -\ln|\Phi_0| - \ln(1+\epsilon)
+       \approx D_0 - \epsilon(x,t).
+\]
+
+
+
+---
+
+### Y1.3 Effective Strain Proxy  
+The perturbation of the response‑geometry proxy is:
+
+
+
+\[
+h_{ij} \propto -\partial_i \partial_j \epsilon(x,t).
+\]
+
+
+
+For a plane‑wave excitation:
+
+
+
+\[
+\epsilon(x,t) = A\, e^{i(k\cdot x - \omega t)},
+\]
+
+
+
+we obtain:
+
+
+
+\[
+h_{ij}^{\text{CCEF}} = C\, k_i k_j\, e^{i(k\cdot x - \omega t)}.
+\]
+
+
+
+**Interpretation:**  
+This is the **pure longitudinal response channel** of the continuum.  
+It stretches along the propagation direction and produces no intrinsic transverse pattern.
+
+This is the scalar (compression) mode of the soliton gas.
+
+---
+
+## Y2. Detector‑Layer Projection (External to Ontology)
+
+### Y2.1 Detector Tensor  
+An interferometric detector defines a projection tensor:
+
+
+
+\[
+D_{ij} = \tfrac12 (x_i x_j - y_i y_j),
+\]
+
+
+
+where \(\hat{x}\) and \(\hat{y}\) are the arm directions.  
+This is **external modelling**, not part of CCEF.
+
+### Y2.2 Detector Response  
+The measured signal is:
+
+
+
+\[
+S(t) = h^{ij} D_{ij}.
+\]
+
+
+
+Substituting the CCEF longitudinal form:
+
+
+
+\[
+S(t) \propto (k\cdot x)^2 - (k\cdot y)^2.
+\]
+
+
+
+---
+
+### Y2.3 Directional Visibility
+
+**Case A — Wave normal to detector plane**  
+If \(k\) is perpendicular to both arms:
+
+
+
+\[
+k\cdot x = 0, \qquad k\cdot y = 0,
+\]
+
+
+
+then:
+
+
+
+\[
+S = 0.
+\]
+
+
+
+**Interpretation:**  
+A pure longitudinal mode is invisible when arriving orthogonally to the detector plane.
+
+---
+
+**Case B — Wave aligned with one arm**
+
+If \(k\) lies along \(\hat{x}\):
+
+
+
+\[
+k\cdot x = k, \qquad k\cdot y = 0,
+\]
+
+
+
+then:
+
+
+
+\[
+S \propto k^2 \neq 0.
+\]
+
+
+
+**Interpretation:**  
+Longitudinal CCEF waves are detectable when propagating in the detector plane.
+
+---
+
+### Y2.4 Mixed‑Mode Correction  
+If the kernel retains residual anisotropy (finite shear channel) before reaching the IR fixed point, a transverse correction appears:
+
+
+
+\[
+h_{ij}^{\text{total}} = k_i k_j + \beta_{\text{shear}}\, \Xi_{ij},
+\]
+
+
+
+where \(\Xi_{ij}\) is an anisotropic kernel‑projection tensor and:
+
+
+
+\[
+\beta_{\text{shear}} \sim b^{-2}
+\]
+
+
+
+from RG suppression.
+
+This produces a **“dirty quadrupole”**:  
+dominantly longitudinal, with a small transverse component.
+
+---
+
+## Y3. RG Flow of Shear Anisotropy
+
+### Y3.1 Internal Shear Parameter  
+Let \(\lambda_S\) quantify static shear anisotropy of the kernel.  
+Under block‑rescaling \(b\), the internal RG flow takes the form:
+
+
+
+\[
+\frac{d\lambda_S}{d\ln b}
+   = (\Delta - \eta_{\text{visc}})\,\lambda_S,
+\]
+
+
+
+where:
+
+- \(\Delta\) is the internal scaling dimension of shear distortions,  
+- \(\eta_{\text{visc}}\) encodes dissipation in the soliton gas.
+
+No spacetime interpretation is used; \(\Delta\) is an **internal continuum exponent**.
+
+---
+
+### Y3.2 Fixed Points
+
+**Fixed Point A — Crystalline Response (\(\lambda_S \to \infty\))**  
+Requires negligible viscosity and persistent directional stiffness.  
+Unstable: any finite coupling variance \(\sigma_\alpha^2\) destroys coherence.
+
+**Fixed Point B — Isotropic Fluid (\(\lambda_S \to 0\))**  
+Static shear decays:
+
+
+
+\[
+\lambda_S(b) \sim b^{-(\eta_{\text{visc}} - \Delta)}.
+\]
+
+
+
+For a chaotic soliton gas, \(\eta_{\text{visc}} > \Delta\), so:
+
+
+
+\[
+\lambda_S \to 0.
+\]
+
+
+
+---
+
+### Y3.3 Consequence  
+As \(\lambda_S \to 0\), the coarse‑grained stress becomes isotropic:
+
+
+
+\[
+P_{ij} \to P\,\delta_{ij}.
+\]
+
+
+
+This enforces the **dual‑response equality**:
+
+
+
+\[
+\Phi = \Psi,
+\]
+
+
+
+the condition derived in Appendix X.
+
+Thus the **Isotropic Vacuum** is the global attractor of the continuum.
+
+---
+
+## Y — Executive Summary
+
+- **Strain:**  
+  CCEF’s fundamental wave mode is longitudinal:  
+  
+
+\[
+  h_{ij} \propto k_i k_j.
+  \]
+
+
+
+- **Visibility:**  
+  Longitudinal waves are invisible to detectors when arriving orthogonally to the detector plane, but visible when propagating in‑plane.
+
+- **Mixed Modes:**  
+  Residual shear anisotropy produces a suppressed transverse component (“dirty quadrupole”).
+
+- **Stability:**  
+  The isotropic vacuum (\(\Phi=\Psi\)) is the universal RG fixed point of any chaotic soliton gas.
+
+
+
 
 
 # APPENDIX Z  

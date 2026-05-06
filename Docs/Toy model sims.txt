@@ -410,6 +410,59 @@ results = {
 }
 print(results)
 
+Hydrogen trough simulation
+import numpy as np
+
+def simulate_surface_state():
+    np.random.seed(42)
+    # Parameters for Proton-Electron CCEF interaction
+    dt = 0.05
+    steps = 500
+    
+    # 1. Proton Trough (Section 7)
+    # Fixed at origin, creates EM-like kernel potential
+    def phi_p(r):
+        xi_em = 10.0 # EM correlation length
+        return -1.0 * np.exp(-r / xi_em) / (r + 0.1)
+
+    # 2. Electron Texture Exclusion (Section 5)
+    # Gradient stress S_grad = |grad(theta)|² -> leads to a repulsive 1/r^3 or similar
+    def s_grad_repulsion(r):
+        # Exclusion becomes dominant at small scales (r_excl)
+        r_excl = 0.8
+        return (r_excl / (r + 0.01))**4 
+
+    # Initial Electron position (tangent mode)
+    pos = np.array([2.0, 0.0])
+    vel = np.array([0.0, 0.6]) # Initial orbital motion
+    
+    trajectory = []
+    
+    for _ in range(steps):
+        r_vec = pos
+        r_mag = np.linalg.norm(r_vec)
+        
+        # Force from Proton Trough (Attraction)
+        # d/dr of -exp(-r/xi)/r
+        f_attr_mag = -(np.exp(-r_mag/10.0)*(1/r_mag + 1/10.0)) / r_mag
+        f_attr = (r_vec / r_mag) * f_attr_mag
+        
+        # Force from Texture Exclusion (Repulsion)
+        # d/dr of (1/r^4) -> -4/r^5
+        f_rep_mag = 4 * (0.8**4) / (r_mag**5 + 0.001)
+        f_rep = (r_vec / r_mag) * f_rep_mag
+        
+        total_force = f_attr + f_rep
+        vel += total_force * dt
+        pos += vel * dt
+        trajectory.append(np.linalg.norm(pos))
+
+    return np.mean(trajectory[-100:]), np.std(trajectory[-100:])
+
+mean_r, std_r = simulate_surface_state()
+print(f"{mean_r=}, {std_r=}")
+
+
 
 
 

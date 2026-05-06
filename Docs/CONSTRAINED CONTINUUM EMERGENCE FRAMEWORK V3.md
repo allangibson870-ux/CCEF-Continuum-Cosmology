@@ -1399,6 +1399,50 @@ Matter is topological.
 Forces are internal response.  
 Geometry is an emergent projection in coherent regimes.
 
+### CCEF Regime Table
+
+| Regime | Kernel Form | Coherence Length `ξ_R` | Variance `σ_α^2` | Dominant Phenomenology | Observer Projection |
+|-------|-------------|-------------------------|-------------------|-------------------------|---------------------|
+| **Coherent Vacuum** | `K(r) ∼ 1/r` | `ξ_R → ∞` | `σ_α^2 → 0` | Long‑range deterministic response; smooth curvature; global coupling | Classical GR‑like behaviour |
+| **Stochastic Floor** | `K(r)` short‑range / contact | `ξ_R → 0` | `σ_α^2 > 0` | Local, noisy interactions; transport dominated by fluctuations | Quantum‑like uncertainty |
+| **Dark Phase (Halo Regime)** | `K(r) ∼ 1/r` with noisy coupling | `ξ_R → ∞` | `σ_α^2 > 0` | Long‑range force with fluctuating strength; anomalous response | Dark‑matter‑like effects |
+| **Acceleration Phase** | `K(r)` subdominant; pressure‑driven | any | `P_R < -ρ_0/3` | Internal pressure exceeds attraction; bulk expansion accelerates | Dark‑energy‑like behaviour |
+
+### CCEF Phase Diagram (Universal State Space)
+
+The state of the continuum is parameterised by the coordinate pair  
+`(ξ_R, σ_α^2)` in the internal phase space.
+
+| Phase | Condition | Dominant Behaviour | Observer Projection |
+|-------|-----------|--------------------|---------------------|
+| **Phase I — Coherent Vacuum** | `ξ_R → ∞`, `σ_α^2 → 0` | Long‑range deterministic response; smooth curvature; global coherence | Classical GR‑like spacetime |
+| **Phase II — Stochastic Floor** | `ξ_R → 0`, `σ_α^2 > 0` | Local, noisy interactions; transport dominated by fluctuations | Quantum‑like uncertainty |
+| **Phase III — Dark Phase (Halo Regime)** | `ξ_R → ∞`, `σ_α^2 > 0` | Long‑range kernel with fluctuating coupling; anomalous response | Dark‑matter‑like effects |
+| **Phase IV — Acceleration Phase** | `P_R < -ρ_0/3` | Internal pressure exceeds attraction; bulk expansion accelerates | Dark‑energy‑like behaviour |
+
+### CCEF Phase-Space Plot (ASCII Schematic)
+
+Phase space is spanned by coherence length `ξ_R` (horizontal) and variance `σ_α^2` (vertical).
+
+- Horizontal axis: `ξ_R` (left: 0, right: ∞)  
+- Vertical axis: `σ_α^2` (bottom: 0, top: large)
+
+```text
+          ↑  σ_α^2
+          |
+   High   |        Phase III
+ variance |   Dark Phase (Halo Regime)
+          |   (ξ_R → ∞, σ_α^2 > 0)
+          |
+          |------------------------------→  ξ_R
+          |         Phase I
+   Low    |    Coherent Vacuum
+ variance |   (ξ_R → ∞, σ_α^2 → 0)
+          |
+          +--------------------------------
+            0                         ∞
+
+
 ---
 
 # 118. Transition to Appendix

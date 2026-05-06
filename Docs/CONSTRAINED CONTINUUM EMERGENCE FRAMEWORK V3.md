@@ -1512,6 +1512,131 @@ at macroscopic scales, while deviations (`γ_eff ≠ 1`) persist only near defec
 
 In this way, the coherent vacuum of CCEF reproduces the observed Shapiro delay (numerically equivalent to γ = 1) as a consequence of hydrodynamic isotropization, without invoking spacetime curvature as a fundamental entity.
 
+---
+### Appendix X. RG Irrelevance of Shear and the Isotropic IR Fixed Point
+
+The continuum field `n(x,t)` supports two linear response channels:
+
+- **Density Response:** `Φ` — compression of the soliton gas  
+- **Stiffness Response:** `Ψ` — isotropic tension of the kernel connectivity  
+
+At short scales, the response kernel may contain anisotropic components.  
+We decompose the static linear response operator into irreducible parts:
+
+`K_ij(k) = K_iso(k) δ_ij + K_shear(k) (k_i k_j / k^2 - δ_ij/3)`.
+
+Here:
+
+- `K_iso` controls isotropic compression (Φ).  
+- `K_shear` controls anisotropic stiffness (Ψ_aniso).  
+
+---
+
+### X.1 RG Scaling of Shear Modes
+
+Under coarse-graining by a factor `b > 1`, the momentum rescales as
+
+`k → k/b`.
+
+The shear component transforms as
+
+`K_shear(k/b) = b^{-y_s} K_shear(k)`,
+
+where `y_s` is the RG scaling exponent of the shear operator.
+
+For a fluid-like continuum, the shear operator contains **two spatial derivatives** and **no restoring force**.  
+Dimensional analysis of the response functional gives
+
+`y_s = 2 > 0`.
+
+Thus:
+
+`K_shear(k/b) = b^{-2} K_shear(k)`.
+
+As `b → ∞` (IR limit):
+
+`K_shear → 0`.
+
+Shear response is therefore **RG-irrelevant**.
+
+---
+
+### X.2 Survival of the Isotropic Channel
+
+The isotropic component rescales as
+
+`K_iso(k/b) = b^{-y_0} K_iso(k)`.
+
+For a compressible fluid, the isotropic mode is associated with the bulk modulus.  
+Its scaling exponent is
+
+`y_0 = 0`.
+
+Thus:
+
+`K_iso(k/b) = K_iso(k)`,
+
+and the isotropic response **survives** in the IR.
+
+---
+
+### X.3 The Isotropic IR Fixed Point
+
+Since `K_shear → 0` and `K_iso` remains finite, the IR response kernel becomes
+
+`K_ij^IR(k) = K_iso(k) δ_ij`.
+
+This is the defining condition of an **ideal isotropic fluid**:
+
+- no static shear stresses,  
+- no directional stiffness,  
+- only isotropic compression/tension modes.
+
+In this limit, the stiffness response `Ψ` becomes purely isotropic and must match the density response `Φ` because both derive from the same surviving kernel component.
+
+Thus the IR fixed point enforces
+
+`Φ = Ψ`.
+
+---
+
+### X.4 Consequence for Light Propagation
+
+The refractive index of the soliton medium is
+
+`n(x) ≈ 1 + Φ(x) + Ψ(x)`.
+
+At the isotropic IR fixed point:
+
+`Φ = Ψ`,
+
+so
+
+`n(x) ≈ 1 + 2 Φ(x)`.
+
+This yields the observed Shapiro delay factor of 2 without invoking geometric curvature.
+
+---
+
+### X.5 Effective γ Parameter
+
+Observers infer a parameter
+
+`γ_eff = Ψ / Φ`.
+
+At the IR fixed point:
+
+`γ_eff = 1`.
+
+The RG flow of slip (Section 73) drives deviations toward this fixed point:
+
+`dγ_eff / d ln b = -β_γ (γ_eff - 1)`,
+
+with `β_γ > 0` in the coherent vacuum.
+
+Thus the coherent phase of CCEF reproduces the empirical Shapiro delay as a **hydrodynamic consequence** of the isotropic IR fixed point.
+
+
 
 # APPENDIX Z  
 INTERPRETIVE MAPPINGS FOR GEOMETRIC AND FORCE‑BASED FRAMEWORKS  

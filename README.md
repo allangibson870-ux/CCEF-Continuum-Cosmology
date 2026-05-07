@@ -1,6 +1,9 @@
 # CCEF‑Continuum‑Cosmology  
 ### Continuum‑Coupled Emergent Framework (CCEF‑Lite v3.0)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20069547.svg)](https://doi.org/10.5281/zenodo.20069547)
+
+
 CCEF‑Continuum‑Cosmology presents a mechanism‑driven cosmological framework built from a single constrained continuum field:
 
 **n(x,t)** with **|n| = 1**

@@ -88,6 +88,16 @@ CCEF‑Lite v3.0 is ruled out if any of the following are observed:
   Primordial gravitational waves with zero dispersion or stochastic phase noise.
 
 ---
+cff-version: 1.2.0
+title: "Continuum--Coupled Emergent Framework (CCEF)"
+message: "If you use this work, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: Gibson
+    given-names: Allan
+version: "V1"
+doi: "10.5281/zenodo.20069547"
+date-released: "2026-05-07"
+url: "https://github.com/allangibson870-ux/CCEF-Continuum-Cosmology"
 
-## Repository Structure
 

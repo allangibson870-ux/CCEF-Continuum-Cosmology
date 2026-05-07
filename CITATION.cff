@@ -6,6 +6,7 @@ type: software
 authors:
   - family-names: Gibson
     given-names: Allan
+    orcid: "https://orcid.org/0009-0005-7957-0907"
 
 version: "V1"
 doi: "10.5281/zenodo.20069547"

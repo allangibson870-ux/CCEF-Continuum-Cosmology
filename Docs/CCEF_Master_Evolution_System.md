@@ -1,338 +1,276 @@
-# CCEF Master Evolution System v1.0
+# CCEF Master Evolution System v1.2 (Closed RG-Soliton Formulation)
 
-A closed, classical, deterministic continuum framework defining the microscopic field, soliton sector, kernel sector, RG flow, stochastic evolution, perturbations, and projection operators.
+A closed deterministic continuum theory based on a single constrained field $n(x,t) \in S^{2}$, where all physical structure, solitons, interactions, stochasticity, and large-scale behavior emerge from an energy functional and its renormalisation group (RG) flow.
 
----
-
-## 1. Microscopic Layer
-
-### 1.1 Microscopic Energy Functional
-The continuum evolves according to a classical energy functional defined on the unit-norm manifold |n| = 1.
-
-E[n] = ∫ d³x · ℰ(n, ∇n, ∇²n)
-
-ℰ = ℰ_grad + ℰ_Sk + ℰ_disp + ℰ_lock
-
-#### 1.1.1 Gradient Sector
-ℰ_grad = (A1/2) (∂ᵢn · ∂ᵢn)
-
-#### 1.1.2 Topological Sector
-ω(x) = (1 / 4π) εᵢⱼₖ [ ∂ᵢn · (∂ⱼn × ∂ₖn) ]  
-ℰ_Sk = (A2/2) ω²
-
-#### 1.1.3 Dispersive Sector
-ℰ_disp = (A3/2) (∇²n · ∇²n)
-
-#### 1.1.4 Alignment Sector
-ℰ_lock = (A4/2) (n · n₀)²
-
-#### 1.1.5 Constraint
-|n(x,t)| = 1
-
-#### 1.1.6 Functional Derivative
-h = δE/δn  
-h_perp = h − (h · n) n
+No external spacetime, quantum postulates, or cosmological inputs are assumed. All scales and observables are emergent.
 
 ---
 
-### 1.2 Microscopic Evolution Equation
-∂ₜ n = −Γ h_perp + λ (n × h_perp)
+# 1. Fundamental Field Theory
 
-#### 1.2.1 Constraint Preservation
-∂ₜ|n|² = 0
+## 1.1 Primary Constraint
 
-#### 1.2.2 Soliton Attractors
-h_perp = 0 defines stationary solitons.
+$$ |n(x,t)| = 1 $$
 
-#### 1.2.3 Role in the System
-This PDE generates solitons, dispersion, relaxation, and the linear operator whose inverse defines the kernel.
+The system is defined entirely on the unit sphere manifold $S^{2}$.
 
 ---
 
-## 2. Kernel, Variance, Soliton, Mass, Perturbations
+## 1.2 Energy Functional
 
-### 2.1 Kernel Sector
-Kernel per channel A:  
-K_A(x − x′, a)
+$$ E[n] = \int d^{3}x \, \mathcal{E}(n, \partial n, \partial^{2} n) $$
 
-Response:  
-Φ_A(x,a) = ∫ d³x′ K_A(x − x′,a) n(x′,a)
-
-Interaction energy:  
-E_int,A = (1/2) ∫ d³x n(x,a) Φ_A(x,a)
-
-Generic k-space form:  
-K(k,a) = A(a) k² + ξ_R⁻²(a) + B(a) k² + R_sol⁻²(a)
+$$ \mathcal{E} = \mathcal{E}_{\nabla} + \mathcal{E}_{\text{top}} + \mathcal{E}_{\text{disp}} + \mathcal{E}_{\text{align}} $$
 
 ---
 
-### 2.2 Variance Sector
-Internal variance:  
-σ_α²(a)
+### Gradient Sector
+
+$$ \mathcal{E}_{\nabla} = \frac{A_{1}}{2} (\partial_{i} n \cdot \partial_{i} n) $$
 
 ---
 
-### 2.3 Soliton Sector
-Topological charge:  
-Q = (1 / 4π) ∫ d³x εᵢⱼₖ (∂ᵢn · (∂ⱼn × ∂ₖn))
+### Topological (Skyrme) Sector
 
-Baryons: Q = 1  
-Leptons: Q = 0
+$$ \omega(x) = \frac{1}{4\pi}\epsilon_{ijk} (\partial_{i} n \cdot (\partial_{j} n \times \partial_{k} n)) $$
 
-Soliton state variables:  
-S_i(a)
+$$ \mathcal{E}_{\text{top}} = \frac{A_{2}}{2}\omega^{2} $$
 
 ---
 
-### 2.4 Mass Functionals
-m_i(a) = ∫ d³x ℰ_soliton,i(n)
+### Dispersive Sector
 
-m_bound = Σ_i m_i − E_binding
-
----
-
-### 2.5 Cosmological Perturbations
-δ(k,a)  
-β(k,a)
-
-ħ_eff(a) = σ_α²(a) ρ₀(a)
+$$ \mathcal{E}_{\text{disp}} = \frac{A_{3}}{2} (\nabla^{2} n \cdot \nabla^{2} n) $$
 
 ---
 
-## 3. Deterministic RG Evolution
+### Alignment Sector
 
-### 3.1 Kernel RG Flow
-dK/dℓ = β_K(K, ξ_R)
-
-### 3.2 Correlation Length Flow
-dξ_R/dℓ = ξ_R [ γ_K (∂ ln K / ∂ ln k)|_{k→0} − γ_σ σ_α² ]
-
-### 3.3 Variance Flow
-dσ_α²/dℓ = F_σ(ρ, K, ξ_R)
-
-### 3.4 Soliton RG Flow
-dS_i/dℓ = F_i(K, ξ_R, σ_α²)  
-dQ_i/dℓ = 0
-
-### 3.5 Mass Flow
-dm_i/dℓ = α_K K(k→0) − α_ξ ξ_R⁻¹ + α_σ σ_α²
+$$ \mathcal{E}_{\text{align}} = \frac{A_{4}}{2} (n \cdot n_{0})^{2} $$
 
 ---
 
-## 4. Stochastic Evolution (LITE v1.2)
+## 1.3 Functional Derivative
 
-### 4.1 Beta Equation
-β′ + Γ_β β = S_δ δ + Ξ_β  
-Γ_β = Γ_β0 + D_β k²/a²
-
-### 4.2 Noise Statistics
-⟨Ξ_β⟩ = 0  
-⟨Ξ_β Ξ_β′⟩ = C_β ħ_eff f_β(k) δ_D(ln a − ln a′) δ_D(k − k′)
-
-### 4.3 Density Contrast Equation
-δ″ + A δ′ + B δ = C_β
-
-### 4.4 Noise Floor
-P_δ = P_δ,cl + P_δ,noise  
-P_δ,noise ∝ A² ρ₀³ σ_α² f_β(k) a/k
+$$ h = \frac{\delta E}{\delta n} \quad,\quad h_{\perp} = h - (h \cdot n)n $$
 
 ---
 
-## 5. Master State Vector
-X(a) = {  
-n(x,t),  
-K(k,a),  
-ξ_R(a),  
-σ_α²(a),  
-S_i(a),  
-m_i(a),  
-δ(k,a),  
-β(k,a)  
-}
+## 1.4 Microscopic Evolution
+
+$$ \partial_{t} n = -\Gamma h_{\perp} + \lambda (n \times h_{\perp}) $$
 
 ---
 
-## 6. Projection Layer
+## 1.5 Soliton Condition
 
-### 6.1 Density Projection
-ρ(x,a) = P_ρ[n]
+$$ h_{\perp} = 0 $$
 
-### 6.2 Transport Projection
-uᵢ(x,a) = P_u[n]
-
-### 6.3 Channel Projections
-q_A(x,a) = P_A[n]  
-Φ_A(x,a) = ∫ d³x′ K_A(x − x′,a) q_A(x′,a)
-
-### 6.4 Effective Couplings
-g_A(a) = ∫ d³x n(x,a) Φ_A(x,a)
-
-### 6.5 Soliton Observables
-m_i(a) = ∫ d³x ℰ_soliton,i  
-S_i(a) = P_S[n]  
-Q_i = (1 / 4π) ∫ d³x εᵢⱼₖ (∂ᵢn · (∂ⱼn × ∂ₖn))
-
-### 6.6 Perturbation Projections
-δ(k,a) = P_δ[n]  
-β(k,a) = P_β[n]
-
-### 6.7 Noise Amplitude Projection
-σ_α²(a) = P_σ[n]  
-ħ_eff(a) = σ_α²(a) ρ₀(a)
-
-### 6.8 Role of the Projection Layer
-n(x,t) → {ρ, u, q_A, Φ_A, g_A, S_i, m_i, δ, β, ħ_eff}
+defines stationary soliton solutions.
 
 ---
 
-## 7. Cosmological Phase Structure (Early-Time Regimes)
+# 2. Minimal Soliton Construction
 
-The expansion parameter $a$ drives the system through distinct dynamical regimes. These phases arise from the RG flows (Section 3), the microscopic PDE (Section 1.2), and the projection operators (Section 6).
+## 2.1 Hedgehog Ansatz (Q = 1)
 
----
-
-### 7.1 Phase 1: High-Stochastic Symmetry ( $a \to 0$ )
-
-#### 7.1.1 Variance Dominance
-The Variance Flow (3.3) is maximal. High $\sigma_\alpha^2$ suppresses the Alignment Sector ($A_4$). The field $n(x,t)$ is an unaligned, high-entropy continuum.
-
-#### 7.1.2 Stiffness-Dominated Dynamics
-The Gradient Sector ($A_1$) smooths fluctuations rapidly. The Skyrme Sector ($A_2$) is too weak to stabilize solitons. No stable $Q=1$ objects exist.
-
-#### 7.1.3 Projection Behaviour
-Density projection (6.1) yields a nearly homogeneous $\rho(x,a)$. Noise amplitude $\hbar_{\mathrm{eff}} = \sigma_\alpha^2 \rho_0$ is maximal.
+$$ n_{*}(x) = \left( \sin f(r)\frac{x}{r}, \cos f(r) \right) $$
 
 ---
 
-### 7.2 Phase 2: Symmetry Breaking and First Attractors
+## 2.2 Profile Function
 
-#### 7.2.1 Hardening of the Skyrme Sector
-RG flow (3.4) increases $A_2$ as density begins to localize. A stabilizing “hard core” emerges.
-
-#### 7.2.2 Soliton Nucleation
-Fluctuations in $n(x,t)$ occasionally wrap the sphere $|n|=1$. When a configuration achieves $Q=1$, the microscopic PDE (1.2) satisfies:
-
-$$h_\perp = 0$$
-
-indicating a stationary soliton.
-
-#### 7.2.3 Attractor Dynamics
-The relaxational term ($\Gamma$) drives near-winding configurations into the soliton attractor basin. These become the first baryons ($Q = 1$).
+$$ f(r) = 2\arctan\left(\frac{R}{r}\right) $$
 
 ---
 
-### 7.3 Phase 3: Kernel Emergence and Structure Formation
+## 2.3 Boundary Conditions
 
-#### 7.3.1 Soliton-Induced Response
-Newly formed solitons act as sources for the channel projections (6.3). The continuum deforms around them, generating the response kernel $K$.
-
-#### 7.3.2 Interaction and Clustering
-The interaction energy $E_{\mathrm{int}}$ becomes nonzero. Solitons begin to cluster through long-range response mediated by $K$.
-
-#### 7.3.3 Projection Behaviour
-Density contrast $\delta(k,a)$ begins to grow. Noise floor decreases as $\sigma_\alpha^2$ flows downward.
+$$ f(0) = \pi \quad,\quad f(\infty) = 0 $$
 
 ---
 
-### 7.4 Phase Summary
+## 2.4 Soliton Scale
 
-
-| State Variable | Phase 1 (Symmetric) | Phase 2 (Transition) | Phase 3 (Structured) |
-| :--- | :--- | :--- | :--- |
-| **Field $n(x,t)$** | Chaotic / high jitter | Nucleating windings | Localized solitons |
-| **Soliton Sector** | $S_i \approx 0$ | First $Q=1$ events | Stable $m_i(a)$ |
-| **Kernel $K$** | Short-range | Growing | Long-range $\xi_R$ |
-| **Projections** | Smooth $\rho$, high noise | Emerging $\delta$ peaks | Clustered structure |
+$$ R^{2} \approx \frac{A_{2}}{A_{1}} $$
 
 ---
 
-### 7.5 Interpretation
-Matter is not introduced into the system. It emerges as the continuum’s topological degrees of freedom “freeze” when expansion drives the RG flows toward lower variance and higher stability.
+# 3. Kernel (Derived Structure)
+
+## 3.1 Definition
+
+$$ K^{-1}(x,y) = \frac{\delta^{2} E}{\delta n(x)\delta n(y)}\Big|_{n=n_{*}} $$
 
 ---
 
-## 8. Late-Time “Bloating” and Continuum Softening
+## 3.2 Fourier Form
 
-As the scale factor a increases into the late-time regime, the RG flows (Section 3) shift again.  
-The dominant drivers become the internal variance σα² and the softening of continuum stiffness.
-
----
-
-## 8.1 Phase 4: The Bloating Regime (a → 1 and beyond)
-
-### 8.1.1 Gradient Softening
-The RG flow for the Gradient Sector A₁ decreases:
-
-dA₁/dℓ = −γ₁ A₁ σα²
-
-This softening reduces the cost of deforming the field n(x,t).
-
-### 8.1.2 Physical Soliton Expansion
-The equilibrium radius of a Q = 1 soliton is:
-
-R_sol ≈ √(A₂ / A₁)
-
-As A₁ decreases, R_sol increases.  
-Solitons physically expand (“bloat”) without changing their topological charge.
-
-### 8.1.3 The “Dark” Transition
-As solitons bloat, the mass functional redistributes:
-
-• mᵢ(a) shifts away from the localized Q-core  
-• Interaction energy E_int increases  
-• Kernel range ξ_R grows, producing a long-range background response
-
-This mimics a “dark energy–like” pressure in the continuum.
+$$ K^{-1}(k) = m^{2} + c_{2} k^{2} + c_{4} k^{4} + \dots $$
 
 ---
 
-## 8.2 Phase 5: Soliton Overlap and Saturation
+## 3.3 Response Field
 
-### 8.2.1 Stochastic Re‑excitation
-As solitons expand, they begin to overlap.  
-In the Projection Layer (Section 6), this appears as an increase in the variance P_σ.
-
-The noise floor rises:
-
-ħ_eff = σα² ρ₀
-
-but now due to soliton–soliton interference rather than thermal jitter.
-
-### 8.2.2 Saturation of δ
-The density contrast δ(k,a) enters a nonlinear saturation regime.
-
-Because solitons are now extended objects, the LITE equations (Section 4) no longer treat them as point-like.  
-The response kernel K dominates, smoothing high‑k power.
+$$ \Phi(x) = \int d^{3}y\,K(x,y)n(y) $$
 
 ---
 
-## 8.3 Projection of Late-Time Observables
+## 3.4 Interaction Energy
 
-### Effective Couplings (g_A)
-Couplings soften as n(x,t) becomes more dilute over large scales.
-
-### Noise Floor (P_δ,noise)
-A late-time bump appears at low k due to large-scale correlations from bloated solitons.
-
-### Mass Flow (dmᵢ/dℓ)
-Mass flow becomes negative as solitons “evaporate” energy into the global response field.
+$$ E_{\text{int}} = \frac{1}{2}\int d^{3}x\, n(x)\Phi(x) $$
 
 ---
 
-## 8.4 Late-Phase Summary
+# 4. Renormalisation Group (RG)
 
-| State Variable | Phase 3 (Structured) | Phase 4 (Bloating) | Phase 5 (Overlapping) |
-|----------------|-----------------------|----------------------|-------------------------|
-| Soliton Size R_sol | Compact | Expanding | Overlapping |
-| Stiffness A₁ | High | Decreasing | Minimal |
-| Kernel Range ξ_R | Localized | Growing | Global |
-| Noise Floor ħ_eff | Minimum | Stable | Rising |
+## 4.1 Coarse-Graining Scale
+
+$$ \ell = \ln(L/L_{0}) $$
 
 ---
 
-## 8.5 Master System Interpretation
-The end state of CCEF is not a vacuum but a fully relaxed continuum.  
-Solitons eventually bloat until they merge back into a uniform field n₀,  
-returning the system to a high-symmetry state at low energy density.
+## 4.2 Field Split
+
+$$ n = n_{<} + n_{>} $$
+
+---
+
+## 4.3 RG Operator
+
+$$ \boxed{ \mathcal{R}[E] = -\ln \int \mathcal{D}n_{>}\, e^{-E[n_{<} + n_{>}]} } $$
+
+---
+
+## 4.4 Saddle Form
+
+$$ \mathcal{R}[E] = E[n_{<} + n_{>}^{*}] + \frac{1}{2}\mathrm{Tr}\ln \left( \frac{\delta^{2} E}{\delta n^{2}} \right) $$
+
+---
+
+## 4.5 Coupling Flow
+
+$$ \frac{dA_{i}}{d\ell} = \beta_{i}(A_{j}, K, \sigma_{\alpha}^{2}) $$
+
+---
+
+# 5. Emergent Stochasticity
+
+## 5.1 Origin
+
+$$ \Xi = \text{projection of unresolved RG modes} $$
+
+---
+
+## 5.2 Effective Dynamics
+
+$$ \beta' + \Gamma_{\beta} \beta = S_{\delta} \delta + \Xi $$
+
+---
+
+## 5.3 Statistics
+
+$$ \langle \Xi \rangle = 0 $$
+
+$$ \langle \Xi(x)\Xi(y) \rangle = C \sigma_{\alpha}^{2} \delta(x-y) $$
+
+---
+
+# 6. Projection Layer
+
+$$ P_{O}[n] = \int d^{3}y\,W_{O}(x,y)\mathcal{F}_{O}[n(y)] $$
+
+---
+
+## Observables
+
+$$ \rho = P_{\rho}[n],\quad u_{i} = \frac{P_{J_{i}}[n]}{\rho} $$
+
+$$ \delta = P_{\delta}[n],\quad \beta = P_{\beta}[n] $$
+
+---
+
+# 7. RG Stability Operator
+
+## 7.1 Linearisation
+
+$$ n = n_{*} + \eta $$
+
+---
+
+## 7.2 Eigenvalue Problem
+
+$$ \boxed{ \hat{\mathcal{L}}_{RG}\eta = \lambda \eta } $$
+
+---
+
+## 7.3 Operator Form
+
+$$ \hat{\mathcal{L}}_{RG} = - A_{1} \nabla^{2} + A_{3} \nabla^{4} + V_{\text{eff}}(x) + \mathcal{S}_{\text{Sk}} + K \mathcal{V}^{(3)} $$
+
+subject to:
+
+$$ n_{*} \cdot \eta = 0 $$
+
+---
+
+# 8. Radial Fluctuation Operator
+
+## 8.1 Reduced Form
+
+$$ \left[ - \partial_{\rho}^{2} - \frac{2}{\rho}\partial_{\rho} + \frac{\ell(\ell+1)}{\rho^{2} } + \frac{4}{(1+\rho^{2})^{2}} \right]\psi = \epsilon \psi $$
+
+---
+
+# 9. First Three Eigenmodes
+
+## 9.1 Translational Mode
+
+$$ \psi^{(0)} = \partial_{i} n_{*} \quad,\quad \lambda_{0} = 0 $$
+
+---
+
+## 9.2 Breathing Mode
+
+$$ \psi^{(1)}(\rho) \propto \frac{1-\rho^{2}}{(1+\rho^{2})^{2}} \quad,\quad \lambda_{1} \sim \frac{A_{1}}{R^{2}} $$
+
+---
+
+## 9.3 Quadrupole Mode
+
+$$ \psi^{(2)}(\rho,\theta) \propto \frac{\rho^{2}}{(1+\rho^{2})^{2}}Y_{2m} \quad,\quad \lambda_{2} \sim \frac{A_{1}}{R^{2}} + \frac{A_{2}}{R^{4}} $$
+
+---
+
+# 10. Fixed Points and Universality
+
+$$ \mathcal{R}[E_{\ast}] = E_{\ast} $$
+
+$$ \mathcal{U}_{Q} = \{E : Q \text{ invariant under RG}\} $$
 
 
+---
+
+# 11. Mass Spectrum
+
+$$ m \sim \min(\lambda_{n}) $$
+
+Mass = lowest nonzero eigenvalue of RG stability operator.
+
+---
+
+# 12. System Closure
+
+$$ n \rightarrow E[n] \rightarrow \frac{\delta^{2} E}{\delta n^{2}} \rightarrow K \rightarrow \mathcal{R}[E] \rightarrow E' \rightarrow n' $$
+
+---
+
+# Final Statement
+
+CCEF is a closed deterministic continuum system in which:
+
+- solitons are RG fixed-point configurations
+- kernels are Hessian inverses of energy curvature
+- stochasticity emerges from RG truncation
+- particles correspond to eigenmodes of RG stability
+- mass is an eigenvalue of deformation stability

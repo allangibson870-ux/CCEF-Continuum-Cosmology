@@ -182,3 +182,70 @@ Q_i = (1 / 4π) ∫ d³x εᵢⱼₖ (∂ᵢn · (∂ⱼn × ∂ₖn))
 
 ### 6.8 Role of the Projection Layer
 n(x,t) → {ρ, u, q_A, Φ_A, g_A, S_i, m_i, δ, β, ħ_eff}
+
+---
+
+## 7. Cosmological Phase Structure (Early-Time Regimes)
+
+The expansion parameter $a$ drives the system through distinct dynamical regimes. These phases arise from the RG flows (Section 3), the microscopic PDE (Section 1.2), and the projection operators (Section 6).
+
+---
+
+### 7.1 Phase 1: High-Stochastic Symmetry ( $a \to 0$ )
+
+#### 7.1.1 Variance Dominance
+The Variance Flow (3.3) is maximal. High $\sigma_\alpha^2$ suppresses the Alignment Sector ($A_4$). The field $n(x,t)$ is an unaligned, high-entropy continuum.
+
+#### 7.1.2 Stiffness-Dominated Dynamics
+The Gradient Sector ($A_1$) smooths fluctuations rapidly. The Skyrme Sector ($A_2$) is too weak to stabilize solitons. No stable $Q=1$ objects exist.
+
+#### 7.1.3 Projection Behaviour
+Density projection (6.1) yields a nearly homogeneous $\rho(x,a)$. Noise amplitude $\hbar_{\mathrm{eff}} = \sigma_\alpha^2 \rho_0$ is maximal.
+
+---
+
+### 7.2 Phase 2: Symmetry Breaking and First Attractors
+
+#### 7.2.1 Hardening of the Skyrme Sector
+RG flow (3.4) increases $A_2$ as density begins to localize. A stabilizing “hard core” emerges.
+
+#### 7.2.2 Soliton Nucleation
+Fluctuations in $n(x,t)$ occasionally wrap the sphere $|n|=1$. When a configuration achieves $Q=1$, the microscopic PDE (1.2) satisfies:
+
+$$h_\perp = 0$$
+
+indicating a stationary soliton.
+
+#### 7.2.3 Attractor Dynamics
+The relaxational term ($\Gamma$) drives near-winding configurations into the soliton attractor basin. These become the first baryons ($Q = 1$).
+
+---
+
+### 7.3 Phase 3: Kernel Emergence and Structure Formation
+
+#### 7.3.1 Soliton-Induced Response
+Newly formed solitons act as sources for the channel projections (6.3). The continuum deforms around them, generating the response kernel $K$.
+
+#### 7.3.2 Interaction and Clustering
+The interaction energy $E_{\mathrm{int}}$ becomes nonzero. Solitons begin to cluster through long-range response mediated by $K$.
+
+#### 7.3.3 Projection Behaviour
+Density contrast $\delta(k,a)$ begins to grow. Noise floor decreases as $\sigma_\alpha^2$ flows downward.
+
+---
+
+### 7.4 Phase Summary
+
+
+| State Variable | Phase 1 (Symmetric) | Phase 2 (Transition) | Phase 3 (Structured) |
+| :--- | :--- | :--- | :--- |
+| **Field $n(x,t)$** | Chaotic / high jitter | Nucleating windings | Localized solitons |
+| **Soliton Sector** | $S_i \approx 0$ | First $Q=1$ events | Stable $m_i(a)$ |
+| **Kernel $K$** | Short-range | Growing | Long-range $\xi_R$ |
+| **Projections** | Smooth $\rho$, high noise | Emerging $\delta$ peaks | Clustered structure |
+
+---
+
+### 7.5 Interpretation
+Matter is not introduced into the system. It emerges as the continuum’s topological degrees of freedom “freeze” when expansion drives the RG flows toward lower variance and higher stability.
+

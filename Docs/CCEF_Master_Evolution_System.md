@@ -134,6 +134,70 @@ $\beta(k,a)$
 $\hbar_{\text{eff}}(a) = \sigma_\alpha^2(a)\,\rho_0(a)$
 
 ---
+## 1.1 Microscopic Evolution Equation  
+Classical deterministic dynamics on the |n| = 1 manifold; no GR; no QFT.
+
+The time evolution of the continuum field n(x,t) is defined as a constraint-preserving flow driven by the microscopic energy functional E[n]. The evolution law is purely internal and acts on the unit-norm manifold |n| = 1.
+
+### 1.1.1 Driving Field
+The functional derivative of the energy defines the microscopic driving field:
+
+h(x,t) = δE / δn(x,t)
+
+Only the component tangent to the |n| = 1 manifold contributes to dynamics:
+
+h_perp(x,t) = h(x,t) − (h(x,t) · n(x,t)) n(x,t)
+
+This projection enforces the unit-norm constraint dynamically.
+
+---
+
+### 1.1.2 Evolution Law
+The continuum evolves according to a combined relaxational–precessional equation:
+
+∂ₜ n(x,t) = −Γ h_perp(x,t) + λ [ n(x,t) × h_perp(x,t) ]
+
+with:
+
+- Γ > 0: dissipative coefficient (relaxation toward energy minima)
+- λ: precessional coefficient (conservative rotation on the |n| = 1 manifold)
+
+This equation is first-order in time, fully classical, and defined entirely within the CCEF ontology.
+
+---
+
+### 1.1.3 Constraint Preservation
+The evolution law preserves the unit-norm constraint exactly:
+
+∂ₜ |n|² = ∂ₜ (n · n) = 2 n · ∂ₜ n = 0
+
+because:
+
+- n · h_perp = 0 by construction
+- n · [n × h_perp] = 0 identically
+
+Thus |n(x,t)| = 1 is maintained for all time.
+
+---
+
+### 1.1.4 Soliton Attractors and Waves
+- Stationary soliton configurations satisfy h_perp = 0 and are fixed points of the dynamics.
+- The precessional term (λ part) supports wave-like motion and internal oscillations on the |n| = 1 manifold.
+- The relaxational term (Γ part) drives unstable configurations toward soliton attractors and coherent phases.
+
+---
+
+### 1.1.5 Role in the Master Evolution System
+This microscopic evolution equation, together with the energy functional E[n], provides the deterministic foundation for:
+
+- soliton formation, motion, and merging  
+- the emergence of the response kernel K from linear response  
+- the definition of correlation length ξ_R and dispersion  
+- the RG flow of K, ξ_R, σ_α², and soliton state variables S_i  
+- the stochastic floor (through coarse-grained soliton discreteness)  
+- the perturbation evolution of δ(k,a) and β(k,a)
+
+All higher-level CCEF sectors are coarse-grained or projected descriptions of this underlying deterministic continuum dynamics.
 
 ## 2. Deterministic Evolution (RG Sector)
 

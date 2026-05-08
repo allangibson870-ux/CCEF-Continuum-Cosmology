@@ -588,6 +588,52 @@ draw_panel(ax3, colors_res, "Residual (CCEF – Std)")
 plt.tight_layout()
 plt.show()
 
+#Radial Profile Generator
+import numpy as np
+import matplotlib.pyplot as plt
+
+# -----------------------------------------
+# 1. Use existing arrays from your renderer
+# -----------------------------------------
+# r_safe, F_std, F_ccef, F_residual already exist
+
+# -----------------------------------------
+# 2. Radial binning
+# -----------------------------------------
+n_bins = 60
+bins = np.linspace(r_safe.min(), r_safe.max(), n_bins+1)
+bin_centers = 0.5 * (bins[:-1] + bins[1:])
+
+F_std_binned = np.zeros(n_bins)
+F_ccef_binned = np.zeros(n_bins)
+F_res_binned = np.zeros(n_bins)
+
+for i in range(n_bins):
+    mask = (r_safe >= bins[i]) & (r_safe < bins[i+1])
+    if np.any(mask):
+        F_std_binned[i]  = np.mean(F_std[mask])
+        F_ccef_binned[i] = np.mean(F_ccef[mask])
+        F_res_binned[i]  = np.mean(F_residual[mask])
+    else:
+        F_std_binned[i]  = np.nan
+        F_ccef_binned[i] = np.nan
+        F_res_binned[i]  = np.nan
+
+# -----------------------------------------
+# 3. Plot
+# -----------------------------------------
+plt.figure(figsize=(8, 6))
+plt.plot(bin_centers, F_std_binned,  label="Standard Gravity", color="dodgerblue", linewidth=2)
+plt.plot(bin_centers, F_ccef_binned, label="CCEF Gravity",     color="cyan", linewidth=2)
+plt.plot(bin_centers, F_res_binned,  label="Residual (CCEF - Std)", color="magenta", linewidth=2)
+
+plt.xlabel("Radius r")
+plt.ylabel("Field Magnitude")
+plt.title("Radial Profile: Standard vs CCEF vs Residual")
+plt.grid(alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.show()
 
 
 

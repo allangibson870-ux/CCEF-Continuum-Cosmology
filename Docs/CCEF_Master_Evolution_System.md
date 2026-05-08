@@ -249,3 +249,90 @@ Density contrast $\delta(k,a)$ begins to grow. Noise floor decreases as $\sigma_
 ### 7.5 Interpretation
 Matter is not introduced into the system. It emerges as the continuum’s topological degrees of freedom “freeze” when expansion drives the RG flows toward lower variance and higher stability.
 
+---
+
+## 8. Late-Time “Bloating” and Continuum Softening
+
+As the scale factor a increases into the late-time regime, the RG flows (Section 3) shift again.  
+The dominant drivers become the internal variance σα² and the softening of continuum stiffness.
+
+---
+
+## 8.1 Phase 4: The Bloating Regime (a → 1 and beyond)
+
+### 8.1.1 Gradient Softening
+The RG flow for the Gradient Sector A₁ decreases:
+
+dA₁/dℓ = −γ₁ A₁ σα²
+
+This softening reduces the cost of deforming the field n(x,t).
+
+### 8.1.2 Physical Soliton Expansion
+The equilibrium radius of a Q = 1 soliton is:
+
+R_sol ≈ √(A₂ / A₁)
+
+As A₁ decreases, R_sol increases.  
+Solitons physically expand (“bloat”) without changing their topological charge.
+
+### 8.1.3 The “Dark” Transition
+As solitons bloat, the mass functional redistributes:
+
+• mᵢ(a) shifts away from the localized Q-core  
+• Interaction energy E_int increases  
+• Kernel range ξ_R grows, producing a long-range background response
+
+This mimics a “dark energy–like” pressure in the continuum.
+
+---
+
+## 8.2 Phase 5: Soliton Overlap and Saturation
+
+### 8.2.1 Stochastic Re‑excitation
+As solitons expand, they begin to overlap.  
+In the Projection Layer (Section 6), this appears as an increase in the variance P_σ.
+
+The noise floor rises:
+
+ħ_eff = σα² ρ₀
+
+but now due to soliton–soliton interference rather than thermal jitter.
+
+### 8.2.2 Saturation of δ
+The density contrast δ(k,a) enters a nonlinear saturation regime.
+
+Because solitons are now extended objects, the LITE equations (Section 4) no longer treat them as point-like.  
+The response kernel K dominates, smoothing high‑k power.
+
+---
+
+## 8.3 Projection of Late-Time Observables
+
+### Effective Couplings (g_A)
+Couplings soften as n(x,t) becomes more dilute over large scales.
+
+### Noise Floor (P_δ,noise)
+A late-time bump appears at low k due to large-scale correlations from bloated solitons.
+
+### Mass Flow (dmᵢ/dℓ)
+Mass flow becomes negative as solitons “evaporate” energy into the global response field.
+
+---
+
+## 8.4 Late-Phase Summary
+
+| State Variable | Phase 3 (Structured) | Phase 4 (Bloating) | Phase 5 (Overlapping) |
+|----------------|-----------------------|----------------------|-------------------------|
+| Soliton Size R_sol | Compact | Expanding | Overlapping |
+| Stiffness A₁ | High | Decreasing | Minimal |
+| Kernel Range ξ_R | Localized | Growing | Global |
+| Noise Floor ħ_eff | Minimum | Stable | Rising |
+
+---
+
+## 8.5 Master System Interpretation
+The end state of CCEF is not a vacuum but a fully relaxed continuum.  
+Solitons eventually bloat until they merge back into a uniform field n₀,  
+returning the system to a high-symmetry state at low energy density.
+
+

@@ -1,16 +1,90 @@
 # CCEF Master Evolution System v1.0
 
-## 1. State Space
+## 1.0 Microscopic Energy Functional  
+Fundamental classical continuum law; constraint-preserving; supports solitons; kernel-compatible.
 
-### 1.1 Fundamental Field
-Continuum field:  
-$n(\mathbf{x},t)$
+The continuum evolves according to a classical energy functional defined entirely on the unit-norm manifold |n| = 1. All microscopic dynamics, soliton formation, dispersion, and long-range response originate from this functional.
 
-Energy functional:  
-$E[n] = \int d^3x \, \mathcal{E}(n,\nabla n,\nabla^2 n,\dots)$
+### 1.0.1 Energy Definition
+E[n] = ∫ d^3x · ℰ(n, ∇n, ∇²n)
 
-Field equation:  
-$\delta E / \delta n(\mathbf{x},t) = 0$
+with the energy density decomposed into gradient, topological, dispersive, and alignment sectors:
+
+ℰ = ℰ_grad + ℰ_Sk + ℰ_disp + ℰ_lock.
+
+---
+
+### 1.0.2 Gradient Sector (Continuum Stiffness)
+ℰ_grad = (A1/2) · (∂ᵢn · ∂ᵢn)
+
+This term sets the intrinsic stiffness of the continuum and governs small-amplitude wave propagation on the |n| = 1 manifold.
+
+---
+
+### 1.0.3 Topological Sector (Q-Core Stabilization)
+Define the topological density:
+
+ω(x) = (1 / 4π) εᵢⱼₖ [ ∂ᵢn · (∂ⱼn × ∂ₖn) ]
+
+The stabilizing Skyrme-type term is:
+
+ℰ_Sk = (A2/2) · ω(x)²
+
+This prevents collapse of Q-core solitons and ensures finite-size, stable topological excitations.
+
+---
+
+### 1.0.4 Dispersive Sector (Texture and Correlation Control)
+ℰ_disp = (A3/2) · (∇²n · ∇²n)
+
+This term controls short-scale texture, sets the internal dispersive behaviour, and contributes to the emergence of the response correlation length ξ_R.
+
+---
+
+### 1.0.5 Alignment Sector (Reference-State Locking)
+Let n₀ denote the uniform reference configuration of the continuum. The alignment term is:
+
+ℰ_lock = (A4/2) · (n · n₀)²
+
+This defines the internal preference for the background state and governs large-scale coherence. The coefficient A4 may be small or vanish depending on the phase.
+
+---
+
+### 1.0.6 Constraint
+All admissible configurations satisfy:
+
+|n(x,t)| = 1
+
+The energy functional is defined on this nonlinear manifold, and all variations respect the constraint.
+
+---
+
+### 1.0.7 Functional Derivative
+The microscopic driving field is:
+
+h(x,t) = δE / δn(x,t)
+
+Only the tangent component contributes to dynamics:
+
+h_perp = h − (h · n) n
+
+This ensures exact preservation of |n| = 1.
+
+---
+
+### 1.0.8 Role in the Master Evolution System
+This energy functional provides the microscopic foundation for:
+
+- soliton attractors  
+- soliton stability and size  
+- kernel derivation via linear response  
+- dispersion and correlation length  
+- RG flow of K, ξ_R, σ_α²  
+- stochastic noise floor ħ_eff  
+- perturbation evolution δ(k,a), β(k,a)  
+- the full Master State Vector X(a)
+
+All higher-level structures in CCEF arise from coarse-graining and projection of this microscopic continuum dynamics.
 
 ---
 

@@ -462,6 +462,131 @@ def simulate_surface_state():
 mean_r, std_r = simulate_surface_state()
 print(f"{mean_r=}, {std_r=}")
 
+#3 version gravity map 
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# -----------------------------
+# 1. Parameters
+# -----------------------------
+R_earth = 2.0
+R_max   = 6.0
+N_pts   = 40000
+
+twist_k_base = 0.6
+fade_p       = 2.0
+
+# CCEF kernel parameters
+C_a   = 1.0
+eps_a = 0.5
+
+# -----------------------------
+# 2. Sample 3D points
+# -----------------------------
+def sample_points_in_shell(n, r_min, r_max):
+    pts = []
+    while len(pts) < n:
+        xyz = np.random.uniform(-r_max, r_max, size=(n, 3))
+        r = np.linalg.norm(xyz, axis=1)
+        mask = (r >= r_min) & (r <= r_max)
+        pts.extend(xyz[mask].tolist())
+    return np.array(pts[:n])
+
+pts = sample_points_in_shell(N_pts, R_earth * 1.05, R_max)
+x, y, z = pts[:, 0], pts[:, 1], pts[:, 2]
+r = np.linalg.norm(pts, axis=1)
+r_safe = np.maximum(r, 1e-6)
+
+# -----------------------------
+# 3. Standard Field
+# -----------------------------
+F_std = np.sqrt((1/r_safe**2)**2 + (twist_k_base/r_safe**2)**2)
+
+# -----------------------------
+# 4. CCEF Field
+# -----------------------------
+kernel_factor = 1.0 + eps_a * C_a / (r_safe**2)
+F_ccef = kernel_factor * F_std
+
+# -----------------------------
+# 5. Residual Field
+# -----------------------------
+F_residual = (kernel_factor - 1.0) * F_std
+F_residual = np.maximum(F_residual, 0.0)
+
+# -----------------------------
+# 6. Normalisations
+# -----------------------------
+F_std_norm = F_std / (F_std.max() + 1e-9)
+F_ccef_norm = F_ccef / (F_ccef.max() + 1e-9)
+F_res_norm = F_residual / (F_residual.max() + 1e-9)
+
+# -----------------------------
+# 7. Colour Maps
+# -----------------------------
+r_norm = np.clip((r - R_earth) / (R_max - R_earth), 0.0, 1.0)
+w = (1.0 - r_norm)**fade_p
+
+# Standard: blue-white
+colors_std = np.zeros((N_pts, 4))
+colors_std[:, 0] = 0.2 + 0.8 * F_std_norm
+colors_std[:, 1] = 0.4 + 0.6 * F_std_norm
+colors_std[:, 2] = 1.0
+colors_std[:, 3] = 0.05 + 0.35 * w
+
+# CCEF: cyan-white
+colors_ccef = np.zeros((N_pts, 4))
+colors_ccef[:, 0] = 0.1 + 0.9 * F_ccef_norm
+colors_ccef[:, 1] = 1.0
+colors_ccef[:, 2] = 1.0
+colors_ccef[:, 3] = 0.05 + 0.35 * w
+
+# Residual: magenta
+colors_res = np.zeros((N_pts, 4))
+colors_res[:, 0] = 1.0
+colors_res[:, 1] = 0.1 + 0.8 * F_res_norm
+colors_res[:, 2] = 0.6 + 0.4 * F_res_norm
+colors_res[:, 3] = 0.05 + 0.35 * w
+
+# -----------------------------
+# 8. Plotting Helper
+# -----------------------------
+def draw_panel(ax, colors, title):
+    # Earth
+    u = np.linspace(0, 2*np.pi, 60)
+    v = np.linspace(0, np.pi, 30)
+    xs = R_earth * np.outer(np.cos(u), np.sin(v))
+    ys = R_earth * np.outer(np.sin(u), np.sin(v))
+    zs = R_earth * np.outer(np.ones_like(u), np.cos(v))
+    ax.plot_surface(xs, ys, zs, color='deepskyblue', alpha=0.8, linewidth=0)
+
+    ax.scatter(x, y, z, c=colors, s=1.5, depthshade=False)
+
+    ax.set_xlim(-R_max, R_max)
+    ax.set_ylim(-R_max, R_max)
+    ax.set_zlim(-R_max, R_max)
+    ax.set_axis_off()
+    ax.set_box_aspect([1, 1, 1])
+    ax.view_init(elev=20, azim=45)
+    ax.set_title(title, color='white', fontsize=14)
+
+# -----------------------------
+# 9. Three-Panel Figure
+# -----------------------------
+fig = plt.figure(figsize=(18, 6))
+fig.patch.set_facecolor('black')
+
+ax1 = fig.add_subplot(131, projection='3d')
+ax2 = fig.add_subplot(132, projection='3d')
+ax3 = fig.add_subplot(133, projection='3d')
+
+draw_panel(ax1, colors_std, "Standard Gravity")
+draw_panel(ax2, colors_ccef, "CCEF Gravity")
+draw_panel(ax3, colors_res, "Residual (CCEF – Std)")
+
+plt.tight_layout()
+plt.show()
 
 
 

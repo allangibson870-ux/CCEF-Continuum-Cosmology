@@ -1,338 +1,184 @@
 # CCEF Master Evolution System v1.0
 
-## 1.0 Microscopic Energy Functional  
-Fundamental classical continuum law; constraint-preserving; supports solitons; kernel-compatible.
-
-The continuum evolves according to a classical energy functional defined entirely on the unit-norm manifold |n| = 1. All microscopic dynamics, soliton formation, dispersion, and long-range response originate from this functional.
-
-### 1.0.1 Energy Definition
-E[n] = ∫ d^3x · ℰ(n, ∇n, ∇²n)
-
-with the energy density decomposed into gradient, topological, dispersive, and alignment sectors:
-
-ℰ = ℰ_grad + ℰ_Sk + ℰ_disp + ℰ_lock.
+A closed, classical, deterministic continuum framework defining the microscopic field, soliton sector, kernel sector, RG flow, stochastic evolution, perturbations, and projection operators.
 
 ---
 
-### 1.0.2 Gradient Sector (Continuum Stiffness)
-ℰ_grad = (A1/2) · (∂ᵢn · ∂ᵢn)
+## 1. Microscopic Layer
 
-This term sets the intrinsic stiffness of the continuum and governs small-amplitude wave propagation on the |n| = 1 manifold.
+### 1.1 Microscopic Energy Functional
+The continuum evolves according to a classical energy functional defined on the unit-norm manifold |n| = 1.
 
----
+E[n] = ∫ d³x · ℰ(n, ∇n, ∇²n)
 
-### 1.0.3 Topological Sector (Q-Core Stabilization)
-Define the topological density:
+ℰ = ℰ_grad + ℰ_Sk + ℰ_disp + ℰ_lock
 
-ω(x) = (1 / 4π) εᵢⱼₖ [ ∂ᵢn · (∂ⱼn × ∂ₖn) ]
+#### 1.1.1 Gradient Sector
+ℰ_grad = (A1/2) (∂ᵢn · ∂ᵢn)
 
-The stabilizing Skyrme-type term is:
+#### 1.1.2 Topological Sector
+ω(x) = (1 / 4π) εᵢⱼₖ [ ∂ᵢn · (∂ⱼn × ∂ₖn) ]  
+ℰ_Sk = (A2/2) ω²
 
-ℰ_Sk = (A2/2) · ω(x)²
+#### 1.1.3 Dispersive Sector
+ℰ_disp = (A3/2) (∇²n · ∇²n)
 
-This prevents collapse of Q-core solitons and ensures finite-size, stable topological excitations.
+#### 1.1.4 Alignment Sector
+ℰ_lock = (A4/2) (n · n₀)²
 
----
-
-### 1.0.4 Dispersive Sector (Texture and Correlation Control)
-ℰ_disp = (A3/2) · (∇²n · ∇²n)
-
-This term controls short-scale texture, sets the internal dispersive behaviour, and contributes to the emergence of the response correlation length ξ_R.
-
----
-
-### 1.0.5 Alignment Sector (Reference-State Locking)
-Let n₀ denote the uniform reference configuration of the continuum. The alignment term is:
-
-ℰ_lock = (A4/2) · (n · n₀)²
-
-This defines the internal preference for the background state and governs large-scale coherence. The coefficient A4 may be small or vanish depending on the phase.
-
----
-
-### 1.0.6 Constraint
-All admissible configurations satisfy:
-
+#### 1.1.5 Constraint
 |n(x,t)| = 1
 
-The energy functional is defined on this nonlinear manifold, and all variations respect the constraint.
-
----
-
-### 1.0.7 Functional Derivative
-The microscopic driving field is:
-
-h(x,t) = δE / δn(x,t)
-
-Only the tangent component contributes to dynamics:
-
+#### 1.1.6 Functional Derivative
+h = δE/δn  
 h_perp = h − (h · n) n
 
-This ensures exact preservation of |n| = 1.
+---
+
+### 1.2 Microscopic Evolution Equation
+∂ₜ n = −Γ h_perp + λ (n × h_perp)
+
+#### 1.2.1 Constraint Preservation
+∂ₜ|n|² = 0
+
+#### 1.2.2 Soliton Attractors
+h_perp = 0 defines stationary solitons.
+
+#### 1.2.3 Role in the System
+This PDE generates solitons, dispersion, relaxation, and the linear operator whose inverse defines the kernel.
 
 ---
 
-### 1.0.8 Role in the Master Evolution System
-This energy functional provides the microscopic foundation for:
+## 2. Kernel, Variance, Soliton, Mass, Perturbations
 
-- soliton attractors  
-- soliton stability and size  
-- kernel derivation via linear response  
-- dispersion and correlation length  
-- RG flow of K, ξ_R, σ_α²  
-- stochastic noise floor ħ_eff  
-- perturbation evolution δ(k,a), β(k,a)  
-- the full Master State Vector X(a)
-
-All higher-level structures in CCEF arise from coarse-graining and projection of this microscopic continuum dynamics.
-
----
-
-### 1.2 Kernel Sector
-Kernel (per channel $A$):  
-$K_A(\mathbf{x}-\mathbf{x}',a)$
+### 2.1 Kernel Sector
+Kernel per channel A:  
+K_A(x − x′, a)
 
 Response:  
-$\Phi_A(\mathbf{x},a) = \int d^3x' \, K_A(\mathbf{x}-\mathbf{x}',a)\,n(\mathbf{x}',a)$
+Φ_A(x,a) = ∫ d³x′ K_A(x − x′,a) n(x′,a)
 
 Interaction energy:  
-$E_{\text{int},A} = \tfrac12 \int d^3x \, n(\mathbf{x},a)\,\Phi_A(\mathbf{x},a)$
+E_int,A = (1/2) ∫ d³x n(x,a) Φ_A(x,a)
 
-Generic $k$‑space form:  
-$K(k,a) = \dfrac{A(a)}{k^2 + \xi_R^{-2}(a)} + \dfrac{B(a)}{k^2 + R_{\text{sol}}^{-2}(a)}$
+Generic k-space form:  
+K(k,a) = A(a) k² + ξ_R⁻²(a) + B(a) k² + R_sol⁻²(a)
 
 ---
 
-### 1.3 Variance Sector
+### 2.2 Variance Sector
 Internal variance:  
-$\sigma_\alpha^2(a)$
+σ_α²(a)
 
 ---
 
-### 1.4 Soliton Sector
+### 2.3 Soliton Sector
 Topological charge:  
-$Q = \dfrac{1}{4\pi}\int d^3x \, \epsilon_{ijk}\,\partial_i n \cdot (\partial_j n \times \partial_k n)$
+Q = (1 / 4π) ∫ d³x εᵢⱼₖ (∂ᵢn · (∂ⱼn × ∂ₖn))
 
-Baryons: $Q=1$  
-Leptons: $Q=0$
+Baryons: Q = 1  
+Leptons: Q = 0
 
 Soliton state variables:  
-$S_i(a)$
+S_i(a)
 
 ---
 
-### 1.5 Mass Functionals
-$m_i(a) = \int d^3x \, \mathcal{E}_{\text{soliton},i}(n)$
+### 2.4 Mass Functionals
+m_i(a) = ∫ d³x ℰ_soliton,i(n)
 
-$m_{\text{bound}} = \sum_i m_i - E_{\text{binding}}$
-
----
-
-### 1.6 Cosmological Perturbations
-$\delta(k,a)$  
-$\beta(k,a)$  
-$\hbar_{\text{eff}}(a) = \sigma_\alpha^2(a)\,\rho_0(a)$
-
----
-## 1.1 Microscopic Evolution Equation  
-Classical deterministic dynamics on the |n| = 1 manifold; no GR; no QFT.
-
-The time evolution of the continuum field n(x,t) is defined as a constraint-preserving flow driven by the microscopic energy functional E[n]. The evolution law is purely internal and acts on the unit-norm manifold |n| = 1.
-
-### 1.1.1 Driving Field
-The functional derivative of the energy defines the microscopic driving field:
-
-h(x,t) = δE / δn(x,t)
-
-Only the component tangent to the |n| = 1 manifold contributes to dynamics:
-
-h_perp(x,t) = h(x,t) − (h(x,t) · n(x,t)) n(x,t)
-
-This projection enforces the unit-norm constraint dynamically.
+m_bound = Σ_i m_i − E_binding
 
 ---
 
-### 1.1.2 Evolution Law
-The continuum evolves according to a combined relaxational–precessional equation:
-
-∂ₜ n(x,t) = −Γ h_perp(x,t) + λ [ n(x,t) × h_perp(x,t) ]
-
-with:
-
-- Γ > 0: dissipative coefficient (relaxation toward energy minima)
-- λ: precessional coefficient (conservative rotation on the |n| = 1 manifold)
-
-This equation is first-order in time, fully classical, and defined entirely within the CCEF ontology.
-
----
-
-### 1.1.3 Constraint Preservation
-The evolution law preserves the unit-norm constraint exactly:
-
-∂ₜ |n|² = ∂ₜ (n · n) = 2 n · ∂ₜ n = 0
-
-because:
-
-- n · h_perp = 0 by construction
-- n · [n × h_perp] = 0 identically
-
-Thus |n(x,t)| = 1 is maintained for all time.
-
----
-
-### 1.1.4 Soliton Attractors and Waves
-- Stationary soliton configurations satisfy h_perp = 0 and are fixed points of the dynamics.
-- The precessional term (λ part) supports wave-like motion and internal oscillations on the |n| = 1 manifold.
-- The relaxational term (Γ part) drives unstable configurations toward soliton attractors and coherent phases.
-
----
-
-### 1.1.5 Role in the Master Evolution System
-This microscopic evolution equation, together with the energy functional E[n], provides the deterministic foundation for:
-
-- soliton formation, motion, and merging  
-- the emergence of the response kernel K from linear response  
-- the definition of correlation length ξ_R and dispersion  
-- the RG flow of K, ξ_R, σ_α², and soliton state variables S_i  
-- the stochastic floor (through coarse-grained soliton discreteness)  
-- the perturbation evolution of δ(k,a) and β(k,a)
-
-All higher-level CCEF sectors are coarse-grained or projected descriptions of this underlying deterministic continuum dynamics.
-
-## 2. Deterministic Evolution (RG Sector)
-
-### 2.1 Kernel RG Flow
-$dK/d\ell = \beta_K(K,\xi_R)$
-
-### 2.2 Correlation Length Flow
-$d\xi_R/d\ell = \xi_R\left[\gamma_K (\partial \ln K / \partial \ln k)_{k\to 0} - \gamma_\sigma \sigma_\alpha^2\right]$
-
-### 2.3 Variance Flow
-$d\sigma_\alpha^2/d\ell = F_\sigma(\rho,K,\xi_R)$
-
-### 2.4 Soliton RG Flow
-$dS_i/d\ell = F_i(K,\xi_R,\sigma_\alpha^2)$  
-$dQ_i/d\ell = 0$
-
-### 2.5 Mass Flow
-$dm_i/d\ell = \alpha_K K(k\to 0) - \alpha_\xi \xi_R^{-1} + \alpha_\sigma \sigma_\alpha^2$
-
----
-
-## 3. Stochastic Evolution (LITE v1.2)
-
-### 3.1 Beta Equation
-$\beta' + \Gamma_\beta \beta = S_\delta \delta + \Xi_\beta$  
-$\Gamma_\beta = \Gamma_{\beta 0} + D_\beta k^2/a^2$
-
-### 3.2 Noise Statistics
-$\langle \Xi_\beta \rangle = 0$  
-$\langle \Xi_\beta \Xi_\beta' \rangle = C_\beta \hbar_{\text{eff}} f_\beta(k)\,\delta_D(\ln a - \ln a')\delta_D(k-k')$
-
-### 3.3 Density Contrast Equation
-$\delta'' + A\delta' + B\delta = C\beta$
-
-### 3.4 Noise Floor
-$P_\delta = P_{\delta,\text{cl}} + P_{\delta,\text{noise}}$  
-$P_{\delta,\text{noise}} \propto A^2 \rho_0^3 \sigma_\alpha^2 f_\beta(k)\,a/k$
-
----
-
-## 4. Master State Vector
-$\mathcal{X}(a) = \{ n(\mathbf{x},t), K(k,a), \xi_R(a), \sigma_\alpha^2(a), S_i(a), m_i(a), \delta(k,a), \beta(k,a) \}$
-
----
-
-## 5. Projection Layer  
-Mapping the microscopic continuum field n(x,t) to effective macroscopic quantities.  
-All projections are internal to the CCEF ontology and do not invoke geometry, QFT, or external structures.
-
-### 5.1 Density Projection
-The effective coarse-grained density is defined by a local projection operator P_ρ acting on the continuum field:
-
-ρ(x,a) = P_ρ[n(x,t)]
-
-This quantity enters the RG flow, the stochastic sector, and the perturbation equations.
-
----
-
-### 5.2 Transport / Velocity Projection
-The effective transport field is defined by a projection P_u:
-
-uᵢ(x,a) = P_u[n(x,t)]
-
-This field governs large-scale flow, soliton drift, and the transport component of the perturbation sector.
-
----
-
-### 5.3 Channel Projections for Kernel Coupling
-Each interaction channel A has an associated projection P_A:
-
-q_A(x,a) = P_A[n(x,t)]
-
-The corresponding potential is generated by convolution with the kernel:
-
-Φ_A(x,a) = ∫ d³x' · K_A(x − x', a) q_A(x',a)
-
----
-
-### 5.4 Effective Couplings
-The effective channel couplings are defined by:
-
-g_A(a) = ∫ d³x · n(x,a) Φ_A(x,a)
-
-These couplings enter the soliton sector, mass functionals, and RG flow.
-
----
-
-### 5.5 Soliton Observables
-For each soliton species i:
-
-m_i(a) = ∫ d³x · ℰ_soliton,i(n)
-
-S_i(a) = P_S[n(x,t)]
-
-Q_i is the topological invariant:
-
-Q_i = (1 / 4π) ∫ d³x · εᵢⱼₖ (∂ᵢn · (∂ⱼn × ∂ₖn))
-
----
-
-### 5.6 Cosmological Perturbation Projections
-The density contrast and velocity-divergence fields are defined by:
-
-δ(k,a) = P_δ[n(x,t)]  
-β(k,a) = P_β[n(x,t)]
-
-These projections connect the microscopic continuum to the large-scale perturbation system.
-
----
-
-### 5.7 Noise Amplitude Projection
-The stochastic floor is determined by the variance projection:
-
-σ_α²(a) = P_σ[n(x,t)]
-
-The effective noise amplitude is:
+### 2.5 Cosmological Perturbations
+δ(k,a)  
+β(k,a)
 
 ħ_eff(a) = σ_α²(a) ρ₀(a)
 
-This enters the stochastic β-equation and the high-k noise floor of P_δ.
+---
+
+## 3. Deterministic RG Evolution
+
+### 3.1 Kernel RG Flow
+dK/dℓ = β_K(K, ξ_R)
+
+### 3.2 Correlation Length Flow
+dξ_R/dℓ = ξ_R [ γ_K (∂ ln K / ∂ ln k)|_{k→0} − γ_σ σ_α² ]
+
+### 3.3 Variance Flow
+dσ_α²/dℓ = F_σ(ρ, K, ξ_R)
+
+### 3.4 Soliton RG Flow
+dS_i/dℓ = F_i(K, ξ_R, σ_α²)  
+dQ_i/dℓ = 0
+
+### 3.5 Mass Flow
+dm_i/dℓ = α_K K(k→0) − α_ξ ξ_R⁻¹ + α_σ σ_α²
 
 ---
 
-### 5.8 Role of the Projection Layer
-The projection layer defines the mapping:
+## 4. Stochastic Evolution (LITE v1.2)
 
+### 4.1 Beta Equation
+β′ + Γ_β β = S_δ δ + Ξ_β  
+Γ_β = Γ_β0 + D_β k²/a²
+
+### 4.2 Noise Statistics
+⟨Ξ_β⟩ = 0  
+⟨Ξ_β Ξ_β′⟩ = C_β ħ_eff f_β(k) δ_D(ln a − ln a′) δ_D(k − k′)
+
+### 4.3 Density Contrast Equation
+δ″ + A δ′ + B δ = C_β
+
+### 4.4 Noise Floor
+P_δ = P_δ,cl + P_δ,noise  
+P_δ,noise ∝ A² ρ₀³ σ_α² f_β(k) a/k
+
+---
+
+## 5. Master State Vector
+X(a) = {  
+n(x,t),  
+K(k,a),  
+ξ_R(a),  
+σ_α²(a),  
+S_i(a),  
+m_i(a),  
+δ(k,a),  
+β(k,a)  
+}
+
+---
+
+## 6. Projection Layer
+
+### 6.1 Density Projection
+ρ(x,a) = P_ρ[n]
+
+### 6.2 Transport Projection
+uᵢ(x,a) = P_u[n]
+
+### 6.3 Channel Projections
+q_A(x,a) = P_A[n]  
+Φ_A(x,a) = ∫ d³x′ K_A(x − x′,a) q_A(x′,a)
+
+### 6.4 Effective Couplings
+g_A(a) = ∫ d³x n(x,a) Φ_A(x,a)
+
+### 6.5 Soliton Observables
+m_i(a) = ∫ d³x ℰ_soliton,i  
+S_i(a) = P_S[n]  
+Q_i = (1 / 4π) ∫ d³x εᵢⱼₖ (∂ᵢn · (∂ⱼn × ∂ₖn))
+
+### 6.6 Perturbation Projections
+δ(k,a) = P_δ[n]  
+β(k,a) = P_β[n]
+
+### 6.7 Noise Amplitude Projection
+σ_α²(a) = P_σ[n]  
+ħ_eff(a) = σ_α²(a) ρ₀(a)
+
+### 6.8 Role of the Projection Layer
 n(x,t) → {ρ, u, q_A, Φ_A, g_A, S_i, m_i, δ, β, ħ_eff}
-
-and provides the interface between:
-
-- microscopic continuum dynamics (Section 1)  
-- RG deterministic evolution (Section 2)  
-- stochastic response (Section 3)  
-- perturbation evolution (Section 3.3–3.4)  
-- the Master State Vector X(a) (Section 4)
-
-All observable or coarse-grained quantities in CCEF arise from these internal projections.
-

@@ -118,7 +118,56 @@ At large separations this manifests as motion down the gradient of the emergent 
 
 ## 9. Phase Space (Control Parameters $A_1, A_2, A_3, A_4$)
 
-(Expanded Dispersive Phase and Topological Charge Diffusion as in v2.0)
+The global behaviour of CCEF is organised by the four couplings of the energy functional:
+
+$$
+(A_1, A_2, A_3, A_4)
+$$
+
+### 9.1 Phases
+
+
+| Phase                | Condition                          | Key Features |
+| :------------------- | :--------------------------------- | :----------- |
+| Gradient-Dominated   | $A_1 \gg A_2, A_3, A_4$          | Trivial spectrum, weak interactions, nearly diagonal $G_{\alpha\beta}$ |
+| Topological          | $A_2 \sim A_1$, moderate $A_3$ | Stable solitons, discrete low-lying spectrum, block-diagonal $G_{\alpha\beta}$, coherent multi-soliton structures |
+| Dispersive           | $A_3 / A_1 \gtrsim 0.2$ (modulated by $A_2$) | Spectrum densification, strong mode mixing, onset of topological charge diffusion, transition toward a high-frequency “Dispersive Fluid” regime |
+| Alignment Collapse   | $A_4 \gg A_2, A_1$               | Single global attractor aligned with $\mathbf{n}_0$, rank-1 interaction algebra, loss of sector structure |
+
+### 9.2 Critical Surfaces
+
+- **Topological onset**:  
+
+$$
+A_2 \sim A_1 \quad \Rightarrow \quad \text{soliton emergence and stable topological sector}
+$$
+
+- **Dispersive onset** (for typical $A_2 \sim A_1$):  
+
+$$
+A_3 / A_1 \approx 0.15 - 0.4 \quad \Rightarrow \quad \text{spectrum densification and loss of sharp soliton identity}
+$$
+
+- **Alignment collapse**:  
+
+$$
+A_4 \sim A_2 \quad \Rightarrow \quad \text{field locking to } \mathbf{n}_0 \text{ and collapse of sector decomposition}
+$$
+
+### 9.3 Topological Charge Diffusion
+
+In the Dispersive Phase, the dense Hessian spectrum and strong cubic mixing drive **topological charge diffusion**:
+
+- The local topological density $\omega(\mathbf{x})$ spreads over larger regions through continuous mode coupling.
+- The total charge
+
+$$
+Q = \int d^3x \, \omega(\mathbf{x})
+$$
+
+remains conserved, but becomes delocalized across many modes and spatial regions.
+- Long-range kernel tails weaken as charge delocalizes, reducing coherent multi-soliton binding.
+
 
 ## 10. Final Structural Closure
 $$\mathbf{n} \to E[\mathbf{n}] \to K \to L^\text{RG} \to \psi_i \to g_{ijk} \to B_\alpha \to G_{\alpha\beta} \to R[G] \to \text{Phase Structure} \to \text{Collective Long-Range Dynamics}$$

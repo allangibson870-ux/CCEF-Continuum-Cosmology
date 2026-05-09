@@ -1,4 +1,4 @@
-# CCEF Master Evolution System v1.7
+# CCEF Master Evolution System v1.8
 
 **Phase Structure & Interaction Algebra Geometry**
 
@@ -52,8 +52,6 @@ $$
 
 (modes normalized w.r.t. Hessian inner product and tangent-space projected: $\psi \cdot \mathbf{n}^* = 0$).
 
-
-
 ### 4.1 Representative Gradient Sector Evaluation — Breathing Mode Self-Coupling $g_{111}$
 
 **Explicit Rational Integrand** (derived from $E_\nabla$):
@@ -88,6 +86,8 @@ Bound states at poles: $\lambda_n + \Sigma_n = 0$.
 - RG flow (sparse spectrum): $\frac{dG}{d\ell} = G^2 - \Lambda$
 - **RG flow (dense spectrum)**: $\frac{dG}{d\ell} = G \circ \rho \circ G - \Lambda$, where $\rho(\lambda)$ is the eigenvalue density of the Hessian.
 
+**Internal UV Regulation**: The constraint $|\mathbf{n}|=1$ inherently limits maximum field curvature, providing a natural emergent cutoff in the mode density $\rho(\lambda)$ at high eigenvalues. This prevents instantaneous divergence in the dense-spectrum flow.
+
 ## 8. Phase Space (Control Parameters $A_1, A_2, A_3, A_4$)
 
 
@@ -95,16 +95,18 @@ Bound states at poles: $\lambda_n + \Sigma_n = 0$.
 | :--- | :--- | :--- |
 | Gradient-Dominated | $A_1 \gg A_2$ | Trivial spectrum, weak interactions |
 | **Topological** | $A_2 \sim A_1$ | Stable solitons, block-diagonal $G$, coherent structures |
-| **Dispersive** | $A_3 / A_1 \gtrsim 0.2$ | Spectrum densification, destabilization of compact hedgehogs, transition to high-frequency continuum regime ("Dispersive Fluid Phase"), strong nonlinear mixing via dense $\rho(\lambda)$ |
+| **Dispersive** | $A_3 / A_1 \gtrsim 0.2$ (depends on $A_2$) | Spectrum densification, destabilization of compact hedgehogs, transition to high-frequency continuum regime ("Dispersive Fluid Phase"), energy redistribution into non-local correlations, strong nonlinear mixing |
 | Alignment Collapse | $A_4 \gg A_2$ | Rank-1 algebra, loss of sector structure |
 
-**Critical Ratio** (from Hessian analysis):
-- Onset of dispersive densification: $A_3 / A_1 \approx 0.15 - 0.4$
-- Full Dispersive Phase: $A_3 / A_1 > 1.0$
+**Critical Surfaces** (emergent from Hessian):
+- Dispersive onset depends on the ratio $A_3 / A_1$ modulated by topological strength $A_2$: higher $A_2$ shifts the boundary to larger $A_3/A_1$ (topological protection).
+- Approximate onset: $A_3 / A_1 \approx 0.15 - 0.4$ for typical $A_2 \sim A_1$.
+
+**Alignment-Dispersive Interaction**: Strong $A_4$ acts as an internal stabilizer, suppressing wild oscillations and potentially delaying or preventing full dispersive dissolution by anchoring the field toward $\mathbf{n}_0$.
 
 **Phase Boundaries**:
 - $A_2 \sim A_1$ → soliton emergence
-- $A_3 / A_1 \approx 0.2$ → spectrum densification & loss of coherent soliton identity
+- $A_3 / A_1 \approx 0.2$ (modulated by $A_2$) → spectrum densification & loss of coherent soliton identity
 - $A_4 \sim A_2$ → alignment collapse
 
 ## 9. Final Structural Closure
@@ -112,7 +114,7 @@ $$\mathbf{n} \to E[\mathbf{n}] \to K \to L^\text{RG} \to \psi_i \to g_{ijk} \to 
 
 ---
 
-**CCEF v1.7 Final Statement**
+**CCEF v1.8 Final Statement**
 
 The CCEF is a closed deterministic continuum theory in which:
 
@@ -121,9 +123,10 @@ The CCEF is a closed deterministic continuum theory in which:
 - interactions are structurally computable cubic curvature tensors
 - bound states are pole structures of RG-dressed propagators
 - sector forces are projections of interaction geometry
-- phases of matter correspond to stability regimes of the interaction algebra, including a predicted transition to a Dispersive Fluid Phase when dispersive terms dominate the Hessian spectrum.
+- phases of matter correspond to stability regimes of the interaction algebra, including a Dispersive Fluid Phase where soliton identity dissolves into non-local correlations while total energy is conserved through the constraint $|\mathbf{n}|=1$.
 
 **Version History**
-- **v1.7**: Incorporated internal analysis of Dispersive Phase, critical $A_3/A_1$ ratio from Hessian, and refined dense-spectrum RG flow.
-- **v1.6**: Added explicit rational integrand and exact integral for $g_{111}$.
+- **v1.8**: Addressed internal RG flow regulation via constraint, phase boundary dependence on $A_2$, energy redistribution in Dispersive Phase, and Alignment-Dispersive interplay.
+- **v1.7**: Incorporated Dispersive Phase analysis and critical $A_3/A_1$ ratio.
+- v1.6: Added explicit rational integrand for $g_{111}$.
 - v1.5: Initial release

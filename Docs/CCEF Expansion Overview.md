@@ -255,7 +255,63 @@ is conserved but spreads across extended regions.
 
 ---
 
-## 10. Structural Closure
+## 10. Causal Closure & Velocity Limitation
+
+### 10.1 Retarded Kernel Response
+To maintain causal closure within the continuum, the response field is defined using a retarded kernel. A deformation at point $y$ influences point $x$ only after a finite redistribution interval determined by the internal signal speed $c_n$:
+
+$$
+\Phi(x,t) = \int d^3y \, \frac{\rho(y,\, t - |x-y|/c_n)}{|x-y|}
+$$
+
+This expresses that changes in the field propagate through the medium rather than acting instantaneously.
+
+---
+
+### 10.2 Internal Signal Speed $c_n$
+The characteristic propagation speed of disturbances in the field is set by the ratio of gradient stiffness to effective inertial density:
+
+$$
+c_n^2 = \frac{A_1}{\mu_{\text{eff}}}
+$$
+
+This speed governs the redistribution of all excitations of the field $n(x,t)$.
+
+---
+
+### 10.3 Velocity‑Dependent Energy
+Transporting a soliton requires deforming the surrounding field while preserving the constraint $|n|=1$. As the transport velocity $v$ approaches the internal signal speed $c_n$, the gradient energy needed to maintain the configuration increases. The effective soliton energy follows:
+
+$$
+M(v) = \frac{M_0}{\sqrt{1 - v^2/c_n^2}}
+$$
+
+This arises from the geometric cost of moving a localized topological configuration through a medium with finite redistribution rate.
+
+---
+
+### 10.4 Kernel Relaxation
+The response kernel $K(x,y)$ has an associated relaxation time determined by the coherence length $\xi_R$ and the internal signal speed:
+
+$$
+\tau_K \approx \frac{\xi_R}{c_n}
+$$
+
+For velocities $v \ll c_n$, soliton motion is well‑approximated by the static kernel. As $v$ approaches $c_n$, the kernel becomes anisotropic in the direction of motion, modifying the local curvature distribution.
+
+---
+
+### 10.5 Sector‑Universal Propagation
+All excitations of the field share the same gradient sector coefficient $A_1$. Consequently:
+
+1. Solitons propagate subject to the same redistribution limit $c_n$.
+2. Linear excitations (mode fluctuations) propagate at the same characteristic speed.
+3. Information transfer is constrained by the connectivity and redistribution properties of the field.
+
+This ensures a unified propagation structure across all sectors of the continuum.
+
+
+## 11. Structural Closure
 
 $$
 n \rightarrow E[n] \rightarrow K \rightarrow L^{RG}

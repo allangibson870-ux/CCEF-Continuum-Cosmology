@@ -145,21 +145,42 @@ manifests as motion down the gradient of the emergent response field at large se
 ### 9.1 Phases
 
 
+| Phase | Condition | Key Features |
+| :--- | :--- | :--- |
+| Gradient-Dominated | $A_1 \gg A_2, A_3, A_4$ | Trivial spectrum, weak interactions, nearly diagonal $G_{\alpha\beta}$ |
+| **Topological** | $A_2 \sim A_1$, moderate $A_3$ | Stable solitons, discrete low-lying spectrum, block-diagonal $G_{\alpha\beta}$ |
+| **Dispersive** | $A_3/A_1 \gtrsim 0.2$ (mod $A_2$) | Spectrum densification, mode mixing, charge diffusion |
+| Alignment Collapse | $A_4 \gg A_2, A_1$ | Single global attractor, rank-1 algebra, loss of sector structure |
 
-| Phase                  | Condition                          | Key Features |
-|------------------------|------------------------------------|--------------|
-| Gradient-Dominated     | $A_1 \gg A_2,A_3,A_4$            | Trivial spectrum, weak interactions |
-| **Topological**        | $A_2 \sim A_1$                   | Stable solitons, coherent structures |
-| **Dispersive**         | $A_3/A_1 \gtrsim 0.2$            | Spectrum densification, charge diffusion |
-| Alignment Collapse     | $A_4 \gg A_2$                    | Rank-1 algebra, loss of sectors |
+### 9.2 Critical Surfaces & The Ratio $\eta$
 
-### 9.2 Critical Surfaces
-- Topological onset: $A_2 \sim A_1$
-- Dispersive onset: $A_3/A_1 \approx 0.15 - 0.4$ (modulated by $A_2$)
-- Alignment collapse: $A_4 \sim A_2$
+The transition between phases is governed by the dimensionless ratio:
 
-### 9.3 Topological Charge Diffusion
-In the Dispersive Phase the topological density spreads through dense mode coupling while total charge $Q$ remains conserved.
+$$
+\eta = \frac{A_3 A_1}{A_2^2}
+$$
+
+This ratio compares dispersive disruption to topological + gradient stabilization.
+
+- **Stable Topological Regime** ($\eta < 0.15$): Solitons are rigid. The Hessian spectrum maintains a clear gap between discrete low-lying modes and the continuum.
+- **Critical Surface** ($\eta \approx 0.2$): Spectral overlap begins. High-frequency dispersive fluctuations start mixing with the breathing mode.
+- **Dispersive Fluid Regime** ($\eta > 0.4$): The hedgehog becomes a leaky attractor. Topological charge diffusion becomes dominant.
+
+**Refined Critical Surfaces**:
+- **Topological Onset**: $A_2 \gtrsim 1.1 A_1$
+- **Dispersive Instability**: $A_3 \gtrsim 0.2 \frac{A_2^2}{A_1}$ (i.e. $\eta \approx 0.2$)
+- **Alignment Locking**: $A_4 \gtrsim 0.5 A_2$
+
+### 9.3 Spectral Overlap Mechanism
+Crossing the critical surface $\eta \approx 0.2$ triggers:
+
+1. The eigenvalue density $\rho(\lambda)$ becomes continuous.
+2. The interaction tensor $g_{ijk}$ shifts from describing discrete soliton collisions to three-wave mixing in a fluid-like regime.
+3. The Internal Correlation Time $\tau$ undergoes a phase slip as the correlation length $\xi_R$ evolves rapidly.
+
+### 9.4 Topological Charge Diffusion
+In the Dispersive Phase, the dense Hessian spectrum and strong cubic mixing drive topological charge diffusion: the local topological density $\omega(\mathbf{x})$ spreads over larger regions while the total charge $Q = \int \omega \, d^3x$ remains conserved.
+
 
 ## 10. Cosmological Regime — Collective & Statistical Limit
 

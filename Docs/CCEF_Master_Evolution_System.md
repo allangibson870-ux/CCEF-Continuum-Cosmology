@@ -196,8 +196,19 @@ Coarse-graining over finite volumes leaves a residual fluctuation term $\Xi$ due
 ### 10.4 Effective Growth Dynamics
 Large-scale density perturbations evolve according to the collective response mediated by the Hessian kernel and interaction algebra, giving rise to scale-dependent growth.
 
-### 10.5 Internal Correlation Time
-The RG flow of the interaction algebra governs the evolution of a characteristic correlation length $\xi_R$. An emergent internal time $\tau$ is defined from the normalized progress of $\xi_R$, providing a secondary time scale that influences apparent evolution rates in the cosmological regime.
+### 10.5 Internal Correlation Time and Phase Slip
+The RG flow of the interaction algebra $G_{\alpha\beta}$ governs the evolution of a characteristic correlation length $\xi_R$ of the collective response. An emergent internal time $\tau$ is defined via the normalized progression of this length:
+
+$$d\tau = \frac{d\xi_R}{\xi_R}$$
+
+**Dynamics at the Critical Surface ($\eta \approx 0.2$):**
+When the system crosses the critical surface, it undergoes a **Phase Slip** — a rapid acceleration in the growth of $\xi_R$.
+
+1. **Decoupling of Rates**: The rate of change of the internal time $\tau$ can decouple strongly from the background field evolution, leading to periods of accelerated internal reorganization.
+2. **Synchronization Mechanism**: The rapid correlation flow during a phase slip provides an internal mechanism for large-scale coherence across distant regions through the collective interaction algebra, without requiring external coordination.
+
+This phase slip is a direct consequence of the nonlinear RG flow $dG/d\ell = G \circ \rho \circ G - \Lambda$ becoming dominant when spectral overlap occurs.
+
 
 ## 11. Final Structural Closure
 $$

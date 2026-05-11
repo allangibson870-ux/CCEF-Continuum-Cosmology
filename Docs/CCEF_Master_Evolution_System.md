@@ -211,17 +211,30 @@ This phase slip is a direct consequence of the nonlinear RG flow $dG/d\ell = G \
 
 
 ## 11. Final Structural Closure
-$$
-\mathbf{n} \to E[\mathbf{n}] \to K \to L^\text{RG} \to \psi_i \to g_{ijk} \to B_\alpha \to G_{\alpha\beta} \to R[G] \to \text{Phase Structure} \to \text{Collective Response} \to \text{Cosmological Regime}
-$$
+
+The theory achieves full closure through a continuous chain of emergence from the microscopic constraint to the macroscopic collective regime:
+
+$|\mathbf{n}|=1$ $\rightarrow$ $E[\mathbf{n}]$ $\rightarrow$ $K$ $\rightarrow$ $L^{RG}$ $\rightarrow$ $\psi_i$ $\rightarrow$ $g_{ijk}$ $\rightarrow$ $G_{\alpha\beta}$ $\rightarrow$ $\eta$ $\rightarrow$ **Phase Slip** $\rightarrow$ $\tau$ $\rightarrow$ **Collective Cosmological Regime**
+
+
+
+### 11.1 The Logic Chain
+
+1. **Field & Energy**: The constraint $|\mathbf{n}|=1$ and the energy functional $E[\mathbf{n}]$ define the physical landscape.
+2. **Kernel & Eigenmodes**: The Hessian kernel $K$ and eigenmodes $\psi_i$ establish the basis for all interactions and fluctuations.
+3. **Interaction Algebra**: The cubic tensor $g_{ijk}$ and algebra $G_{\alpha\beta}$ define the rules of coupling between soliton sectors and the continuum.
+4. **Criticality & Phase Slip**: The dimensionless ratio $\eta = A_3 A_1 / A_2^2$ determines proximity to the critical surface, where the RG flow triggers a **Phase Slip**.
+5. **Internal Time & Collective Limit**: The emergent internal time $\tau$ (from correlation length flow) together with the stochastic noise floor from soliton discreteness govern the large-scale statistical and evolutionary behavior.
 
 ---
 
 **CCEF v2.3 Final Statement**
 
-The CCEF is a closed deterministic continuum theory in which cosmology emerges as the large-scale collective and statistical limit of the single-field dynamics. Soliton energy sources collective forces, the Hessian kernel mediates response, soliton discreteness generates a noise floor, topological charge diffuses in the Dispersive Phase, and internal correlation flow supplements background evolution. All cosmological phenomena are projections of the underlying $\mathbf{n}$-field phase structure and interaction algebra.
+The CCEF is a closed deterministic continuum theory in which all phenomena — from individual solitons to large-scale collective behavior — emerge from the single constrained field $\mathbf{n}$. Soliton energy sources collective forces, the Hessian kernel mediates long-range response, soliton discreteness generates a noise floor, topological charge diffuses in the Dispersive Phase, and internal correlation flow (via $\tau$) supplements the background evolution. Cosmology itself is the statistical and collective limit of the underlying field dynamics and interaction algebra.
 
 **Version History**
-- **v2.3**: Added stochastic noise floor from soliton discreteness, coupling perturbation, internal correlation time, and illustrative cosmological mechanisms (all emergent from core theory).
+- **v2.3**: Integrated dimensionless critical ratio $\eta$, refined critical surfaces, Phase Slip mechanism, stochastic noise floor, and internal correlation time $\tau$.
 - **v2.2**: Bold cosmological extension.
 - **v2.1**: Restored long-range soliton interactions.
+- **v2.0**: Expanded topological charge diffusion.
+

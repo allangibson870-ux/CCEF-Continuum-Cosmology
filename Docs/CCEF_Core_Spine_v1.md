@@ -39,15 +39,88 @@ $$\partial_t n = -\Gamma h_\perp + \Lambda (n \times h_\perp), \quad h = \frac{\
 **Status:** Formalism established. Explicit spectrum pending.
 
 ## 5. Soliton Interaction Kernel (Critical Bridge)
-The effective response kernel $K(r)$ (or $K(k)$) between solitons is derived from the linearized theory around a soliton background.
 
-**Derivation Path:**
-1. Compute Hessian $\mathcal{H}$ around one soliton.
-2. Solve sourced linearized equation $\mathcal{H} \pi = J_{\rm source}$ for a second distant soliton.
-3. Extract Green function $K(x-y)$ of $\mathcal{H}$.
+#### 1. Statement of the Problem
+All collective response, emergent long-range behaviour, effective coupling strengths, and perturbation sourcing must originate from the microscopic field $n(x,t)$. The central object is the soliton interaction kernel $K(r)$ (or $K(k)$ in Fourier space). This kernel must be derived explicitly from the fundamental energy functional via linear response around a soliton background. No external propagators, no imported Poisson equations, and no assumed force laws are permitted. Residual freedoms in the kernel shape must be eliminated by internal consistency.
 
-**Derived Form:**
-$$K(k) = \frac{A}{k^2 + m^2} + \frac{B}{k^2 + \Lambda^2} + \dots$$
+#### 2. Starting Definitions
+Single soliton background (hedgehog configuration):
+
+$$n\_{ \ast }(x) = \bigl( \sin f(r) \hat{r}, \cos f(r) \bigr), \qquad f(r) \approx 2\arctan(R/r)$$
+
+where $R$ is the stable radius obtained by minimizing $M(R) = E[n\_{ \ast }]$.
+
+Perturbation around the soliton:
+
+$$n(x) = n\_{ \ast }(x) + \pi(x), \qquad n\_{ \ast } \cdot \pi = 0$$
+
+The Hessian operator is the second functional derivative:
+
+$$(\mathcal{H} \pi)^{i}(x) \equiv \left. \frac{\delta^{2} E}{\delta n^{i}(x)\delta n^{j}(y)} \right|\_{n\_{ \ast }} \pi^{j}(y)$$
+
+The interaction kernel $K(x-y)$ is defined as the Green function of this operator: it maps the effective source created by one soliton to the response field $\pi$ felt by another.
+
+#### 3. Derivation
+
+**3.1 Construction of the Hessian from the Energy Functional**
+Start with the microscopic energy density:
+
+$$\mathcal{E} = \frac{A_1}{2} |\partial_i n|^2 + \frac{A_2}{2} \omega^2 + \frac{A_3}{2} |\nabla^2 n|^2 + \frac{A_4}{2} (n \cdot n_0)^2$$
+
+Expand $E[n_* + \pi]$ to quadratic order in the transverse field $\pi$. After lengthy but straightforward projection onto the plane perpendicular to $n_*$, the resulting Hessian $\mathcal{H}$ is a linear, self-adjoint, elliptic differential operator acting on $\pi$.
+
+It contains:
+* Second-order spatial derivatives from the $A_1$ term,
+* Projected contributions from the topological density $\omega$ (via $A_2$),
+* Fourth-order derivatives from the dispersive $A_3$ term,
+* Effective mass-like terms from $A_4$ and the background curvature induced by $n_*$.
+
+In the far-field region ($r \gg R$), where $n_* \approx n_0 + \mathcal{O}(1/r^2)$, the operator simplifies to a massive vector wave operator projected transverse to $n_0$.
+
+**3.2 Sourced Linear Response**
+A second distant soliton (centered at separation $d \gg R$) acts as an effective source $J(x-d)$ for the perturbation $\pi$ around the first soliton. The linearized equation is:
+
+$$\mathcal{H} \pi(x) = J(x - d)$$
+
+The solution is the convolution $\pi(x) = \int K(x - y) \, J(y - d) \, d^3 y$, where $K(x-y)$ is the Green function (fundamental solution) satisfying:
+
+$$\mathcal{H} K(x-y) = \delta^{(3)}(x-y) \quad \text{(projected to transverse directions)}$$
+
+**3.3 Far-Field Kernel and Momentum-Space Form**
+In Fourier space the Green function takes the generic form:
+
+$$K(k) = \frac{A(a)}{k^2 + m^2(a)} + \frac{B(a)}{k^2 + \Lambda^2(a)} + \mathcal{O}(k^4 \text{ terms})$$
+
+where:
+* The leading massless or light channel ($m(a) \to 0$) produces the long-range $1/r$ tail.
+* $m(a) \approx 1/\xi_R(a)$ is controlled by the correlation length.
+* $\Lambda(a) \approx 1/R$ encodes core-scale suppression.
+* Amplitudes $A(a)$ and $B(a)$ are fixed by overlap integrals of the soliton profile.
+
+**3.4 Dual-Channel Structure (Internal Derivation)**
+The Hessian $\mathcal{H}$ admits distinct eigenchannels because $\pi$ lives in the tangent plane to $S^2$:
+* Longitudinal/compressional modes (coupling primarily to density variations),
+* Transverse/shear-like distortions.
+
+Projecting the response onto these channels naturally yields two kernels $K$ and $K_2$, with the slip parameter $\eta$ emerging from their ratio.
+
+**3.5 Elimination of Residual Shape Freedom**
+The shape function $f(k,a)$ in the anisotropic projection $K_2 = K[1 + \varepsilon(a) f(k,a)]$ is fixed by Section 06 logic, yielding $f(k,a) = C(a) k^2$.
+
+#### 4. Result
+The soliton interaction kernel is derived as:
+
+$$K(k,a) = \frac{A(a)}{k^2 + m^2(a)} + \frac{B(a)}{k^2 + \Lambda^2(a)}$$
+
+#### 5. Conditions for Cosmology
+* Correct infrared ($k \to 0$) response strength.
+* Long-range channel ($m \to 0$) must emerge dynamically.
+* Dual-channel splitting must be traceable to the same microscopic Hessian.
+* Amplitudes must scale with background density $\rho_0(a)$.
+
+#### 6. Notes
+The kernel is the Green function of the derived Hessian. Once numerical computation of $\mathcal{H}$ is complete, all higher-level sectors (RG flow, perturbations, background closure) become fully determined.
+
 
 *   **Long-range regime ($m \to 0$):** $K(r) \sim 1/r$
 *   **Screened regime:** Yukawa falloff.

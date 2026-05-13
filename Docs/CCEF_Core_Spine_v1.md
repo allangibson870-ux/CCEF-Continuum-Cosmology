@@ -317,6 +317,30 @@ The system resolves into two main families. Tangential (orbital) modes capture d
 ### 6. Boundary Conditions for Coherent Binding
 A hydrogen‑like bound state exists when the lowest tangential surface mode possesses lower total energy than the continuum of free electron configurations. This requires at least one negative eigenvalue ($\lambda_{\text{orbital}} < 0$), an exclusion barrier high enough to prevent core collapse, and a long‑range EM‑like kernel capable of supporting a stable structural radius.
 
+## APPENDIX I — Statistical Boltzmann Transport for the Unsuppressed Ensemble
+
+### I.1 Microscopic Phase‑Space Density Function
+We define the one‑body distribution function $f(\mathbf{x},\mathbf{p},t)$ of the unsuppressed multi‑soliton ensemble over the 6D phase space. The distribution is structurally coupled to the continuum energy functional through the velocity‑dependent mass functional $M(v)$ and the ensemble‑derived interaction kernel $G_{\mathrm{eff}}^{\mathrm{ensemble}}(k)$. The total number density of $Q=1$ soliton cores in a spatial volume element is $n(\mathbf{x},t) = \int d^3p \; f(\mathbf{x},\mathbf{p},t)$.
+
+### I.2 Generalized CCEF Boltzmann Equation
+The evolution of the distribution function under cosmic expansion is governed by the CCEF transport equation $\frac{\partial f}{\partial t} + \frac{\mathbf{p}}{a\,M(v)}\cdot\nabla_{\mathbf{x}} f - a\,M(v)\left(\nabla_{\mathbf{x}}\Phi_{\mathrm{total}}\right)\cdot\nabla_{\mathbf{p}} f = \mathcal{C}[f] + \mathcal{S}[f]$. The dynamical components are closed within the $S^2$ manifold:
+
+* **Velocity‑Dependent Mass:** $M(v) = M_0 / \sqrt{1 - v^2/c_n^2}$, where $c_n$ is the internal signal speed of the continuum.
+* **Total Response Potential:** $\Phi_{\mathrm{total}}(\mathbf{x}) = \int d^3y \; K_{\mathrm{ensemble}}(\mathbf{x}-\mathbf{y})\,\delta\rho(\mathbf{y})$, with $K_{\mathrm{ensemble}}$ derived from the unsuppressed multi‑core kernel $G_{\mathrm{eff}}^{\mathrm{ensemble}}(k)$.
+* **Collision Term:** $\mathcal{C}[f]$ encodes short‑range structural scattering and core‑boundary deformations.
+* **Stochastic Source Term:** $\mathcal{S}[f]$ injects the irreducible noise floor associated with the invariant action‑density variance $\sigma_\alpha^2$.
+
+### I.3 Fluid Moments and Conservation Laws
+Integrating the Boltzmann equation over momentum space yields the macroscopic hydrodynamic transport equations.
+
+* **I.3.1 Continuity Equation (0th Moment):** $\frac{\partial \rho}{\partial t} + 3H\rho + \frac{1}{a}\nabla_{\mathbf{x}}\cdot(\rho\,\mathbf{u}) = 0$, where $\rho = M_0 n$ is the coarse‑grained inertial density.
+* **I.3.2 Euler Momentum Balance (1st Moment):** $\frac{\partial \mathbf{u}}{\partial t} + H\mathbf{u} + \frac{1}{a}(\mathbf{u}\cdot\nabla_{\mathbf{x}})\mathbf{u} = -\frac{1}{a}\nabla_{\mathbf{x}}\Phi_{\mathrm{total}} -\frac{1}{a\rho}\partial_j \Sigma_{ij}$. The anisotropic pressure tensor is $\Sigma_{ij} = \rho\langle v_i v_j\rangle_{\mathrm{fluid}} + \Sigma_{ij}^{\mathrm{gradient}}$, where $\Sigma_{ij}^{\mathrm{gradient}}$ captures non‑local gradient exchange across overlapping multi‑soliton boundaries.
+
+### I.4 Collision Term $\mathcal{C}[f]$ via Texture‑Exclusion
+Because the gradient‑stress functional diverges at the core boundary ($S_{\mathrm{grad}}\to\infty$), hard topological overlaps are forbidden. The collision operator uses a BGK‑type relaxation model with a structural exclusion radius $R_{\mathrm{sol}}$: $\mathcal{C}[f] = -\frac{f - f_0}{\tau_K} \, \Theta\!\left(|\mathbf{x}-\mathbf{x}'| - 2R_{\text{sol}}\right)$, where $\tau_K \approx \xi_R/c_n$ is the kernel relaxation time and $\Theta$ enforces the geometric exclusion volume.
+
+### I.5 Stochastic Fluctuation Coupling $\mathcal{S}[f]$
+To maintain consistency with the dimensionally safe $1/k^3$ stochastic floor, the transport equation includes a momentum‑space diffusion operator $\mathcal{S}[f] = \nabla_{\mathbf{p}}\cdot \left[ \mathbf{D}_{\mathbf{p}}\cdot\nabla_{\mathbf{p}} f \right] + \Xi_f(\mathbf{x},\mathbf{p},t)$. The fluctuation correlations satisfy $\langle \Xi_f(\mathbf{x},\mathbf{p},t)\,\Xi_f(\mathbf{x}',\mathbf{p}',t') \rangle \propto \sigma_\alpha^2 \rho_0\,\delta_D(\mathbf{x}-\mathbf{x}') \delta_D(\mathbf{p}-\mathbf{p}') \delta_D(t-t')$, ensuring that the phase‑space density retains its irreducible background fluctuation floor even when macroscopic structure is absent.
 
 
 ## Appendices

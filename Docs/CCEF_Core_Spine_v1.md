@@ -390,7 +390,17 @@ Integrating the Boltzmann equation over momentum space yields the macroscopic hy
 Because the gradient‑stress functional diverges at the core boundary ($S_{\mathrm{grad}}\to\infty$), hard topological overlaps are forbidden. The collision operator uses a BGK‑type relaxation model with a structural exclusion radius $R_{\mathrm{sol}}$: $\mathcal{C}[f] = -\frac{f - f_0}{\tau_K} \, \Theta\!\left(|\mathbf{x}-\mathbf{x}'| - 2R_{\text{sol}}\right)$, where $\tau_K \approx \xi_R/c_n$ is the kernel relaxation time and $\Theta$ enforces the geometric exclusion volume.
 
 ### I.5 Stochastic Fluctuation Coupling $\mathcal{S}[f]$
-To maintain consistency with the dimensionally safe $1/k^3$ stochastic floor, the transport equation includes a momentum‑space diffusion operator $\mathcal{S}[f] = \nabla_{\mathbf{p}}\cdot \left[ \mathbf{D}_{\mathbf{p}}\cdot\nabla_{\mathbf{p}} f \right] + \Xi_f(\mathbf{x},\mathbf{p},t)$. The fluctuation correlations satisfy $\langle \Xi_f(\mathbf{x},\mathbf{p},t)\,\Xi_f(\mathbf{x}',\mathbf{p}',t') \rangle \propto \sigma_\alpha^2 \rho_0\,\delta_D(\mathbf{x}-\mathbf{x}') \delta_D(\mathbf{p}-\mathbf{p}') \delta_D(t-t')$, ensuring that the phase‑space density retains its irreducible background fluctuation floor even when macroscopic structure is absent.
+
+To maintain strict structural consistency with the dimensionally safe $1/k^3$ macroscale noise floor, the phase-space transport equation incorporates a regularized momentum‑space diffusion operator:
+
+$$\mathcal{S}[f] = \nabla_{\mathbf{p}} \cdot \left[ \mathbf{D}_{\mathbf{p}} \cdot \nabla_{\mathbf{p}} f \right] + \Xi_f(\mathbf{x}, \mathbf{p}, t)$$
+
+where the stochastic fluctuation correlations satisfy the exact scale-calibrated autocorrelation identity:
+
+$$\langle \Xi_f(x,p,t) \, \Xi_f(x',p',t') \rangle = \left( \frac{\sigma_\alpha^2 \hbar_{\text{eff}}}{\rho_0 c_n^3} \right) \delta_D(x-x') \delta_D(p-p') \delta_D(t-t')$$
+
+The momentum-space diffusion matrix $D_p$ and noise amplitude are driven entirely by the invariant action-density variance, ensuring that the phase‑space density retains its native, irreducible background fluctuation floor even when macroscopic classical structure is fully suppressed.
+
 
 
 ## Appendices

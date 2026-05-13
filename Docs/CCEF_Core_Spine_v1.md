@@ -221,6 +221,27 @@ The discrete bound spectrum is mapped explicitly through the eigenmodes $L_p \ps
 * Compute the potential $\Phi_p$ using the parameterized dual‑pole kernel array.
 * Solve for the lowest discrete eigenmodes of the sparse system matrix $L_p$.
 * Extract the effective core radius $r_0$ directly from the zero-net-force spatial balance step.
+* 
+* ## APPENDIX H.10 — Conceptual Architecture of the Hydrogen Surface State
+
+### 1. Unified Structure of Hydrogen in CCEF
+Hydrogen is not a point proton, a point electron orbiting in a Coulomb potential, or a wavefunction in Hilbert space. It is a $Q = 1$ proton soliton in the continuum field $n(x,t)$ whose EM‑like kernel carves a trough in the surrounding medium, plus a $Q = 0$ lepton soliton that gets locked to the surface of that trough, with texture‑exclusion preventing core collapse. The bound state is literally a surface configuration of the continuum, not a particle orbit.
+
+### 2. The Non-Singular Proton Trough
+The proton soliton $S_p$ generates a kernel response $\Phi_p(\mathbf{x})$ via the EM‑like kernel $K_{\text{EM}}$. Near the core, the field exhibits high curvature and energy density, while outside the core, the dual‑pole kernel generates a smooth, long‑range $1/r$-like trough. This configuration yields a finite‑width, kernel‑smeared potential well instead of a singular Coulomb point potential.
+
+### 3. Electron Surface Mechanics
+The electron is a topologically trivial ($Q = 0$) configuration stabilized by kernel locking inside a local energy minimum of the continuum. Constrained by texture‑exclusion, its internal pattern cannot overlap the proton core. Texture‑exclusion makes falling into the proton energetically forbidden rather than dynamically unlikely, forcing the electron to live on the trough boundary as a surface‑bound configuration of $n(x,t)$.
+
+### 4. Mathematical Mapping of the Mode Operator
+Linearizing the electron's energy functional around the surface configuration in the proton trough yields an operator $L_p$ acting on small perturbations $\psi$, forming the eigenvalue relation $L_p \psi = \lambda \psi$. Here, $\psi$ is a physical mode of deformation of the continuum field around the surface state rather than a wavefunction in Hilbert space, and $\lambda$ labels the energy levels of discrete classical surface modes instead of quantum operator eigenvalues.
+
+### 5. Decomposition of Spatial Modes
+The system resolves into two main families. Tangential (orbital) modes capture deformations along the surface around the proton, where the lowest nontrivial mode generates a stable circular surface state. Radial modes govern deformations toward or away from the trough boundary, where the balance between texture‑exclusion and kernel geometry stabilizes a preferred equilibrium radius $r_0$. The orbit is a standing surface pattern rather than a trajectory.
+
+### 6. Boundary Conditions for Coherent Binding
+A hydrogen‑like bound state exists when the lowest tangential surface mode possesses lower total energy than the continuum of free electron configurations. This requires at least one negative eigenvalue ($\lambda_{\text{orbital}} < 0$), an exclusion barrier high enough to prevent core collapse, and a long‑range EM‑like kernel capable of supporting a stable structural radius.
+
 
 
 ## Appendices

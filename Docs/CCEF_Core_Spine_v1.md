@@ -345,6 +345,27 @@ $$K_{\text{EM}}(r) = \frac{1}{4\pi r}\left(C_1 e^{-m_1 r} + C_2 e^{-m_2 r}\right
 $$\lim_{r \to \infty} [L_p, \Delta_{S^2}] = 0$$
 * **H.4.2 Separation of Variables:** This identity mathematically derives the separation of variables $\psi(r,\theta,\phi) = R(r)Y_{\ell m}(\theta,\phi)$. Hydrogenic orbitals are thus proven to be the discrete, non-radiating tangential surface standing waves of a continuous, non-singular field boundary geometry.
 
+* ### H.4 4th-Order Radial Sturm–Liouville Reduction
+The spatial perturbations split into a decoupled radial companion form via $\psi(r,\theta,\phi) = R(r)Y_{\ell m}(\theta,\phi)$. Applying the angular Beltrami mapping $\Delta_{S^2} Y_{\ell m} = -\ell(\ell+1)Y_{\ell m}$ reduces the 4th-order operator to its exact radial differential track:
+$$A_1 L_\ell R - A_3 L_\ell^2 R + A_4 R = \lambda R, \qquad \text{where } L_\ell R \equiv \frac{1}{r^2}\frac{d}{dr}\left(r^2 \frac{dR}{dr}\right) - \frac{\ell(\ell+1)}{r^2}R$$
+
+### H.5 Low-Energy Long-Wavelength Bound States
+In the macroscopic bound limit where $|L_\ell^2 R| \ll |L_\ell R|$, the higher biharmonic derivatives act as an ultraviolet regulator, while the leading-order transport equation reduces to a classical spherical Bessel/Yukawa equation:
+$$\frac{1}{r^2}\frac{d}{dr}\left(r^2 \frac{dR}{dr}\right) - \frac{\ell(\ell+1)}{r^2}R + \kappa^2 R = 0, \qquad \kappa^2 \equiv \frac{A_4 - \lambda}{A_1}$$
+
+### H.6 Boundary Quantization and Confinement Conditions
+The boundary conditions are determined by the texture-exclusion divergence at the core radius ($R(R_{\text{sol}}) = 0$) and flat-field decay at infinity ($R(\infty) \to 0$). This forces discrete quantization roots matching the zeros of the spherical Bessel functions ($\alpha_{\ell n}$):
+$$\kappa_{\ell n} = \frac{\alpha_{\ell n}}{R_{\text{eff}}} \implies \lambda_{\ell n} = A_4 - \frac{A_1}{R_{\text{eff}}^2}\alpha_{\ell n}^2$$
+Hydrogenic energy levels are thus proven to be the discrete, classical resonant surface modes ($\lambda_{\ell n}$) of the continuous, non-singular field boundary geometry.
+
+### H.7 Intrinsic Orthogonality Metric
+Complete spectral decomposition is formalised without abstract state-space axioms by integrating over the Riemannian volume element of the manifold using the derived radial weight function $W_l(r)$:
+$$\langle \psi_i, \psi_j \rangle_{\mathcal{M}} \equiv \int_0^\infty dr \oint d\Omega \; W_l(r) \, \psi_i^a \psi_j^a = \delta_{ij}$$
+
+### H.8 Numerical Implementation Summary
+The atomic sector program runs on a 5-diagonal sparse finite-difference matrix builder. It enforces texture-exclusion bounds via edge penalty weights, computes the non-singular potential well $\Phi_p$ using the derived dual-pole kernel parameters, and solves the discrete eigenmodes via sparse minimization routines to extract the stable equilibrium radius $r_0$.
+
+
 
 ## APPENDIX I — Statistical Boltzmann Transport for the Unsuppressed Ensemble
 

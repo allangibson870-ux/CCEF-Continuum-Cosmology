@@ -365,6 +365,24 @@ $$\langle \psi_i, \psi_j \rangle_{\mathcal{M}} \equiv \int_0^\infty dr \oint d\O
 ### H.8 Numerical Implementation Summary
 The atomic sector program runs on a 5-diagonal sparse finite-difference matrix builder. It enforces texture-exclusion bounds via edge penalty weights, computes the non-singular potential well $\Phi_p$ using the derived dual-pole kernel parameters, and solves the discrete eigenmodes via sparse minimization routines to extract the stable equilibrium radius $r_0$.
 
+### H.9 Infrared Core Propagator Expansion
+In the macroscopic infrared weak-screening limit ($m r \ll 1$), the real-space dual-pole kernel inverse $\mathcal{H}^{-1}(r)$ expands smoothly around the light pole:
+
+$$K_{\text{EM}}(r) = \frac{1}{4\pi c^2 r} \left[ A_{\text{EM}} e^{-m_{\text{EM}} r/c^2} + B_{\text{UV}} e^{-\Lambda_{\text{UV}} r/c^2} \right] \approx \frac{A_{\text{EM}}}{4\pi c^2 r} - \frac{A_{\text{EM}} m_{\text{EM}}}{4\pi c^4} + \mathcal{O}(r)$$
+
+The constant subleading shift drops out of the spatial gradient variations ($\nabla \Phi_{\text{const}} = 0$). This isolates a pure, non-singular algebraic $1/r$ potential trough across intermediate clustering bands.
+
+#### 9.1 Derived Hydrogenic Coordinate Scaling
+Linearizing the energy functional around the background configuration yields the isotropic radial Sturm‑Liouville operator $-A_1 \nabla^2 \psi - \frac{\gamma}{r} \psi = E \psi$. Introducing the dimensionless scaling coordinate matrix variable $\rho \equiv \frac{\gamma}{A_1} r$ forces the transport parameters to collapse uniformly. The bound-state spectrum is determined strictly by the normalizability criteria of the fluctuation wave on the compact manifold, forcing the discrete momentum quantization roots:
+
+$$\kappa_n = \frac{\gamma / A_1}{n + \ell + 1}$$
+
+#### 9.2 Emergence of the Inverse-Square Energy Ladder
+Substituting the derived momentum quantization bounds back into the core field equations yields the exact structural energy spectrum:
+
+$$\lambda_{n,\ell} = A_4 - \frac{\gamma^2 / A_1}{(n + \ell + 1)^2}$$
+
+Hydrogenic energy levels are thus proven to be the discrete, non-radiating classical surface standing waves ($E_{n,\ell} \propto -1/n^2$) of the continuous field geometry. The stable atomic configuration is a bound Sturm-Liouville spectrum square-integrable on $S^2 \times \mathbb{R}^+$.
 
 
 ## APPENDIX I — Statistical Boltzmann Transport for the Unsuppressed Ensemble

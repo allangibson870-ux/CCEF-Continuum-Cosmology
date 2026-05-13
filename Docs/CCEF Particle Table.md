@@ -1,9 +1,8 @@
 # CCEF Particle Sector v1.1  
-## Unified Mathematical Edition + Soliton RG Flow Extension  
-### Topology‑Consistent, Ontology‑Pure, Q‑Core, Kernel‑Locked, Texture‑Excluded, and RG‑Driven Solitons
+### Unified Mathematical Edition + Soliton RG Flow Extension  
+**Topology‑Consistent, Ontology‑Pure, Q‑Core, Kernel‑Locked, Texture‑Excluded, and RG‑Driven Solitons**
 
-This section defines the complete mathematical structure of the CCEF particle sector, including:
-
+This document defines the complete mathematical structure of the **CCEF particle sector**, including:
 - field equations  
 - kernel operators  
 - mass functionals  
@@ -12,216 +11,239 @@ This section defines the complete mathematical structure of the CCEF particle se
 - beta‑decay rules  
 - hydrogen surface‑state equations  
 - nuclear geometry  
-- explicit soliton RG flow (new in v1.1)
+- explicit soliton RG flow (v1.1)  
+- stochastic floor (v1.2)  
+- dual‑pole propagator and real‑space kernel  
 
 All content remains strictly within CCEF ontology:
-
-- fundamental object: `n(x,t)`  
-- no GR geometry  
-- no QFT operators  
-- all “particles” are soliton attractors of the continuum  
+- **fundamental object:** $n(x,t)$  
+- **no GR geometry**  
+- **no QFT operators**  
+- **all “particles” are soliton attractors of the continuum**
 
 ---
 
 ## 1. Field and Kernel Foundations
 
 ### 1.1 Continuum Field
+Fundamental field:
+$$n(x,t), \qquad |n| = 1$$
 
-Fundamental field: `n(x,t)`  
-Dynamics: `E[n] = ∫ d^3x · ℰ(n, ∇n, ∇²n, …)`
+Dynamics:
+$$E[n] = \int d^3x \; \mathcal{E}(n, \nabla n, \nabla^2 n, \ldots)$$
 
 ### 1.2 Kernel Operators
-
-- Grav‑like: `K_grav(x − x', a)`  
-- EM‑like: `K_EM(x − x', a)`  
-- Weak‑like: `K_weak(x − x', a)`  
+* Grav‑like: $K_{\text{grav}}(x-x',a)$  
+* EM‑like: $K_{\text{EM}}(x-x',a)$  
+* Weak‑like: $K_{\text{weak}}(x-x',a)$
 
 ### 1.3 Kernel Response Functional
+$$\Phi(x) = \int d^3x' \; K(x-x',a)\, n(x')$$
 
-`Φ(x) = ∫ d^3x' · K(x − x', a) n(x')`  
-`E_int = (1/2) ∫ d^3x · n(x) Φ(x)`
+$$E_{\text{int}} = \frac12 \int d^3x \; n(x)\Phi(x)$$
 
 ### 1.4 Variance Sector
-
-Variance: `σ_α²(δ, a)`  
-- small in halos  
-- large in voids  
+Variance:
+$$\sigma_\alpha^2(\delta,a)$$
+* small in halos  
+* large in voids  
 
 ---
 
 ## 2. Soliton Definitions
 
 ### 2.1 Q‑Core Solitons (Baryons)
+Topological charge:
+$$Q = \frac{1}{4\pi} \int d^3x \; \epsilon_{ijk}\, \partial_i n \cdot (\partial_j n \times \partial_k n)$$
 
-Topological charge:  
-`Q = (1 / 4π) ∫ d^3x · εᵢⱼₖ (∂ᵢn · (∂ⱼn × ∂ₖn))`  
-All baryons: `Q = 1`.
+All baryons:  
+$$Q = 1$$
 
 ### 2.2 Kernel‑Locked Solitons (Leptons)
+Leptons:  
+$$Q = 0$$
 
-Leptons: `Q = 0`  
-Stability: `δE[n] / δn = 0` under kernel locking.
+Stability condition:
+$$\frac{\delta E[n]}{\delta n} = 0 \quad \text{under kernel locking}$$
 
 ---
 
 ## 3. Mass Functionals
+$$m = \int d^3x \; \mathcal{E}_{\text{soliton}}(n)$$
 
-`m = ∫ d^3x · ℰ_soliton(n)`  
-Hierarchy: `m_Sn > m_Sp >> m_Se >> m_Sν`  
-Binding: `m_bound = Σ m_i − E_binding`
+Hierarchy:
+$$m_{S_n} > m_{S_p} \gg m_{S_e} \gg m_{S_\nu}$$
+
+Binding:
+$$m_{\text{bound}} = \sum_i m_i - E_{\text{binding}}$$
 
 ---
 
 ## 4. Coupling Definitions
+$$g_{\text{EM}} = \int n \, \Phi_{\text{EM}}$$
 
-`g_EM = ∫ n Φ_EM`  
-`g_weak = ∫ n Φ_weak`  
-`g_grav = ∫ n Φ_grav`
+$$g_{\text{weak}} = \int n \, \Phi_{\text{weak}}$$
+
+$$g_{\text{grav}} = \int n \, \Phi_{\text{grav}}$$
 
 ---
 
 ## 5. Texture Exclusion Principle
+Electron texture: $\theta_e(x)$
 
-Electron texture: `θ_e(x)`  
-Gradient‑stress: `S_grad = ∫ |∇(θ_e(1) − θ_e(2))|²`  
-Exclusion: `S_grad → ∞` ⇒ overlap forbidden.
+Gradient‑stress functional:
+$$S_{\text{grad}} = \int |\nabla(\theta_e^{(1)} - \theta_e^{(2)})|^2$$
+
+Exclusion rule:
+$$S_{\text{grad}} \to \infty \quad \Rightarrow \quad \text{overlap forbidden}$$
 
 ---
 
 ## 6. Beta Decay (Topology‑Correct)
+$$S_n(Q=1) \rightarrow S_p(Q=1) + S_e(Q=0) + S_\nu(Q=0)$$
 
-`S_n(Q=1) → S_p(Q=1) + S_e(Q=0) + S_ν(Q=0)`  
-Core conservation: `1 → 1 + 0 + 0`  
-Amplitude: `A ∝ ∫ θ_n K_weak θ_p`
+Core conservation:
+$$1 \rightarrow 1 + 0 + 0$$
+
+Amplitude:
+$$A \propto \int \theta_n \, K_{\text{weak}} \, \theta_p$$
 
 ---
 
 ## 7. Hydrogen as a Surface‑State System
+Proton trough:
+$$Phi_p = \int K_{\text{EM}} n_p$$
 
-Proton trough: `Φ_p = ∫ K_EM n_p`  
-Electron equation: `δE[n_e]/δn_e + λ Φ_p = 0`  
-Modes: `L_p ψ = λ ψ`
+Electron equation:
+$$\frac{\delta E[n_e]}{\delta n_e} + \lambda \Phi_p = 0$$
+
+Modes:
+$$L_p \psi = \lambda \psi$$
 
 ---
 
 ## 8. Nuclear Geometry (Q‑Core Merging)
+Two $Q=1 \rightarrow$ one $Q=2$ soliton.
 
-Two `Q=1` → one `Q=2` soliton.  
-Energy: `E_Q=2 < E_Q=1 + E_Q=1`  
-Shape: `n_Q=2(x) = n₀(f(r,θ))`
+Energy:
+$$E_{Q=2} < E_{Q=1} + E_{Q=1}$$
+
+Shape:
+$$n_{Q=2}(x) = n_0(f(r,\theta))$$
 
 ---
 
 ## 9. Summary Table
 
+
 | Species | Symbol | Q | EM | Weak | Exclusion | Mass |
-|--------|--------|---|----|-------|-----------|-------|
-| Proton | S_p | 1 | +1 | small | n/a | large |
-| Neutron | S_n | 1 | 0 | moderate | n/a | > S_p |
-| Electron | S_e | 0 | -1 | small | Yes | small |
-| Neutrino | S_ν | 0 | 0 | moderate | No | tiny |
-| Photon | S_γ | 0 | 0 | 0 | No | ≈0 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Proton | $S_p$ | 1 | +1 | small | n/a | large |
+| Neutron | $S_n$ | 1 | 0 | moderate | n/a | $> S_p$ |
+| Electron | $S_e$ | 0 | −1 | small | Yes | small |
+| Neutrino | $S_\nu$ | 0 | 0 | moderate | No | tiny |
+| Photon | $S_\gamma$ | 0 | 0 | 0 | No | $\approx 0$ |
 
 ---
 
 ## 10. Soliton RG Flow Extension (v1.1)
 
-### 10.1 RG Coarse-Graining
-
-`b = e^ℓ`, `ℓ = ln b`.
+### 10.1 RG Coarse‑Graining
+$$b = e^\ell, \qquad \ell = \ln b$$
 
 ### 10.2 RG State Vector
+$$X(\ell) = [K, \xi_R, A, B, S_i]^T$$
 
-`X(ℓ) = [K, ξ_R, A, B, S_i]ᵀ`  
-`A = C_α α² ρ`  
-`B = C_σ σ_α² ρ`
+$$A = C_\alpha \alpha^2 \rho, \qquad B = C_\sigma \sigma_\alpha^2 \rho$$
 
 ### 10.3 Kernel RG Flow
+$$\frac{dK}{d\ell} = \beta_K(K,\xi_R)$$
 
-`dK/dℓ = β_K(K, ξ_R)`  
-`K = A/(k²+m²) + B/(k²+Λ²)`  
-`m = 1/ξ_R`, `Λ = 1/R_sol`
+Dual‑pole propagator:
+$$K(k) = \frac{A}{k^2 + m^2} + \frac{B}{k^2 + \Lambda^2}$$
+
+Mass scales:
+$$m = \frac{1}{\xi_R}, \qquad \Lambda = \frac{1}{R_{\text{sol}}}$$
+
+#### Exact 3D Fourier Transform (Real‑Space Kernel)
+$$K(r) = \frac{1}{4\pi c^2 r} \left[ A e^{-mr/c^2} + B e^{-\Lambda r/c^2} \right]$$
+- $A$: long‑range grav‑like channel  
+- $B$: UV structural cutoff  
+- $m$: IR screening mass  
+- $\Lambda$: soliton‑scale UV mass  
 
 ### 10.4 Correlation Length Flow
-
-`dξ_R/dℓ = ξ_R [γ_K (∂ ln K / ∂ ln k)|_{k→0} − γ_σ σ_α²]`
+$$\frac{d\xi_R}{d\ell} = \xi_R\left[ \gamma_K \left(\frac{\partial \ln K}{\partial \ln k}\right)_{k\to 0} - \gamma_\sigma \sigma_\alpha^2 \right]$$
 
 ### 10.5 Soliton RG Map
+$$\frac{dS_i}{d\ell} = F_i(K,\xi_R,\sigma_\alpha^2)$$
 
-`dS_i/dℓ = F_i(K, ξ_R, σ_α²)`  
-`dQ_i/dℓ = 0`
+$$\frac{dQ_i}{d\ell} = 0$$
 
 ### 10.6 Soliton Classes
-
-- Proton: `dS_Q=1/dℓ = 0`  
-- Electron: `dE_e/dℓ = −η₁ ξ_R^{-1} + η₂ σ_α²`  
-- Neutron: `S_n = S_Q=1 + S_Q=0 + δB`
+* Proton:  
+$$\frac{dS_{Q=1}}{d\ell} = 0$$
+* Electron:  
+$$\frac{dE_e}{d\ell} = -\eta_1 \xi_R^{-1} + \eta_2 \sigma_\alpha^2$$
+* Neutron:  
+$$S_n = S_{Q=1} + S_{Q=0} + \delta B$$
 
 ### 10.7 Mass Flow
+$$m_i = \int E_i$$
 
-`m_i = ∫ E_i`  
-`dm_i/dℓ = α_K K(k→0) − α_ξ ξ_R^{-1} + α_σ σ_α²`
-
----
-
-# CCEF‑LITE v1.2  
-## Stochastic Response System (Quantum Floor)
-
-This section introduces irreducible fluctuations of the soliton gas into the transport equations.  
-No Hilbert space, no GR, no external QFT.  
-All stochasticity arises from internal variance `σ_α²(a)`.
+$$\frac{dm_i}{d\ell} = \alpha_K K(k\to 0) - \alpha_\xi \xi_R^{-1} + \alpha_\sigma \sigma_\alpha^2$$
 
 ---
 
-## Quantum‑Corrected Coupling Perturbation
+## 11. CCOF‑LITE v1.2 — Stochastic Response System (Quantum Floor)
+Irreducible fluctuations of the soliton gas enter the transport equations. No Hilbert space. No GR. No external QFT. All stochasticity arises from $\sigma_\alpha^2(a)$.
 
-`β' + [Γ_α + D_α k²/a²] β = s(a) δ + P(k,a)`  
-`P(k,a)` = Gaussian white noise from soliton discreteness.
+### Quantum‑Corrected Coupling Perturbation
+$$\beta' + [\Gamma_\alpha + D_\alpha k^2/a^2]\beta = s(a)\delta + P(k,a)$$
 
-Noise amplitude (Quantum Floor):
+Noise:
+$$P(k,a) = \text{Gaussian white noise}$$
 
-`ħ_eff(a) = σ_α²(a) ρ₀(a)`
+Noise amplitude:
+$$\hbar_{\text{eff}}(a) = \sigma_\alpha^2(a)\rho_0(a)$$
+As $\rho_0$ dilutes, $\hbar_{\text{eff}}$ decreases slowly $\rightarrow$ noise fraction increases $\rightarrow$ power spectrum never reaches zero.
 
-As `ρ₀` dilutes, `ħ_eff` decreases slowly → relative noise increases → power spectrum never reaches zero.
-
----
-
-## Stochastic Behaviour of δ(k,a)
-
-- Large scales: classical growth dominates.  
-- Intermediate scales: noise subdominant.  
-- Small scales: diffusion kills classical structure; noise dominates; δ → finite floor.
+### Stochastic Behaviour of $\delta(k,a)$
+* Large scales: classical growth  
+* Intermediate: noise subdominant  
+* Small scales: diffusion kills classical structure $\rightarrow$ noise dominates $\rightarrow$ finite floor  
 
 Interpretation:
+* Zero‑point analogue: residual $\delta$ at high $k$  
+* Decoherence: as $\xi_R \rightarrow$ IR fixed point  
+* No external quantum theory: all from $\sigma_\alpha^2$
 
-- Zero‑point analogue: residual δ at high k.  
-- Decoherence: as `ξ_R` → IR fixed point, fluctuations suppressed.  
-- No external quantum theory: all from `σ_α²`.
+### Tightened ASCII Form (v1.2)
+Stochastic beta equation:
+$$\beta' + \Gamma_\beta \beta = S_\delta \delta + \Xi_\beta$$
 
----
+$$\Gamma_\beta = \Gamma_{\beta0} + D_\beta k^2/a^2$$
 
-## Tightened ASCII Form (v1.2)
+Noise correlations:
+$$\langle \Xi_\beta \rangle = 0$$
 
-Stochastic beta equation:  
-`β' + Γ_β β = S_δ δ + Ξ_β`  
-`Γ_β = Γ_β0 + D_β k²/a²`
+$$\langle \Xi_\beta \Xi_\beta' \rangle = N_\beta \delta_D(\ln a - \ln a') \delta_D(k-k')$$
 
-Noise:  
-`<Ξ_β> = 0`  
-`<Ξ_β Ξ_β'> = N_β δ_D(ln a - ln a') δ_D(k - k')`  
-`N_β = C_β ħ_eff f_β(k)`  
-`ħ_eff = σ_α² ρ₀`
+$$N_\beta = C_\beta \hbar_{\text{eff}} f_\beta(k)$$
 
-δ‑equation:  
-`δ'' + A δ' + B δ = C β`  
-`P_δ = P_δ,cl + P_δ,noise`
+$$\hbar_{\text{eff}} = \sigma_\alpha^2 \rho_0$$
 
-High‑k limit:  
-`K ≈ A/k²`, `G_eff ≈ A`  
-`δ_cl → 0`, `δ_noise → const`
+$\delta$‑equation:
+$$\delta'' + A\delta' + B\delta = C\beta$$
 
-Noise floor:  
-`P_δ,noise ∝ A² ρ₀³ σ_α² f_β(k) a/k`
+Power spectrum:
+$$P_\delta = P_{\delta,\text{cl}} + P_{\delta,\text{noise}}$$
 
-This is the CCEF‑native irreducible fluctuation level.
+High‑$k$ limit:
+$$K \approx \frac{A}{k^2}, \qquad G_{\text{eff}} \approx A$$
 
+$$\delta_{\text{cl}} \to 0, \qquad \delta_{\text{noise}} \to \text{const}$$
+
+Noise floor:
+$$P_{\delta,\text{noise}} \propto A^2 \rho_0^3 \sigma_\alpha^2 f_\beta(k)\frac{a}{k}$$
+This is the **CCEF‑native irreducible fluctuation level**.

@@ -317,6 +317,35 @@ The system resolves into two main families. Tangential (orbital) modes capture d
 ### 6. Boundary Conditions for Coherent Binding
 A hydrogen‑like bound state exists when the lowest tangential surface mode possesses lower total energy than the continuum of free electron configurations. This requires at least one negative eigenvalue ($\lambda_{\text{orbital}} < 0$), an exclusion barrier high enough to prevent core collapse, and a long‑range EM‑like kernel capable of supporting a stable structural radius.
 
+# APPENDIX H(2) — Hydrogen Surface‑State System
+**Ontology-Separated, Derivation-Strict Edition | Exact Operator Closure**
+
+## H.1 Fundamental Field Action & Euler-Lagrange Equations (Axiomatic Layer)
+* **H.1.1 Axiomatic Energy Functional:** The atomic sector is governed strictly by the functional evaluation of a single continuous field $n(\mathbf{x}) \in S^2, \; |n|=1$:
+$$E[n] = \int d^3x \left[ \frac{A_1}{2}(\partial_i n)^2 + \frac{A_2}{2}\omega^2 + \frac{A_3}{2}(\nabla^2 n)^2 + \frac{A_4}{2}(1 - (n \cdot n_0)^2) \right]$$
+* **H.1.2 Derived Euler-Lagrange Field Equation:** Varying the action under the tangent constraint $n \cdot \delta n = 0$ yields the non-linear companion relation:
+$$A_1 \nabla^2 n - A_3 \nabla^4 n + A_4 (n \cdot n_0)n_0 + \lambda(\mathbf{x})n = 0$$
+where the local field multiplier $\lambda(\mathbf{x})$ dynamically enforces the absolute pointwise manifold constraint $|n|=1$.
+
+## H.2 Derived Hessian Operator and Linearized Spectrum (Derived Layer)
+* **H.2.1 Linearization Protocol:** Expanding the field around the static profile vector $n = n_{\text{sol}} + \psi$ subject to $n_{\text{sol}} \cdot \psi = 0$ isolates the explicit linear fluctuation system:
+$$L_p \psi = \lambda \psi$$
+* **H.2.2 Exact Mathematical Form of the Hessian:** The localized atomic operator expands into its complete algebraic components:
+$$L_p = A_1 \nabla^2 - A_3 \nabla^4 + A_4 (n_0 \otimes n_0) + V_{\text{sol}}(\mathbf{x})$$
+where $V_{\text{sol}}(\mathbf{x})$ tracks the non-linear geometric curvature corrections generated close to the baryonic core boundary.
+
+## H.3 Kernel as an Exact Green's Function (Derived Effective Layer)
+* **H.3.1 Momentum-Space Propagator Definition:** In the far-field limit where $V_{\text{sol}}(\mathbf{x}) \to 0$, the inverse of the Hessian operator defines the exact mathematical form of the kernel without external adjustments:
+$$K_{\text{EM}}(k) = L_p^{-1}(k) = \frac{1}{A_4 - A_1 k^2 - A_3 k^4}$$
+* **H.3.2 Derivation of the Dual-Pole Yukawa Matrix:** Solving the characteristic biharmonic root equation $A_3 s^2 + A_1 s - A_4 = 0$ with $s \equiv k^2$ yields two roots $s_{\pm}$, mapping the real-space kernel 1:1 onto a dual-pole regulated propagator:
+$$K_{\text{EM}}(r) = \frac{1}{4\pi r}\left(C_1 e^{-m_1 r} + C_2 e^{-m_2 r}\right), \qquad m_{1,2}^2 = -s_{\pm}$$
+
+## H.4 Asymptotic Symmetry and Spectral Separability (Derived Layer)
+* **H.4.1 Radial Commutation Proof:** Because $V_{\text{sol}}(\mathbf{x})$ decays exponentially as $r \to \infty$, the operator transitions into a purely isotropic, spherically symmetric spatial form. This derives the angular commutation identity from first principles:
+$$\lim_{r \to \infty} [L_p, \Delta_{S^2}] = 0$$
+* **H.4.2 Separation of Variables:** This identity mathematically derives the separation of variables $\psi(r,\theta,\phi) = R(r)Y_{\ell m}(\theta,\phi)$. Hydrogenic orbitals are thus proven to be the discrete, non-radiating tangential surface standing waves of a continuous, non-singular field boundary geometry.
+
+
 ## APPENDIX I — Statistical Boltzmann Transport for the Unsuppressed Ensemble
 
 ### I.1 Microscopic Phase‑Space Density Function

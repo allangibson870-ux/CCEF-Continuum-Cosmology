@@ -188,6 +188,51 @@ All parameters are treated as projections of the underlying continuum (non-ontol
 * **Partially Derived:** Kernel structure, collective equations.
 * **Needs Work:** Explicit multi-soliton overlap integrals, full RG beta functions, background closure functional $F$, consistency audit, and higher-order $A_3$ contributions in BVP.
 
+* ## 14. Unified Particle Sector Diagram Description
+Below is the complete conceptual diagram description, structured for direct integration into project ledgers and markdown repositories.
+
+### 14.1 Topological Core Layer (Q‑Cores)
+* **Diagram Element:** A set of solid, curvature‑dense regions, each labeled by an integer topological charge ($Q=1$ for single baryons, $Q=2$ for fused double-cores/deuterons, and $Q \ge 3$ for higher composite nuclei).
+* **Visual Structure:** Each Q‑core is represented as a curved potential well with a hard boundary. Multiple Q‑cores merge into a single, multi‑lobe continuous manifold when forming larger nuclei.
+* **Interpretation:** This layer explicitly encodes topological identity and local mass binding.
+
+### 14.2 Exclusion Boundary (Gradient‑Stress Shell)
+* **Diagram Element:** A sharp, non‑penetrable boundary interface surrounding each individual Q‑core or composite multi-core manifold.
+* **Properties:** Governed by an infinite gradient energy cost at the boundary boundary layer ($S_{\text{grad}} \to \infty$). It prevents separate Q‑cores from overlapping, blocks $Q=0$ modes from re‑entering the core once ejected, and defines the exact surface manifold where leptons reside.
+* **Interpretation:** This boundary layer enforces spatial geometry and topological separation.
+
+### 14.3 Internal Q=0 Deformation Zone (Metastable Region)
+* **Diagram Element:** A shaded interior region nested inside any $Q \ge 1$ baryonic core, representing metastable $Q=0$ field textures.
+* **Examples:** Captures the neutron’s internal electron‑like deformation, localized weak‑kernel excitations, and curvature‑induced $Q=0$ modes within composite nuclei.
+* **Interpretation:** This layer encodes latent lepton content and internal weak‑kernel sensitivity.
+
+### 14.4 Weak‑Kernel Tunneling Pathway
+* **Diagram Element:** A narrow directional channel or vector arrow pointing from the internal deformation zone outward to the external surface manifold.
+* **Meaning:** Represents the mechanism where the weak kernel destabilizes internal $Q=0$ modes, forcing them to tunnel outward through the core boundary. Once past the threshold, texture‑exclusion prevents return. This maps the beta‑decay mechanism and the universal delocalization rule.
+
+### 14.5 Surface Manifold (Lepton Shell)
+* **Diagram Element:** A thin, flexible outer boundary layer surrounding and tracking the shape of the underlying exclusion boundary.
+* **Contents:** Populated by electron surface states (hydrogen), neutrino escape channels, and general $Q=0$ deformation modes within multi‑core nuclear systems.
+* **Interpretation:** This layer encodes atomic structure, lepton dynamics, and non-spherical nuclear surface shells.
+
+### 14.6 Tangential Mode Structure (Orbital Patterns)
+* **Diagram Element:** Wave‑like geometric patterns drawn continuously along the surface manifold rather than tracing a path around a central point.
+* **Modes:** Resolves into discrete levels ($m = 0$ for uniform surface states, and $m = 1, 2, 3 \dots$ for higher tangential modes). These correspond to hydrogenic orbitals, behaving as standing surface waves instead of particle trajectories.
+
+### 14.7 Composite Manifold Geometry (Nuclear Shapes)
+* **Diagram Element:** For $Q \ge 2$, the system forms multi‑lobe configurations (dumbbell/peanut shapes for $Q=2$, triangular/Y‑shaped layouts for $Q=3$, and multi‑axial shells for $Q \ge 4$).
+* **Unified Properties:** Each compound shape possesses a single unified exclusion boundary, merged core curvature wells, and a shared, continuous surface manifold shell.
+* **Interpretation:** This layer tracks emergent nuclear geometry and multi‑core topological fusion.
+
+### 14.8 Global Kernel Envelope (Long‑Range Fields)
+* **Diagram Element:** A smooth, continuous outer halo wrapping around the entire unified structure.
+* **Represents:** The long-range EM‑like kernel ($K_{\text{EM}}$ for hydrogen binding), the composite nuclear kernel, and the short-range weak‑kernel locality zones.
+* **Interpretation:** This layer encodes physical force delivery, binding troughs, and effective interaction ranges.
+
+### 14.9 One‑Sentence Summary
+Q‑cores form the interior; exclusion defines the boundary; $Q=0$ modes tunnel outward; leptons live on the surface; tangential modes form orbitals; multi‑core fusion shapes nuclear geometry; kernels wrap the entire structure.
+
+
 * ## APPENDIX H — Hydrogen Surface‑State System
 
 ### H.1 Proton Trough: Kernel‑Induced Potential Well

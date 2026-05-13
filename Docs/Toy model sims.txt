@@ -635,5 +635,52 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
+CCEF Power Spectrums 
+# APPENDIX P2 — Three‑Panel CCEF Spectrum Plot Module
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def ccef_three_panel_spectrum():
+    k = np.logspace(-1, 2, 400)
+    a = 1.0
+
+    # Classical
+    P_prim = 1.5 * k**0.96
+    c_n = 1.5
+    J = 1.0 / (1.0 + (c_n * k * a)**2)
+    P_cl = P_prim * a**2 * J
+
+    # Noise floor
+    C_noise = 0.05
+    hbar_eff = 1.2
+    rho_0 = 1.0
+    noise_pref = C_noise * (hbar_eff / (rho_0**2 * c_n**4))
+    f_beta = 1.0 / (1.0 + 0.1 * k)
+    P_noise = noise_pref * (f_beta / (k**3 + 1e-8))
+
+    # Total
+    P_tot = P_cl + P_noise
+
+    fig, ax = plt.subplots(1, 3, figsize=(15, 4))
+
+    ax[0].loglog(k, P_cl, color='crimson')
+    ax[0].set_title("Classical $P_{\\delta,\\mathrm{cl}}$")
+    ax[0].grid(True, which='both', ls='--', alpha=0.5)
+
+    ax[1].loglog(k, P_noise, color='darkorange')
+    ax[1].set_title("Noise Floor $P_{\\delta,\\mathrm{noise}}$")
+    ax[1].grid(True, which='both', ls='--', alpha=0.5)
+
+    ax[2].loglog(k, P_tot, color='navy')
+    ax[2].set_title("Total $P_\\delta$")
+    ax[2].grid(True, which='both', ls='--', alpha=0.5)
+
+    plt.tight_layout()
+    plt.show()
+
+ccef_three_panel_spectrum()
+
+
 
 

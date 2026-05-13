@@ -188,6 +188,41 @@ All parameters are treated as projections of the underlying continuum (non-ontol
 * **Partially Derived:** Kernel structure, collective equations.
 * **Needs Work:** Explicit multi-soliton overlap integrals, full RG beta functions, background closure functional $F$, consistency audit, and higher-order $A_3$ contributions in BVP.
 
+* ## APPENDIX H — Hydrogen Surface‑State System
+
+### H.1 Proton Trough: Kernel‑Induced Potential Well
+The proton ($Q = 1$) generates an EM‑like trough $\Phi_p(\mathbf{x}) = \int d^3x' \; K_{\text{EM}}(\mathbf{x}-\mathbf{x}') \, n_p(\mathbf{x}')$ using the dual‑pole kernel $K_{\text{EM}}(r) = \frac{1}{4\pi c^2 r} \left[ A_{\text{EM}} e^{-m_{\text{EM}} r/c^2} + B_{\text{UV}} e^{-\Lambda_{\text{UV}} r/c^2} \right]$.
+
+### H.2 Electron as a Kernel‑Locked Surface Soliton
+Electron: $Q = 0$, kernel‑locked state satisfying $\frac{\delta E[n_e]}{\delta n_e} = 0$, subject to the texture‑exclusion bound $S_{\text{grad}} = \int |\nabla(\theta_e - \theta_p)|^2 \to \infty$.
+
+### H.3 Surface‑State Equation
+The unified state equation settles as $\frac{\delta E[n_e]}{\delta n_e} + \lambda \Phi_p = 0$, giving the linearized partial wave mode operator $L_p \psi = \lambda \psi$.
+
+### H.4 Mode Structure
+* **Tangential (Orbital) Modes:** $\psi_{\ell m}(\theta,\phi) \sim Y_{\ell m}$
+* **Radial Compression Modes:** $\psi_r(r) \sim \partial_r n_e$
+
+### H.5 Binding Condition
+A physical bound state exists when the lowest eigenvalue satisfies $\lambda_{\text{orbital}} < 0$.
+
+### H.6 Effective Radius
+The exact equilibrium distance is fixed at the point where $\left. \frac{d}{dr} \left[ E_{\text{grad}}(r) + \lambda \Phi_p(r) \right] \right|_{r=r_0} = 0$.
+
+### H.7 Hydrogen Stability Mechanism
+Stability arises from the proton trough, kernel‑locking constraints, texture‑exclusion states, surface‑mode quantization, and the RG‑consistent $1/r$ tail.
+
+### H.8 Hydrogen Energy Levels (CCEF Interpretation)
+The discrete bound spectrum is mapped explicitly through the eigenmodes $L_p \psi_n = \lambda_n \psi_n$.
+
+### H.9 Numerical Implementation Notes
+* Cylindrical symmetry configurations are mapped over the spatial grid.
+* Enforce texture‑exclusion bounds via localized matrix edge penalties.
+* Compute the potential $\Phi_p$ using the parameterized dual‑pole kernel array.
+* Solve for the lowest discrete eigenmodes of the sparse system matrix $L_p$.
+* Extract the effective core radius $r_0$ directly from the zero-net-force spatial balance step.
+
+
 ## Appendices
 * **A. Detailed Calculations & Numerics**
 * **B. Interpretive Mappings to GR / Standard Cosmology**

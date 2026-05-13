@@ -195,7 +195,7 @@ $$\frac{dm_i}{d\ell} = \alpha_K K(k\to 0) - \alpha_\xi \xi_R^{-1} + \alpha_\sigm
 
 ---
 
-## 11. CCOF‑LITE v1.2 — Stochastic Response System (Quantum Floor)
+## 11. v1.2 — Stochastic Response System (Quantum Floor)
 Irreducible fluctuations of the soliton gas enter the transport equations. No Hilbert space. No GR. No external QFT. All stochasticity arises from $\sigma_\alpha^2(a)$.
 
 ### Quantum‑Corrected Coupling Perturbation
@@ -247,3 +247,18 @@ $$\delta_{\text{cl}} \to 0, \qquad \delta_{\text{noise}} \to \text{const}$$
 Noise floor:
 $$P_{\delta,\text{noise}} \propto A^2 \rho_0^3 \sigma_\alpha^2 f_\beta(k)\frac{a}{k}$$
 This is the **CCEF‑native irreducible fluctuation level**.
+
+### 11.4 Tightened ASCII Form (v1.2) - Calibrated Noise Floor
+The continuum noise floor isolates the structural resolution limit where classical growth equations yield to irreducible variance fluctuations. 
+
+The matter perturbation power spectrum updates to its dimensionally safe, physics-preserving layout:
+
+$$P_{\delta,\text{noise}}(k,a) = C_{\text{noise}} \left(\frac{\hbar_{\text{eff}}}{\rho_0^2 c_n^4}\right) \frac{f_\beta(k,a)}{k^3}$$
+
+where the spectral conformation parameters satisfy:
+* $C_{\text{noise}}$: Dimensionless global multiplier
+* $f_\beta(k,a)$: Dimensionless geometric shape function
+* $\hbar_{\text{eff}}$: Native action-density noise scale parameter
+
+In the short-wavelength asymptotic regime ($k \to \infty$), the classical perturbation spectrum $\delta_{\text{cl}} \to 0$, forcing the structural distribution to flatline cleanly against this non-zero irreducible fluctuation bound.
+

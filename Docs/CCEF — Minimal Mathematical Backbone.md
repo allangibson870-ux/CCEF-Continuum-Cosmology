@@ -96,13 +96,23 @@ $$\dot{\rho}_0 + 3H\rho_0 = 0$$
 
 $$H^2 = F(\rho_0, \alpha_0, P_R, \Sigma)$$
 
-## 9.1 Effective Energy Density and Modified Friedmann Equation
+## 9.1 Covariant Energy–Momentum Tensor
 
-$$T_{\mu\nu} = 2 \frac{\partial\mathcal{L}}{\partial g^{\mu\nu}} - g_{\mu\nu}\mathcal{L}$$
+$$T_{\mu\nu} = 2\frac{\partial\mathcal{L}}{\partial g^{\mu\nu}} - g_{\mu\nu}\mathcal{L}$$
 
-$$\rho_{\text{eff}} = T^0{}_0,\qquad P_{\text{eff}} = \frac{1}{3} T^i{}_i$$
+$$\mathcal{L} = \frac{Z_t}{2} g^{00}(\partial_0 n)^2 + \frac{A_1}{2} g^{ij}(\partial_i n\cdot\partial_j n) - \frac{A_2}{2}\omega^2 - \frac{A_3}{2}(g^{\alpha\beta}\nabla_\alpha\partial_\beta n)^2 - \frac{A_4}{2}(1-(n\cdot n_0)^2)$$
 
-$$H^2(a) = \frac{8\pi G_*}{3} \rho_{\text{eff}}(\rho_0, \alpha_0, P_R, \Sigma)$$
+$$\frac{\partial\mathcal{L}}{\partial g^{\mu\nu}} = \frac{1}{2}\mathcal{M}_{\mu\nu} - A_3(\Box n)\nabla_\mu\partial_\nu n$$
+
+$$\mathcal{M}_{00} = Z_t(\partial_t n)^2 \qquad \mathcal{M}_{ij} = -A_1(\partial_i n\cdot\partial_j n)$$
+
+$$T^0{}_0 = \rho_{\text{eff}} \qquad T^i{}_i = 3P_{\text{eff}}$$
+
+$$\rho_{\text{eff}} = \frac{Z_t}{2}(\partial_t n)^2 + \frac{A_1}{2}(\partial_i n)^2 + \frac{A_2}{2}\omega^2 + \frac{A_3}{2}(\nabla^2 n)^2 - A_3(\nabla^2 n)\partial_t^2 n + \frac{A_4}{2}(1-(n\cdot n_0)^2)$$
+
+$$\P_{\text{eff}} = \frac{Z_t}{2}(\partial_t n)^2 - \frac{A_1}{6}(\partial_i n)^2 - \frac{A_2}{2}\omega^2 - \frac{A_3}{6}(\nabla^2 n)^2 - \frac{A_4}{2}(1-(n\cdot n_0)^2)$$
+
+$$T = T^\mu{}_\mu = \rho_{\text{eff}} - 3P_{\text{eff}} = - Z_t(\partial_t n)^2 + A_1(\partial_i n)^2 + 2A_2\omega^2 + A_3(\nabla^2 n)^2 - A_3(\nabla^2 n)\partial_t^2 n + 2A_4(1-(n\cdot n_0)^2)$$
 
 ## 10. Perturbations
 

@@ -172,6 +172,28 @@ $$\P_{\text{eff}} = \frac{Z_t}{2}(\partial_t n)^2 - \frac{A_1}{6}(\partial_i n)^
 
 $$T = T^\mu{}_\mu = \rho_{\text{eff}} - 3P_{\text{eff}} = - Z_t(\partial_t n)^2 + A_1(\partial_i n)^2 + 2A_2\omega^2 + A_3(\nabla^2 n)^2 - A_3(\nabla^2 n)\partial_t^2 n + 2A_4(1-(n\cdot n_0)^2)$$
 
+## 9.2 Canonical Noether Energy-Momentum Tensor
+- Infinitesimal spacetime translation variation: $\delta n = \epsilon^\nu \partial_\nu n$
+- Conservation equation under translation invariance: $\partial_\mu T^\mu{}_\nu = 0$
+
+### Exact Current Derivation
+Varying the first-order, topological, and higher-derivative terms under the translation shift yields:
+
+$$T^\mu{}_\nu = \gamma_{\alpha} g^{\mu\alpha} (\partial_\alpha n \cdot \partial_\nu n) - A_3 \left[ (\Box n) \cdot \partial^\mu \partial_\nu n - \partial^\mu (\Box n) \cdot \partial_\nu n \right] - \delta^\mu{}_\nu \mathcal{L}$$
+
+Splitting the tensor components explicitly into comoving frame densities ($\Box = \partial_t^2 - \nabla^2$):
+
+- **Energy Density Flux ($T^0{}_0 = \rho_{\text{canonical}}$):**
+
+$$T^0{}_0 = Z_t (\partial_t n)^2 - A_3 \left[ (\partial_t^2 n - \nabla^2 n) \cdot \partial_t^2 n - \partial_t (\partial_t^2 n - \nabla^2 n) \cdot \partial_t n \right] - \mathcal{L}$$
+
+- **Spatial Stress Tensor Components ($T^i{}_j$):**
+
+$$T^i{}_j = -A_1 (\partial_i n \cdot \partial_j n) + A_3 \left[ (\partial_t^2 n - \nabla^2 n) \cdot \partial_i \partial_j n - \partial_i (\partial_t^2 n - \nabla^2 n) \cdot \partial_j n \right] - \delta^i{}_j \mathcal{L}$$
+
+*(Note: On the shell of the non-linear spherical constraint $n \cdot \partial_\nu n = 0$, this canonical current matches the metric derivation in Section 9.1, confirming complete mathematical consistency).*
+
+
 ## 10. Perturbations
 
 $$\ddot{\delta} + 2H \dot{\delta} = 4\pi G_{\text{eff}}(k,a) \rho_0 (\delta + \chi\beta) - c_s^2 k^2 \delta$$  

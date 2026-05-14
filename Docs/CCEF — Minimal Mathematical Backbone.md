@@ -57,6 +57,32 @@ $$\partial_t^2 \nabla^2 \pi = 0$$
 
 $$\omega^2 k^2 \pi_0 = 0 \implies \omega = 0 \quad \text{(Static Screening Mode) or} \quad k = 0 \quad \text{(Uniform Drift Mode)}$$
 
+## 3.2 Conserved SO(3) Noether Currents
+- Infinitesimal global $SO(3)$ transformation: $\delta n = \boldsymbol{\epsilon} \times n$
+- Total action divergence relation: $\delta \mathcal{L} = \partial_\mu \left( \mathbf{J}^\mu \right) \cdot \boldsymbol{\epsilon} = 0$
+
+### Derived Current Formulation
+Evaluating the first-order and higher-derivative functional variations term-by-term yields:
+
+$$\mathbf{J}^\mu = \gamma_{\nu} g^{\mu\nu} (n \times \partial_\nu n) - A_3 \left[ (\Box n) \times \partial^\mu n - \partial^\mu (\Box n) \times n \right]$$
+
+Breaking this tensor down into explicit comoving spacetime frames ($\Box = \partial_t^2 - \nabla^2$):
+
+- **Time Component (Charge Density Vector $\mathbf{J}^0$):**
+
+$$\mathbf{J}^0 = Z_t (n \times \partial_t n) - A_3 \left[ (\partial_t^2 n - \nabla^2 n) \times \partial_t n - \partial_t (\partial_t^2 n - \nabla^2 n) \times n \right]$$
+
+- **Spatial Component (Flux Vector $\mathbf{J}^i$):**
+
+$$\mathbf{J}^i = -A_1 (n \times \partial_i n) + A_3 \left[ (\partial_t^2 n - \nabla^2 n) \times \partial_i n - \partial_i (\partial_t^2 n - \nabla^2 n) \times n \right]$$
+
+- **Conservation Law:**
+
+$$\partial_t \mathbf{J}^0 + \nabla \cdot \mathbf{J}^i = 0$$
+
+*(Note: The potential coefficient $A_4$ and topological boundary coefficient $A_2$ carry no derivative field components and contribute exactly zero to the active current matrix).*
+
+
 
 ## 4. Soliton Sector
 - Perturbation: $n = n_* + \pi,\ n_*\cdot\pi = 0$  

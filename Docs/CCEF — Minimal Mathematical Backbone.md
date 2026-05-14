@@ -1,4 +1,4 @@
-# CCEF — Corrected Minimal Mathematical Backbone 
+# CCEF — Minimal Mathematical Backbone 
 
 ## 1. Field & Constraint
 - Field: $n(x,t) \in S^2,\ |n| = 1$  

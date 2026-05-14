@@ -372,17 +372,38 @@ $$K_{\text{EM}}(r) = \frac{1}{4\pi c^2 r} \left[ A_{\text{EM}} e^{-m_{\text{EM}}
 
 The constant subleading shift drops out of the spatial gradient variations ($\nabla \Phi_{\text{const}} = 0$). This isolates a pure, non-singular algebraic $1/r$ potential trough across intermediate clustering bands.
 
-#### 9.1 Derived Hydrogenic Coordinate Scaling
-Linearizing the energy functional around the background configuration yields the isotropic radial Sturm‑Liouville operator $-A_1 \nabla^2 \psi - \frac{\gamma}{r} \psi = E \psi$. Introducing the dimensionless scaling coordinate matrix variable $\rho \equiv \frac{\gamma}{A_1} r$ forces the transport parameters to collapse uniformly. The bound-state spectrum is determined strictly by the normalizability criteria of the fluctuation wave on the compact manifold, forcing the discrete momentum quantization roots:
+## 9.1 Derived Hydrogenic Coordinate Scaling
 
-$$\kappa_n = \frac{\gamma / A_1}{n + \ell + 1}$$
+Linearizing the energy functional around the background configuration yields the isotropic radial Sturm–Liouville operator:
 
-#### 9.2 Emergence of the Inverse-Square Energy Ladder
-Substituting the derived momentum quantization bounds back into the core field equations yields the exact structural energy spectrum:
+$$-A_1 \nabla^2 \psi - \frac{\gamma}{r} \psi = E \psi$$
 
-$$\lambda_{n,\ell} = A_4 - \frac{\gamma^2 / A_1}{(n + \ell + 1)^2}$$
+Introducing the dimensionless scaling coordinate:
 
-Hydrogenic energy levels are thus proven to be the discrete, non-radiating classical surface standing waves ($E_{n,\ell} \propto -1/n^2$) of the continuous field geometry. The stable atomic configuration is a bound Sturm-Liouville spectrum square-integrable on $S^2 \times \mathbb{R}^+$.
+$$\rho \equiv \left(\frac{\gamma}{A_1}\right) r$$
+
+forces the transport parameters to collapse uniformly. Normalizability of the fluctuation mode on the compact manifold imposes the discrete momentum quantization rule:
+
+$$\kappa_n = \left(\frac{\gamma}{A_1}\right) \cdot \frac{1}{n + \ell + 1}$$
+
+where $n = 0,1,2,\dots$ labels the radial excitation number. This scaling is the unique choice consistent with the Sturm–Liouville weight and the infrared Yukawa reduction of the dual‑pole kernel.
+
+## 9.2 Emergence of the Inverse‑Square Energy Ladder
+
+Substituting the quantization rule into the radial eigenvalue relation:
+
+$$\lambda = A_4 - A_1 \kappa^2$$
+
+yields the exact structural energy spectrum:
+
+$$\lambda_{n,\ell} = A_4 - \frac{\gamma^2}{A_1 (n + \ell + 1)^2}$$
+
+Hydrogenic energy levels are thus proven to be the discrete, non‑radiating classical surface standing waves:
+
+$$E_{n,\ell} \propto -\frac{1}{(n + \ell + 1)^2}$$
+
+of the continuous field geometry. The stable atomic configuration is a bound Sturm–Liouville spectrum square‑integrable on $S^2 \times \mathbb{R}_+$.
+
 
 
 ## APPENDIX I — Statistical Boltzmann Transport for the Unsuppressed Ensemble

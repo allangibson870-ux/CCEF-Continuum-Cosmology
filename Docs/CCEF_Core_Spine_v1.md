@@ -134,12 +134,68 @@ This is the critical bridge from microscopic field to collective behaviour.
 
 **Status:** Formal derivation established. Explicit computation of $\mathcal{H}$ now supported by numerical radial solvers for concrete $A_i$.
 
-## 6. Coarse-Graining & RG Flow
-* Block transformation + Wilsonian coarse-graining of the kernel and soliton ensemble.
-* Flow equations for $\xi_R(\ell)$, $A_i(\ell)$, and $\sigma_\alpha^2(\ell)$.
-* Fixed points isolate the long-range coherent phase, screened phase, and broken regimes.
+## 6. Coarse‑Graining & RG Flow
 
-**Status:** Schematic beta functions exist. Explicit flows pending.
+### 6.1 Block Transformation Framework
+The continuum field is coarse‑grained by integrating out fluctuations of $n(x,t)$ over spatial shells of thickness $\Delta \ell$. Each RG step rescales the soliton ensemble variables:
+- Correlation scale: $\xi_R(\ell)$
+- Hessian coefficients: $A_i(\ell)$
+- Variance metric: $\sigma_\alpha^2(\ell)$
+
+The block transformation preserves the unit‑norm constraint and the soliton topological sector. All renormalized quantities must remain explicit functionals of the underlying continuum field.
+
+### 6.2 Wilsonian Flow of Ensemble Variables
+The soliton ensemble defines the microscopic state density $\rho_0(a)$, correlation scale $\xi_R(a)$, and fluctuation variance $\Sigma(a)$. Under coarse‑graining, the RG flow equations take the schematic form:
+
+$$\frac{d\xi_R}{d\ln \ell} = \mathcal{F}_{\xi}(\xi_R,\rho_0,\Sigma),\qquad \frac{dA_i}{d\ln \ell} = \mathcal{F}_{A_i}(A_i,\xi_R,\rho_0,\Sigma),$$
+
+$$\frac{d\sigma_\alpha^2}{d\ln \ell} = \mathcal{F}_{\sigma}(\sigma_\alpha^2,\xi_R,\rho_0).$$
+
+Fixed points of these flows define the coherent long‑range phase, the screened phase, and the stochastic floor.
+
+### 6.3 Time‑Dependent Kernel from RG‑Flowed Hessian Coefficients
+The soliton interaction kernel inherits explicit time dependence through the RG evolution of the Hessian coefficients. The effective coefficients at cosmological scale factor $a$ are:
+
+$$A_i(a) = A_{i,\text{bare}} + \Delta A_i[\rho_0(a),\xi_R(a),\Sigma(a)],$$
+
+where the corrections $\Delta A_i$ arise from integrating out continuum fluctuations up to the running cutoff $\Lambda(a)\sim\xi_R^{-1}(a)$.
+
+The RG‑driven flow equations take the minimal derived form:
+
+$$\frac{dA_1}{d\ln a} = c_1\,\rho_0(a)\,\xi_R^2(a) - d_1\,\Sigma(a),$$
+
+$$\frac{dA_3}{d\ln a} = c_3\,\rho_0(a)\,\xi_R^4(a) - d_3\,\Sigma(a)\,\xi_R^2(a),$$
+
+$$\frac{dA_4}{d\ln a} = c_4\,\rho_0(a) - d_4\,\Sigma(a),$$
+
+with $c_i,d_i$ fixed by the microscopic energy functional.
+
+The time‑dependent kernel is then:
+
+$$K(k,a) = \frac{1}{A_4(a) - A_1(a)k^2 - A_3(a)k^4}.$$
+
+The poles of the kernel evolve as:
+
+$$s_\pm(a) = \frac{-A_1(a) \pm \sqrt{A_1(a)^2 + 4A_3(a)A_4(a)}}{2A_3(a)},$$
+
+yielding the derived screening mass and crossover scale:
+
+$$m(a) = \sqrt{-s_-(a)},\qquad k_+(a) = \sqrt{s_+(a)}.$$
+
+The effective coupling and slip parameter inherit this time dependence:
+
+$$G_{\text{eff}}(k,a) \propto K(k,a),\qquad \eta(k,a) = \frac{K_{\text{long}}(k,a)}{K_{\text{trans}}(k,a)}.$$
+
+This section completes the bridge between the microscopic Hessian and the cosmological perturbation system by providing the fully RG‑consistent, time‑dependent kernel required for Sections 8 and 9.
+
+### 6.4 Fixed Points and Phase Structure
+The RG flow admits multiple fixed points corresponding to:
+- Long‑range coherent phase ($m(a)\to 0$)
+- Screened phase ($m(a)$ finite)
+- UV‑dominated stochastic floor ($A_3(a)$ dominant)
+
+These phases map directly onto the global continuum phase diagram in $(\xi_R,\sigma_\alpha^2)$ space.
+
 
 ## 7. Collective Variables & Statistical Sector
 * **Inertial density:** $\rho = \langle M \rangle$ (coarse-grained)

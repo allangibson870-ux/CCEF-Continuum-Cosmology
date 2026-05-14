@@ -26,6 +26,38 @@ $$Z_t \partial_t^2 n - A_1 \nabla^2 n + A_3 \nabla^4 n - A_4(n\cdot n_0)n_0 + \l
 
 $$A_1 \nabla^2 n - A_3 \nabla^4 n + A_4(n\cdot n_0)n_0 + \lambda n = 0$$
 
+## 3.1 Isolated Cross-Term Projection Dynamics
+- Isolated Cross-Term Action: $S_{\text{cross}}[n] = \int d^4x \left[ -A_3 (\nabla^2 n) \cdot (\partial_t^2 n) \right]$
+
+- Functional Variation:
+
+$$\delta S_{\text{cross}} = -A_3 \int d^4x \left[ (\nabla^2 \delta n) \cdot (\partial_t^2 n) + (\nabla^2 n) \cdot (\partial_t^2 \delta n) \right]$$
+
+- Integrating by parts twice spatially on the first term and twice temporally on the second term yields:
+
+$$\frac{\delta S_{\text{cross}}}{\delta n} = -2A_3 \partial_t^2 \nabla^2 n$$
+
+- Imposing the $S^2$ target-space spherical variation constraint ($n \cdot \delta n = 0$):
+
+$$-2A_3 \partial_t^2 \nabla^2 n + \lambda_{\text{cross}} n = 0$$
+
+- Taking the inner product with $n$ to eliminate the Lagrange multiplier via identity $n \cdot n = 1$:
+
+$$\lambda_{\text{cross}} = 2A_3 n \cdot (\partial_t^2 \nabla^2 n)$$
+
+- Fully Derived Non-Linear Equation of Motion:
+
+$$\partial_t^2 \nabla^2 n - \left[ n \cdot (\partial_t^2 \nabla^2 n) \right] n = 0$$
+
+- Linearized Perturbation Regime ($n = n_0 + \pi$ with $n_0 = (0,0,1)$):
+
+$$\partial_t^2 \nabla^2 \pi = 0$$
+
+- Plane-Wave Dispersion Relation Solution ($\pi \propto e^{i(k \cdot x - \omega t)}$):
+
+$$\omega^2 k^2 \pi_0 = 0 \implies \omega = 0 \quad \text{(Static Screening Mode) or} \quad k = 0 \quad \text{(Uniform Drift Mode)}$$
+
+
 ## 4. Soliton Sector
 - Perturbation: $n = n_* + \pi,\ n_*\cdot\pi = 0$  
 - Hessian:  

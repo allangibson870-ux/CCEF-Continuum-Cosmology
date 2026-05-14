@@ -496,6 +496,77 @@ $$\langle \Xi_f(x,p,t) \, \Xi_f(x',p',t') \rangle = \left( \frac{\sigma_\alpha^2
 
 The momentum-space diffusion matrix $D_p$ and noise amplitude are driven entirely by the invariant action-density variance, ensuring that the phase‑space density retains its native, irreducible background fluctuation floor even when macroscopic classical structure is fully suppressed.
 
+# Appendix J: First-Principles Asymptotic Derivation of the High-$k$ Matter Power Spectrum
+
+This appendix presents the explicit analytical derivation of the matter transfer function $T(k)$ and the resulting matter power spectrum $P(k)$ in the high-momentum (ultraviolet) limit ($k \to \infty$), operating strictly from the framework's linear differential operators.
+
+## J.1 The Asymptotic Perturbation Equation
+The linear growth of the matter density contrast $\delta(k, \tau)$ as a function of conformal time $\tau$ on sub-horizon scales is governed by the perturbation equation from Section 10:
+
+$$\frac{d^2\delta}{d\tau^2} + \mathcal{H}(\tau) \frac{d\delta}{d\tau} - 4\pi G_{\text{eff}}(k,\tau)a^2\rho_0\delta + c_s^2 k^2 \delta = 0$$
+
+where $\mathcal{H} = \frac{1}{a}\frac{da}{d\tau}$ is the conformal Hubble parameter. Substituting the explicit momentum-dependent definition of $G_{\text{eff}}(k) \propto K(k)$ from Section 10.1 yields:
+
+$$\frac{d^2\delta}{d\tau^2} + \mathcal{H}(\tau) \frac{d\delta}{d\tau} - \left[ \frac{4\pi G_* a^2 \rho_0}{A_4 - A_1 k^2 - A_3 k^4} \right] \delta + c_s^2 k^2 \delta = 0$$
+
+Evaluating the strict mathematical limit of the differential operators in the high-momentum regime ($k \to \infty$) under the condition $A_3 > 0$:
+
+$$\lim_{k \to \infty} \left[ \frac{4\pi G_* a^2 \rho_0}{A_4 - A_1 k^2 - A_3 k^4} \right] = 0$$
+
+Consequently, the gravitational driving term drops off asymptotically as $k^{-4}$, leaving the pressure term $c_s^2 k^2 \delta$ as the dominant driver of the system. The differential equation reduces to a decoupled, damped harmonic oscillator equation:
+
+$$\frac{d^2\delta}{d\tau^2} + \mathcal{H}(\tau) \frac{d\delta}{d\tau} + c_s^2 k^2 \delta \approx 0$$
+
+## J.2 Analytical Solution for the Transfer Function
+During the matter-dominated era, the scale factor scales quadratically with conformal time ($a \propto \tau^2$), which sets the conformal Hubble parameter to $\mathcal{H} = \frac{2}{\tau}$. Substituting this into the reduced system yields:
+
+$$\frac{d^2\delta}{d\tau^2} + \frac{2}{\tau} \frac{d\delta}{d\tau} + c_s^2 k^2 \delta = 0$$
+
+This partial differential equation matches the standard spherical Bessel differential equation of order zero. Requiring regular boundary conditions at the origin ($\tau \to 0$), the unique analytical solution for the density contrast mode evolution is given by the zeroth-order spherical Bessel function of the first kind ($j_0$):
+
+$$\delta(k, \tau) = \delta_{\text{primordial}}(k) \cdot j_0(c_s k \tau) = \delta_{\text{primordial}}(k) \cdot \frac{\sin(c_s k \tau)}{c_s k \tau}$$
+
+The matter transfer function $T(k)$, defined as the late-time evolution scaled relative to the primordial seed perturbation, inherits this exact functional profile in the UV limit:
+
+$$\lim_{k \to \infty} T(k) \propto \frac{\sin(c_s k \tau_{0})}{c_s k \tau_{0}}$$
+
+
+
+
+where $\tau_*$ represents the conformal time at the epoch of evaluation.
+
+## J.3 Asymptotic Slope of the Matter Power Spectrum
+The linear matter power spectrum $P(k)$ is calculated by squaring the mode amplitude, modulated by the primordial inflationary power spectrum $P_{\text{primordial}}(k)$:
+
+$$P(k) = P_{\text{primordial}}(k) \cdot \vert{}T(k)\vert{}^2$$
+
+Assuming a standard primordial scalar perturbation spectrum with spectral index $n_s \approx 1$ ($P_{\text{primordial}}(k) \propto k^1$), we compute the strict high-momentum asymptotic scaling of the power spectrum:
+
+$$\lim_{k \to \infty} P(k) \propto k \cdot \left\vert \frac{\sin(c_s k \tau)}{c_s k \tau} \right\vert^2 \propto k \cdot \left( \frac{\sin^2(c_s k \tau)}{c_s^2 k^2 \tau^2} \right)$$
+
+
+Taking the envelope of the oscillating $\sin^2(x)$ terms to isolate the continuous background power-law slope:
+
+$$P(k) \propto k \cdot \left( \frac{1}{k^2} \right) = k^{-1}$$
+
+This formal derivation proves that the un-biased high-momentum scaling dictated by the framework's linear operators is exactly $P(k) \propto k^{-1}$, overlaid with acoustic baryonic oscillations.
+
+## J.4 Parametric Mapping of $\sigma_8$ and Critical Thresholds
+The root-mean-square mass fluctuation within a sphere of radius $R$ ($\sigma_R$) is explicitly defined by the windowed integral of the derived power spectrum:
+
+$$\sigma_R^2(A_1, A_3, A_4) = \frac{1}{2\pi^2} \int_0^\infty k^2 \left[ P_{\text{prim}}(k) \cdot T^2(k, a_{\text{late}}) \right] \left\vert{} \frac{3(\sin kR - kR\cos kR)}{(kR)^3} \right\vert{}^2 dk$$
+
+Because $T(k, a_{\text{late}})$ is globally constrained by the effective gravitational coupling operator $G_{\text{eff}}(k)$, the numerical value of $\sigma_8$ (where $R = 8 \, h^{-1}\text{Mpc}$) is an integrated parameter determined strictly by the chosen configuration values of the coefficients $A_1$, $A_3$, and $A_4$.
+
+The exact threshold scale $k_{\text{Jeans}}$ where the framework's modified gravity forces exactly balance the fluid pressure forces occurs when the effective Jeans operator satisfies:
+
+$$k_{\text{Jeans}}^2(a) = \frac{4\pi G_{\text{eff}}(k, a) \rho_0}{c_s^2} = \frac{4\pi G_* \rho_0}{c_s^2 (A_4 - A_1 k^2 - A_3 k^4)}$$
+
+Rearranging this condition yields the precise sixth-order algebraic boundary equation determining the spatial scale of structure suppression:
+
+$$A_3 k_{\text{Jeans}}^6 + A_1 k_{\text{Jeans}}^4 - A_4 k_{\text{Jeans}}^2 + \frac{4\pi G_* \rho_0}{c_s^2} = 0$$
+
+
 
 
 ## Appendices

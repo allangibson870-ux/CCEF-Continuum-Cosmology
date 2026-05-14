@@ -1,4 +1,4 @@
-# CCEF — Minimal Mathematical Backbone 
+# CCEF — Minimal Mathematical Backbone
 
 ## 1. Field & Constraint
 - Field: $n(x,t) \in S^2,\ |n| = 1$  
@@ -9,6 +9,18 @@
 ## 2. Energy Functional
 
 $$E[n] = \int d^3x \left[ \frac{A_1}{2}(\partial_i n)^2 + \frac{A_2}{2} \omega^2 + \frac{A_3}{2}(\nabla^2 n)^2 + \frac{A_4}{2}(1 - (n\cdot n_0)^2) \right]$$
+
+## 2.1 Covariant Kinetic Term (Derived Minimal Form)
+- 4D Action: $S[n] = \int d^4x\,\mathcal{L}$  
+
+$$\mathcal{L} = \frac{Z_t}{2}(\partial_t n)^2 - E[n]$$
+
+- Constraint: $n\cdot n = 1$  
+- Euler–Lagrange:  
+
+$$Z_t \partial_t^2 n - A_1 \nabla^2 n + A_3 \nabla^4 n - A_4(n\cdot n_0)n_0 + \lambda n = 0$$
+
+*(Here $Z_t$ is fixed by matching to the long‑wavelength limit of the microscopic soliton dispersion).*
 
 ## 3. Euler–Lagrange
 
@@ -49,6 +61,27 @@ $$K(r) = \frac{1}{4\pi r} \left[ C_1 e^{-m r} + C_2 e^{-\Lambda r} \right]$$
 
 ($\Lambda$ replaces the incorrect “$k_+$” definition)
 
+## 7.1 Determination of $C_1$ and $C_2$
+- Radial Quartic Equation:  
+
+$$\big(A_4 - A_1\nabla^2 - A_3\nabla^4\big) K(r) = \delta^{(3)}(r)$$
+
+- Ansatz:  
+
+$$K(r) = \frac{1}{4\pi r}\big(C_1 e^{-m r} + C_2 e^{-\Lambda r}\big)$$
+
+- Boundary Conditions:  
+  1. Regularity at $r \to 0$  
+  2. Decay at $r \to \infty$  
+  3. Normalization: $\int d^3r\,L K(r) = 1$  
+- Solution:  
+
+$$C_1 + C_2 = 0$$  
+
+$$C_1 = \frac{1}{A_3 (\Lambda^2 - m^2)}$$  
+
+$$C_2 = -C_1$$
+
 ## 8. RG Flow
 
 $$\frac{dA_1}{d\ln a} = c_1 \rho_0 \xi_R^2 - d_1 \Sigma$$  
@@ -63,6 +96,14 @@ $$\dot{\rho}_0 + 3H\rho_0 = 0$$
 
 $$H^2 = F(\rho_0, \alpha_0, P_R, \Sigma)$$
 
+## 9.1 Effective Energy Density and Modified Friedmann Equation
+
+$$T_{\mu\nu} = 2 \frac{\partial\mathcal{L}}{\partial g^{\mu\nu}} - g_{\mu\nu}\mathcal{L}$$
+
+$$\rho_{\text{eff}} = T^0{}_0,\qquad P_{\text{eff}} = \frac{1}{3} T^i{}_i$$
+
+$$H^2(a) = \frac{8\pi G_*}{3} \rho_{\text{eff}}(\rho_0, \alpha_0, P_R, \Sigma)$$
+
 ## 10. Perturbations
 
 $$\ddot{\delta} + 2H \dot{\delta} = 4\pi G_{\text{eff}}(k,a) \rho_0 (\delta + \chi\beta) - c_s^2 k^2 \delta$$  
@@ -70,6 +111,24 @@ $$\ddot{\delta} + 2H \dot{\delta} = 4\pi G_{\text{eff}}(k,a) \rho_0 (\delta + \c
 $$G_{\text{eff}} \propto K(k)$$  
 
 $$\eta = \frac{K_{\text{long}}}{K_{\text{trans}}}$$
+
+## 10.1 Tensor Kernel Decomposition
+
+$$\mathcal{H}_{ij}(k) = \mathcal{H}_{\text{long}}(k) \hat k_i \hat k_j + \mathcal{H}_{\text{trans}}(k)(\delta_{ij} - \hat k_i \hat k_j)$$
+
+$$\mathcal{H}_{\text{long}}(k) = A_1 k^2 + A_3 k^4$$  
+
+$$\mathcal{H}_{\text{trans}}(k) = A_4 - A_1 k^2 - A_3 k^4$$
+
+$$K_{ij}(k) = K_{\text{long}}(k) \hat k_i \hat k_j + K_{\text{trans}}(k)(\delta_{ij} - \hat k_i \hat k_j)$$
+
+$$K_{\text{long}}(k) = \frac{1}{A_1 k^2 + A_3 k^4}$$  
+
+$$K_{\text{trans}}(k) = \frac{1}{A_4 - A_1 k^2 - A_3 k^4}$$
+
+- Gravitational Slip Parameter:  
+
+$$\eta(k,a) = \frac{K_{\text{long}}(k,a)}{K_{\text{trans}}(k,a)}$$
 
 ## 11. Hydrogen Sector
 Radial operator:  
@@ -87,8 +146,6 @@ Boundary quantization (correct form):
 $$\kappa_{\ell n} = \frac{\alpha_{\ell n}}{R_{\text{eff}}}$$  
 
 $$\lambda_{\ell n} = A_4 - A_1 \left(\frac{\alpha_{\ell n}}{R_{\text{eff}}}\right)^2$$
-
-(REMOVED incorrect Rydberg scaling)
 
 ## 12. Boltzmann Transport
 

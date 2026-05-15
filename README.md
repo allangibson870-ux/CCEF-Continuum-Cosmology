@@ -89,4 +89,4 @@ CCEF‑Lite v3.0 is ruled out if any of the following are observed:
 
 ---
 
-  **Given that the theory is live please refer to https://github.com/allangibson870-ux/CCEF-Continuum-Cosmology/blob/main/Docs/CCEF_Master_Evolution_System.md for updates
+  **Given that the theory is live please refer to https://github.com/allangibson870-ux/CCEF-Continuum-Cosmology/blob/main/Docs/CCEF%20%E2%80%94%20Minimal%20Mathematical%20Backbone.md for updates

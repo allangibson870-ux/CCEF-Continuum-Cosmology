@@ -307,6 +307,44 @@ $$A_1(a)>0,\qquad Z_t(a)>0$$
 ensuring a positive propagation speed $c_{\mathrm{eff}}^2(a)$.  
 The coefficient $A_4(a)$ contributes only a mass gap through $m_{\mathrm{eff}}^2(a)$ and does not affect the existence of the causal cone.
 
+## 8.4 Emergent Eikonal Metric (Derived Minimal Form)
+
+Starting from the infrared limit of the CCEF perturbation operator,
+
+$$\ddot{\delta} - c_{\mathrm{eff}}^{2}(a)\,\nabla^{2}\delta = 0, \qquad c_{\mathrm{eff}}^{2}(a)=\frac{A_{1}(a)}{Z_{t}(a)},$$
+
+we apply the standard eikonal substitution
+
+$$\delta(x,t)=e^{iS(x,t)}, \qquad k_{\mu}=\partial_{\mu}S,$$
+
+which isolates the characteristic surfaces of the PDE.  
+Substituting into the IR operator yields the dispersion relation
+
+$$-\omega^{2} + c_{\mathrm{eff}}^{2}(a)\,k^{2} = 0.$$
+
+Identifying this with the null condition of an emergent characteristic geometry,
+
+$$g^{\mu\nu}(a)\,k_{\mu}k_{\nu}=0,$$
+
+forces the contravariant metric components
+
+$$g^{00}(a)=-1, \qquad g^{11}(a)=g^{22}(a)=g^{33}(a)=c_{\mathrm{eff}}^{2}(a).$$
+
+The covariant metric follows uniquely by inversion:
+
+$$
+g_{\mu\nu}(a)=
+\begin{pmatrix}
+-1 & 0 & 0 & 0 \\
+0 & c_{\mathrm{eff}}^{-2}(a) & 0 & 0 \\
+0 & 0 & c_{\mathrm{eff}}^{-2}(a) & 0 \\
+0 & 0 & 0 & c_{\mathrm{eff}}^{-2}(a)
+\end{pmatrix}.
+$$
+
+No ansatz is introduced:  
+The metric is the **unique characteristic tensor** implied by the CCEF wave operator.  
+It depends only on the RG‑evolved internal coefficients $A_{1}(a)$ and $Z_{t}(a)$, requires no external geometric structure.
 
 
 

@@ -283,27 +283,29 @@ Each mode satisfies
 
 $$\int E_\star(n_\star(x),a)\,d^3x < \mathcal{E}_{\mathrm{bound}}(a).$$
 
-#### 8.3 Emergent Hyperbolic Operator and Causal Structure
+### 8.3 Emergent Hyperbolic Operator and Causal Structure
 
-The effective evolution of the density contrast $\delta$ can be written as
+The effective perturbation dynamics reduce to the single evolution equation
 
 $$\ddot{\delta} +2H_{\mathrm{eff}}(a)\,\dot{\delta} - c_{\mathrm{eff}}^2(a)\,\nabla^2\delta + \ell^2(a)\,\nabla^4\delta - m_{\mathrm{eff}}^2(a)\,\delta =0,$$
 
-with
+with coefficients inherited directly from the RG–evolved kernel parameters:
 
 $$c_{\mathrm{eff}}^2(a)=\frac{A_1(a)}{Z_t(a)},\qquad \ell^2(a)=\frac{A_3(a)}{Z_t(a)},\qquad m_{\mathrm{eff}}^2(a)=\frac{A_4(a)}{Z_t(a)}.$$
 
-In the infrared limit $k\to 0$, the principal part reduces to
+In the infrared limit $k\to 0$, the principal part becomes
 
-$$\ddot{\delta}-c_{\mathrm{eff}}^2(a)\,\nabla^2\delta=0, \quad \text{provided } c_{\mathrm{eff}}^2(a)>0,$$
+$$\ddot{\delta}-c_{\mathrm{eff}}^2(a)\,\nabla^2\delta=0,$$
 
-which is a strictly hyperbolic PDE. Time derivatives are second order, the spatial operator is a Laplacian with positive coefficient, and this defines an emergent causal cone without assuming any background metric.
+which is strictly hyperbolic whenever $c_{\mathrm{eff}}^2(a)>0$.  
+Time derivatives remain second order, the spatial operator reduces to a positive‑definite Laplacian, and a well‑defined causal cone emerges without assuming any background metric.
 
-Hyperbolicity is controlled by the RG–evolved coefficients $A_1(a)$ and $Z_t(a)$: a phase with
+Hyperbolicity is selected dynamically by the RG flow:
 
 $$A_1(a)>0,\qquad Z_t(a)>0$$
 
-ensures $c_{\mathrm{eff}}^2(a)>0$ and thus a well‑defined light‑cone–like structure. The coefficient $A_4(a)$ enters only through $m_{\mathrm{eff}}^2(a)$, setting a mass gap for perturbations but not affecting the existence of the causal cone itself.
+ensuring a positive propagation speed $c_{\mathrm{eff}}^2(a)$.  
+The coefficient $A_4(a)$ contributes only a mass gap through $m_{\mathrm{eff}}^2(a)$ and does not affect the existence of the causal cone.
 
 
 

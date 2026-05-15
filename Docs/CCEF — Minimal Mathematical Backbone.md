@@ -222,6 +222,68 @@ unless the pole is explicitly designated as a coherent mode with positive residu
 
 This completes the minimal stability closure of the quartic kernel under RG flow.
 
+### 8.2 Structural Closure (Minimal Form)
+
+#### 8.2.1 Dynamical Stability
+Let $\Psi_A$ be all coupled perturbations.  
+The bilinear operator defines
+
+$$\mathbf{M}(k^2,a).$$
+
+Stability requires
+
+$$\det \mathbf{M}(k^2,a)\neq 0 \quad \forall k\in[k_{\mathrm{IR}},k_{\mathrm{UV}}],\; \forall a\in[a_{\min},a_{\max}].$$
+
+#### 8.2.2 Causal Structure
+Dispersion:
+
+$$\omega=\omega(k,a),\qquad v_g=\partial_k\omega.$$
+
+Causality requires
+
+$$v_g(k,a)<\infty \quad \forall k\in[k_{\mathrm{IR}},k_{\mathrm{UV}}].$$
+
+#### 8.2.3 Soliton / Coherent‑Mode Spectrum
+Static localized states satisfy
+
+$$A_4 n + A_1\nabla^2 n - A_3\nabla^4 n + \mathcal{N}[n]=0, \qquad n\cdot n=1.$$
+
+Solutions $n_\star(x)$ define the coherent‑mode spectrum.
+
+#### 8.2.4 Structural Power Spectrum
+The kernel
+
+$$K(k,a)=\frac{1}{A_4-A_1 k^2-A_3 k^4}$$
+
+gives
+
+$$P(k,a)\propto |K(k,a)|^2.$$
+
+#### 8.2.5 Internal Scaling
+Coefficient evolution obeys
+
+$$\frac{dA_n}{d\ln a} = \mathcal{F}_n(A_1,A_3,A_4),$$
+
+derived from internal mode interactions.
+
+#### 8.2.6 Sector Decomposition
+Independent subsectors arise only if
+
+$$\mathbf{M}(k^2,a) = \mathbf{M}_1(k^2,a)\oplus\mathbf{M}_2(k^2,a).$$
+
+#### 8.2.7 Runaway Elimination
+Time evolution remains second‑order:
+
+$$\partial_t^2 n = \mathcal{G}(n,\partial_t n,\nabla^2 n,\nabla^4 n,a).$$
+
+Higher derivatives act only spatially.
+
+#### 8.2.8 Coherent‑Mode Bounds
+Each mode satisfies
+
+$$\int E_\star(n_\star(x),a)\,d^3x < \mathcal{E}_{\mathrm{bound}}(a).$$
+
+
 
 ## 9. Background
 

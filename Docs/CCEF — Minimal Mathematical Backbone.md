@@ -148,6 +148,81 @@ $$\frac{dA_3}{d\ln a} = c_3 \rho_0 \xi_R^4 - d_3 \Sigma \xi_R^2$$
 
 $$\frac{dA_4}{d\ln a} = c_4 \rho_0 - d_4 \Sigma$$
 
+### 8.1 Stability Control (Derived Minimal Form)
+
+Define the quartic kernel denominator:
+
+$$D(k,a)=A_4(a)-A_1(a)k^2-A_3(a)k^4$$
+
+Poles occur when:
+
+$$A_3(a)k^4 + A_1(a)k^2 - A_4(a)=0$$
+
+Solve for the pole locations by setting $s=k^2$:
+
+$$A_3(a)s^2 + A_1(a)s - A_4(a)=0$$
+
+$$s_\pm(a)=\frac{-A_1(a)\pm\sqrt{A_1(a)^2+4A_3(a)A_4(a)}}{2A_3(a)}$$
+
+Define the associated inverse-length scales:
+
+$$m(a)=\sqrt{-s_-(a)},\qquad \Lambda(a)=\sqrt{s_+(a)}$$
+
+#### 8.1.1 RG-Admissible Domain (No Accidental Poles)
+
+Let the operational comoving momentum band be:
+
+$$k\in[k_{\mathrm{IR}},k_{\mathrm{UV}}]$$
+
+and the cosmological interval:
+
+$$a\in[a_{\min},a_{\max}]$$
+
+The RG trajectory $(A_1(a),A_3(a),A_4(a))$ is admissible only if:
+
+$$D(k,a)\neq 0 \quad \forall\,k\in[k_{\mathrm{IR}},k_{\mathrm{UV}}],\; \forall\,a\in[a_{\min},a_{\max}]$$
+
+Stronger stability condition:
+
+$$\min_{a\in[a_{\min},a_{\max}]}\; \min_{k\in[k_{\mathrm{IR}},k_{\mathrm{UV}}]} |D(k,a)|>0$$
+
+This prevents RG drift from moving a pole into the physical band.
+
+#### 8.1.2 Intentional Pole Interpretation (Emergent Coherent Modes)
+
+If a pole at $k^2=k_\star^2(a)$ is intentionally promoted to a physical coherent mode, then near the pole:
+
+$$K(k,a)\sim \frac{1}{Z_\star(a)}\frac{1}{k^2-k_\star^2(a)}$$
+
+Residue definition:
+
+$$Z_\star(a)=\left[\frac{\partial(k^2)}{\partial D}\right]^{-1}_{k^2=k_\star^2(a)}$$
+
+Since:
+
+$$D(k,a)=A_4(a)-A_1(a)k^2-A_3(a)k^4$$
+
+we obtain:
+
+$$\frac{\partial D}{\partial(k^2)}=-A_1(a)-2A_3(a)k^2$$
+
+Thus:
+
+$$Z_\star(a)=\big[-A_1(a)-2A_3(a)k_\star^2(a)\big]^{-1}$$
+
+Positivity requirement (no ghost excitation):
+
+$$-A_1(a)-2A_3(a)k_\star^2(a)>0$$
+
+Band-separation requirement:
+
+$$k_\star(a)\notin[k_{\mathrm{IR}},k_{\mathrm{UV}}]$$
+
+unless the pole is explicitly designated as a coherent mode with positive residue.
+
+This completes the minimal stability closure of the quartic kernel under RG flow.
+
+
 ## 9. Background
 
 $$\dot{\rho}_0 + 3H\rho_0 = 0$$  

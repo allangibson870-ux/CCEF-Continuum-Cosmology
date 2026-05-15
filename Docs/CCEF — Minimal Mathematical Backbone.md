@@ -283,6 +283,29 @@ Each mode satisfies
 
 $$\int E_\star(n_\star(x),a)\,d^3x < \mathcal{E}_{\mathrm{bound}}(a).$$
 
+#### 8.3 Emergent Hyperbolic Operator and Causal Structure
+
+The effective evolution of the density contrast $\delta$ can be written as
+
+$$\ddot{\delta} +2H_{\mathrm{eff}}(a)\,\dot{\delta} - c_{\mathrm{eff}}^2(a)\,\nabla^2\delta + \ell^2(a)\,\nabla^4\delta - m_{\mathrm{eff}}^2(a)\,\delta =0,$$
+
+with
+
+$$c_{\mathrm{eff}}^2(a)=\frac{A_1(a)}{Z_t(a)},\qquad \ell^2(a)=\frac{A_3(a)}{Z_t(a)},\qquad m_{\mathrm{eff}}^2(a)=\frac{A_4(a)}{Z_t(a)}.$$
+
+In the infrared limit $k\to 0$, the principal part reduces to
+
+$$\ddot{\delta}-c_{\mathrm{eff}}^2(a)\,\nabla^2\delta=0, \quad \text{provided } c_{\mathrm{eff}}^2(a)>0,$$
+
+which is a strictly hyperbolic PDE. Time derivatives are second order, the spatial operator is a Laplacian with positive coefficient, and this defines an emergent causal cone without assuming any background metric.
+
+Hyperbolicity is controlled by the RG–evolved coefficients $A_1(a)$ and $Z_t(a)$: a phase with
+
+$$A_1(a)>0,\qquad Z_t(a)>0$$
+
+ensures $c_{\mathrm{eff}}^2(a)>0$ and thus a well‑defined light‑cone–like structure. The coefficient $A_4(a)$ enters only through $m_{\mathrm{eff}}^2(a)$, setting a mass gap for perturbations but not affecting the existence of the causal cone itself.
+
+
 
 
 ## 9. Background

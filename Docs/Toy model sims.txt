@@ -778,5 +778,74 @@ class CCEF_Boltzmann_Engine_v3:
 ccef_three_panel_spectrum()
 
 
+import numpy as np
+from scipy.integrate import quad
+from scipy.interpolate import interp1d
 
+def evaluate_3d_p13_quadrature(k_grid, P_linear, A1=1.0, A3=0.5, A4=2.0,
+                               N_x=64, q_min=1e-6, q_max=None, add_tails=True):
+    """
+    P13 with numerically integrated core + analytically derived UV/IR tails.
+    All expansions derived directly from the CCEF cubic vertex M_3D.
+    """
+    if q_max is None:
+        q_max = np.max(k_grid) * 8.0   # generous UV buffer
+    
+    P_13_out = np.zeros_like(k_grid, dtype=float)
+    x_nodes, x_weights = np.polynomial.legendre.leggauss(N_x)
+    
+    D_k = A4 + A1 * k_grid**2 + A3 * k_grid**4
+    
+    # Safe interpolation
+    P_interp = interp1d(k_grid, P_linear, kind='cubic', bounds_error=False,
+                        fill_value=(P_linear[0], P_linear[-1]))
+    
+    # Estimate local UV spectral index
+    q_eps = q_max * 0.92
+    if P_interp(q_max) > 0 and P_interp(q_eps) > 0:
+        alpha = - (np.log(P_interp(q_max) / P_interp(q_eps)) /
+                   np.log(q_max / q_eps))
+    else:
+        alpha = 8.0  # safe default
+    
+    for i, k in enumerate(k_grid):
+        def q_integrand(q):
+            if q <= 0:
+                return 0.0
+            P_q = P_interp(q)
+            kq2 = k**2 + q**2 + 2*k*q*x_nodes
+            
+            term_A1 = (2/3)*A1*q**2 + (2/3)*A1*k*q*x_nodes - (2/3)*A1*kq2
+            term_A3 = -(11/3)*A3*q**4 + 2*A3*k**2*q**2 - (2/3)*A3*k**4 \
+                      - (2/3)*A3*(kq2**2)
+            term_A4 = -4.0*A4
+            
+            M_3D = term_A1 + term_A3 + term_A4
+            ang_int = np.dot(M_3D, x_weights) / 2.0
+            
+            return (q**2 * P_q / (2.0 * np.pi**2)) * ang_int
+        
+        # Core numerical integral
+        num, _ = quad(q_integrand, q_min, q_max, limit=300, epsabs=1e-10, epsrel=1e-10)
+        total = num
+        
+        if add_tails:
+            # ====================== IR TAIL (0 → q_min) ======================
+            # Derived: angular average of M_3D as q→0
+            M_IR = -4.0*A4 - (2.0/3.0)*A1*k**2 - (4.0/3.0)*A3*k**4   # correct leading term
+            ir_tail = M_IR * P_interp(0) * q_min**3 / (6.0 * np.pi**2)
+            total += ir_tail
+            
+            # ====================== UV TAIL (q_max → ∞) ======================
+            # Leading UV: M_3D → - (13/3) A3 q^4   (after angular average)
+            # Integrand ~ [q² P(q) / (2π²)] * (-13/3 A3 q^4) = C q^6 P(q)
+            if alpha > 7.0 and A3 > 0:
+                C_UV = -13.0 * A3 / (2.0 * np.pi**2)
+                # ∫_{q_max}^∞ q^6 * (const / q^alpha) dq = const * q_max^{7-alpha} / (alpha-7)
+                uv_tail = C_UV * P_interp(q_max) * q_max**(7.0 - alpha) / (alpha - 7.0)
+                total += uv_tail
+        
+        P_13_out[i] = (P_linear[i] / D_k[i]) * total
+    
+    return P_13_out
 

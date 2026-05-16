@@ -146,4 +146,26 @@ where epsilon_reg is a small numerical filter constant set below the physical so
 
 This velocity parameter field maintains strict casual subluminality bounds (max |v_top| < c_eff) under all valid integration steps, providing a stable, non-dissipative method to monitor localized soliton transport from first principles.
 
+## SECTION 7.2 — Stochastic Parameter Extraction and Scaling Verification
+
+### 7.2 Numerical Stabilization of the Short-Scale Density Floor
+Stochastic fluctuations inside the Boltzmann transport pipeline are filtered through the quartic Green's function kernel K(k) to determine the output matter density noise floor P_delta(k). To protect the grid blocks from short-scale structural runtime divergences, the empirical ultraviolet slope alpha must track the logarithmic convergence threshold:
+
+alpha = d(ln(P_delta)) / d(ln(k)) -> -3.0
+
+The continuum engine enforces this baseline by parameterizing the stochastic injection source array with a non-white, highly correlated spatial momentum profile:
+
+P_Xi(k) = |k|^5
+
+### Vectorized Verification Protocol
+1. Map the 3D wavenumber magnitude arrays across the periodic grid cells:
+   k_mag = sqrt(kx^2 + ky^2 + kz^2)
+2. Compute the static quartic filter matrix using the running couplings:
+   K_k = 1.0 / (A4 + A1 * k_mag^2 + A3 * k_mag^4)
+3. Evaluate the output power spectrum array elements:
+   P_delta = (K_k^2) * P_Xi
+
+This correlated profile creates an exact multi-scale safety loop: at large angles, fluctuations are plateaued by the mass-gap parameter A4, while at high frequencies, the A3 * |k|^4 regulariser cleanly balances the k^5 injection energy. This limits real-space variance to finite values and eliminates numerical coordinate anomalies up to the Nyquist limit.
+
+
 

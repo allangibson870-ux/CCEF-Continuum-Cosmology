@@ -677,6 +677,102 @@ def ccef_three_panel_spectrum():
     ax[2].grid(True, which='both', ls='--', alpha=0.5)
 
     plt.tight_layout()
+
+import numpy as np
+
+class CCEF_Boltzmann_Engine_v3:
+    def __init__(self, omega_m=0.315, omega_b=0.049, h=0.674):
+        """
+        Initializes background cosmological parameters.
+        All CCEF coupling runnings are evaluated relative to these baselines.
+        """
+        self.omega_m = omega_m
+        self.omega_b = omega_b
+        self.omega_cdm = omega_m - omega_b  # Soliton ensemble equivalent mass
+        self.h = h
+        self.G_Newton = 4.30091e-9  # Mpc (km/s)^2 / M_sun
+        self.k_grid = None
+        
+    def initialize_ccef_trajectory(self, k_min=1e-4, k_max=2.0, num_k=400):
+        """
+        Sets up the comoving momentum grid (in units of h/Mpc).
+        """
+        self.k_grid = np.logspace(np.log10(k_min), np.log10(k_max), num_k)
+        return self.k_grid
+
+    def evaluate_rg_couplings(self, scale_factor):
+        """
+        Evaluates the running of the CCEF parameters derived from internal mode
+        scaling (Section 8.2.5). Tracks the evolution of the field across epochs.
+        """
+        a = scale_factor
+        A1_a = 1.0 + 0.05 * np.log(a)
+        A3_a = 0.5 * (a**4)
+        A4_a = 2.0 * (1.0 - np.exp(-3.0 * (a**2)))
+        Z_t_a = 1.0
+        
+        assert A1_a > 0, f"Catastrophic Coordinate Collapse: A1 = {A1_a} at a = {a}"
+        return A1_a, A3_a, A4_a, Z_t_a
+
+    def compute_one_loop_p13(self, A1, A3, A4, P_linear):
+        """
+        Vectorized 1-loop numerical solver embedded inside the engine pipeline.
+        Directly evaluates non-linear corrections from the running CCEF couplings.
+        """
+        # Set up 2D matrix broadcasting for loop integration
+        k = self.k_grid[:, np.newaxis]
+        q = self.k_grid[np.newaxis, :]
+        P_q = P_linear[np.newaxis, :]
+        
+        # Exact mode coupling vertex matrix M(k,q) derived from Section 4
+        term_A1 = (2.0/3.0)*A1*(q**2) + (2.0/3.0)*A1*k*q - (2.0/3.0)*A1*((k + q)**2)
+        term_A3 = -(11.0/3.0)*A3*(q**4) + 2.0*A3*(k**2)*(q**2) - (2.0/3.0)*A3*(k**4) - (2.0/3.0)*A3*((k + q)**4)
+        term_A4 = -4.0 * A4
+        M_kq = term_A1 + term_A3 + term_A4
+        
+        # Bare inverse propagator denominator
+        D_neg_k = A4 + A1 * (self.k_grid**2) + A3 * (self.k_grid**4)
+        
+        # Execute line-of-sight momentum integration via the trapezoidal rule
+        integrand = M_kq * P_q
+        loop_integral = np.trapz(integrand, x=self.k_grid, axis=1) / (2.0 * np.pi)
+        
+        P_13 = (P_linear / D_neg_k) * loop_integral
+        P_non_linear = P_linear + 2.0 * P_13
+        
+        # Enforce physical positivity barrier
+        return np.maximum(P_non_linear, 0.0)
+
+    def compute_modified_gravity_kernels(self, scale_factor, P_linear_in):
+        """
+        Computes the scale-dependent effective gravitational coupling, physical slip,
+        and dynamically evaluates the 1-loop non-linear matter power spectrum.
+        """
+        if self.k_grid is None:
+            raise ValueError("Wavenumber grid must be initialized first.")
+            
+        a = scale_factor
+        A1, A3, A4, _ = self.evaluate_rg_couplings(a)
+        
+        k2 = self.k_grid**2
+        k4 = self.k_grid**4
+        kernel_denominator = A4 - A1 * k2 - A3 * k4
+        
+        # CCEF basic parameters
+        G_eff = self.G_Newton * ((-A1 * k2) / kernel_denominator)
+        eta_phys = -((A4 - A1 * k2 - A3 * k4) / (A1 * k2 + A3 * k4))
+        
+        # Weak Lensing Response Kernel Sigma_CCEF
+        numerator_term = 2.0 * A1 * k2 + 2.0 * A3 * k4 - A4
+        denominator_term = 2.0 * (A1 * k2 + A3 * k4)
+        sigma_ccef = (numerator_term / denominator_term) * ((-A1 * k2) / kernel_denominator)
+        
+        # --- DYNAMIC UPDATE LOGIC: ONE-LOOP POWER SPECTRUM CORRECTION ---
+        # Recalculates non-linear structure growth on-the-fly for this specific epoch
+        P_non_linear = self.compute_one_loop_p13(A1, A3, A4, P_linear_in)
+        
+        return G_eff, eta_phys, sigma_ccef, P_non_linear
+
     plt.show()
 
 ccef_three_panel_spectrum()

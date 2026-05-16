@@ -203,6 +203,47 @@ $$C_1 = \frac{1}{A_3 (\Lambda^2 - m^2)}$$
 
 $$C_2 = -C_1$$
 
+## 7.2 Numerical Continuum Evolution (1D Reduction)
+
+To evolve the CCEF field directly in continuum form, we implement the 1D reduction of the full second–order evolution equation
+
+$$Z_t\,\partial_t^2 n = A_1\nabla^2 n - A_3\nabla^4 n + A_4(n\cdot n_0)n_0 - (n\cdot V)n + Z_t|\partial_t n|^2 n,$$
+
+where $V$ denotes the spatial drive vector inside the Euler–Lagrange operator and the projection term enforces the spherical constraint $n\cdot n=1$.
+
+### Spatial Operators
+
+Periodic finite–difference stencils give
+
+$$\nabla^2 n = \frac{n_{i+1}-2n_i+n_{i-1}}{dx^2}, \qquad \nabla^4 n = \frac{n_{i+2}-4n_{i+1}+6n_i-4n_{i-1}+n_{i-2}}{dx^4}.$$
+
+### Projected Evolution Equation
+
+The raw drive vector is
+
+$$V = A_1\nabla^2 n - A_3\nabla^4 n + A_4(n\cdot n_0)n_0.$$
+
+Projection onto the tangent space of $S^2$ is performed via
+
+$$P_\perp V = V - (n\cdot V)n.$$
+
+The full acceleration becomes
+
+$$\partial_t^2 n = \frac{P_\perp V}{Z_t} + |\partial_t n|^2 n.$$
+
+### Time Integration
+
+A leapfrog/Verlet scheme updates the field:
+
+$$\partial_t n \rightarrow \partial_t n + (\partial_t^2 n)\,dt, \qquad n \rightarrow n + (\partial_t n)\,dt.$$
+
+After each update, the target–space constraint is enforced algebraically:
+
+$$n \rightarrow \frac{n}{|n|}.$$
+
+This algorithm provides a direct numerical realization of the CCEF continuum dynamics, preserving the spherical constraint and the exact structure of the spatial operators without introducing any external assumptions.
+
+
 ## 8. RG Flow
 
 $$\frac{dA_1}{d\ln a} = c_1 \rho_0 \xi_R^2 - d_1 \Sigma$$  

@@ -399,6 +399,97 @@ This establishes an exact duality link between the large-scale spatial boundary 
 
 The long-wavelength screening mass m that bounds the physical interaction range of two well-separated solitons in real space is the same mass-gap parameter that controls the small-k behaviour of the transverse kernel and sets the baseline of the cosmological effective Newton coupling inside the linear Boltzmann engines. The microphysical spatial boundaries and macroscale cosmic evolution share a closed, un-decomposed parameter lifecycle.
 
+## 11.0 — Linearized Boltzmann Hierarchy in CCEF (Newtonian Gauge)
+
+The linear Boltzmann system is closed by the CCEF metric sector, where the scalar wells Φ and Ψ are not free Einstein variables but are determined by the transverse and longitudinal Green’s function kernels and the slip parameter:
+  Φ(k, a) = −4 * π * G_Newton * ρ_0(a) * a² * K_trans(k, a) * δ_m(k, a)
+  Ψ(k, a) = −4 * π * G_Newton * ρ_0(a) * a² * K_long(k, a) * δ_m(k, a)
+  η_phys(k, a) = Ψ / Φ = K_long / K_trans
+
+The Weyl potential and lensing kernel are:
+  Φ_W(k, a) = (Φ + Ψ) / 2
+  Σ_CCEF(k, a) = ( (2*A_1*k² + 2*A_3*k⁴ − A_4) / (2*(A_1*k² + A_3*k⁴)) ) * ( −A_1*k² / (A_4 − A_1*k² − A_3*k⁴) )
+
+All metric source terms in the Boltzmann hierarchy below are therefore fully determined by the CCEF couplings A_1(a), A_3(a), A_4(a), Z_t(a) and the matter density contrast δ_m.
+
+---
+
+### 11.1 Matter and Baryon Fluid Equations
+
+For cold dark matter (CDM) in Newtonian gauge:
+  δ̇_c = −k * v_c + 3 * Φ̇
+  v̇_c = −H * v_c + k * Ψ
+
+For baryons (with Thomson drag from photons):
+  δ̇_b = −k * v_b + 3 * Φ̇
+  v̇_b = −H * v_b + c_s² * k * δ_b + k * Ψ + R_γb * a * n_e * σ_T * (v_γ − v_b)
+
+Here R_γb = (4/3) * ρ_γ / ρ_b and all gravitational driving terms Φ, Ψ are given by the CCEF kernel closures above.
+
+---
+
+### 11.2 Photon Temperature Hierarchy
+
+Define the photon temperature multipoles Θ_ℓ(k, τ) in Newtonian gauge. The monopole, dipole, and quadrupole obey:
+  Θ̇_0 = −k * Θ_1 − Φ̇
+  Θ̇_1 = k * (Θ_0 + Ψ − (2/5)*Θ_2) − a * n_e * σ_T * (Θ_1 − v_b)
+  Θ̇_2 = k * ( (2/3)*Θ_1 − (3/7)*Θ_3 ) − a * n_e * σ_T * (Θ_2 − Π_γ/10)
+
+For ℓ ≥ 3:
+  Θ̇_ℓ = k * [ (ℓ/(2ℓ+1))*Θ_(ℓ−1) − ((ℓ+1)/(2ℓ+1))*Θ_(ℓ+1) ] − a * n_e * σ_T * Θ_ℓ
+
+The photon anisotropic stress Π_γ is sourced by the quadrupole and polarization (see below). All gravitational driving terms (Φ, Ψ, Φ̇, Ψ̇) are determined by CCEF via K_trans, K_long, and η_phys.
+
+---
+
+### 11.3 Photon Polarization Hierarchy (E‑Modes)
+
+Define E‑mode polarization multipoles E_ℓ(k, τ). The polarization source is the photon quadrupole and the Thomson scattering term:
+  Ė_2 = k * ( (2/3)*E_1 − (3/7)*E_3 ) − a * n_e * σ_T * (E_2 − S_pol)
+  Ė_ℓ = k * [ (ℓ/(2ℓ+1))*E_(ℓ−1) − ((ℓ+1)/(2ℓ+1))*E_(ℓ+1) ] − a * n_e * σ_T * E_ℓ   for ℓ ≥ 3
+
+The polarization source S_pol is proportional to the temperature quadrupole and polarization quadrupole:
+  S_pol ∝ Θ_2 + E_2
+
+Scalar modes generate only E‑mode polarization; B‑modes are zero at linear order. The gravitational potentials Φ and Ψ enter the polarization hierarchy only through their impact on Θ_ℓ via the temperature equations above.
+
+---
+
+### 11.4 Metric Source Terms from CCEF
+
+The metric potentials are not evolved via Einstein equations but are algebraically closed by the CCEF kernels:
+  Φ(k, a) = −4 * π * G_Newton * ρ_0(a) * a² * K_trans(k, a) * δ_m(k, a)
+  Ψ(k, a) = η_phys(k, a) * Φ(k, a)
+
+The Weyl potential and its time derivative, which source the Integrated Sachs–Wolfe (ISW) effect, are:
+  Φ_W = (Φ + Ψ) / 2
+  Φ̇_W = (Φ̇ + Ψ̇) / 2
+
+Time derivatives Φ̇, Ψ̇ follow from the time evolution of δ_m and the running of the couplings A_n(a), Z_t(a) inside K_trans and K_long.
+
+---
+
+### 11.5 Line‑of‑Sight Solution and CMB Power Spectra
+
+The photon temperature anisotropy today is written in line‑of‑sight form:
+  Θ_ℓ(k, τ_0) = ∫_0^{τ_0} dτ S_T(k, τ) * j_ℓ[k(τ_0 − τ)]
+
+where j_ℓ is the spherical Bessel function and S_T(k, τ) is the total temperature source function including:
+  • Sachs–Wolfe:      S_SW ∝ Φ_W
+  • Doppler:          S_Doppler ∝ v_b
+  • Polarization:     S_pol ∝ Π_γ
+  • ISW:              S_ISW ∝ Φ̇_W
+
+The visibility function is:
+  g(τ) = κ̇(τ) * exp(−κ(τ))
+  κ(τ) = ∫_τ^{τ_0} a(τ') * n_e(τ') * σ_T dτ'
+
+The angular power spectra follow from:
+  C_ℓ^TT = 4π ∫ dk k² P_prim(k) |Θ_ℓ(k, τ_0)|²
+  C_ℓ^TE = 4π ∫ dk k² P_prim(k) Θ_ℓ(k, τ_0) E_ℓ(k, τ_0)
+  C_ℓ^EE = 4π ∫ dk k² P_prim(k) |E_ℓ(k, τ_0)|²
+
+All dependence on modified gravity enters exclusively through Φ, Ψ, Φ_W, Φ̇_W, which are fixed by the CCEF kernels K_trans, K_long, the slip η_phys, and the lensing kernel Σ_CCEF. This completes the first‑principles derivation of the linear Boltzmann hierarchy in CCEF.
 
 
 

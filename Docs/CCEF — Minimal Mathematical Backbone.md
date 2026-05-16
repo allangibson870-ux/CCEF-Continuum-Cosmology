@@ -90,6 +90,69 @@ $$\partial_t \mathbf{J}^0 + \nabla \cdot \mathbf{J}^i = 0$$
 
 $$\mathcal{H}\pi = \frac{\delta^2 E}{\delta n^2} \pi$$
 
+## 4.1 Energy–Momentum and Interaction Structure of Radial Solitons
+
+For the static hedgehog configuration
+
+$$n(r) = (\sin f(r)\,\hat r,\; \cos f(r)),$$
+
+the covariant energy–momentum tensor reduces to purely spatial components.
+
+### Energy Density
+
+$$\rho_{\mathrm{eff}}(r) = \frac{A_1}{2}\left[(f')^{2} + \frac{2\sin^{2}f}{r^{2}}\right] + \frac{A_3}{2}\left[f'' + \frac{2}{r}f' - \frac{\sin(2f)}{r^{2}}\right]^{2} + \frac{A_4}{2}\sin^{2}f$$
+
+### Radial Pressure
+
+$$P_r(r) = \frac{A_1}{2}\left[(f')^{2} - \frac{2\sin^{2}f}{r^{2}}\right] - \frac{A_3}{2}\left[f'' + \frac{2}{r}f' - \frac{\sin(2f)}{r^{2}}\right]^{2} - \frac{A_4}{2}\sin^{2}f$$
+
+### Tangential Pressure
+
+$$P_t(r) = -\frac{A_1}{2}(f')^{2} + \frac{A_3}{2}\left[f'' + \frac{2}{r}f' - \frac{\sin(2f)}{r^{2}}\right]^{2} - \frac{A_4}{2}\sin^{2}f$$
+
+### Local Conservation
+
+Static spherical symmetry requires
+
+$$\frac{dP_r}{dr} + \frac{2}{r}(P_r - P_t) = 0$$
+
+Substituting the explicit expressions yields
+
+$$\frac{dP_r}{dr} + \frac{2}{r}(P_r - P_t) = -f'(r)\,\Big[ A_3\nabla^{4}f - A_1\left(f'' + \frac{2}{r}f' - \frac{\sin(2f)}{r^{2}}\right) + \frac{A_4}{2}\sin(2f) \Big]$$
+
+The bracketed term is the radial Euler–Lagrange equation, so the conservation law holds identically.
+
+### Total Soliton Mass
+
+$$M_{\mathrm{soliton}} = 4\pi\!\int_{0}^{\infty} r^{2}\,\rho_{\mathrm{eff}}(r)\,dr$$
+
+---
+
+## Asymptotic Soliton–Soliton Interaction
+
+For two well‑separated solitons with profile angles $f_A(\mathbf{r})$ and $f_B(\mathbf{r}-\mathbf{R})$, the combined configuration is approximated by
+
+$$f_{\mathrm{tot}}(\mathbf{r}) = f_A(\mathbf{r}) \pm f_B(\mathbf{r}-\mathbf{R}),$$
+
+with the sign determined by the relative topological charge.
+
+Inserting into the static energy functional and subtracting self‑energies gives the interaction potential
+
+$$V_{AB}(\mathbf{R}) =\!\int d^{3}x\Big[ A_1\,\partial_i f_A\,\partial_i f_B + A_4\,\cos f_A\,\sin f_B + A_3\,\nabla^{2}f_A\,\nabla^{2}f_B \Big]$$
+
+For large separations, the profiles obey
+
+$$f(r)\sim C\,\frac{e^{-m r}}{r}, \qquad m=\sqrt{\frac{A_4}{A_1}},$$
+
+and the short‑range $A_3$ term is suppressed.  
+The asymptotic interaction reduces to
+
+$$V_{AB}(\mathbf{R}) =\pm 4\pi A_1\,C_A C_B\,\frac{e^{-|\mathbf{R}|\sqrt{A_4/A_1}}}{|\mathbf{R}|}$$
+
+* The upper sign corresponds to soliton–soliton repulsion.
+* The lower sign corresponds to soliton–antisoliton attraction.
+
+
 ## 5. Kernel Definition
 
 $$\mathcal{H} K = \delta^{(3)}$$  

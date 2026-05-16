@@ -291,6 +291,59 @@ $$\Gamma_{ab}(k)\sim A_3 k^4.$$
 
 Thus the mass‑gap parameter $A_4$ sets the IR interaction plateau, while the higher‑derivative coefficient $A_3$ governs UV mode‑coupling growth and stabilizes high‑frequency continuum dynamics.
 
+## 7.4 Pseudo‑Spectral Continuum Evolution (1D Reduction)
+
+The 1D CCEF evolution equation
+
+$$Z_t\,\partial_t^2 n = A_1\nabla^2 n - A_3\nabla^4 n + A_4(n\cdot n_0)n_0 - (n\cdot V)n + Z_t|\partial_t n|^2 n$$
+
+can be implemented exactly using a pseudo‑spectral method, where all spatial derivatives are evaluated in Fourier space.
+
+### Fourier Operators
+
+For a periodic domain of length $L$ with $N$ modes,
+
+$$k = \frac{2\pi m}{L},\qquad m\in\{-N/2,\dots,N/2-1\}.$$
+
+The Laplacian and bi‑Laplacian act as
+
+$$\nabla^2 n \;\longleftrightarrow\; -k^2 \tilde n, \qquad \nabla^4 n \;\longleftrightarrow\; k^4 \tilde n.$$
+
+### Linear Drive Vector
+
+Transforming $n$ to Fourier space and applying the operators gives
+
+$$V_{\text{lin}} = A_1\nabla^2 n - A_3\nabla^4 n + A_4(n\cdot n_0)n_0.$$
+
+### Target‑Space Projection
+
+The spherical constraint is enforced by projecting the drive vector onto the tangent space of $S^2$:
+
+$$P_\perp V = V - (n\cdot V)n.$$
+
+### Non‑Linear Kinetic Term
+
+The kinetic reinforcement term is
+
+$$|\partial_t n|^2 n.$$
+
+### Final Acceleration
+
+$$\partial_t^2 n = \frac{P_\perp V}{Z_t} + |\partial_t n|^2 n.$$
+
+### Time Integration
+
+A leapfrog/Verlet update advances the field:
+
+$$\partial_t n \rightarrow \partial_t n + (\partial_t^2 n)\,dt, \qquad n \rightarrow n + (\partial_t n)\,dt.$$
+
+After each update, the algebraic constraint is restored:
+
+$$n \rightarrow \frac{n}{|n|}.$$
+
+This pseudo‑spectral scheme provides an exact representation of the spatial operators and preserves the target‑space constraint throughout the evolution.
+
+
 
 
 ## 8. RG Flow

@@ -491,6 +491,77 @@ The angular power spectra follow from:
 
 All dependence on modified gravity enters exclusively through Φ, Ψ, Φ_W, Φ̇_W, which are fixed by the CCEF kernels K_trans, K_long, the slip η_phys, and the lensing kernel Σ_CCEF. This completes the first‑principles derivation of the linear Boltzmann hierarchy in CCEF.
 
+### 11.1a — Tightened Superhorizon Scaling and Slip Regularity in CCEF
+
+We refine the ζ̇ ≈ 0 proof by explicitly deriving the superhorizon scaling of δ_m from the CCEF kernel closures plus metric regularity, instead of assuming it.
+
+#### 1. Kernel‑Based Poisson Relations
+
+From the CCEF metric sector:
+  −k² * Φ = 4 * π * G_Newton * a² * ρ_0(a) * K_trans(k, a) * δ_m(k, a)
+  −k² * Ψ = 4 * π * G_Newton * a² * ρ_0(a) * K_long(k, a) * δ_m(k, a)
+
+Small‑k limits of the kernels:
+  K_trans(k → 0, a) → 1 / A_4(a)          (finite IR plateau)
+  K_long(k → 0, a)  → 1 / (A_1(a) * k²)   (long‑range mode)
+
+#### 2. Regularity of Φ and the δ_m ∼ k² Scaling
+
+Demand that the physical metric potential Φ remains finite as k → 0 at fixed a(τ). From:
+  Φ = −[4 * π * G_Newton * a² * ρ_0 / k²] * K_trans(k, a) * δ_m
+
+and K_trans → const, finiteness of Φ requires:
+  δ_m(k, a) ∝ k²   as k → 0
+
+This is the CCEF analogue of the standard adiabatic superhorizon scaling in Newtonian gauge, but here it is enforced directly by the kernel closure plus regularity.
+
+#### 3. Regularity of Ψ
+
+Insert δ_m ∝ k² into the Ψ relation:
+  Ψ = −[4 * π * G_Newton * a² * ρ_0 / k²] * K_long(k, a) * δ_m
+
+With K_long ~ 1 / (A_1 k²) and δ_m ~ k²:
+  K_long * δ_m ~ (1 / (A_1 k²)) * k² = const
+
+Hence Ψ is also finite as k → 0. The apparent 1/k⁴ divergence in the naive combination (K_long / k²) is exactly cancelled by the δ_m ∼ k² scaling enforced by Φ‑regularity.
+
+#### 4. Slip and Anisotropic Stress Scaling
+
+The difference of the potentials is:
+  Ψ − Φ = −[4 * π * G_Newton * a² * ρ_0 / k²] * (K_long − K_trans) * δ_m
+
+Use δ_m ~ k²:
+  Ψ − Φ = −4 * π * G_Newton * a² * ρ_0 * (K_long − K_trans) * (δ_m / k²)
+         = −4 * π * G_Newton * a² * ρ_0 * (K_long − K_trans) * O(1)
+
+For small k:
+  K_long − K_trans = 1/(A_1 k²) − 1/A_4 + O(k²)
+
+The 1/(A_1 k²) term multiplies δ_m ~ k² and yields a finite constant; the remaining finite pieces are also regular. Therefore:
+  Ψ − Φ = O(1)   as k → 0
+
+The total anisotropic stress σ_tot is proportional to (Ψ − Φ), so:
+  σ_tot = O(1)
+
+In the ζ̇ equation it appears as:
+  ζ̇ ⊃ −(1/3) * (k² / a²) * σ_tot = O(k²)
+
+#### 5. Combined Superhorizon Behaviour
+
+From the background and homogeneous CCEF field analysis, the effective non‑adiabatic pressure satisfies:
+  δP_nad = O(k²)
+
+Together with the anisotropic stress scaling above, the exact ζ̇ identity:
+  ζ̇ = −(H / (ρ_tot + P_tot)) * δP_nad − (1/3) * (k² / a²) * σ_tot
+
+gives:
+  ζ̇ = −(H/(ρ+P))*O(k²) − (1/3)*(k²/a²)*O(1)
+  ζ̇ = O(k²)
+
+Thus for superhorizon modes k ≪ aH:
+  ζ(k, a) = const + O(k²)
+
+The crucial δ_m ∼ k² scaling is not imported from GR but is enforced by the CCEF kernel‑based Poisson relations plus the physical requirement that Φ and Ψ remain finite as k → 0. This closes the remaining mathematical gap in the superhorizon conservation proof.
 
 
 

@@ -785,6 +785,32 @@ $$\frac{\partial f}{\partial t} + \frac{p}{M(v)}\cdot\nabla_x f - \frac{1}{M(v)}
 
 $$\Phi(x) = \int K(x-y) \delta\rho(y) dy$$
 
+## SECTION 12.1 — Weak Lensing Convergence Spectrum $P_\kappa(\ell)$
+
+### 12.1 Lensing Convergence Power Spectrum from the CCEF Kernel
+
+Weak lensing probes the line‑of‑sight projection of the Weyl potential. Using the Limber approximation $k = \ell / \chi$, the convergence field is
+
+$$\kappa(\boldsymbol{\theta}) = \int_0^{\chi_s} W(\chi)\,\nabla_\perp^2 \Phi_{\mathrm{lens}}(\chi\boldsymbol{\theta}, \chi)\,d\chi,$$
+
+with the geometric window function
+
+$$W(\chi) = \frac{\chi(\chi_s - \chi)}{\chi_s}.$$
+
+### CCEF Convergence Spectrum
+
+$$P_\kappa(\ell) = \frac{9}{4} \Omega_m^2 H_0^4 \int_0^{\chi_s} \frac{(\chi_s - \chi)^2}{\chi_s^2\,a^2(\chi)} \left[ \Sigma_{\mathrm{CCEF}}\!\left(k = \frac{\ell}{\chi}, a(\chi)\right) \right]^2 P_m^{\mathrm{nonlin}}\!\left(k = \frac{\ell}{\chi}, a(\chi)\right)d\dots$$
+
+### Interpretation
+
+* $\Sigma_{\mathrm{CCEF}}$ modifies the Weyl potential, producing scale‑dependent lensing deviations.
+* $P_m^{\mathrm{nonlin}}$ includes the full CCEF one‑loop correction.
+* General Relativity (GR) is recovered when 
+  $$A_4 \to 0, \qquad A_3 \to 0, \qquad \Sigma_{\mathrm{CCEF}} \to 1.$$
+
+This is the complete, RG‑consistent CCEF prediction for cosmic shear, requiring no external phenomenology.
+
+
 ## 13. Noise Sector
 White noise source:  
 

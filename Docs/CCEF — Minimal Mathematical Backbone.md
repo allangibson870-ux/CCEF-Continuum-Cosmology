@@ -681,6 +681,87 @@ $$K_{\text{trans}}(k) = \frac{1}{A_4 - A_1 k^2 - A_3 k^4}$$
 
 $$\eta(k,a) = \frac{K_{\text{long}}(k,a)}{K_{\text{trans}}(k,a)}$$
 
+## SECTION 10.2 — CCEF Lensing Kernel $\Sigma_{\mathrm{CCEF}}(k,a)$
+
+### 10.2 Emergent Lensing Kernel from the Dual‑Channel Quartic Operator
+
+Weak lensing in CCEF is sourced not by an assumed GR metric, but by the Weyl potential of the emergent eikonal geometry. The lensing potential is defined as the symmetric combination of the two scalar channels:
+
+$$\Phi_{\mathrm{lens}}(k,a) \equiv \frac{\Phi(k,a) + \Psi(k,a)}{2}.$$
+
+Using the tensor‑decomposed kernel (Section 10.1),
+
+$$K_{\mathrm{long}}(k,a) = \frac{1}{A_1(a)k^2 + A_3(a)k^4}, \qquad K_{\mathrm{trans}}(k,a) = \frac{1}{A_4(a) - A_1(a)k^2 - A_3(a)k^4},$$
+
+the gravitational slip parameter is
+
+$$\eta(k,a) = \frac{K_{\mathrm{long}}}{K_{\mathrm{trans}}}.$$
+
+The Weyl potential obeys
+
+$$-k^2 \Phi_{\mathrm{lens}} = 4\pi G_{\mathrm{Newton}}\,\rho_0(a)\,a^2 \left[ \frac{1 + \eta(k,a)}{2} \right] K_{\mathrm{trans}}(k,a)\,\delta(k,a).$$
+
+This defines the CCEF lensing response kernel:
+
+$$\Sigma_{\mathrm{CCEF}}(k,a) = \left[ \frac{1 + \eta(k,a)}{2} \right] \left( \frac{-A_1(a)k^2}{A_4(a) - A_1(a)k^2 - A_3(a)k^4} \right).$$
+
+Substituting the explicit slip expression yields the closed algebraic form:
+
+$$\Sigma_{\mathrm{CCEF}}(k,a) = \frac{2A_1k^2 + 2A_3k^4 - A_4}{2(A_1k^2 + A_3k^4)} \cdot \frac{-A_1k^2}{A_4 - A_1k^2 - A_3k^4}.$$
+
+### Asymptotic Regimes
+
+* **Infrared limit $k \to 0$**:
+  $$\Sigma_{\mathrm{CCEF}} \sim -\frac{A_4}{2A_1k^2},$$
+  giving a mass‑gap‑controlled amplitude shift.
+* **Intermediate lensing band**:
+  Scale‑dependent deviations arise from the running of $A_1(a)$ and $A_4(a)$.
+* **Ultraviolet limit $k \to \infty$**:
+  $$\Sigma_{\mathrm{CCEF}} \to 1,$$
+  due to the dominance of the quartic term $A_3k^4$, ensuring GR recovery at small scales.
+
+This kernel is the unique lensing response implied by the RG‑flowed quartic operator and requires no metric ansatz.
+
+---
+
+## SECTION 10.3 — One‑Loop Nonlinear Matter Power Spectrum $P_{13}$
+
+### 10.3 Nonlinear Structure Growth from the CCEF Cubic Vertex
+
+The transverse perturbation equation (Section 7.3) contains no quadratic terms, only cubic nonlinearities $\mathcal{F}_a^{(3)}[\pi]$. Therefore, the standard SPT diagram $P_{22}$ vanishes identically, and the entire one‑loop correction arises from the tadpole self‑energy diagram $P_{13}$.
+
+### Perturbative Expansion
+
+$$\tilde\pi_a(k,a) = \tilde\pi_a^{(1)}(k,a) + \tilde\pi_a^{(3)}(k,a) + \dots$$
+
+The third‑order field satisfies
+
+$$\tilde\pi_a^{(3)}(k) = \frac{1}{\tilde D(k)}\!\int\!\frac{d^3k_1}{(2\pi)^3}\frac{d^3k_2}{(2\pi)^3}\frac{d^3k_3}{(2\pi)^3} (2\pi)^3\delta^3(k-k_1-k_2-k_3)\,\Gamma_{ab}(k_1,k_2,k_3)\,\tilde\pi_a^{(1)}(k_1)\tilde\pi_b^{(1)}(k_2)\tilde\pi_b^{(1)}(k_3).$$
+
+The nonlinear matter power spectrum is
+
+$$P_m^{\mathrm{nonlin}}(k,a) = P_{\mathrm{lin}}(k,a) + 2P_{13}(k,a).$$
+
+### One‑Loop Correction
+
+$$P_{13}(k,a) = \frac{P_{\mathrm{lin}}(k,a)}{\tilde D(-k)}\!\int\!\frac{dq}{2\pi}\,M(k,q)\,P_{\mathrm{lin}}(q,a),$$
+
+where the effective vertex is
+
+$$M(k,q) = \Gamma_{a,b\neq a}(-k,q,-q) + \Gamma_{aa}(-k,q,-q) + 2\Gamma_{aa}(q,-k,-q).$$
+
+### Infrared and Ultraviolet Behavior
+
+* **IR limit $k \to 0$**:
+  $$P_{13}(k) \propto -A_4\,P_{\mathrm{lin}}(k)\!\int\!dq\,P_{\mathrm{lin}}(q).$$
+  The mass‑gap $A_4$ renormalizes large‑scale clustering.
+* **UV limit $q \to \infty$**:
+  $$\Gamma_{ab}(q) \sim A_3q^4, \qquad \tilde D(q) \sim A_3q^4.$$
+  The symmetry of the quartic operator ensures UV finiteness without cutoffs.
+
+This section completes the nonlinear growth closure of the CCEF perturbation system.
+
+
 ## 11. Hydrogen Sector
 Radial operator:  
 

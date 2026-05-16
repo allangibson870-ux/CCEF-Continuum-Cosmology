@@ -9,20 +9,30 @@
   d2n_dt2 = (1 / Z_t) * P_perp( A_1 * laplacian_n - A_3 * biharmonic_n + A_4 * dot(n, n_0) * n_0 ) + sum(dn_dt^2) * n
   where: P_perp(V) = V - dot(n, V) * n
 
-## 2. Conserved Spacetime Currents & Tensor Equivalence
-- Global SO(3) Noether Current: J^mu = Z_t * g^(mu,0) * cross(n, dt_n) - A_1 * g^(mu,i) * cross(n, di_n) - A_3 * [ cross(box_n, partial_mu_n) - cross(partial_mu_box_n, n) ] -> divergence(J) = 0.
-- 3D Topological Current Vector: J_top^mu = (1 / (8 * pi)) * epsilon^(mu,nu,alpha,beta) * epsilon_abc * n^a * partial_nu_n^b * partial_alpha_n^c
+## 2. Conserved Continuum Currents & Tensor Equivalence
+
+- **Global SO(3) Noether Current Vector:** Spatial and temporal components map independently, tracking charge transport across the 3D continuous medium without assuming a geometric four-manifold.
+  J^0 = Z_t * cross(n, dt_n) - A_3 * [ cross(box_n, dt_n) - cross(dt_box_n, n) ]
+  J^i = -A_1 * cross(n, di_n) + A_3 * [ cross(box_n, di_n) - cross(di_box_n, n) ]
+  where: box_n = d2n_dt2 - laplacian_n
+  Conservation Law: dt(J^0) + di(J^i) == 0
+
+- **3D Topological Current Vector:** Tracks the instantaneous spatial count (rho_top) and active directional drift (J_top^i) of localized coherent modes across the moving grid cells:
   rho_top = (1 / (4 * pi)) * epsilon_ijk * dot(n, cross(partial_i_n, partial_j_n))
   J_top^i = (1 / (4 * pi)) * epsilon_ijk * dot(n, cross(dt_n, partial_j_n))
-  Identity: dt(rho_top) + divergence(J_top) = 0 identically.
-- Metric-Derived Stress-Energy Tensor (T^mu_nu_metric):
+  Identity: dt(rho_top) + di(J_top^i) == 0 identically due to mixed spatial-temporal partial derivative symmetry.
+
+- **Metric-Derived Stress-Energy Tensor Components (T^mu_nu_metric):** Sourced by calculating the response of the 3D material action to modifications of the emergent eikonal characteristic geometry:
   rho_eff = (Z_t / 2) * dt_n^2 + (A_1 / 2) * sum(di_n^2) + (A_2 / 2) * omega^2 + (A_3 / 2) * (laplacian_n)^2 - A_3 * laplacian_n * d2n_dt2 + (A_4 / 2) * (1 - dot(n, n_0)^2)
   P_eff = (Z_t / 2) * dt_n^2 - (A_1 / 6) * sum(di_n^2) - (A_2 / 2) * omega^2 - (A_3 / 6) * (laplacian_n)^2 - (A_4 / 2) * (1 - dot(n, n_0)^2)
-  Identity: partial_mu(T^mu_nu_metric) = 0 on shell.
-- Canonical Noether Stress-Energy Tensor (T^mu_nu_canonical):
+  Identity: dt(T^0_nu_metric) + di(T^i_nu_metric) == 0 on shell.
+
+- **Canonical Noether Stress-Energy Tensor (T^mu_nu_canonical):** Derived strictly from separate space and time translation invariants of the 3D medium layout:
   T^mu_nu_canonical = gamma_alpha * g^(mu,alpha) * dot(partial_alpha_n, partial_nu_n) - A_3 * [ box_n * partial_mu_partial_nu_n - partial_mu_box_n * partial_nu_n ] - delta^mu_nu * L
-- On-Shell Tensor Equivalence: For field configurations where dot(n, partial_nu_n) = 0 holds identically:
-  T^mu_nu_canonical == T^mu_nu_metric for all mu, nu components.
+
+- **On-Shell Tensor Equivalence:** For field configurations where dot(n, partial_nu_n) = 0 holds identically across the medium space components:
+  T^mu_nu_canonical == T^mu_nu_metric for all temporal and spatial indices, confirming complete mathematical consistency.
+
 
 ## 3. Real-Space Soliton Sector & Functional Hessian
 - Hessian Operator Definition (H_field): Evaluated as the second functional variation of the energy functional (delta^2_E / delta_n^2) at the stable static soliton profile n_star, acting on the perturbation vector pi:

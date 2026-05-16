@@ -898,3 +898,55 @@ If a $1/k^3$ floor is required, $\Xi_f$ must have:
 $$P_\Xi(k) \propto k^5$$  
 
 (i.e., non‑white, correlated noise)
+
+## SECTION 14.0 — Early Integrated Sachs–Wolfe (eISW) Anisotropy Coupling Matrix
+
+
+### 14.1 The Early ISW Source Term in 3D Fourier Space
+
+The early ISW contribution to the fractional Cosmic Microwave Background (CMB) temperature perturbation $\Theta(\mathbf{k}) = \Delta T / T$ tracks the explicit time derivative of the combined metric potentials $\partial_\tau (\Phi + \Psi)$ during the transition from radiation to matter dominance. The 3D source profile is governed by the line-of-sight integral:
+
+$$\Theta_{\mathrm{eISW}}(\mathbf{k}) = \int_{\tau_{\mathrm{rec}}}^{\tau_{\mathrm{dec}}} d\tau \, e^{-\tau_{\mathrm{opt}}} \, \frac{\partial}{\partial \tau} \Big[ \Phi(\mathbf{k}, \tau) + \Psi(\mathbf{k}, \tau) \Big],$$
+
+where $\tau_{\mathrm{opt}}$ is the optical depth due to Thomson scattering. Isolating the potential sum via the dual-channel mapping yields:
+
+$$\Phi(\mathbf{k}, \tau) + \Psi(\mathbf{k}, \tau) = 2 \Phi_{\mathrm{lens}}(\mathbf{k}, \tau) = -\frac{8\pi G_{\mathrm{Newton}} a^2}{k^2} \, \Sigma_{\mathrm{CCEF}}(k, a) \, \rho_0(a) \delta(\mathbf{k}, \tau).$$
+
+Applying the conformal time derivative operator $\partial_\tau = a H \partial_a$ expands the source term via the product rule into three distinct physical channels:
+
+$$\frac{\partial}{\partial \tau} \Big[ \Phi + \Psi \Big] = \left( \Phi + \Psi \right) \left[ H a + \frac{\partial_\tau \delta}{\delta} + \frac{\partial_\tau \Sigma_{\mathrm{CCEF}}}{\Sigma_{\mathrm{CCEF}}} \right].$$
+
+### 14.2 Analytical Derivative of the Lensing Kernel
+
+The logarithmic time derivative of the lensing response kernel $\Sigma_{\mathrm{CCEF}}(k, a)$ parameterizes the contribution of the Renormalization Group (RG) beta-functions $\mathcal{F}_n \equiv \partial_\tau A_n$ across the 3D momentum grid:
+
+$$\frac{\partial_\tau \Sigma_{\mathrm{CCEF}}}{\Sigma_{\mathrm{CCEF}}} = \mathcal{V}_1(k, a) \cdot \partial_\tau A_1(a) + \mathcal{V}_3(k, a) \cdot \partial_\tau A_3(a) + \mathcal{V}_4(k, a) \cdot \partial_\tau A_4(a),$$
+
+where the scale-dependent sensitivity functions are explicitly closed under 3D momentum coordinates:
+
+$$\mathcal{V}_1(k, a) = \frac{2k^2}{2A_1k^2 + 2A_3k^4 - A_4} - \frac{A_3 k^4}{A_1(A_1k^2 + A_3k^4)} - \frac{k^2}{A_4 - A_1k^2 - A_3k^4},$$
+
+$$\mathcal{V}_3(k, a) = \frac{2k^4}{2A_1k^2 + 2A_3k^4 - A_4} - \frac{k^4}{A_1k^2 + A_3k^4} - \frac{k^4}{A_4 - A_1k^2 - A_3k^4},$$
+
+$$\mathcal{V}_4(k, a) = \frac{-1}{2A_1k^2 + 2A_3k^4 - A_4} - \frac{1}{A_4 - A_1k^2 - A_3k^4}.$$
+
+### 14.3 Linear Perturbation Coupling Form
+
+Let $\mathbf{U}(\mathbf{k}, \tau) = \left( \Phi, \dot{\Phi}, \delta, \dot{\delta} \right)^T$ define the active perturbation state vector. The metric time derivative updates at each step via the 3D coupling matrix:
+
+$$\frac{\partial}{\partial \tau} \Big[ \Phi(\mathbf{k}, \tau) + \Psi(\mathbf{k}, \tau) \Big] = \mathbf{M}_{\mathrm{eISW}}(k, \tau) \cdot \mathbf{U}(\mathbf{k}, \tau),$$
+
+where the exact **3D CCEF Anisotropy Coupling Matrix** is structured as:
+
+$$\mathbf{M}_{\mathrm{eISW}}(k, \tau) = \Big( 1 + \eta_{\mathrm{phys}}(k, a) \Big) \cdot \begin{pmatrix} -H a & 1 & 0 & \mathcal{M}_{\delta}(k,a) \end{pmatrix} + \begin{pmatrix} \mathcal{M}_{\mathrm{RG}}(k, a) & 0 & 0 & 0 \end{pmatrix}.$$
+
+The internal matrix scalar components are evaluated on the grid layout using the 3D volume parameters:
+
+$$\mathcal{M}_{\delta}(k,a) = \frac{-4\pi G_{\mathrm{Newton}} a^2 \rho_0(a) \Sigma_{\mathrm{CCEF}}(k,a)}{k^2 \cdot \delta},$$
+
+$$\mathcal{M}_{\mathrm{RG}}(k, a) = \mathcal{V}_1(k, a) \mathcal{F}_1(a) + \mathcal{V}_3(k, a) \mathcal{F}_3(a) + \mathcal{V}_4(k, a) \mathcal{F}_4(a).$$
+
+### 14.4 Physical Manifestation at Recombination
+
+Unlike standard $\Lambda\text{CDM}$ where metric potentials remain constant during deep matter dominance ($\dot{\Phi} + \dot{\Psi} \to 0$), the CCEF framework generates an intrinsic potential decay signature. Even when the fluid tracks standard growth ($\dot{\delta}/\delta = Ha$), the active running of the background parameters ensures $\mathcal{M}_{\mathrm{RG}} \neq 0$. This continuous modulation injects additional power around the first CMB acoustic peak ($\ell \sim 220$), placing direct observational bounds on the early universe running rates $\mathcal{F}_n(a_{\mathrm{rec}})$.
+

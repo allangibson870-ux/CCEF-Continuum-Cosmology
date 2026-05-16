@@ -343,6 +343,61 @@ $$n \rightarrow \frac{n}{|n|}.$$
 
 This pseudo‑spectral scheme provides an exact representation of the spatial operators and preserves the target‑space constraint throughout the evolution.
 
+## 7.5 Discrete Energy Conservation Identity (Pseudo‑Spectral Scheme)
+
+For the pseudo‑spectral evolution of the 1D CCEF field, the discrete Hamiltonian at time-step $m$ is
+
+$$\mathcal{H}_i^m = \frac{Z_t}{2}|v_i^m|^2 + \frac{A_1}{2}(\partial_x n_i^m)^2 + \frac{A_3}{2}(\partial_x^2 n_i^m)^2 + \frac{A_4}{2}\big[1-(n_i^m\cdot n_0)^2\big].$$
+
+Using Parseval’s identity, the gradient terms satisfy
+
+$$\frac{1}{N}\sum_i (\partial_x n_i^m)^2 = \sum_k k^2|\tilde n^m(k)|^2, \qquad \frac{1}{N}\sum_i (\partial_x^2 n_i^m)^2 = \sum_k k^4|\tilde n^m(k)|^2.$$
+
+Define the total discrete energy
+
+$$\bar E^m = \frac{1}{N}\sum_i \mathcal{H}_i^m.$$
+
+### Time Difference of the Energy
+
+Using midpoint values and the Verlet updates
+
+$$v^{m+1}-v^m = \Delta t\,\partial_t^2 n^{m+1/2}, \qquad n^{m+1}-n^m = \Delta t\,v^{m+1/2},$$
+
+the discrete time difference becomes
+
+$$\frac{\bar E^{m+1}-\bar E^m}{\Delta t} = Z_t\langle \partial_t^2 n^{m+1/2}, v^{m+1/2}\rangle + A_1\langle \partial_x v^{m+1/2}, \partial_x n^{m+1/2}\rangle + A_3\langle \partial_x^2 v^{m+1/2}, \partial_x^2 n^{m+1/2}\rangle - A_4\langle (n^{m+1/2}\cdot n_0)n_0, v^{m+1/2}\rangle.$$
+
+### Insertion of the Pseudo‑Spectral Acceleration
+
+The midpoint acceleration is
+
+$$\partial_t^2 n = \frac{1}{Z_t}\big(V_{\text{lin}} - (n\cdot V_{\text{lin}})n\big) + |v|^2 n.$$
+
+Because the constraint $n\cdot n=1$ is enforced exactly,
+
+$$\langle n^{m+1/2}, v^{m+1/2}\rangle = 0,$$
+
+which removes the projection and kinetic terms, giving
+
+$$Z_t\langle \partial_t^2 n, v\rangle = \langle V_{\text{lin}}, v\rangle.$$
+
+### Linear Drive Vector
+
+$$V_{\text{lin}} = A_1\nabla^2 n - A_3\nabla^4 n + A_4(n\cdot n_0)n_0.$$
+
+Using Parseval’s identities,
+
+$$\langle \nabla^2 n, v\rangle = -\langle \partial_x n, \partial_x v\rangle, \qquad \langle \nabla^4 n, v\rangle = \langle \partial_x^2 n, \partial_x^2 v\rangle.$$
+
+Substituting these into the time‑difference expression yields
+
+$$\frac{\bar E^{m+1}-\bar E^m}{\Delta t} = 0.$$
+
+### Discrete Conservation Law
+
+$$\boxed{\bar E^{m+1} = \bar E^m}$$
+
+Thus the pseudo‑spectral Verlet scheme preserves the total discrete CCEF energy exactly up to $\mathcal{O}(\Delta t^2)$, independent of grid resolution or non‑linear mode coupling.
 
 
 

@@ -256,6 +256,44 @@ Theorem: For any continuous multi-directional material medium governed by the CC
 
 The entire non-linear structure growth correction is driven exclusively by the fourth-order cubic-vertex contraction diagram P_13(k) and the one-loop closed triangle loop bispectrum Gamma_3D_3point.
 
+
+## 9.1 — First‑Principles Background Expansion Closure (H²)
+
+The background expansion rate H = ∂_t a / a is sourced entirely by the coarse‑grained energy density of the CCEF continuous medium.
+
+### 1. Coarse‑Grained Homogeneous Energy Density
+Under the homogeneous smoothing ansatz (∂_i n = 0, ∇²n = 0), the metric‑derived energy density reduces to:
+  ρ_eff(a) = (Z_t/2) * (∂_t n)² + (A₄/2) * (1 − (n·n₀)²)
+
+The total background density is:
+  ρ_total(a) = ρ₀(a) + (Z_t/2)*(∂_t n)² + (A₄/2)*(1 − (n·n₀)²)
+
+### 2. Homogeneous Field Dynamics and the Overdamped Attractor
+Parameterising n·n₀ = cosφ(t), the exact homogeneous CCEF equation of motion becomes:
+  Z_t * φ̈ + 3H Z_t * φ̇ + (A₄/2)*sin(2φ) = 0
+
+At late times, Hubble friction forces the system onto the overdamped attractor:
+  3H Z_t * φ̇ = −(A₄/2)*sin(2φ)
+  (∂_t n)² = φ̇²
+
+Substituting yields the exact homogeneous field energy:
+  ρ_eff = (A₄/2)*sin²φ + (A₄²/(72 H² Z_t))*sin²(2φ)
+
+### 3. Exact Quadratic Friedmann Equation
+Inserting ρ_eff into H² = (8πG/3)*ρ_total gives the quadratic equation:
+  H⁴ − (8πG/3)*[ρ₀ + (A₄/2)*sin²φ] * H² − (4πG/(27 Z_t))*A₄²*sin²φ*cos²φ = 0
+
+### 4. Exact Radical Solution
+The physical branch of the solution is:
+  H² = (4πG/3)*[ρ₀ + (A₄/2)*sin²φ]
+        + sqrt( (4πG/3)²*[ρ₀ + (A₄/2)*sin²φ]²
+                + (4πG/(27 Z_t))*A₄²*sin²φ*cos²φ )
+
+### 5. Structural Closure
+The same couplings A₄(a) and Z_t(a) that determine the homogeneous expansion also govern the soliton mass gap, far‑field interaction range, and long‑wavelength kernel behaviour, unifying the background and perturbative sectors.
+
+
+
 ## SECTION 10.0 — Hessian Operator & Dual-Channel Kernel Closure
 
 ### 10.1 Exact Hessian Operator in Plain-Text Form

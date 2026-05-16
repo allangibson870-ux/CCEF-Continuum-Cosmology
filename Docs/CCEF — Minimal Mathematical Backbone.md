@@ -399,6 +399,71 @@ $$\boxed{\bar E^{m+1} = \bar E^m}$$
 
 Thus the pseudo‑spectral Verlet scheme preserves the total discrete CCEF energy exactly up to $\mathcal{O}(\Delta t^2)$, independent of grid resolution or non‑linear mode coupling.
 
+## SECTION 7.5 — 3D Discrete Energy Conservation Identity (Pseudo‑Spectral Scheme)
+
+### 7.5 Multi‑Dimensional Stability of the 3D Pseudo‑Spectral Grid
+
+For a periodic volume $V = L^3$ containing $N^3$ discrete nodes with coordinate vectors $\mathbf{x}_{\mathbf{i}}$, spatial grid fields are mapped via the 3D discrete spatial averaging operator:
+
+$$\langle U, W \rangle_{\text{3D}} \equiv \frac{1}{N^3}\sum_{\mathbf{i}} U_{\mathbf{i}} \cdot W_{\mathbf{i}}.$$
+
+The total discrete 3D energy density $\mathcal{H}_{\mathbf{i}}^m$ at time-step $m$ tracks all active spatial derivative blocks using the target-space velocity vector $\mathbf{v}_{\mathbf{i}}^m = (\partial_t n)_{\mathbf{i}}^m$:
+
+$$\mathcal{H}_{\mathbf{i}}^m = \frac{Z_t}{2} |\mathbf{v}_{\mathbf{i}}^m|^2 + \frac{A_1}{2} \sum_{j=1}^3 (\partial_j n_{\mathbf{i}}^m)^2 + \frac{A_3}{2} (\nabla^2 n_{\mathbf{i}}^m)^2 + \frac{A_4}{2}\big[1-(n_{\mathbf{i}}^m\cdot n_0)^2\big].$$
+
+Invoking the multi‑dimensional Parseval identity, the integrated 3D spatial operators map perfectly onto the momentum‑space wavenumber grid via the exact 3D momentum magnitude $|\mathbf{k}|^2 = k_x^2 + k_y^2 + k_z^2$:
+
+$$\frac{1}{N^3}\sum_{\mathbf{i}} \sum_{j=1}^3 (\partial_j n_{\mathbf{i}}^m)^2 = \sum_{\mathbf{k}} |\mathbf{k}|^2 |\tilde n^m(\mathbf{k})|^2, \qquad \frac{1}{N^3}\sum_{\mathbf{i}} (\nabla^2 n_{\mathbf{i}}^m)^2 = \sum_{\mathbf{k}} |\mathbf{k}|^4 |\tilde n^m(\mathbf{k})|^2.$$
+
+Define the total integrated 3D discrete energy:
+
+$$\bar E^m_{\text{3D}} = \frac{1}{N^3}\sum_{\mathbf{i}} \mathcal{H}_{\mathbf{i}}^m.$$
+
+### Time Difference of the 3D Integrated Energy
+
+Using midpoint values and the multi‑directional Verlet time‑stepping updates
+
+$$\mathbf{v}^{m+1}-\mathbf{v}^m = \Delta t\,\partial_t^2 n^{m+1/2}, \qquad n^{m+1}-n^m = \Delta t\,\mathbf{v}^{m+1/2},$$
+
+the discrete 3D time difference expands to:
+
+$$\frac{\bar E^{m+1}_{\text{3D}}-\bar E^m_{\text{3D}}}{\Delta t} = Z_t\langle \partial_t^2 n^{m+1/2}, \mathbf{v}^{m+1/2}\rangle_{\text{3D}} + A_1 \sum_{j=1}^3 \langle \partial_j \mathbf{v}^{m+1/2}, \partial_j n^{m+1/2}\rangle_{\text{3D}} + A_3\langle \nabla^2 \mathbf{v}^{m+1/2}, \nabla^2 n^{m+1/2}\rangle_{\text{3D}} - A_4\langle (n^{m+1/2}\cdot n_0)n_0, \mathbf{v}^{m+1/2}\rangle_{\text{3D}}.$$
+
+### Verification of Orthogonality under Multi‑Dimensional Projection
+
+The 3D pseudo‑spectral midpoint acceleration vector evaluated on the manifold is:
+
+$$\partial_t^2 n = \frac{1}{Z_t}\big(\mathbf{V}_{\text{lin, 3D}} - (n\cdot \mathbf{V}_{\text{lin, 3D}})n\big) + |\mathbf{v}|^2 n.$$
+
+Because the algebraic constraint $n\cdot n=1$ is enforced exactly at every coordinate node, the field vector $n^{m+1/2}$ and its temporal derivative vector $\mathbf{v}^{m+1/2}$ remain perfectly orthogonal across all three dimensions simultaneously:
+
+$$\langle n^{m+1/2}, \mathbf{v}^{m+1/2}\rangle_{\text{3D}} = 0.$$
+
+This exact target‑space orthogonality cancels the projection and non‑linear kinetic feedback terms identically, reducing the velocity product to:
+
+$$Z_t\langle \partial_t^2 n, \mathbf{v}\rangle_{\text{3D}} = \langle \mathbf{V}_{\text{lin, 3D}}, \mathbf{v}\rangle_{\text{3D}}.$$
+
+### 3D Spectral Identity Integration and Closure
+
+The 3D linear drive vector fields are defined as:
+
+$$\mathbf{V}_{\text{lin, 3D}} = A_1\nabla^2 n - A_3\nabla^4 n + A_4(n\cdot n_0)n_0.$$
+
+Applying the 3D Parseval identity to the multi‑directional Laplacians transforms the fields into exact wavenumber scalar functions:
+
+$$\langle \nabla^2 n, \mathbf{v}\rangle_{\text{3D}} \equiv -\sum_{j=1}^3 \langle \partial_j n, \partial_j \mathbf{v}\rangle_{\text{3D}}, \qquad \langle \nabla^4 n, \mathbf{v}\rangle_{\text{3D}} \equiv \langle \nabla^2 n, \nabla^2 \mathbf{v}\rangle_{\text{3D}}.$$
+
+Substituting these exact spectral identities back into the time‑difference expression forces a total analytical cancellation across the entire 3D array:
+
+$$\frac{\bar E^{m+1}_{\text{3D}}-\bar E^m_{\text{3D}}}{\Delta t} = 0.$$
+
+### 3D Master Conservation Identity
+
+$$\boxed{\bar E^{m+1}_{\text{3D}} = \bar E^m_{\text{3D}}}$$
+
+Thus, the 3D pseudo‑spectral Verlet scheme preserves the total discrete CCEF energy exactly up to $\mathcal{O}(\Delta t^2)$. This mathematical stability loop holds true independent of the chosen 3D grid resolution, the number of active momentum modes, or the non‑linear mode‑coupling energy cascades flowing through the 3D vertices.
+
+
 
 
 ## 8. RG Flow

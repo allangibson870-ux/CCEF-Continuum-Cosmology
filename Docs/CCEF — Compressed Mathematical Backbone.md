@@ -1,4 +1,4 @@
-# CCEF — Fully Restored Plain-Text Mathematical Backbone
+# CCEF — Condensed Mathematical Backbone
 
 ## 1. Field Constraints & Action
 - Field & Constraint: n(x,t) in S^2, dot(n, n) = 1, dot(n, delta_n) = 0, dot(n, partial_mu_n) = 0, dot(n, d2n_dt2) = -sum(dn_dt^2).

@@ -243,6 +243,55 @@ $$n \rightarrow \frac{n}{|n|}.$$
 
 This algorithm provides a direct numerical realization of the CCEF continuum dynamics, preserving the spherical constraint and the exact structure of the spatial operators without introducing any external assumptions.
 
+## 7.3 Perturbative Expansion and Mode‑Coupling Structure (1D Reduction)
+
+We expand the transverse components of the field as
+
+$$n(x,t) = (\pi_1,\;\pi_2,\;\sqrt{1-\pi^2}), \qquad \pi^2=\pi_1^2+\pi_2^2,$$
+
+and retain terms up to cubic order. Substituting into the 1D evolution equation yields the transverse perturbation equation
+
+$$Z_t\,\partial_t^2\pi_a - A_1\,\partial_x^2\pi_a + A_3\,\partial_x^4\pi_a + A_4\,\pi_a = \mathcal{F}^{(3)}_a[\pi].$$
+
+### Cubic Non‑Linear Driving Term
+
+$$\mathcal{F}^{(3)}_a[\pi] = \pi_a\!\left[ A_1\sum_b(\partial_x\pi_b)^2 + A_3\sum_b(\partial_x^2\pi_b)^2 - A_4\sum_b\pi_b^2 + Z_t\sum_b(\partial_t\pi_b)^2 \right] - \pi_a\,\partial_x\!\left[ A_1\sum_b\pi_b\partial_x\pi_b \right] + A_3\pi_a\,\partial_x^2\!\left[ \sum_b\big((\partial_x\pi_b)^2+\pi_b\partial_x^2\pi_b\big) \right].$$
+
+### Fourier Representation
+
+$$\pi_a(x,t) = \int\frac{dk}{2\pi}\,\tilde\pi_a(k,t)e^{ikx}.$$
+
+The linear operator becomes
+
+$$\tilde D(k) = -Z_t\omega^2 + A_1 k^2 + A_3 k^4 + A_4.$$
+
+The cubic term transforms into a momentum‑conserving convolution:
+
+$$\tilde{\mathcal{F}}^{(3)}_a(k) = \sum_b\!\int\!\frac{dk_1}{2\pi}\frac{dk_2}{2\pi}\frac{dk_3}{2\pi} (2\pi)\delta(k-k_1-k_2-k_3)\, \Gamma_{ab}(k_1,k_2,k_3)\, \tilde\pi_a(k_1)\tilde\pi_b(k_2)\tilde\pi_b(k_3).$$
+
+### Mode‑Coupling Coefficients
+
+#### Cross‑Mode Coupling $(b\neq a)$
+
+$$\Gamma_{a,b\neq a}(k_1,k_2,k_3) = -A_1(k_2 k_3) + A_3\!\left(k_2^2 k_3^2 - k_2^4 - k_3^4\right) - A_4 - Z_t\,\omega_2\omega_3.$$
+
+#### Self‑Mode Coupling $(b=a)$
+
+$$\Gamma_{aa}(k_1,k_2,k_3) = -A_1\!\left[ \frac{1}{3}(k_1k_2+k_2k_3+k_3k_1) + \frac{1}{3}(k_2+k_3)^2 \right] + A_3\!\left[ k_2^2 k_3^2 - \frac{1}{3}(k_2^4+k_3^4) - \frac{1}{3}(k_2+k_3)^4 \right] - A_4 - Z_t\,\omega_2\omega_3.$$
+
+### Vertex Scaling
+
+In the infrared limit,
+
+$$\lim_{k\to 0}\Gamma_{ab} = -A_4.$$
+
+In the ultraviolet limit,
+
+$$\Gamma_{ab}(k)\sim A_3 k^4.$$
+
+Thus the mass‑gap parameter $A_4$ sets the IR interaction plateau, while the higher‑derivative coefficient $A_3$ governs UV mode‑coupling growth and stabilizes high‑frequency continuum dynamics.
+
+
 
 ## 8. RG Flow
 

@@ -232,6 +232,31 @@ theta_eff = (1 / rho_eff) * ( Z_t * [ dot(di_dt_n, di_n) + dot(dt_n, laplacian_n
 
 The regularization factor epsilon_reg (typically 1e-15) prevents coordinate singularities in deep vacuum cells, forcing theta_eff to vanish smoothly where field densities approach zero.
 
+### 9 Structure Theorem: Quadratic Cancellation and Interaction Hierarchy
+
+For transverse field perturbations parameterized as n = (pi_1, pi_2, sqrt(1 - |pi|^2))^T expanded up to fourth order O(pi^4) around the stable vacuum baseline n_0 = (0, 0, 1), all quadratic non-linear interaction terms vanish identically. 
+
+#### 1. Target-Space Expansion Geometry
+Expanding the longitudinal component n_3 and its spacetime derivative fields yields:
+  n_3 = 1 - (1/2)*|pi|^2 - (1/8)*|pi|^4 - O(pi^6)
+  partial_mu_n_3 = - sum_b( pi_b * partial_mu_pi_b ) - (1/2)*|pi|^2 * sum_b( pi_b * partial_mu_pi_b )
+
+Substituting these expansions into the full multi-directional Lagrangian density reveals that the squared gradient and temporal manifolds contain zero cubic field interactions in the action, mapping exclusively to fourth-order field terms of the form pi^m * (partial_mu_pi)^n where m + n >= 4.
+
+#### 2. Functional Variation and Constraint Enforcement
+Imposing the strict S^2 target-space variation constraints (n dot delta_n == 0, n dot partial_mu_n == 0) and varying the expanded action blocks term-by-term generates the unconstrained transverse equations of motion:
+  delta_L / delta_pi_a = [Linear Inverse Propagator Operator] - F_a_2D[pi] - F_a_3D_cubic[pi]
+
+Because every single non-linear contraction requires a minimum product profile of three field elements, the quadratic non-linear driving vector field cancels out perfectly across all coordinates:
+  F_a_2D[pi] == 0  for all a in {1, 2}
+
+#### 3. The Hierarchy Theorem
+Theorem: For any continuous multi-directional material medium governed by the CCEF action, all quadratic non-linearities vanish. The first non-trivial non-linear interaction is strictly cubic (O(pi^3)). Consequently, the standard perturbation theory tree-level power spectrum components P_12(k) and loop-bubble mode-mixing components P_22(k) are identically zero everywhere on the wavenumber grid:
+  P_12(k, a) == 0,  P_22(k, a) == 0  for all k, a
+
+The entire non-linear structure growth correction is driven exclusively by the fourth-order cubic-vertex contraction diagram P_13(k) and the one-loop closed triangle loop bispectrum Gamma_3D_3point.
+
+
 
 
 

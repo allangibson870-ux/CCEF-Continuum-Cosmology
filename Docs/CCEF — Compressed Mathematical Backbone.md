@@ -119,3 +119,31 @@ Evaluating this template across triangular parameters reveals the distinctive fi
 * **Equilateral Configuration Domination (ell_1 == ell_2 == ell_3)**: The angular bispectrum peaks heavily in symmetric configurations. When the external angular vectors map to an equilateral shape, the closed spatial loop maximizes the interior overlap volume of the internal momentum fields q, generating a clean non-Gaussian track.
 * **Squeezed Configuration Deficit (ell_1 << ell_2 == ell_3)**: Unlike standard dark matter frameworks (where non-linear gravity pushes three-point signatures into the squeezed limit), CCEF suppresses this channel. As ell_1 -> 0, the corresponding vertex collapses onto the constant infrared mass-gap plateau (lim Gamma -> -A_4). Concurrently, the high-frequency internal momentum legs are strongly damped by the A_3 * |q|^4 regulariser. This unique deficit allows modern wide-field cosmic shear maps to directly differentiate CCEF from alternative gravity models.
 
+* ## SECTION 7. — 3D Topological Velocity Field Evaluation (Plain-Text Stencil)
+
+### 7.10 Regularized Extraction of Hydrodynamic Soliton Velocity
+To track the multi-directional comoving drift of localized coherent modes across a 3D spectral coordinate layout without point particles, the velocity vector field v_top^i(x) is derived directly from the topological current components:
+
+v_top^i = J_top^i / rho_top
+
+To eliminate coordinate singularities where the field approaches uniform vacuum configurations (rho_top -> 0), the continuum engine applies a regularized quadratic projection template:
+
+v_top_x = (rho_top * J_x) / (rho_top^2 + epsilon_reg^2)
+v_top_y = (rho_top * J_y) / (rho_top^2 + epsilon_reg^2)
+v_top_z = (rho_top * J_z) / (rho_top^2 + epsilon_reg^2)
+
+where epsilon_reg is a small numerical filter constant set below the physical soliton core boundary (typically 1e-8). 
+
+### Momentum and Density Extraction Steps
+1. Evaluate spatial derivative matrices via exact wavenumber products in Fourier space:
+   di_n = Inverse_FFT( i * k_i * FFT(n) )
+2. Construct the local topological charge density tensor block:
+   rho_top = (1 / (4 * pi)) * dot( n, cross(dy_n, dz_n) + cross(dz_n, dx_n) + cross(dx_n, dy_n) )
+3. Compute the active directional spatial flux vector components:
+   J_x = (1 / (4 * pi)) * dot( n, cross(dt_n, dx_n) )
+   J_y = (1 / (4 * pi)) * dot( n, cross(dt_n, dy_n) )
+   J_z = (1 / (4 * pi)) * dot( n, cross(dt_n, dz_n) )
+
+This velocity parameter field maintains strict casual subluminality bounds (max |v_top| < c_eff) under all valid integration steps, providing a stable, non-dissipative method to monitor localized soliton transport from first principles.
+
+

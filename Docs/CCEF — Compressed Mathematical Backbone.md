@@ -177,5 +177,62 @@ P_Xi(k) = |k|^5
 
 This correlated profile creates an exact multi-scale safety loop: at large angles, fluctuations are plateaued by the mass-gap parameter A4, while at high frequencies, the A3 * |k|^4 regulariser cleanly balances the k^5 injection energy. This limits real-space variance to finite values and eliminates numerical coordinate anomalies up to the Nyquist limit.
 
+## SECTION 7.3 — Full Time-Evolution Engine and 3D Bispectrum Quadrature
+
+### 7.3 3D Pseudo-Spectral Splitting Matrix Stepper
+
+The explicit integration of the 3D continuous material wave operator alternates spatial derivatives in Fourier space with constraint projections in real space. For long-term numerical stability over N=128+ grids, time-stepping must use an exact Symplectic-Projective Verlet integration loop.
+
+1. Momentum Phase (Fourier Space):
+   tilde_V_lin(k) = (-A_1 * |k|^2 - A_3 * |k|^4) * tilde_n(k) + A_4 * tilde_projection(n_0)
+
+2. Tangent Manifold Projection (Real Space):
+   P_perp_V = V_lin - dot(n, V_lin) * n
+   d2n_dt2 = (P_perp_V / Z_t) + sum(v^2) * n
+
+3. Symplectic Update & Constraint Restoration:
+   v_half = v + 0.5 * d2n_dt2 * dt
+   n_next = n + v_half * dt
+   n_normalized = n_next / norm(n_next)
+   v_next = v_half - dot(n_normalized, v_half) * n_normalized
+
+This loop guarantees dot(n, v) == 0 and |n| == 1 to machine precision, preventing high-frequency energy accumulation over extended integrations.
+
+### 7.4 High-Resolution Isotropic 3D Bispectrum Quadrature
+
+To eliminate directional approximation errors in B_m_1loop, the angular integration over the triangle loop vector q must use a robust double-spherical coordinate grid mapping instead of single-axis sampling loops. Let x = cos(theta_q) and phi_q track the angular orientation relative to the external wavevector triangle. The full phase-space integral evaluates as:
+
+B_m_1loop = Integral_dq( (q^2 * P_lin(q) / (2 * pi^2)) * [ (1 / (4 * pi)) * Integral_dx( Integral_dphi( M_triangle_3D(k1, k2, k3, q, x, phi) ) ) ] )
+
+The nested angular arrays are solved via Gauss-Legendre quadrature along x and Gauss-Chebyshev quadrature along phi, ensuring exact multi-scale non-Gaussian mode coupling.
+
+## SECTION 8 — Non‑Linear Fluid Velocity Divergence Field (Plain-Text Stencil)
+
+### 8.1 Extraction of Macroscopic Momentum Divergence
+To bridge the gap between microscopic field gradients and macroscale cosmological observables without introducing unphysical point particles or baryonic feedback assumptions, the continuous fluid velocity divergence field theta_eff(x, t) is extracted directly from the spatial elements of the metric stress-energy tensor:
+
+theta_eff = di( T^0_i / rho_eff )
+
+Expanding the derivative operator analytically via the product rule across full 3D spatial directions gives the closed algebraic plain-text template:
+
+theta_eff = (1 / rho_eff) * ( Z_t * [ dot(di_dt_n, di_n) + dot(dt_n, laplacian_n) ] - A_3 * [ dot(biharmonic_n, dt_n) - dot(laplacian_dt_n, laplacian_n) ] ) - ( T^0_i * di_rho_eff ) / (rho_eff^2)
+
+### Vectorized Extraction and Regularisation Stencil
+1. Evaluate the comoving momentum density flux vector components T^0_i from the field arrays:
+   T0_x = Z_t * dot(v, dx_n)
+   T0_y = Z_t * dot(v, dy_n)
+   T0_z = Z_t * dot(v, dz_n)
+2. Reconstruct the total local effective metric energy density matrix rho_eff:
+   rho_eff = 0.5 * Z_t * sum(v^2) + 0.5 * A1 * sum(di_n^2) + 0.5 * A3 * sum(laplacian_n^2) + 0.5 * A4 * (1 - n_z^2)
+3. Compute the spatial divergence using exact Fourier wavenumber multiplication:
+   tilde_tx = FFT( T0_x / (rho_eff + epsilon_reg) )
+   tilde_ty = FFT( T0_y / (rho_eff + epsilon_reg) )
+   tilde_tz = FFT( T0_z / (rho_eff + epsilon_reg) )
+   theta_eff = Real( Inverse_FFT( i * k_x * tilde_tx + i * k_y * tilde_ty + i * k_z * tilde_tz ) )
+
+The regularization factor epsilon_reg (typically 1e-15) prevents coordinate singularities in deep vacuum cells, forcing theta_eff to vanish smoothly where field densities approach zero.
+
+
+
 
 

@@ -85,3 +85,37 @@
   P_delta(k) proportional to |K(k)|^2 * P_Xi(k)
   For white noise: P_Xi proportional to k^0 -> P_delta(k) ~ 1 / (A_3^2 * k^8) (True UV Scaling)
   If an observational baseline floor of P_delta(k) ~ 1 / k^3 is required, the noise template must scale as P_Xi(k) proportional to k^5.
+
+  ## 6.1 Three‑Point Weak Lensing Bispectrum Spectrum B_kappa(ell_1, ell_2, ell_3)
+
+The angular bispectrum B_kappa(ell_1, ell_2, ell_3) tracks the non-Gaussian spatial configuration of cosmic shear maps over an angular triangle forming a closed shell where vector_ell_1 + vector_ell_2 + vector_ell_3 == 0. Because all quadratic non-linear interactions vanish identically due to target-space projection parity, the tree-level bispectrum is zero, and the entire three-point signature is generated at the one-loop level via the closed triangle loop vertex.
+
+### Multi‑Dimensional Limber Projection Mapping
+By generalising the Limber projection tracking from two-point to three-point statistics, the angular bispectrum is written as a line-of-sight integration over the 3D spatial matter bispectrum B_m_1loop, mapped via the geometric wavevector condition k_n = ell_n / chi:
+
+B_kappa(ell_1, ell_2, ell_3) = (3.375 * Omega_m^3 * H_0^6) * Integral_dchi( ( (chi_s - chi)^3 / (chi_s^3 * a^3(chi) * chi) ) * Sigma_CCEF(ell_1/chi, a) * Sigma_CCEF(ell_2/chi, a) * Sigma_CCEF(ell_3/chi, a) * B_m_1loop(ell_1/chi, ell_2/chi, ell_3/chi, a) ) from 0 to chi_s
+
+Where the geometric lensing efficiency lens window function is defined as W(chi) = chi * (chi_s - chi) / chi_s.
+
+### Insertion of the 3D Spatial Matter Bispectrum Core
+The 3D spatial matter bispectrum inside the projection integrand is driven by the internal triangle loop momentum integration over the three interacting wavenumbers k_n = ell_n / chi:
+
+B_m_1loop(k1, k2, k3, a) = Integral_d3q( M_triangle_3D(k1, k2, k3, q, a) * P_lin(q, a) * P_lin(|q + k1|, a) * P_lin(|q - k2|, a) / ( D_k(q, a) * D_k(|q + k1|, a) * D_k(|q - k2|, a) ) ) / (2 * pi)^3
+
+Where the 3D inverse propagator denominator is defined as D_k(p, a) = A_4(a) + A_1(a) * |p|^2 + A_3(a) * |p|^4.
+
+### Fully Closed Algebraic Plain‑Text Template
+Combining the projection layers, the complete first-principles model for the CCEF non-Gaussian lensing signature reads:
+
+B_kappa(ell_1, ell_2, ell_3) = (3.375 * Omega_m^3 * H_0^6) * Integral_dchi( ( (chi_s - chi)^3 / (chi_s^3 * a^3(chi) * chi) ) * Sigma_CCEF(ell_1/chi, a) * Sigma_CCEF(ell_2/chi, a) * Sigma_CCEF(ell_3/chi, a) * [ Integral_d3q( M_triangle_3D(ell_1/chi, ell_2/chi, ell_3/chi, q, a) * P_lin(q, a) * P_lin(|q + k1|, a) * P_lin(|q - k2|, a) / ( D_k(q, a) * D_k(|q + k1|, a) * D_k(|q - k2|, a) ) ) / (2 * pi)^3 ] ) from 0 to chi_s
+
+Where the active 3D triangle vertex mapping matrix M_triangle_3D tracks the permutation couplings of the self-mode vertex functions over the vector dot products:
+
+M_triangle_3D = sum_over_permutations( Gamma_aa_3D(-k1, q, -q-k1) * Gamma_aa_3D(-k2, -q, q-k2) )
+
+### Geometrical Configurations & Observational Shapes
+Evaluating this template across triangular parameters reveals the distinctive fingerprints of the CCEF loop mechanics:
+
+* **Equilateral Configuration Domination (ell_1 == ell_2 == ell_3)**: The angular bispectrum peaks heavily in symmetric configurations. When the external angular vectors map to an equilateral shape, the closed spatial loop maximizes the interior overlap volume of the internal momentum fields q, generating a clean non-Gaussian track.
+* **Squeezed Configuration Deficit (ell_1 << ell_2 == ell_3)**: Unlike standard dark matter frameworks (where non-linear gravity pushes three-point signatures into the squeezed limit), CCEF suppresses this channel. As ell_1 -> 0, the corresponding vertex collapses onto the constant infrared mass-gap plateau (lim Gamma -> -A_4). Concurrently, the high-frequency internal momentum legs are strongly damped by the A_3 * |q|^4 regulariser. This unique deficit allows modern wide-field cosmic shear maps to directly differentiate CCEF from alternative gravity models.
+

@@ -628,6 +628,119 @@ Thus for superhorizon modes k ≪ aH:
 
 The crucial δ_m ∼ k² scaling is not imported from GR but is enforced by the CCEF kernel‑based Poisson relations plus the physical requirement that Φ and Ψ remain finite as k → 0. This closes the remaining mathematical gap in the superhorizon conservation proof.
 
+# Appendix — Formal Field-Theoretic Structure of the CCEF Open EFT
+A modular presentation of the microscopic action, SK inversion, renormalization,
+infrared protection, and non‑Gaussian configuration space.
+
+---
+
+## 1. Microscopic Origin and Schwinger–Keldysh Construction
+
+### 1.1 Keldysh Rotation and Field Content
+We define forward/backward fields (π₊, π₋) and rotate into classical/quantum bases:
+π_c = (π₊ + π₋)/√2 ,   π_q = (π₊ − π₋)/√2.
+
+### 1.2 UV Action with Environmental Bath
+The macroscopic field π couples to a continuum of fast bath modes B_α(x,t) with
+mass gaps Ω_α. Couplings preserve Galilean covariance and momentum conservation:
+
+S[π,B] = ∫ d⁴x [ (Z_t/2) π̇² − (A₄/2) π² ]
+       + Σ_α ∫ d⁴x [ (1/2) Ḃ_α² − (c_α²/2)(∇B_α)² − (Ω_α²/2)B_α²
+                     − g_α ∇π·Ḃ_α − λ_α ∇²π·B_α ].
+
+### 1.3 Exact Gaussian Integration of Bath Fields
+Integrating out B_α yields the SK effective action S_eff[π_c,π_q] with retarded and
+advanced inverse propagators:
+
+D_{R,A}(k,ω) = −Z_t ω² ∓ i η₀ (kR₀)² ω + A₁(kR₀)² + A₃(kR₀)⁴ + A₄.
+
+### 1.4 Emergence of Macroscopic Coefficients
+Assuming a flat spectral density J_g(Ω)=η₀, the imaginary branch produces the
+viscous term iη₀k²ω, while the static elastic loop generates the A₃k⁴ Lifshitz
+regulariser. The coherence scale is R₀ = √(A₃/A₁).
+
+---
+
+## 2. One‑Loop Renormalization and Operator Algebra Closure
+
+### 2.1 Nonlinear Vertex from S² Constraint
+Expanding n·n=1 to cubic order yields the three‑point vertex:
+Γ_{qcc}(k,q,ω,Ω) = g₁R₀(k·q)ω + g₂R₀³(k·q)².
+
+### 2.2 Sunset Diagram Structure
+The 1‑loop correction to D_R is:
+Σ_R^{1‑loop}(k,ω) = 2i ∫ d³q dΩ Γ_{qcc} G^R(q,Ω) G^K(k−q,ω−Ω) Γ_{cqq}.
+
+### 2.3 Tensor Integral Decomposition
+Odd‑power integrals vanish; even‑power integrals reduce to isotropic Kronecker
+structures. Hydrodynamic limit (ω²,k² ≪ M_bath²) yields:
+
+I₀ ∝ ω²,   I₂ ∝ k²,   I₄ ∝ k⁴,   J₂ ∝ k²ω.
+
+### 2.4 Exact 1‑Loop Scaling
+Σ_R^{1‑loop}(k,ω) = I₀ ω² + I₂ k² + I₄ k⁴ + i J₂ k²ω + O(k⁶,ω³).
+
+### 2.5 Renormalization Closure
+Each divergent term maps to an existing operator:
+
+δZ_t = I₀,   δA₁ = I₂,   δA₃ = I₄,   δη₀ = J₂.
+
+Thus the operator algebra {k², k⁴, k²ω} is **strictly closed** under SK
+renormalization. No higher‑derivative operators are generated.
+
+---
+
+## 3. Hyperbolic KMS Invariant and Infrared Regularity
+
+### 3.1 Exact KMS Relation
+G^K(k,ω) = coth(ω/2T_eff) [ G^R − G^A ].
+
+### 3.2 Spectral Density Scaling
+ρ(k,ω) = −2 Im G^R(k,ω) → (const)·ω as ω→0, due to A₄>0.
+
+### 3.3 Cancellation of Classical Divergence
+Since coth(x)→1/x for x→0, the ω factor in ρ cancels the 1/ω factor in the KMS
+kernel, guaranteeing a finite hydrodynamic noise spectrum.
+
+---
+
+## 4. Real‑Space Cosmic Shear via Hankel Transforms
+
+### 4.1 Flat‑Sky Transform
+ξ₊^{ij}(θ) = (1/2π) ∫ dℓ ℓ C_ℓ^{ij} J₀(ℓθ),
+ξ₋^{ij}(θ) = (1/2π) ∫ dℓ ℓ C_ℓ^{ij} J₄(ℓθ).
+
+### 4.2 UV Convergence Guarantee
+Because P(k) ~ k⁻³ in the UV (from A₃k⁴ regularisation), the oscillatory Bessel
+kernels converge without artificial smoothing.
+
+---
+
+## 5. Non‑Gaussianity and the 4‑Point Degeneracy Matrix
+
+### 5.1 Induced Cubic Coupling
+λ₃^{eff}(k) = (A₁k² + A₃k⁴ + A₄)/Z_t.
+
+### 5.2 Triple‑Lensing Projection
+B_κ^{ijk}(ℓ) = ∫ dχ χ⁻⁴ W_iW_jW_k D_+³ λ₃^{eff}(k)
+               × [ (kR₀)² e^{−k²R₀²} / (A₄ − A₁k² − A₃k⁴)² ]³.
+
+### 5.3 Degeneracy Theorem
+CCEF mimics a primordial local‑f_NL template **iff** all four hold:
+
+1. **Squeezed refactorisation:** A₃k_S⁴ ≪ A₁k_S²  
+2. **Loss of coherence:** R₀²k_S² ≪ 1  
+3. **Scale‑free propagator:** A₃ → 0  
+4. **Projection linearisation:** Σ_CCEF → √P  
+
+### 5.4 Proof Summary
+If A₃→0 and R₀→0, the cyclic kernel collapses to a separable product:
+Γ₃ → const × [P(k₁)P(k₂) + perms], identical to local‑f_NL.
+Otherwise, A₃>0 and R₀>0 enforce non‑local, equilateral‑heavy structure.
+
+---
+
+
 
 
 

@@ -101,6 +101,80 @@ CCEF‑Lite v3.0 is ruled out if any of the following are observed:
 - **Perfect GW Speed:**  
   Primordial gravitational waves with zero dispersion or stochastic phase noise.
 
+  # CCEF Open EFT — Structural Compression
+
+## 1. AXIOMS (Microscopic Level)
+
+- Fundamental field: |n(x,t)| = 1 (constrained continuum)
+- No spacetime / gauge fields as primitives
+- UV sector = Gaussian bath + linear couplings
+
+Core parameters:
+- A1 → gradient stiffness (k²)
+- A3 → biharmonic elasticity (k⁴)
+- A4 → UV regulator / mass term
+- η0 → dissipation (k²ω)
+- R0 ~ sqrt(A3 / A1) → coherence length
+
+---
+
+## 2. OPERATOR CLOSURE (SK + RG STRUCTURE)
+
+Schwinger–Keldysh fields:
+- πc = classical
+- πq = response
+
+Inverse propagator:
+D⁻¹(k, ω) = ω² + iη0 k²ω + A1 k² + A3 k⁴ + A4
+
+Closure property:
+- {k², k²ω, k⁴} is CLOSED under 1-loop renormalization
+- No higher derivative operators generated
+
+Renormalization map:
+- ω²   ↔ Zt
+- k²   ↔ A1
+- k⁴   ↔ A3
+- k²ω  ↔ η0
+
+Result:
+- Stable EFT algebra
+- Infrared regular via KMS structure
+
+---
+
+## 3. OBSERVABLE MAP
+
+### (A) Power spectrum
+P(k): UV softened by A3 k⁴ term → scale-dependent suppression
+
+### (B) Weak lensing shear
+ξ±(θ) = ∫ dℓ ℓ Cℓ J0/J4(ℓθ)
+
+→ directly probes coherence scale R0
+
+### (C) Bispectrum
+B(k1,k2,k3) ∝ Γ3(k) × propagator structure
+
+Γ3 includes:
+- g1 derivative coupling
+- g2 non-local structure
+- A3 shape deformation
+
+---
+
+## PHASE STRUCTURE
+
+NON-LOCAL CCEF:
+- A3 > 0, R0 > 0
+- equilateral-enhanced bispectrum
+- non-factorisable Γ3
+
+LOCAL fNL LIMIT:
+- A3 → 0 AND R0 → 0
+- Γ3 factorises
+- reduces to local primordial template
+
 ---
 
   **Given that the theory is live please refer to https://github.com/allangibson870-ux/CCEF-Continuum-Cosmology/blob/main/Docs/CCEF%20%E2%80%94%20Minimal%20Mathematical%20Backbone.md for updates

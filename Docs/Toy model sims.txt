@@ -1595,3 +1595,138 @@ if __name__ == "__main__":
     else:
         print("\n [FAILED] Reconstruction loop exhibits non-vanishing spatial offsets.")
     print("================================================================================")
+
+CCEF Tomographic Angular Power Spectrum Pipeline
+import numpy as np
+from scipy.interpolate import CubicSpline
+
+class CCEFTomographicObservablesSuite:
+    def __init__(self, z_grid, H_grid, chi_grid, D_plus_grid, Omega_m, H_0):
+        """
+        CCEF Flat-Sky Tomographic Angular Power Spectrum Suite.
+        Natively bridges the tabulated first-principles cosmology grid to
+        observable cosmic shear data tracks using pure continuum splines.
+        """
+        # Ensure data arrays are ordered by increasing redshift for monotonic splining
+        idx_sort = np.argsort(z_grid)
+        self.z_grid = z_grid[idx_sort]
+        self.H_grid = H_grid[idx_sort]
+        self.chi_grid = chi_grid[idx_sort]
+        self.D_grid = D_plus_grid[idx_sort]
+        
+        self.Omega_m = Omega_m
+        self.H_0 = H_0
+        self.c_speed = 299792.458
+        self.H0_mpc = H_0 / self.c_speed
+        
+        # 1. Construct Exact Monotonic Cubic Splines over the Derived Continuum Grid
+        # Maps coordinates seamlessly: chi -> z, z -> H, z -> D+
+        self.spline_z_from_chi = CubicSpline(self.chi_grid, self.z_grid, extrapolate=False)
+        self.spline_H_from_z = CubicSpline(self.z_grid, self.H_grid, extrapolate=False)
+        self.spline_D_from_z = CubicSpline(self.z_grid, self.D_grid, extrapolate=False)
+        
+        # Determine the maximum safe physical comoving boundary limit
+        self.chi_max = np.max(self.chi_grid)
+
+    def evaluate_lensing_window(self, chi, chi_source_bin):
+        """
+        Computes the sharp single-plane tomographic lensing efficiency matrix element.
+        W(chi) = 1.5 * Omega_m * H0_mpc^2 * (chi / a(chi)) * ((chi_s - chi) / chi_s)
+        """
+        if chi <= 0.0 or chi >= chi_source_bin:
+            return 0.0
+            
+        z_curr = self.spline_z_from_chi(chi)
+        a_chi = 1.0 / (1.0 + z_curr)
+        
+        # Continuum geometric kernel weight mapping
+        window_efficiency = (chi * (chi_source_bin - chi)) / chi_source_bin
+        prefactor = 1.5 * self.Omega_m * (self.H0_mpc**2)
+        
+        return prefactor * (window_efficiency / a_chi)
+
+    def compute_c_ell_matrix(self, ell_array, chi_s_bins, A_3=0.5, noise_amp=1e-5):
+        """
+        Computes the complete, un-decomposed tomographic cross-power spectrum matrix 
+        C_ell^{ij} by performing line-of-sight quadrature over the splined grid loops.
+        """
+        num_ell = len(ell_array)
+        num_bins = len(chi_s_bins)
+        
+        # Allocate tomographic output tensor matrix layout: shape (nbins, nbins, nell)
+        C_ell_matrix = np.zeros((num_bins, num_bins, num_ell))
+        
+        # Set up a high-precision line-of-sight trapezoidal integration mesh
+        chi_integration_mesh = np.linspace(10.0, self.chi_max, num=200)
+        d_chi = chi_integration_mesh[1] - chi_integration_mesh[0]
+        
+        print(f" Computing tomographic C_ell matrix tracks over {num_bins} cross-channels...")
+        
+        for l_idx in range(num_ell):
+            ell = ell_array[l_idx]
+            
+            # Integrate along the line of sight for this specific multipole scale
+            for s_chi in chi_integration_mesh:
+                z_s = self.spline_z_from_chi(s_chi)
+                D_s = self.spline_D_from_z(z_s)
+                
+                # Physical spatial wavenumber mapping matching the Limber projection state
+                k_local = ell / s_chi
+                
+                # Native CCEF matter power spectrum floor: P_delta ~ D+^2 * P_Xi * |K_trans|^2
+                # In the high-frequency UV limit, it converges to the target k^-3 profile floor
+                P_Xi_local = k_local**5
+                K_trans_denom = (2.2 - 1.0 * k_local**2 - A_3 * k_local**4)
+                K_trans_sq = 1.0 / (K_trans_denom**2 + 1e-15)
+                
+                # Active non-linear 3D power spectrum matrix element at this epoch
+                P_m_nonlin = (D_s**2) * P_Xi_local * K_trans_sq * noise_amp
+                
+                # Compute and multiply the cross-bin tomographic efficiency parameters
+                for i in range(num_bins):
+                    W_i = self.evaluate_lensing_window(s_chi, chi_s_bins[i])
+                    for j in range(i, num_bins): # Matrix symmetry constraint: C_ell^{ij} == C_ell^{ji}
+                        W_j = self.evaluate_lensing_window(s_chi, chi_s_bins[j])
+                        
+                        # Limber kernel increment integration element: d_chi / chi^2
+                        integration_kernel = (W_i * W_j * P_m_nonlin) / (s_chi**2)
+                        
+                        cell_increment = integration_kernel * d_chi
+                        C_ell_matrix[i, j, l_idx] += cell_increment
+                        
+                        if i != j:
+                            C_ell_matrix[j, i, l_idx] = C_ell_matrix[i, j, l_idx]
+                            
+        return C_ell_matrix
+
+# --- RUNTIME VALIDATION AND FORECAST EXECUTION ---
+if __name__ == "__main__":
+    # 1. Load the exact data matrix rows generated by the first-principles tabulator loop
+    z_tab = np.array([2.0000, 1.8571, 1.7143, 1.5714, 1.4286, 1.2857, 1.1429, 1.0000, 0.8571, 0.7143, 0.5714, 0.4286, 0.2857, 0.1429, 0.0000])
+    H_tab = np.array([213.6872, 197.8014, 182.5298, 167.8931, 153.9142, 140.6186, 127.9304, 115.7533, 103.9575, 92.4042, 80.9702, 70.0827, 64.2981, 65.1105, 67.4000]) / 299792.458
+    chi_tab = np.array([3788.1405, 3584.0041, 3369.3106, 3143.1493, 2904.4947, 2652.2046, 2385.0116, 2101.4017, 1799.3951, 1476.4020, 1129.1309, 753.3039, 438.1154, 164.2081, 0.0000])
+    D_tab = np.array([0.38541, 0.41407, 0.44521, 0.47915, 0.51624, 0.55688, 0.60155, 0.65082, 0.70535, 0.76587, 0.83325, 0.90847, 0.96314, 0.98560, 1.00000])
+
+    # 2. Spin up the spline forecasting engine
+    suite = CCEFTomographicObservablesSuite(z_tab, H_tab, chi_tab, D_tab, Omega_m=0.315, H_0=67.4)
+    
+    # Configure multipole angular array mapping (ell = 100 up to small scales ell = 2000)
+    ell_test_grid = np.array([100, 500, 1000, 2000])
+    
+    # Establish two tomographic observer bins sliced at 800Mpc and 1200Mpc
+    source_planes = [800.0, 1200.0]
+    
+    # 3. Compute the output prediction matrix
+    Cl_tensor = suite.compute_c_ell_matrix(ell_test_grid, source_planes)
+    
+    print("\n================================================================================")
+    print(" CCEF FIRST-PRINCIPLES TOMOGRAPHIC OBSERVE CHANNEL FORECASTS")
+    print("================================================================================")
+    print(f" Bin 1 Horizon: {source_planes[0]} Mpc | Bin 2 Horizon: {source_planes[1]} Mpc")
+    print("--------------------------------------------------------------------------------")
+    print(f" {'Multipole (ell)':<16} | {'Auto C_l (1,1)':<18} | {'Cross C_l (1,2)':<18} | {'Auto C_l (2,2)':<18}")
+    print("--------------------------------------------------------------------------------")
+    for idx in range(len(ell_test_grid)):
+        print(f" {ell_test_grid[idx]:<16} | {Cl_tensor[0, 0, idx]:<18.6e} | {Cl_tensor[0, 1, idx]:<18.6e} | {Cl_tensor[1, 1, idx]:<18.6e}")
+    print("================================================================================")
+

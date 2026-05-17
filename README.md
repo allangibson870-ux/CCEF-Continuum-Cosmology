@@ -12,6 +12,20 @@ Matter, inertia, gravity, and expansion emerge from internal transport and respo
 
 This repository contains the full theoretical development, mathematical structure, observational predictions, and falsification suite for the CCEF‑Lite v3.0 model.
 
+# Short Summary -
+1.  Axiom: n(x,t) ∈ S² with |n| = 1 defines the geometric state space.
+2.  Projection: P⊥(v) = v − (n·v)n enforces motion on the tangent bundle.
+3.  Dynamics: n̈ = (1/Z_t) P⊥(A₁∇²n − A₃∇⁴n + A₄(n·n₀)n₀) + |ṅ|² n.
+4.  Channels: Linearization yields longitudinal (A₁k² + A₃k⁴) and transverse (A₄ − A₁k² − A₃k⁴) operators.
+5.  Green’s Functions: K_long = 1/(A₁k² + A₃k⁴), K_trans = 1/(A₄ − A₁k² − A₃k⁴).
+6.  UV Completion: SK functional Z[π,ξ] with g₁,g₂,M_bath fixes η₀, A₃, T_eff.
+7.  Dissipation: Σ_R = iη₀ k²ω emerges from tracing out the gapped bath.
+8.  Noise: Σ_K = coth(ω/2T_eff)(Σ_R − Σ_A) enforces exact KMS/FDT.
+9.  RG Flow: β_{A₁}, β_{A₃}, β_{η₀} preserve the operator algebra {k², k⁴, k²ω}.
+10. Kernels: η(k,a), Φ, Ψ follow directly from {K_long, K_trans}.
+11. Power Spectrum: P(k) = P_lin + 2P₁₃ with P₁₂ = P₂₂ = 0 by the hierarchy theorem.
+12. Observables: {P(k), C_ℓ, B_κ} = RG ∘ SK‑trace ∘ linearization ∘ projection[n].
+
 ---
 
 ## Overview

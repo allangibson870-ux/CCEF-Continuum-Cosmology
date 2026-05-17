@@ -731,9 +731,22 @@ CCEF mimics a primordial local‑f_NL template **iff** all four hold:
 1. **Squeezed refactorisation:** A₃k_S⁴ ≪ A₁k_S²  
 2. **Loss of coherence:** R₀²k_S² ≪ 1  
 3. **Scale‑free propagator:** A₃ → 0  
-4. **Projection linearisation:** Σ_CCEF → √P  
+4. **Projection linearisation:** Σ_CCEF → √P
 
-### 5.4 Proof Summary
+## 5.4 Angular Bispectrum: CCEF vs ΛCDM
+
+The following figure shows the smoothed comparison between the
+CCEF equilateral lensing bispectrum, the ΛCDM baseline, and the log‑absolute ratio.
+This highlights the non‑local A₃k⁴ signature, the equilateral enhancement window,
+and the UV suppression characteristic of the CCEF effective theory.
+
+![Bkappa_3panel_smoothed](figures/bispectrum/Bkappa_3panel_smoothed.png)
+
+
+<img width="989" height="1489" alt="image" src="https://github.com/user-attachments/assets/9728e8e9-8037-4d4b-8756-227f40235fb6" />
+
+
+### 5.5 Proof Summary
 If A₃→0 and R₀→0, the cyclic kernel collapses to a separable product:
 Γ₃ → const × [P(k₁)P(k₂) + perms], identical to local‑f_NL.
 Otherwise, A₃>0 and R₀>0 enforce non‑local, equilateral‑heavy structure.

@@ -9,6 +9,30 @@
   d2n_dt2 = (1 / Z_t) * P_perp( A_1 * laplacian_n - A_3 * biharmonic_n + A_4 * dot(n, n_0) * n_0 ) + sum(dn_dt^2) * n
   where: P_perp(V) = V - dot(n, V) * n
 
+  ### UV Completion: Schwinger–Keldysh Generating Functional
+
+In the open‑system quantum regime, the macroscopic field π(x,t) couples to a gapped
+continuous bath ξ(x,t) through the SK generating functional:
+
+  𝒵 = ∫ Dπ Dξ exp{i ∫ d⁴x [ L_CCEF[π] 
+        + g₁ π · ∂ₜξ 
+        + g₂ (∇π) · (∇ξ) 
+        + (1/2) M_bath² ξ² ] }
+
+Tracing out ξ produces the exact retarded and Keldysh self‑energies:
+
+  Σ_R(k,ω) = i η₀ k² ω  ,   Σ_K(k,ω) = coth(ω / 2T_eff) (Σ_R − Σ_A)
+
+with all macroscopic coefficients derived from UV invariants:
+
+  η₀ = (2 g₁ g₂ R₀²) / M_bath²
+  A₃ = (g₂² R₀⁶) / M_bath²
+  T_eff = (g₁² R₀²) / M_bath²
+
+Thus viscosity, quartic elasticity, and stochastic noise are not free parameters but
+emerge uniquely from the microscopic Hamiltonian of the bath sector.
+
+
 ## 2. Conserved Continuum Currents & Tensor Equivalence
 
 - **Global SO(3) Noether Current Vector:** Spatial and temporal components map independently, tracking charge transport across the 3D continuous medium without assuming a geometric four-manifold.
@@ -70,15 +94,43 @@
   M_3D(k, q, x) = (2/3)*A_1*q^2 + (2/3)*A_1*k*q*x - (2/3)*A_1*(k^2 + q^2 + 2*k*q*x) - (11/3)*A_3*q^4 + 2*A_3*k^2*q^2 - (2/3)*A_3*k^4 - (2/3)*A_3*(k^2 + q^2 + 2*k*q*x)^2 - 4*A_4
 - One-Loop Emergent Bispectrum Vertex (Gamma_3D_3point): Sourced by the triangle loop contraction of two cubic operators:
   Gamma_3D_3point(k1, k2, k3) = Integral_d3q( (Gamma_aa_3D(k1, q, -q-k1) * Gamma_aa_3D(k2, -q, q-k2) * P_lin(q) * P_lin(q+k1) * P_lin(q-k2)) / (tilde_D(q) * tilde_D(q+k1) * tilde_D(q-k2)) ) / (2*pi)^3
+  ### 1‑Loop Callan–Symanzik Renormalisation and Operator Closure
+
+The 1‑loop SK sunset and triangle diagrams generate logarithmic divergences that are
+absorbed entirely into the existing operator basis {k², k⁴, k²ω}. Evaluating the
+Callan–Symanzik flow yields:
+
+  β_{A₁} = μ dA₁/dμ = c₁ A₁²
+  β_{A₃} = μ dA₃/dμ = c₂ A₃ A₁
+  β_{η₀} = μ dη₀/dμ = c₃ η₀ A₁
+
+with no generation of higher‑derivative operators such as k⁶, k⁸, k⁴ω, or ω³ terms.
+The operator algebra is therefore closed under renormalisation:
+
+  {k², k⁴, k²ω}  →  {k², k⁴, k²ω}
+
+This establishes that the CCEF open EFT forms a renormalizable Gaussian SK sector with
+zero operator leakage at 1‑loop.
+
 - Vertex Momentum Scaling Limits: Evaluated across cosmic momentum regimes:
   lim_k_to_0(Gamma_ab_3D) = -A_4(a) (Infrared Plateau)
   lim_k_to_infinity(Gamma_ab_3D) ~ A_3(a) * |k|^4 (Ultraviolet Growth Regularisation)
 
 ## 6. Cosmological Observations & Lensing Closures
-- Emergent Metric & Weyl Potentials: Metric components trace as g^00 = -1, g^ii = A_1 / Z_t. The scalar gravity wells decompose explicitly from the split kernel channels:
-  Phi = -4 * pi * G_Newton * rho_0 * a^2 * K_trans(k,a) * delta
-  Psi = -4 * pi * G_Newton * rho_0 * a^2 * K_long(k,a) * delta
-  Phi_lens = (Phi + Psi) / 2
+-### KMS Fluctuation–Dissipation Closure
+
+The stochastic sector obeys the exact Kubo–Martin–Schwinger (KMS) relation:
+
+  G^K(k,ω) = coth(ω / 2T_eff) [ G^R(k,ω) − G^A(k,ω) ]
+
+The spectral density satisfies ρ(k,ω) = Im G^R and exhibits a linear infrared scaling:
+
+  ρ(k,ω) ∝ ω  as  ω → 0
+
+This cancels the classical 1/ω divergence in G^K and ensures a finite hydrodynamic
+noise amplitude. No GR‑based transfer functions (Eisenstein–Hu, Halofit, etc.) enter
+the CCEF sector; all fluctuation physics is generated internally by the SK kernel.
+
 - Correct Gravitational Slip Convention: The physical ratio tracks cleanly using the exact unshifted positive sign mapping rule:
   eta_phys(k, a) = K_long(k,a) / K_trans(k,a) = (A_4(a) - A_1(a)*k^2 - A_3(a)*k^4) / (A_1(a)*k^2 + A_3(a)*k^4)
 - CCEF Lensing Response Kernel (Sigma_CCEF): Derived via geodesic tracing through the Weyl combination:
@@ -128,6 +180,19 @@ Evaluating this template across triangular parameters reveals the distinctive fi
 
 * **Equilateral Configuration Domination (ell_1 == ell_2 == ell_3)**: The angular bispectrum peaks heavily in symmetric configurations. When the external angular vectors map to an equilateral shape, the closed spatial loop maximizes the interior overlap volume of the internal momentum fields q, generating a clean non-Gaussian track.
 * **Squeezed Configuration Deficit (ell_1 << ell_2 == ell_3)**: Unlike standard dark matter frameworks (where non-linear gravity pushes three-point signatures into the squeezed limit), CCEF suppresses this channel. As ell_1 -> 0, the corresponding vertex collapses onto the constant infrared mass-gap plateau (lim Gamma -> -A_4). Concurrently, the high-frequency internal momentum legs are strongly damped by the A_3 * |q|^4 regulariser. This unique deficit allows modern wide-field cosmic shear maps to directly differentiate CCEF from alternative gravity models.
+
+* ### 2D Continuum Growth‑Factor Interpolation
+
+The previous redshift‑slice selection using np.searchsorted introduced discontinuous
+jumps in the tomographic kernels. This has been replaced by a fully continuous
+2‑dimensional RegularGridInterpolator over (k, z):
+
+  D₊(k, z) = RGI( k_grid, z_grid )[k, z]
+
+This ensures smooth derivatives across both dimensions, eliminates numerical ringing
+in the lensing and clustering vectors, and preserves the continuity of the Limber
+projection across all multipoles.
+
 
 * ## SECTION 7. — 3D Topological Velocity Field Evaluation (Plain-Text Stencil)
 

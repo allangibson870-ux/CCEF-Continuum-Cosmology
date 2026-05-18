@@ -2,7 +2,7 @@
 ### Unified Mathematical Edition + Soliton RG Flow Extension  
 **Topology‑Consistent, Ontology‑Pure, Q‑Core, Kernel‑Locked, Texture‑Excluded, and RG‑Driven Solitons**
 
-This document defines the complete mathematical structure of the **CCEF particle sector**, including:
+This document defines the complete mathematical structure of the **CCEF Soliton sector**, including:
 - field equations  
 - kernel operators  
 - mass functionals  

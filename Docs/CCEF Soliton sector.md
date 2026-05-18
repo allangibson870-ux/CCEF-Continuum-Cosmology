@@ -1,4 +1,4 @@
-# CCEF Particle Sector v1.1  
+# CCEF Soliton Sector v1.1  
 ### Unified Mathematical Edition + Soliton RG Flow Extension  
 **Topology‑Consistent, Ontology‑Pure, Q‑Core, Kernel‑Locked, Texture‑Excluded, and RG‑Driven Solitons**
 

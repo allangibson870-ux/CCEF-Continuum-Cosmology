@@ -519,6 +519,48 @@ The electron is a classical standing deformation mode of the continuum field, lo
 
 This formulation is fully consistent with the static surface-state picture and provides the dynamical foundation for atomic spectroscopy, transitions, and chemistry within the CCEF ontology.
 
+## 15. Continuum Wave Diffraction and Parametric Decoherence (Double-Slit Realisation)
+
+### 15.1 Pure Continuum Wave-Particle Inversion
+Standard quantum mechanics begins with zero-dimensional point-particle primitives and invokes abstract probability wavefunctions to generate spatial diffraction. In contrast, the CCEF framework completely inverts this paradigm. The fundamental object is the continuous field $n(x,t) \in S^2$, and "particles" are simply localized, self-trapping soliton wavepacket attractors ($\psi$) of the medium. 
+
+When a harmonic plane-wave front encounters a spatial boundary mask governed by a localized potential layer $A_4(x,y)$, the field undergoes purely deterministic classical diffraction. The emergent interference fringes recorded at a far-field detector screen:
+
+$$I(x) = \left| \psi(x, y_{\text{screen}}, t) \right|^2$$
+
+arise entirely from the local phase alignment of the spatial field operators, without requiring a probabilistic amplitude or collapse postulate.
+
+---
+
+### 15.2 Spatial Sigmoid Gaps and Phase Synchronisation
+To preserve structural stability and prevent non-physical hard-wall boundary discontinuities, the double-slit architecture is derived natively from the field using symmetric, smoothed sigmoid channels:
+
+$$\sigma_{\text{left}}(x) = \left[1 + \exp\left(-\beta \left(x - \left(x_l - \frac{w}{2}\right)\right)\right)\right]^{-1} \left[1 + \exp\left(+\beta \left(x - \left(x_l + \frac{w}{2}\right)\right)\right)\right]^{-1}$$
+
+$$\sigma_{\text{right}}(x) = \left[1 + \exp\left(-\beta \left(x - \left(x_r - \frac{w}{2}\right)\right)\right)\right]^{-1} \left[1 + \exp\left(+\beta \left(x - \left(x_r + \frac{w}{2}\right)\right)\right)\right]^{-1}$$
+
+The structural landscape is defined across the grid by splitting the vacuum floor from the regularised barrier wall:
+
+$$A_4(x,y) = A_{4,V} + (A_{4,W} - A_{4,V}) \left[ 1 - \text{clip}\left( \sigma_{\text{left}}(x) + \sigma_{\text{right}}(x), 0, 1 \right) \right] \Pi_{\text{layer}}(y)$$
+
+When an incoming flat plane wave passes through these openings, the two resulting wave segments emerge in perfect phase synchronisation, generating a highly symmetrical, multi-peaked interference signature driven entirely by the geometric path differences.
+
+---
+
+### 15.3 The Instability Paradox and Bi-Harmonic Noise Filtering
+Attempts to introduce raw, additive stochastic noise directly into the grid points inside the slit openings fail to alter the far-field pattern. The intense neighborhood-averaging property of the standard Laplacian operator ($\nabla^2$) instantly smooths out localized, high-frequency additive jitter, preserving phase coherence. 
+
+Conversely, attempting to model decoherence via loose, global parametric updates on the transport coefficients ($A_1 \to A_1(1 + \eta_n)$) triggers a catastrophic numerical feedback loop. Shifting the propagation speeds dynamically outside the strict Courant–Friedrichs–Lewy (CFL) stability bounds causes the field gradients to experience exponential runaway inflation:
+
+$$\lim_{t \to t_{\text{crit}}} \left| \psi(x,y,t) \right|^2 \to \infty$$
+
+This mathematical overflow yields a profound physical insight into CCEF ontology: **unconstrained parametric noise violates the internal consistency of the medium.** 
+
+True quantum decoherence—the washing out of the interference fringes into a broad, classical Gaussian diffusion profile—cannot be a chaotic parameter-level disruption. Because the operator algebra $\{k^2, k^4, k^2\omega\}$ is strictly closed under renormalisation (Section 0), any transport fluctuation entering the slit openings must be structurally regularised and filtered by the bi-harmonic operator ($A_3 \nabla^4 n$). 
+
+The Section 11 stochastic quantum floor ($\sigma_\alpha^2$) can only dehere the system if the noise itself travels as smooth, topologically protected texture waves. This ensures that the phase relationships between the two slit fronts are scrambled in a manner that remains dimensionally safe and bounded by the continuum grid rules.
+
+
 
 
 

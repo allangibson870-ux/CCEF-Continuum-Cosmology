@@ -587,6 +587,32 @@ Because the non-local coordination is enforced by the absolute field normalizati
 
 As a result, CCEF naturally satisfies quantum non-locality while remaining completely loyal to flat-background causality: the field constraints guarantee correlated measurements, but because the background noise floor $\sigma_\alpha^2$ scrambles local outcomes stochastically, it is physically impossible to use this topological re-alignment to transmit un-correlated superluminal information.
 
+### 16.4 Spin and Polarization as Field Texture Orientations
+In a pure continuum theory, spin is not an intrinsic, point-like quantum angular momentum vector. Spin is the physical, geometric orientation of the field vector $n(x,t)$ at the center of a localized soliton attractor. For an $n \in S^2$ manifold, the field vector at any coordinate can be explicitly parameterized by two real angles $\theta(\mathbf{x})$ and $\phi(\mathbf{x})$:
+
+$$n(\mathbf{x}) = \begin{pmatrix} \sin\theta \cos\phi \\ \sin\theta \sin\phi \\ \cos\theta \end{pmatrix}$$
+
+When a composite soliton structure (such as an entangled lepton pair) undergoes decay and spatial separation, the conservation of global topological charge requires the two separating attractor cores ($\mathbf{X}_A$ and $\mathbf{X}_B$) to maintain an anti-aligned or locked phase relationship. This geometric alignment is frozen into the field texture across the non-local kernel response.
+
+---
+
+### 16.5 The Mechanism of Correlated Projection
+A measurement apparatus (such as a Stern-Gerlach magnet or a polarizing filter) does not perform an operational "wavefunction reduction." It acts as a macroscopic **alignment boundary condition**. 
+
+When the field vector at attractor well $\mathbf{X}_A$ enters a detector oriented at angle_A, the local potential barrier forces a projection of the field coordinate onto that measurement axis:
+
+$$n(\mathbf{X}_A) \to n_{\theta_A} = \begin{pmatrix} \cos\theta_A \\ \sin\theta_A \\ 0 \end{pmatrix}$$
+
+Because the rigid constraint $\|n(x,t)\|^2 = 1$ must be perfectly conserved across the unbroken global manifold, forcing an alignment at coordinate $\mathbf{X}_A$ dictates an instantaneous, deterministic matching constraint on the anti-aligned twin at coordinate $\mathbf{X}_B$. 
+
+When attractor $\mathbf{X}_B$ encounters a second detector oriented at angle_B, its local projection probability is governed entirely by the relative geometric angle between the two boundary filters:
+
+$$P_{\text{coincidence}} \propto \left| n_{\theta_A} \cdot n_{\theta_B} \right|^2 = \cos^2(\theta_A - \theta_B)$$
+
+#### Purely Geometric Non-Locality
+This exactly reproduces the non-classical correlation bounds of the singlet state. The math resolves without non-local collapse paradoxes because the trigonometric Malus's Law scaling is a native property of a continuous, constrained $S^2$ manifold under non-local boundary conditions. 
+
+The randomness of individual outcomes is provided by the Section 11 stochastic noise floor ($\sigma_\alpha^2$), which continuously introduces micro-fluctuations into the initial orientation angles before the packet hits the boundary filter.
 
 
 

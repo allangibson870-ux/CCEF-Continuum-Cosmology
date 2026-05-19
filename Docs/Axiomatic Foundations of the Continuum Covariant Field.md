@@ -61,6 +61,22 @@ where $A_{\text{grav}}$ tracks the long-range attraction amplitude, $B_{\text{st
 
 ## 2. The Null Sector: Geodesic Line-Integrals and Lensing Invariants
 
+## 2.0 Unified Probe Coupling via the Effective Stress Tensor
+Null and timelike probes do not couple to the same scalar functional of the field. Both responses derive from a single effective stress‑tensor analogue obtained directly from the action:
+
+$$T_{\mu\nu}[n] = \frac{\partial \mathcal{L}}{\partial (\partial^\mu n)} \partial_\nu n - \eta_{\mu\nu} \mathcal{L}$$
+
+Two distinct contractions govern physical observables:
+
+1. **Null Probes (Photons):** Respond strictly to the invariant scalar trace contraction, isolating the local index variations:
+   $$T^\mu_\mu \implies n_{\text{opt}}(r) = \sqrt{1 + \chi \mathcal{E}(r)}$$
+
+2. **Timelike Probes (Massive Bodies):** Respond strictly to the pure timelike energy density component, isolating the negative potential well:
+   $$T_{00} \implies \Phi_{\text{eff}}(r) \le 0$$
+
+This automatically produces the correct relative sign between the optical index and the attractive potential. No manual sign flips are introduced anywhere in the theory.
+
+
 ### 2.1 Achromatic Optical Refractive Index
 Linearising the field wave equation (Axiom 2) around a static, localized background soliton reveals that high-speed field perturbations propagate with a position-dependent velocity $c_{\text{eff}}(r)$. The native achromatic index of refraction $n_{\text{opt}}(r)$ and its local spatial perturbation $\delta n(r)$ are defined as:
 

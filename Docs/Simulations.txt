@@ -2558,4 +2558,92 @@ if __name__ == "__main__":
    theta = 120.0     arcmin | 6.812345e-07       | 3.912043e-07
 ================================================================================
 
+# Outer Planets
+import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+# ============================================================
+# 1. CCEF CENTRAL POTENTIAL FROM DUAL‑POLE KERNEL
+#    (uses existing K_real(r) from your Option A cell)
+# ============================================================
+
+# Overall strength scale for the CCEF central potential
+Phi0 = 1.0
+
+def Phi_ccef(r):
+    # Effective central potential built directly from K_real(r)
+    # Monotonic, attractive, CCEF-defined
+    r = np.maximum(r, 1e-6)
+    return -Phi0 * K_real(r)
+
+def dPhi_dr_ccef(r):
+    # Numerical derivative of Phi_ccef(r)
+    h = 1e-4 * np.maximum(r, 1.0)
+    return (Phi_ccef(r + h) - Phi_ccef(r - h)) / (2.0 * h)
+
+# ============================================================
+# 2. EQUATIONS OF MOTION IN CCEF CENTRAL POTENTIAL
+# ============================================================
+
+def orbit_rhs_ccef(t, y):
+    x, y_pos, vx, vy = y
+    r = np.hypot(x, y_pos)
+    if r < 1e-6:
+        return [vx, vy, 0.0, 0.0]
+
+    a_r = -dPhi_dr_ccef(r)
+    ax = a_r * x / r
+    ay = a_r * y_pos / r
+    return [vx, vy, ax, ay]
+
+# ============================================================
+# 3. INITIAL CONDITIONS FOR "OUTER PLANET"–LIKE ORBITS
+#    (pure CCEF, no GR, no Newtonian)
+# ============================================================
+
+def launch_orbit(r0, v_tangential_factor=1.0):
+    x0 = r0
+    y0 = 0.0
+
+    # Estimate a "circular" speed from CCEF potential:
+    # v_circ^2 / r ≈ |dPhi/dr|
+    g_eff = np.abs(dPhi_dr_ccef(r0))
+    v_circ = np.sqrt(g_eff * r0)
+
+    vx0 = 0.0
+    vy0 = v_tangential_factor * v_circ
+
+    return np.array([x0, y0, vx0, vy0])
+
+# Choose a set of "outer planet" radii (in solar radii)
+radii = [5.0, 10.0, 20.0, 30.0]
+
+# ============================================================
+# 4. INTEGRATE ORBITS FOR EACH RADIUS
+# ============================================================
+
+t_max = 2e5
+t_eval = np.linspace(0.0, t_max, 40000)
+
+plt.figure(figsize=(7,7))
+
+for r0 in radii:
+    y_init = launch_orbit(r0, v_tangential_factor=1.0)
+    sol = solve_ivp(orbit_rhs_ccef, [0.0, t_max], y_init,
+                    t_eval=t_eval, rtol=1e-9, atol=1e-9)
+
+    x = sol.y[0]
+    y = sol.y[1]
+
+    plt.plot(x, y, label=f"r0 = {r0}")
+
+plt.scatter([0.0], [0.0], color='k', s=40)
+plt.xlabel("x (solar radii)")
+plt.ylabel("y (solar radii)")
+plt.axis('equal')
+plt.grid(True)
+plt.legend()
+plt.title("Outer-planet–like orbits in pure CCEF central potential")
+plt.show()
 

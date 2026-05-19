@@ -2647,3 +2647,101 @@ plt.legend()
 plt.title("Outer-planet–like orbits in pure CCEF central potential")
 plt.show()
 
+# Geodesics
+import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+# ============================================================
+# 1. ONTOLOGY-PURE PARAMETERS (From Section 10.3 & 10.7)
+# ============================================================
+c = 1.0          # Speed of light scaling
+A_grav = 1.0482  # Long-range grav-like amplitude (A)
+B_UV = 0.5000    # UV structural cutoff amplitude (B)
+
+# Mass scales derived from correlation/soliton lengths
+m_IR = 0.0195    # IR screening mass (m = 1/xi_R) -> controls long-range falloff
+Lambda_UV = 1.50 # UV structural mass (Lambda = 1/R_sol) -> controls core softening
+
+# Calibrated coupling from Section 7 of the orbital text
+chi_star = 1.7e-4
+
+# ============================================================
+# 2. EXACT 3D FOURIER TRANSFORM REAL-SPACE KERNEL
+# ============================================================
+def K_real_space(r):
+    """Exact real-space kernel from Section 10.3 of the Soliton Sector."""
+    r = np.maximum(r, 1e-5)
+    # Long-range channel + UV structural cutoff channel
+    return (1.0 / (4.0 * np.pi * (c**2) * r)) * (A_grav * np.exp(-m_IR * r / c**2) + B_UV * np.exp(-Lambda_UV * r / c**2))
+
+def Phi_ccef(r):
+    """Effective timelike potential derived from the kernel response."""
+    return -chi_star * K_real_space(r)
+
+def dPhi_dr_ccef(r):
+    """Radial force gradient (effective gravity acceleration profile)."""
+    h = 1e-4 * np.maximum(r, 1.0)
+    return (Phi_ccef(r + h) - Phi_ccef(r - h)) / (2 * h)
+
+# ============================================================
+# 3. GEODESIC DYNAMICS WITHOUT METRIC
+# ============================================================
+def orbit_rhs_pure(t, y):
+    x, y_pos, vx, vy = y
+    r = np.hypot(x, y_pos)
+    if r < 1e-4:
+        return [vx, vy, 0.0, 0.0]
+    
+    a_r = -dPhi_dr_ccef(r)
+    return [vx, vy, a_r * x / r, a_r * y_pos / r]
+
+def launch_pure(r0, v_factor=0.94):
+    g_eff = np.abs(dPhi_dr_ccef(r0))
+    v_circ = np.sqrt(g_eff * r0)
+    return np.array([r0, 0.0, 0.0, v_factor * v_circ])
+
+# ============================================================
+# 4. EXECUTION & SECULAR VISUALISATION (Extended Baseline)
+# ============================================================
+r0 = 12.0
+v_factor = 0.85  # Clear eccentric baseline
+t_max = 4.0e5    # Extended to allow ~5 full orbital revolutions
+t_eval = np.linspace(0.0, t_max, 100000)
+
+y_init = launch_pure(r0, v_factor=v_factor)
+sol = solve_ivp(orbit_rhs_pure, [0.0, t_max], y_init, t_eval=t_eval, rtol=1e-10, atol=1e-10)
+
+x, y = sol.y[0], sol.y[1]
+r_hist = np.hypot(x, y)
+
+# Robust peak-finding window adjusted for the longer timeseries array
+peri_indices = []
+window = 200
+for i in range(window, len(r_hist) - window):
+    if r_hist[i] == np.min(r_hist[i - window : i + window + 1]):
+        if len(peri_indices) == 0 or (i - peri_indices[-1] > 2000):
+            peri_indices.append(i)
+
+# Plotting the physical output
+plt.figure(figsize=(7,7))
+plt.plot(x, y, color='teal', lw=0.7, alpha=0.8, label="Precessing Soliton Path")
+plt.scatter([0.0], [0.0], color='black', s=60, zorder=5, label="Fused Q-Core (Solar Origin)")
+
+# Draw the advancing perihelion lines
+if len(peri_indices) > 0:
+    print(f"Success: Captured {len(peri_indices)} clean perihelion encounters.")
+    for idx in peri_indices[:3]:
+        plt.plot([0, x[idx]], [0, y[idx]], 'r--', alpha=0.4, lw=1)
+    if len(peri_indices) > 1:
+        plt.plot([0, x[peri_indices[-1]]], [0, y[peri_indices[-1]]], 'r--', alpha=0.9, lw=1.5, label="Advanced Perihelion Line")
+else:
+    print("Warning: Increase t_max further or decrease window size.")
+
+plt.xlabel("x (solar radii)")
+plt.ylabel("y (solar radii)")
+plt.axis('equal')
+plt.grid(True, linestyle=':')
+plt.title("Ontology-Pure Geodesics via Section 10.3 Propagator")
+plt.legend()
+plt.show()

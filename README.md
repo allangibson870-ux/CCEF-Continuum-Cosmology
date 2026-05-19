@@ -177,4 +177,6 @@ LOCAL fNL LIMIT:
 
 ---
 
+For predictive Axioms please see - Docs/Axiomatic Foundations of the Continuum Covariant Field.md
+
   **Given that the theory is live please refer to https://github.com/allangibson870-ux/CCEF-Continuum-Cosmology/blob/main/Docs/CCEF%20%E2%80%94%20Minimal%20Mathematical%20Backbone.md for updates

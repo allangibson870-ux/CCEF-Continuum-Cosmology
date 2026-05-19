@@ -215,6 +215,63 @@ As a result, the non-Newtonian advance is powerfully concentrated near the core 
 
 ---
 
+## 13. Large‑Scale Ensemble Dynamics and the Emergent Galactic Window
+
+### 13.1 Collective Multi-Core Kernel Regularisation
+On macroscopic galactic scales ($r \sim 10^3\ \text{to}\ 10^5$ solar radii), a galaxy functions not as an isolated point-like source, but as a continuous, dense spatial ensemble of interacting topological solitons ($S_{Q=1}$ baryon cores) bound within a shared continuum field. According to the Section 10 Soliton RG Flow and Section 11 Variance equations, as the background field density dilutes across vast interstellar and cosmic margins ($\rho_0 \to 0$), the local texture variance $\sigma_\alpha^2$ increases. This drives a topological transition where the correlation length diverges ($\xi_R \to \infty$), effectively forcing the short-range screening mass to vanish ($m_1 \to 0$).
+
+When the exponential shielding drops away, the collective volume integration of millions of uncompensated field channels over a standard multi-soliton isothermal disk distribution does not return a single-site point potential. Instead, the collective, RG-dressed response of the ensemble generates a non-local, large-scale effective potential:
+
+$$\Phi_{\text{ens}}(r) \approx -V_{\text{flat}}^2 \ln\left(\frac{r}{R_0}\right)$$
+
+where $V_{\text{flat}}$ is the characteristic velocity scale set by the core concentration of the active ensemble, and $R_0$ is the internal boundary matching radius.
+
+---
+
+### 13.2 Optical Realisation and Symmetric Sign Alignments
+Light propagation across the galactic halo is governed directly by the non-local refractive index $n_{\text{opt}}(r) = \sqrt{1 - 2\Phi_{\text{ens}}(r)}$ derived from the background energy sector. To preserve internal consistency with local solar-system configurations, the effective potential remains strictly negative ($\Phi_{\text{ens}} < 0$) within the core wells. Expanding the non-linear index under this ensemble-scale profile yields:
+
+$$n_{\text{opt}}(r) = \sqrt{1 + 2 V_{\text{flat}}^2 \ln\left(\frac{r}{R_0}\right)} \approx 1 + V_{\text{flat}}^2 \ln\left(\frac{r}{R_0}\right)$$
+
+Because a logarithmic function grows indefinitely, this effective index does not rapidly decay to $1.0$ at long ranges. It maintains a broad, non-local refractive gradient across the observed halo range, establishing a continuous refractive medium without invoking external dark matter primitives.
+
+---
+
+### 13.3 Impact-Parameter-Independent Deflection (Constant Lens Arcs)
+We evaluate the Achromatic Bending Angle integral defined in Section 5 along a straight-line geometric path ($r = \sqrt{b^2 + z^2}$) using the unshielded ensemble-dressed refractive index:
+
+$$\alpha(b) \approx \int_{-Z_{\text{max}}}^{Z_{\text{max}}} \frac{\partial}{\partial b} \left[ V_{\text{flat}}^2 \ln\left(\sqrt{b^2+z^2}\right) \right] dz = V_{\text{flat}}^2 \int_{-Z_{\text{max}}}^{Z_{\text{max}}} \frac{b}{b^2 + z^2} \, dz$$
+
+Evaluating this definite integral over a finite but large spatial band where the logarithmic potential dominates before reaching the outer cosmological truncation boundary yields:
+
+$$\alpha(b) = V_{\text{flat}}^2 \left[ \arctan\left(\frac{z}{b}\right) \right]_{-Z_{\text{max}}}^{Z_{\text{max}}} \approx \pi V_{\text{flat}}^2$$
+
+Because the impact parameter $b$ drops completely out of the final relation, the lensing deflection angle flatlines and becomes constant over the observed halo band. 
+
+When a distant background source aligns behind a CCEF galaxy, the light is focused into an extended, elliptic arc configuration or a constant-deflection ring whose physical radius is explicitly locked to the galactic velocity scale $V_{\text{flat}}$, mimicking the lensing signature of an isothermal sphere purely via continuum refraction.
+
+---
+
+### 13.4 Logarithmic Shapiro Coordinate Time Delay
+The coordinate propagation time along the null path accumulates a non-linear travel lag due to the persistent refractive gradient of the unshielded halo. Integrating across a finite cosmological baseline spanning from a distant source ($-Z_{\text{source}}$) to an observer ($+Z_{\text{obs}}$) yields:
+
+$$\Delta t_{\text{Shapiro}}(b) \approx \frac{V_{\text{flat}}^2}{c_0} \int_{-Z_{\text{source}}}^{Z_{\text{obs}}} \ln\left(\sqrt{b^2 + z^2}\right) dz \sim \frac{V_{\text{flat}}^2}{c_0} \, Z_{\text{obs}} \ln\left(\frac{Z_{\text{obs}}}{b}\right)$$
+
+Because the arrival delay scales logarithmically with the impact parameter ($\sim \ln(1/b)$), multiple null packets skimming past the galaxy at different offset distances experience distinct, non-linear geometric retardation. This naturally produces deterministic time-delay offsets between lensed images arriving at the observer plane, enabling macro-scale cosmological time-lag metrics to emerge natively from flat-background causal refraction.
+
+---
+
+### 13.5 Scale Unification Matrix
+The smooth transition between localized stellar precision and large-scale galactic profiles is governed entirely by the internal coupling of the screening parameters to the local vacuum field density:
+
+
+| Cosmic Regime | Local Vacuum Density ($\rho_0$) | Effective Micro-Field Propagator | Null Sector Observable | Timelike Geodesic Observable |
+| :--- | :--- | :--- | :--- | :--- |
+| **Stellar Scale** | High Local Concentration | Screened Dual-Pole Yukawa Tail ($e^{-mr}/r$) | **Precision $1.74''$ Solar Lens Bend** and $0.114\ \mu\text{s}$ Shapiro Delay | Closed Keplerian Ellipses with **$43''/\text{cy}$ Prograde Precession** |
+| **Galactic Scale** | Diluted Cosmic Margin | Ensemble-Dressed Kernel (Effective Log Potential) | **Constant Deflection Angle ($\alpha = \pi V_{\text{flat}}^2$)** and Logarithmic Delay | **Flat Rotation Curves ($v = V_{\text{flat}}$)** over the observed halo range |
+
+
+
 ### Summary
 
 With the updated parameters $(A_1=1.0,\ A_3=2.8\times10^{-6},\ A_4=0.018,\ Z_t=1.0)$ and the re-architected wavepacket profile, the continuum-orbital construction reproduces:

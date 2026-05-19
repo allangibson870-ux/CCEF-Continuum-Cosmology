@@ -101,7 +101,9 @@ $$\frac{\partial n_{\text{opt}}}{\partial r} = \frac{\chi_{\ast}}{2 \sqrt{1 + \c
 
 1. **Local Stellar Calibration:** Evaluating this line integral at the physical solar surface boundary checkpoint ($b_{\odot} = 6.96$) under the locked, calibrated coupling constant $\chi_{\ast} = 1.63 \times 10^{-6}$ yields the exact target deflection:
    $$\alpha(b_{\odot}; \chi_{\ast}) = 1.7410''$$
-2. **Cosmological Galactic Calibration:** Across low-density cosmic margins where the local field density dilutes ($\rho_0 \to 0$), the Soliton RG flow suppresses the screening mass ($m_{\text{IR}} \to 0$). The integrated volume response of a dense multi-soliton distribution yields an effective ensemble potential $\Phi_{\text{ens}}(r) \sim -V_{\text{flat}}^2 \ln(r/R_0)$, updating the large-scale effective index perturbation to $\delta n(r) \approx V_{\text{flat}}^2 \ln(r/R_0)$. The line integral yields an impact-parameter-independent deflection profile over the finite, large-scale galactic halo range:
+2. **Cosmological Galactic Calibration:** Across low-density cosmic margins where the local field density dilutes ($\rho_0 \to 0$), the Soliton RG flow suppresses the screening mass ($m_{\text{IR}} \to 0$). The integrated volume response of a dense multi-soliton distribution yields an effective ensemble potential over a finite halo range ($r < R_{\text{halo}}$):
+   $$\Phi_{\text{ens}}(r) \approx -V_{\text{flat}}^2 \ln\left(\frac{r}{R_0}\right)$$
+   Beyond the halo radius, the background cosmic density $\bar{\rho}$ restores a finite screening mass $m_{\text{cosmic}} > 0$, smoothly attenuating the field lines and ensuring a finite total field energy across multi-galaxy cosmological backgrounds. Over the observed, finite halo range, this updates the large-scale effective index perturbation to $\delta n(r) \approx V_{\text{flat}}^2 \ln(r/R_0)$. The line integral yields an impact-parameter-independent deflection profile over this finite, large-scale galactic halo band:
    $$\alpha_{\text{galactic}}(b) = V_{\text{flat}}^2 \int_{-Z_{\text{max}}}^{Z_{\text{max}}} \frac{b}{b^2 + z^2} \, dz \approx \pi V_{\text{flat}}^2 = \text{constant}$$
 
 ---

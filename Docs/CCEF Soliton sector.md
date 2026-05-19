@@ -433,47 +433,47 @@ This framework maintains strict ontological purity: everything is still the sing
 
 ---
 
-## 14. Hydrogen Surface Mode Equations
+## 14. Composite Soliton Surface Mode Equations ($S_{Q=1} \oplus S_{Q=0}$ Bound States)
 
 ### 14.1 Physical Picture
-In the CCEF framework, the hydrogen atom is not a point-like proton orbited by a point-like electron. It consists of:
-* A $Q=1$ hedgehog soliton (proton) generating a smooth kernel-induced potential trough.
-* A topologically trivial ($Q=0$) deformation locked to the exclusion boundary of the proton trough, forming a surface-state configuration of the continuum field $n(x,t)$.
+In the CCEF framework, an atomic bound state is not a collection of discrete point-like particles held together by abstract virtual forces. It consists of a single, continuous hierarchical field structure containing interacting soliton species:
+* A central **$S_{Q=1}$ Soliton Core Species** (Baryon attractor) generating a smooth kernel-induced potential trough.
+* A **Topologically Trivial $S_{Q=0}$ Soliton Surface Species** (Lepton texture) locked to the exclusion boundary of the central core trough.
 
-The electron is therefore a standing tangential wave mode on the effective spherical manifold defined by the proton’s kernel response.
+The $S_{Q=0}$ species functions strictly as a classical standing tangential wave mode on the effective spherical manifold defined by the $S_{Q=1}$ core’s kernel response.
 
 ---
 
-### 14.2 Effective Energy Functional for the Electron Surface State
-The total energy of the electron configuration $n_{e}(\mathbf{x})$ is:
+### 14.2 Effective Energy Functional for the Surface State Configuration
+The total energy of the $S_{Q=0}$ surface configuration $n_{0}(\mathbf{x})$ is:
 
-$$E[n_{e}] = \int d^3x \left[ \frac{A_1}{2} |\nabla n_{e}|^2 + \frac{A_3}{2} (\nabla^2 n_{e})^2 + \frac{A_4}{2} (1 - (n_{e} \cdot n_0)^2) \right] + \lambda \int d^3x \, n_{e}(\mathbf{x}) \cdot \Phi_{p}(\mathbf{x})$$
+$$E[n_{0}] = \int d^3x \left[ \frac{A_1}{2} |\nabla n_{0}|^2 + \frac{A_3}{2} (\nabla^2 n_{0})^2 + \frac{A_4}{2} (1 - (n_{0} \cdot n_{\text{vac}})^2) \right] + \lambda \int d^3x \, n_{0}(\mathbf{x}) \cdot \Phi_{Q=1}(\mathbf{x})$$
 
-where $\Phi_{p}(\mathbf{x})$ is the proton trough:
+where $\Phi_{Q=1}(\mathbf{x})$ is the kernel potential trough of the central core:
 
-$$\Phi_{p}(\mathbf{x}) = \int K_{\text{EM}}(|\mathbf{x} - \mathbf{y}|) \, n_{p}(\mathbf{y}) \, d^3y$$
+$$\Phi_{Q=1}(\mathbf{x}) = \int K_{\text{EM}}(|\mathbf{x} - \mathbf{y}|) \, n_{Q=1}(\mathbf{y}) \, d^3y$$
 
 and $K_{\text{EM}}(k) = 1 / (A_4 - A_1 k^2 - A_3 k^4)$ is the dual-pole EM-like kernel.
 
 ---
 
 ### 14.3 Static Equilibrium Equation
-Varying $E[n_{e}]$ subject to the constraint $n_{e} \cdot \delta n_{e} = 0$ yields the nonlinear equilibrium condition:
+Varying $E[n_{0}]$ subject to the rigid normalization constraint $n_{0} \cdot \delta n_{0} = 0$ yields the non-linear equilibrium condition:
 
-$$\frac{\delta E[n_{e}]}{\delta n_{e}} + \lambda \Phi_{p}(\mathbf{x}) = 0$$
+$$\frac{\delta E[n_{0}]}{\delta n_{0}} + \lambda \Phi_{Q=1}(\mathbf{x}) = 0$$
 
 ---
 
 ### 14.4 Linearised Surface Mode Operator
-Linearising around a static surface solution $n_{e} = n_0 + \psi$ (with $\psi \perp n_0$) produces the eigenvalue problem for small surface deformations:
+Linearising around a static surface solution $n_{0} = n_{\text{vac}} + \psi$ (with $\psi \perp n_{\text{vac}}$) produces the eigenvalue problem for small surface deformations:
 
-$$L_{p} \psi = \lambda \psi$$
+$$\hat{\mathcal{L}}_{Q=1} \psi = \lambda \psi$$
 
 where the surface mode operator is:
 
-$$L_{p} \psi = A_1 \nabla^2 \psi - A_3 \nabla^4 \psi + V_{\text{eff}}(\mathbf{x}) \psi$$
+$$\hat{\mathcal{L}}_{Q=1} \psi = A_1 \nabla^2 \psi - A_3 \nabla^4 \psi + V_{\text{eff}}(\mathbf{x}) \psi$$
 
-and the effective potential $V_{\text{eff}}$ incorporates background curvature corrections from $n_0$, the kernel-locking term $\lambda \Phi_{p}$, and the vacuum mass-gap contribution from $A_4$.
+and the effective potential $V_{\text{eff}}$ incorporates background curvature corrections from $n_{\text{vac}}$, the kernel-locking term $\lambda \Phi_{Q=1}$, and the vacuum mass-gap contribution from $A_4$.
 
 ---
 
@@ -493,31 +493,70 @@ $$L_{\ell} R = \frac{1}{r^2} \frac{d}{dr} \left( r^2 \frac{dR}{dr} \right) - \fr
 ---
 
 ### 14.6 Hydrogenic Approximation and Quantization
-In the low-energy regime relevant to atomic physics, the biharmonic term $A_3 \nabla^4$ primarily regulates the ultraviolet. The leading-order equation reduces to:
+In the low-energy regime, the bi-harmonic term $A_3 \nabla^4$ primarily regulates the ultraviolet at the core boundary. The leading-order equation reduces to:
 
 $$-A_1 L_{\ell} R - \frac{\gamma}{r} R = \lambda R$$
 
-where $\gamma > 0$ is the effective strength of the kernel trough ($\Phi_{p} \approx -\gamma / r$).
+where $\gamma > 0$ is the effective strength of the central core's kernel trough ($\Phi_{Q=1} \approx -\gamma / r$).
 
-Introducing the scaled radial coordinate $\rho = (\gamma / A_1) r$, the equation takes the standard hydrogenic form. Imposing regularity at the origin (texture-exclusion boundary) and normalizability at infinity yields the discrete spectrum:
+Introducing the scaled radial coordinate $\rho = (\gamma / A_1) r$, the equation takes the standard hydrogenic form. Imposing regularity at the origin (enforced by the texture-exclusion boundary) and normalizability at infinity yields the discrete spectrum:
 
 $$\lambda_{n,\ell} = -\frac{\gamma^2}{A_1 (n + \ell + 1)^2} + \text{constant shift}$$
 
-with principal quantum number $n = n_{r} + \ell + 1$, $n_{r} = 0,1,2,\dots$. This reproduces the familiar inverse-square energy ladder of hydrogen as eigenvalues of the surface mode operator $L_{p}$.
+with principal quantum number $n = n_{r} + \ell + 1$, $n_{r} = 0,1,2,\dots$. This reproduces the inverse-square energy ladder as eigenvalues of the surface mode operator $\hat{\mathcal{L}}_{Q=1}$.
 
 ---
 
 ### 14.7 Mode Classification
-* **Tangential (Orbital) Modes ($\ell \ge 0$):** Standing waves on the surface manifold, corresponding to the conventional hydrogenic orbitals $n\ell m$.
+* **Tangential (Orbital) Modes ($\ell \ge 0$):** Standing waves on the surface manifold, corresponding to the conventional atomic orbital shapes $n\ell m$.
 * **Radial Compression Modes:** Perturbations that modulate the mean radius of the surface state, determining the equilibrium balance between kernel attraction and texture-exclusion repulsion.
-* **Collective Surface Excitations:** Include breathing of the entire electron shell and non-spherical deformations when coupled to nuclear shape or external fields.
+* **Collective Surface Excitations:** Include breathing of the entire $S_{Q=0}$ shell and non-spherical deformations when coupled to composite nuclear shape or external fields.
 
 ---
 
 ### 14.8 Physical Interpretation
-The electron is a classical standing deformation mode of the continuum field, locked to the proton’s kernel trough. The discrete energy levels arise naturally from the Sturm–Liouville quantization on the effective spherical surface with texture-exclusion boundary conditions. No point-particle orbit or quantum wavefunction postulate is required.
+The $S_{Q=0}$ species is a classical standing deformation mode of the continuum field, locked to the $S_{Q=1}$ core's kernel trough. The discrete energy levels arise naturally from the Sturm–Liouville quantization on the effective spherical surface with texture-exclusion boundary conditions. No point-particle orbit or quantum wavefunction postulate is required.
 
-This formulation is fully consistent with the static surface-state picture and provides the dynamical foundation for atomic spectroscopy, transitions, and chemistry within the CCEF ontology.
+---
+
+### 14.9 Stochastic Perturbation of the Mode Ladder (The Non-Metric Vacuum Dressing)
+When the system is coupled to the Section 11 Stochastic Response System ($v1.2$), the irreducible fluctuations of the soliton gas introduce a stochastic texture perturbation $\Xi(\mathbf{x}, t)$ directly into the background constraint manifold. The effective potential $V_{\text{eff}}(\mathbf{x})$ operating on the transverse surface deformation field is updated to include an explicit fluctuation sector:
+
+$$V_{\text{eff}}(\mathbf{x}) \to V_{\text{eff}}(\mathbf{x}) + \delta V_{\text{stochastic}}(\mathbf{x}, t)$$
+
+where the statistical properties of the local potential fluctuation are rigidly locked to the native action-density noise scale $\hbar_{\text{eff}} = \sigma_\alpha^2 \rho_0$:
+
+$$\langle \delta V_{\text{stochastic}}(\mathbf{x}, t) \rangle = 0$$
+
+$$\langle \delta V_{\text{stochastic}}(\mathbf{x}, t) \, \delta V_{\text{stochastic}}(\mathbf{y}, t') \rangle = 2 \, D_\beta \left( \frac{\hbar_{\text{eff}}}{\rho_0^2} \right) \nabla^2 \delta_D(\mathbf{x} - \mathbf{y}) \, \delta_D(t - t')$$
+
+---
+
+#### 14.9.1 Emergent Energy Level Dressing (Lamb Shift Analogue via Boundary Breathing)
+Because the $S_{Q=0}$ configuration is an extended standing wave mode on the core's effective potential surface, the stochastic background noise does not drive virtual state mixing. Instead, it induces an instantaneous, random modulation of the equilibrium radius of the entire standing wave shell:
+
+$$r_{\text{shell}}(t) = R_{0} + \delta R(t)$$
+
+The discrete energy eigenvalues $\lambda_{n, \ell}$ shift purely because the boundary conditions of the 4th-order Sturm-Liouville problem are fluctuating in time. Integrating the modified potential landscape over the dynamically breathing spherical shell yields a time-averaged structural shift in the baseline energy levels:
+
+$$\langle \Delta \lambda_{n, \ell} \rangle = \frac{1}{\text{Vol}} \int \left| R_{n, \ell}(r) \right|^2 \langle \delta V_{\text{stochastic}}(r) \rangle \, r^2 \, dr$$
+
+Because the higher-derivative bi-harmonic regulator $A_3 \nabla^4$ naturally cuts off high-frequency short-wavelength noise at the texture-exclusion core boundary ($r \to R_{\text{sol}}$), the spatial integration remains strictly finite and bounded. 
+
+For the fundamental spherical mode ($n=1, \ell=0$), the stochastic breathing of the shell volume compresses the field lines near the core, lifting the degeneracy of the baseline hydroscopic ladder. This generates a positive, parameter-free structural energy shift:
+
+$$\langle \Delta \lambda_{1, 0} \rangle \propto \sigma_\alpha^2 \left( \frac{A_3}{A_1^2} \right) \gamma^4$$
+
+This shift acts as the pure continuum analogue of the **Lamb Shift**, emerging entirely as a geometric consequence of an extended classical wave shell interacting with a fluctuating field background.
+
+---
+
+#### 14.9.2 Native Spectral Line-Broadening
+Because the noise fluctuations are continuous in time, the instantaneous energy eigenvalues undergo a constrained random walk around their mean dressed targets. The variance of this spectral drift determines the natural line-width $\Delta \nu$ of the state transition:
+
+$$\Delta \nu_{n, \ell} = \int \langle \delta \lambda_{n, \ell}(t) \delta \lambda_{n, \ell}(0) \rangle \, dt \propto \hbar_{\text{eff}} \, f_\beta(n, \ell)$$
+
+The $S_{Q=0}$ standing wave shell breathes stochastically under the influence of the background bath. This converts the infinitely sharp classical states into fuzzy, finite-width resonance bands, directly matching experimental spectroscopy without invoking point-particle probability clouds.
 
 ## 15. Continuum Wave Diffraction and Parametric Decoherence (Double-Slit Realisation)
 

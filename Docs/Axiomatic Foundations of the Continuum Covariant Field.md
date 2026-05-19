@@ -232,3 +232,62 @@ $$P_{\text{coincidence}} \propto \left| n_{\theta_A} \cdot n_{\theta_B} \right|^
 This exactly reproduces the non-classical correlation bounds of the singlet state. The global constraint produces the correlation without non-local collapse paradoxes, because the trigonometric Malus's Law scaling is a native property of a continuous, constrained $S^2$ manifold under non-local boundary conditions. 
 
 The Section 11 stochastic noise floor ($\sigma_\alpha^2$) provides the randomness of individual outcomes, continuously introducing micro-fluctuations into the initial orientation angles before the packet encounters the boundary filter, while the structural constraint enforces the correlation.
+
+## Appendix: Reference Grid Coordinates and Empirical Dataset Formats
+
+To ensure complete numerical reproducibility by external referees, this appendix defines the explicit coordinate mappings, grid resolutions, and data-confrontation layouts used to evaluate the macro-scale galactic metrics against empirical databases. All metrics are evaluated under the invariant core parameters established in Sections 1 and 2.
+
+---
+
+### A.1 SPARC Galaxy Database: Surface Photometry Radial Coordinates
+When confronting the rotation curve of an unshielded galactic ensemble, the baryonic mass components are extracted directly from the **SPARC (Spitzer Photometry and Accurate Rotation Curves)** repository. The continuous 2D galactic disk profile is mapped onto a discretised, axisymmetric polar coordinate system to solve the non-local potential integrals.
+
+#### A.1.1 Spatial Coordinate Discretisation
+The raw observational data strings provide the raw surface brightness at discrete galactic radii $R_{\text{obs}, k}$ (expressed in kiloparsecs, $\text{kpc}$). The local numerical simulation grid maps these inputs onto a 2D cylindrical plane:
+
+*   **Radial Grid:** $r_i \in [0.1, R_{\text{max}}]$ with uniform radial stepping $\Delta r = 0.05\ \text{kpc}$. $R_{\text{max}}$ is dynamically set to $1.5 \times R_{\text{obs},\text{last}}$ to ensure the asymptotic far-field halo is captured.
+*   **Angular Grid:** $\phi_j \in [0, 2\pi)$ with a constant angular step resolution $\Delta \phi = \frac{\pi}{64}$.
+
+#### A.1.2 Baryonic Density Vector Extraction
+The observed luminosity profiles for the gas component ($\Sigma_{\text{gas}}(r)$), stellar disk ($\Sigma_{\text{disk}}(r)$), and bulges ($\Sigma_{\text{bul}}(r)$) are converted to an effective surface energy density profile on the grid plane:
+
+$$\Sigma_{\text{bar}}(r_i) = \Sigma_{\text{gas}}(r_i) + \Upsilon_{\text{disk}}\,\Sigma_{\text{disk}}(r_i) + \Upsilon_{\text{bul}}\,\Sigma_{\text{bul}}(r_i)$$
+
+where $\Upsilon_{\text{disk}}$ and $\Upsilon_{\text{bul}}$ are the constant, un-tunable mass-to-light ratio scale markers fixed by standard stellar population synthesis models ($\Upsilon_{\text{disk}} \approx 0.5$ at $3.6\ \mu\text{m}$).
+
+#### A.1.3 The Non-Local Acceleration Integrator
+At each radial node $r_i$, the total inward acceleration $a_r(r_i)$ is solved by evaluating the non-local ensemble derivative over the discrete grid cells:
+
+$$a_r(r_i) = \sum_{k} \sum_{j} \frac{G_{\text{eff}} \cdot \Sigma_{\text{bar}}(r_k) \cdot \left[ r_i - r_k\cos\phi_j \right]}{\left( r_i^2 + r_k^2 - 2r_i r_k\cos\phi_j \right)^{3/2}} \, r_k \, \Delta r \, \Delta \phi$$
+
+The emergent orbital phase velocity at that grid node is extracted directly via $v_{\text{rot}}(r_i) = \sqrt{a_r(r_i) \cdot r_i}$, which must track the flatlined empirical rotation curve without introducing dark matter halos.
+
+---
+
+### A.2 H0LiCOW Strong Lensing: Coordinate Projections and Arrival Baselines
+When confronting the multiple image arrays of strong lens configurations, the spatial positions are extracted directly from the **H0LiCOW (H0 Lenses in COSMOGRAIL's Wellspring)** database. The coordinates are mapped relative to the baryonic center of mass of the foreground lensing galaxy, situated at the coordinate origin $(0,0)$.
+
+#### A.2.1 Image Plane Coordinates
+For a quad-image lens configuration (e.g., RXJ1131-1231), the spatial coordinates of the lensed images are recorded on an orthogonal 2D sky projection plane $(x, y)$, where the units are expressed in arcseconds ($''$).
+
+The relative impact parameter $b_A$ for an individual image A is the absolute geometric distance from the center of the lensing core:
+
+$$b_A = \sqrt{x_A^2 + y_A^2} \cdot \kappa_{\text{arcsec}}$$
+
+where $\kappa_{\text{arcsec}}$ is the cosmological scale factor mapping angular arcseconds to physical transverse distances ($\text{kpc}$) at the lens redshift window $z_{\text{lens}}$.
+
+#### A.2.2 The Line-of-Sight Integration Baseline
+The non-linear Logarithmic Shapiro Delay is integrated along a straight-line longitudinal path parallel to the unperturbed line-of-sight axis $z$. To ensure that the long-range tails of the unshielded ensemble potential are integrated completely, the simulation uses a deep, fixed cosmic boundary baseline:
+
+*   **Integration Window:** $z \in [-Z_{\text{max}}, Z_{\text{max}}]$ where $Z_{\text{max}} = 5000.0 \times b_{\odot}$ (equivalent to a wide interaction envelope of approximately $25\ \text{parsecs}$).
+*   **Numerical Step Resolution:** $\Delta z = 10^{-3}\ \text{solar radii}$, with an adaptive sub-step refinement down to $10^{-6}$ when passing through the immediate impact margin $z \sim 0$.
+
+#### A.2.3 Time-Delay Output Format
+The predicted difference in arrival times $\Delta t_{AB}$ between image components A and B is computed across the discrete geodesic path lengths:
+
+$$\Delta t_{AB} = \tau_0 \left[ t_{\text{path}}(b_A) - t_{\text{path}}(b_B) \right]$$
+
+$$t_{\text{path}}(b) = \frac{1}{c_0} \int_{-Z_{\text{max}}}^{Z_{\text{max}}} \left[ \sqrt{1 + 2 V_{\text{flat}}^2 \ln\left(\frac{\sqrt{b^2 + z^2}}{R_0}\right)} - 1 \right] dz$$
+
+The resulting time unit must scale directly into physical days via the locked, global invariant $\tau_0 \approx 578.68\ \mu\text{s}/\text{field unit}$ to be compared directly against the time-delay datasets of the collaboration.
+

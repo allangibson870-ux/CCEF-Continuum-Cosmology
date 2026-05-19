@@ -13,22 +13,29 @@ All "matter" and "radiation" are attractor configurations of this single field.
 
 ---
 
-### 1.2 Axiom 2: The Energy Action
-The global field dynamics emerge strictly from a modified kinetic action containing a position-dependent field deformation dressing:
+### 1.2 Axiom 2: The Energy Action (with Explicit Unit Normalisation)
+All spatial and temporal coordinates are expressed in dimensionless units relative to the intrinsic soliton core radius and light‑crossing time:
+
+$$R_{\text{sol}} \equiv 1, \qquad T_{\text{sol}} \equiv 1$$
+
+In these natural units, the structural coefficients of the field become dimensionless invariants of the continuum. The global field dynamics emerge from the modified kinetic action:
 
 $$S[n] = \int d^4x \left[ \frac{Z_t}{2}(1 + \chi \mathcal{E}[n])(\partial_t n)^2 - \mathcal{E}[n] \right]$$
 
 $$\mathcal{E}[n] = A_1 (\nabla n)^2 + A_3 (\nabla^2 n)^2 + A_4 (1 - (n \cdot n_{\text{vac}})^2)$$
 
-where the component terms map to the following structural field conditions:
+where the components map to the following structural field conditions:
 *   $A_1 (\nabla n)^2$ is the baseline first-order gradient tension term.
 *   $A_3 (\nabla^2 n)^2$ is the higher-derivative bi-harmonic regularisation operator.
 *   $A_4 (1 - (n \cdot n_{\text{vac}})^2)$ is the vacuum mass-gap penalty, where $n_{\text{vac}}$ is a fixed unit vector defining the global vacuum orientation.
 *   $(1 + \chi \mathcal{E})$ is the time-kinetic dressing that directly governs the local propagation speed, where $\chi$ is the calibrated coupling factor that feeds into the optical index.
 
-The global parameter set is rigidly fixed to: $A_1 = 1.0, A_3 = 2.8 \times 10^{-6}, A_4 = 0.018, Z_t = 1.0$.
+The global parameter set is rigidly fixed to the dimensionless quantities:
 
----
+$$A_1 = 1.0, \qquad A_3 = 2.8 \times 10^{-6}, \qquad A_4 = 0.018, \qquad Z_t = 1.0$$
+
+These constants are not phenomenological fits; they are structural coefficients of the continuum in the $(R_{\text{sol}}, T_{\text{sol}})$ unit system.
+
 
 ### 1.3 Axiom 3: The Topological Species Invariant
 Particles are classified not by operational quantum flags, but by the integer topological winding number $Q$ of the mapping:

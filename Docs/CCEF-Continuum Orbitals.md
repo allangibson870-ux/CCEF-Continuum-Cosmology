@@ -281,3 +281,6 @@ With the updated parameters $(A_1=1.0,\ A_3=2.8\times10^{-6},\ A_4=0.018,\ Z_t=1
 * **Unified soliton mass** $M \approx 45$ across all probes
 
 All phenomena emerge from the same soliton, same kernel, and same field theory, with no metric and no GR primitives.
+
+<img width="1536" height="1024" alt="CCEF v ACDM Peaks Image May 21, 2026, 12_35_12 PM" src="https://github.com/user-attachments/assets/c366e682-145c-4cd4-ac19-5034bd83b1e7" />
+

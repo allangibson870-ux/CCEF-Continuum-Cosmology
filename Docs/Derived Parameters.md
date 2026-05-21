@@ -78,6 +78,54 @@
   → Fixed by matching the ground-state surface-state radius to the Bohr radius:  
     R_peak,intrinsic ≈ 1.99 ⇒ R_peak,phys ≈ 5.29 × 10^{-11} m ≈ a₀.
 
+  ### CCEF / Spine v1.0 — Newly Derived Intrinsic Quantities (Numerical Realisation)
+
+#### Intrinsic Soliton Quantities (Q = 1 Hedgehog)
+- **Intrinsic Soliton Mass M_intrinsic ≈ 34.891**  
+  → Result of full hedgehog minimisation under (A₁, A₂, A₃, A₄).  
+  **Derived from**: Derrick virial balance + Skyrme stabilisation + numerical Gaussian-basis minimisation.
+
+- **Coherence Scale R₀ ≈ 1.6733 × 10⁻³**  
+  → Natural vacuum coherence radius.  
+  **Derived from**: R₀ = √(A₃ / A₁).
+
+- **Derived Sub-Leading Coupling γ_derived ≈ 5.04 × 10⁻⁸**  
+  → Sub-leading 1/r³ correction in the point potential.  
+  **Derived from**: γ_derived = A₃ A₄.
+
+#### Derived Point Potential (Intrinsic Form)
+- **Leading Term:**  
+  Φ_lead(r) = −A₁ / √(r² + R₀²)
+
+- **Sub-Leading Term:**  
+  Φ_sub(r) = −(A₃ + γ_derived) / (r² + R₀²)^{3/2}
+
+- **Combined Derived Potential:**  
+  Φ_derived(r) = Φ_lead(r) + Φ_sub(r)
+
+#### Electron Surface-State Spectrum (Intrinsic)
+- **Lowest intrinsic eigenvalues (λ):**  
+  - n = 1 → λ ≈ −0.2319  
+  - n = 2 → λ ≈ −0.0173  
+  - n = 3 → λ ≈ 0.1735  
+  - n = 4 → λ ≈ 0.4615  
+  - n = 5 → λ ≈ 0.8420  
+  - n = 6 → λ ≈ 1.0000  (boundary artefact)
+
+- **Ground-State Peak Radius:**  
+  R_peak,intrinsic ≈ 1.992
+
+#### Global Scale Calibration (Intrinsic → Physical)
+- **Energy Scale E₀ ≈ 2.689 × 10⁷ eV per intrinsic unit**  
+  → Fixed by M_intrinsic E₀ = m_p c².
+
+- **Length Scale L₀ ≈ 2.656 × 10⁻¹¹ m per intrinsic unit**  
+  → Fixed by R_peak,intrinsic L₀ = a₀.
+
+- **Hydrogen Ground-State Radius (Check):**  
+  R_peak,phys = 1.992 × L₀ ≈ 5.292 × 10⁻¹¹ m ≈ a₀
+
+
 ### Status Overview
 - **Fully Derived**: A₂ (Derrick), A₃ (RG+SK), A₄ (vacuum), χ (null-timelike), M_intrinsic (virial+bootstrap+numerics), dual-pole kernel coefficients (exact residues), η (slip), all bath parameters (g₁, g₂, M_bath), noise/dissipation coefficients, operator closure.  
 - **Normalized / Axiomatic**: A₁, Z_t.  

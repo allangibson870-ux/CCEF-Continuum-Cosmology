@@ -25,9 +25,16 @@
   **Derived from**: Null–timelike sector consistency.
 
 #### Soliton & Kernel Quantities
-- **Soliton Mass M ≈ 45** (preferred) / ~124 (strong A₃ regime)  
+- **Soliton Mass M_intrinsic ≈ 34.9** (current numerical realisation; analytic target ≈ 45 / ~124 in strong A₃ regime)  
   → Integrated energy of minimized Q=1 hedgehog.  
-  **Derived from**: Derrick virial theorem + self-consistent mean-field bootstrap.
+  **Derived from**: Derrick virial theorem + self-consistent mean-field bootstrap + numerical minimisation.
+
+- **Coherence Scale R₀ ≈ √(A₃ / A₁) ≈ 1.67 × 10^{-3}**  
+  → Intrinsic vacuum coherence length entering packet softening and bath sector.
+
+- **Derived Sub-Leading Coupling γ_derived = A₃ A₄ ≈ 5.04 × 10^{-8}**  
+  → Sub-leading 1/r³ correction in the point potential:  
+  Φ_point(r) = −[A₁/r + (A₃ + γ_derived)/r³] (before packet averaging).
 
 - **Interaction Kernel K(k)**  
   → **Fully derived** as Green function of the Hessian ℋ.  
@@ -54,7 +61,7 @@
   → All fully derived from g₁, g₂, M_bath, R₀ via Schwinger–Keldysh integration.
 
 - **R₀ (coherence scale)**  
-  → Emergent: R₀ ≈ √(A₃ / A₁).
+  → Emergent: R₀ ≈ √(A₃ / A₁) (numerically ≈ 1.67 × 10^{-3}).
 
 #### RG & Cosmological
 - **Running couplings A_i(a)**  
@@ -63,12 +70,20 @@
 - **Effective G_eff(k,a), Σ_CCEF, noise floor**  
   → All descend from derived kernel + RG + bath.
 
+### Global Scale Calibration (Intrinsic → Physical)
+- **Energy scale E₀ ≈ 2.69 × 10^7 eV per intrinsic unit**  
+  → Fixed by M_intrinsic E₀ = m_p c² with M_intrinsic ≈ 34.9.
+
+- **Length scale L₀ ≈ 2.66 × 10^{-11} m per intrinsic unit**  
+  → Fixed by matching the ground-state surface-state radius to the Bohr radius:  
+    R_peak,intrinsic ≈ 1.99 ⇒ R_peak,phys ≈ 5.29 × 10^{-11} m ≈ a₀.
+
 ### Status Overview
-- **Fully Derived**: A₂ (Derrick), A₃ (RG+SK), A₄ (vacuum), χ (null-timelike), M (virial+bootstrap), dual-pole kernel coefficients (exact residues), η (slip), all bath parameters (g₁, g₂, M_bath), noise/dissipation coefficients, operator closure.
-- **Normalized / Axiomatic**: A₁, Z_t.
--- **Minimal Phenomenological Remainder**: Only the overall unit conversion factor from intrinsic soliton units (R_sol = 1, M ≈ 45) to physical units.  
-  This single global scale can be fixed by matching the derived soliton mass to the proton mass and/or the hydrogen surface-state radius to the Bohr radius. Once fixed, all other physical quantities (G_eff, atomic scales, cosmological densities) are predictions. This is the standard and inevitable last step in any pure field theory without an a-priori Planck scale.
+- **Fully Derived**: A₂ (Derrick), A₃ (RG+SK), A₄ (vacuum), χ (null-timelike), M_intrinsic (virial+bootstrap+numerics), dual-pole kernel coefficients (exact residues), η (slip), all bath parameters (g₁, g₂, M_bath), noise/dissipation coefficients, operator closure.  
+- **Normalized / Axiomatic**: A₁, Z_t.  
+-- **Minimal Phenomenological Remainder**: Only the overall unit conversion factor from intrinsic soliton units (R_sol = 1, M_intrinsic ≈ 34.9) to physical units.  
+  This single global scale is fixed by matching the derived soliton mass to the proton mass and the hydrogen surface-state radius to the Bohr radius. Once fixed, all other physical quantities (G_eff, atomic scales, cosmological densities) are predictions. This is the standard and inevitable last step in any pure field theory without an a-priori Planck scale.
 
 **Core Unification Principle**: Everything emerges from the single S²-constrained field n(x,t), its energy functional, topology, Hessian-derived kernels, RG flow, and stochastic bath — with **no external geometry, no free parameters beyond overall scale, and no hand-fitting** for the core coefficients.
 
-This represents the current best self-consistent, derivation-heavy state of the framework.
+

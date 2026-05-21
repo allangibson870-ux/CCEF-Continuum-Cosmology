@@ -653,5 +653,6 @@ This exactly reproduces the non-classical correlation bounds of the singlet stat
 
 The randomness of individual outcomes is provided by the Section 11 stochastic noise floor ($\sigma_\alpha^2$), which continuously introduces micro-fluctuations into the initial orientation angles before the packet hits the boundary filter.
 
+<img width="1254" height="1254" alt="CCEF Atom May 21, 2026, 11_19_14 AM" src="https://github.com/user-attachments/assets/5b00635d-dd17-4f4d-83a2-c0dd29ccb8bc" />
 
 

@@ -1,50 +1,69 @@
-### CCEF Derived Parameters Summary (as of current derivations)
+### CCEF / Spine v1.0 — Derived Parameters Summary (All Documents)
 
-#### Core Structural Parameters (from Axioms + RG Fixed Points)
+#### Core Structural Parameters (Energy Functional)
 - **A₁ = 1.0**  
-  → Normalized quadratic gradient coefficient (set by wave-function renormalization / axiom 2).
+  → Quadratic gradient tension |∇n|². Normalized / axiomatic.
 
-- **A₃ ≈ 2.8 × 10^{-6}**  
-  → Biharmonic UV regulator (∇²n)² coefficient.  
-  **Derived from**: RG fixed-point balance between quadratic (A₁ k²) and quartic (A₃ k⁴) terms at the soliton core scale Λ_UV ≈ 140–600 (in R_sol=1 units).  
-  Ensures stable finite-size hedgehog solitons and consistent UV → IR flow (Yukawa → logarithmic ensemble).
+- **A₂ ≈ 0.45** (new prominence in Spine)  
+  → Topological Skyrme term (ω²).  
+  **Status**: Phenomenological in most docs; contributes to soliton binding and currents.
 
-- **A₄ = 0.018** (still phenomenological / partially derivable)  
-  → Vacuum mass-gap / potential term coefficient.  
-  Can be further derived from vacuum texture variance σ_α² equilibrium.
+- **A₃ ≈ 2.8 × 10^{-6}** (main documents) / **A₃ ≈ 0.5** (Spine numerical example)  
+  → Biharmonic UV regulator (∇²n)².  
+  **Derived from**:  
+  - RG fixed-point balance (A₁k² ≈ A₃k⁴ at core).  
+  - Schwinger–Keldysh bath integration: A₃ = (g₂² R₀⁶)/M_bath².  
+  - Hessian Green function for interaction kernel.  
+  (Note: Different numerical regimes across document versions; ratio A₃/A₁ fixes core scale.)
+
+- **A₄ ≈ 0.018** (main) / **A₄ ≈ 0.08** (Spine example)  
+  → Vacuum mass-gap / potential term (1 − (n·n₀)²).  
+  **Derived role**: Sets IR plateau of kernels (K_trans(k→0) → 1/A₄), homogeneous background energy, and screening mass m.
 
 - **Z_t = 1.0**  
-  → Baseline time-scale normalization (intrinsic soliton units).
+  → Kinetic time-scale normalization.
 
-#### Kinetic Dressing Coupling
+#### Kinetic & Propagation
 - **χ ≈ 1.63 × 10^{-6}**  
-  → Modified kinetic term coefficient (1 + χ E[n]).  
-  **Derived from**: Null–Timelike sector consistency.  
-  Ensures the *same* background soliton energy density E₀(r) produces:
-  - Correct achromatic refractive index n_opt(r) = √(1 + χ E₀(r)) for light (lensing + Shapiro).
-  - Correct local propagation speed and Lorentz-like contraction for timelike wavepacket orbits.  
-  Matches solar deflection 1.75″ and unified soliton mass M ≈ 45 across sectors.
+  → Modified kinetic dressing (1 + χ E[n]).  
+  **Derived from**: Null–timelike consistency (shared E₀(r) for refractive lensing and wavepacket orbits/precession).
 
-#### Emergent / Unified Quantities
-- **Soliton Mass M ≈ 45** (in intrinsic soliton units)  
-  → Integrated energy E[n_sol] of the Q=1 hedgehog.  
-  **Strongly unified**: Same value appears in null (lensing), timelike (orbits), and dynamical sectors.
+#### Soliton & Kernel Quantities
+- **Soliton Mass M**  
+  → ≈45 (main gravity/orbitals docs) or ≈124 (Spine numerical example with A₃=0.5).  
+  **Strongly unified**: Same M appears in lensing, orbits, and collective dynamics.
 
-- **Dual-pole kernel scales** (m_IR, Λ_UV)  
-  → Derived from RG flow: m_IR → 0 in galactic dilute limit; Λ_UV from A₃/A₁ balance.
+- **Interaction Kernel K(k)**  
+  → Fully derived in principle: Green function of the Hessian operator ℋ around hedgehog background.  
+  Explicit dual-pole form:  
+  $$K(k) = \frac{A(a)}{k^2 + m^2(a)} + \frac{B(a)}{k^2 + \Lambda^2(a)}$$  
+  with poles from A₃ s² + A₁ s − A₄ = 0 (s = k²).  
+  Long-range: m → 0 → logarithmic ensemble potential.
 
-- **Effective scales** (R_p0, c_eff, etc.)  
-  → Can be derived from wavepacket self-consistency + RG fixed points (currently calibrated for solar-system precision).
+- **Gravitational Slip η(k,a)**  
+  → Exactly derived: η = K_long / K_trans = (A₄ − A₁k² − A₃k⁴) / (A₁k² + A₃k⁴).
 
-### Status Overview
-- **Fully Derived (via RG + Consistency)**: A₃, χ
-- **Normalized / Axiomatic**: A₁, Z_t
-- **Partially Derivable**: A₄, σ_α² (stochastic floor), kernel amplitudes A_grav / B_struct
-- **Still Phenomenological**: Some scale-matching constants (τ₀, γ_halo) and precise RG beta coefficients
+#### Stochastic / Bath Sector
+- **η₀ (viscosity), T_eff, ℏ_eff**  
+  → Derived from Schwinger–Keldysh bath integration (g₁, g₂, M_bath, R₀).  
+  Noise floor P_δ,noise ∝ ℏ_eff / k³ (with correlated injection).
 
-All parameters ultimately flow from:
-1. Single S²-constrained field n(x,t)
-2. Action with higher derivatives + kinetic dressing
-3. Topological charge Q
-4. RG fixed-point conditions (new physics axiom)
-5. Null–Timelike sector consistency
+- **R₀ (coherence / core scale)**  
+  → Emergent: R₀ ≈ √(A₃ / A₁).
+
+#### RG & Cosmological
+- **Running couplings A_i(a)**  
+  → Governed by RG flow equations (explicit schematic forms in Spine v1.0). Fixed points control IR → UV transition and phases.
+
+- **Effective G_eff(k,a), Σ_CCEF, etc.**  
+  → All descend from the derived kernel + RG.
+
+### Status Overview (Across All Documents)
+- **Fully Derived**: Kernel K(k) from Hessian Green function, χ (null-timelike), η (slip), dual-pole structure (m, Λ), A₃ (RG + SK bath), noise/dissipation coefficients (bath), operator closure (no quadratic non-linearities, renormalizable).
+- **Normalized**: A₁, Z_t.
+- **Partially / Numerically Constrained**: A₂, A₄, soliton mass M, precise RG beta coefficients.
+- **Still Phenomenological**: Some global unit conversions and exact bath couplings (gᵢ, M_bath) — can be further fixed by matching observed particle masses / couplings.
+
+**Core Unification Principle (Spine v1.0)**: Everything (particles as solitons, forces via Hessian kernels, cosmology via RG + ensemble, atoms as surface modes) must emerge from the single S² field, its energy functional, topology, and coarse-grained response. No external geometry or axioms permitted.
+
+**Key Strength**: The interaction kernel is now explicitly positioned as derivable from the microscopic Hessian (major advance over pure phenomenology).

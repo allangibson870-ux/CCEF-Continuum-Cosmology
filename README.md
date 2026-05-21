@@ -1,6 +1,12 @@
 # CCEF‑Continuum‑Cosmology  
 ### Continuum‑Coupled Emergent Framework (CCEF‑Lite v3.0)
 
+### 🌐 Project Navigation
+* 🧮 [Minimal Mathematical Backbone](./Docs/CCEF%20%E2%80%94%20Minimal%20Mathematical%20Backbone.md)
+
+---
+
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20069546.svg)](https://doi.org/10.5281/zenodo.20069546)
 
 

@@ -3,15 +3,15 @@
 ### Core Structural Parameters (Energy Functional)
 *   **$A_1 = 1.0$**  
     → Quadratic gradient tension $|\nabla n|^2$. **Normalized / axiomatic.**
-*   **$A_2 \approx 0.45$**  
+*   **$A_2 = A_{2,\text{nat}}$**  
     → Topological Skyrme term ($\omega^2$).  
-    **Derived from**: Derrick’s theorem + virial identity for stable finite-size hedgehog solitons ($A_2/A_1 \approx 0.4–0.6$).
-*   **$A_3 \approx 2.8 \times 10^{-6}$ (main documents) / $\approx 0.5$ (strong UV regime)**  
+    **Derived from**: Exact Derrick locking on the minimized $Q=1$ hedgehog: $A_2 = I_2 / I_4$.
+*   **$A_3 = A_{3,\text{nat}}$**  
     → Biharmonic UV regulator $(\nabla^2 n)^2$.  
-    **Derived from**: RG fixed-point balance + Schwinger–Keldysh bath integration.
-*   **$A_4 \approx 0.018 – 0.08$**  
+    **Derived from**: Curvature-sector invariant of the hedgehog: $A_3 = \tfrac{1}{2} I_2 / I_{\text{bih}}$.
+*   **$A_4 = A_{4,\text{nat}}$**  
     → Vacuum mass-gap term.  
-    **Derived from**: Vacuum fluctuation equilibrium: $A_4 \approx c \sqrt{A_1^3 / A_3}$ with $c \approx 0.03–0.15$.
+    **Derived from**: Potential-sector invariant of the hedgehog: $A_4 = \tfrac{1}{6} I_2 / I_{\text{pot}}$.
 *   **$Z_t = 1.0$**  
     → Kinetic time-scale normalization (axiomatic).
 
@@ -19,6 +19,7 @@
 *   **$\chi \approx 1.63 \times 10^{-6}$**  
     → Modified kinetic dressing $(1 + \chi E[n])$.  
     **Derived from**: Null–timelike sector consistency.
+
 
 ### Soliton & Kernel Quantities
 *   **Soliton Mass $M_{\text{intrinsic}} \approx 34.9$ (current numerical realisation; analytic target $\approx 45$ / $\sim 124$ in strong $A_3$ regime)**  

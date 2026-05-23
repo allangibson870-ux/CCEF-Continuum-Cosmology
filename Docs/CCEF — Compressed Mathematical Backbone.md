@@ -556,6 +556,82 @@ The angular power spectra follow from:
 
 All dependence on modified gravity enters exclusively through Φ, Ψ, Φ_W, Φ̇_W, which are fixed by the CCEF kernels K_trans, K_long, the slip η_phys, and the lensing kernel Σ_CCEF. This completes the first‑principles derivation of the linear Boltzmann hierarchy in CCEF.
 
+### 11.6 Stratified RG Phase Geometry
+
+The Wilsonian stress tests reveal that the Continuum-Coupled Emergent Framework does not collapse onto a single infrared (IR) fixed point. Instead, the renormalisation flow forms a *stratified* phase structure governed by a two-parameter manifold in the \((A_2, A_4)\) plane, with the biharmonic regulator \(A_3\) acting as a redundant operator direction.
+
+#### 11.6.1 Irrelevance of the Biharmonic Regulator \(A_3\)
+
+Across all numerical resolutions, deformation seeds, and operator bases, the third singular value of the linear response matrix \(M_{ji}\) converges to numerical zero. This identifies \(A_3\) as a globally irrelevant coupling in the Wilsonian sense:
+
+- it does not generate flow,
+- it does not modify the IR basin structure,
+- it serves only as a UV stabiliser for the variational operator.
+
+Thus the effective RG dynamics live entirely on the \((A_2, A_4)\) submanifold.
+
+#### 11.6.2 Fixed-Line Sheet and Vanishing Beta Functions
+
+The beta functions for \(A_2\) and \(A_4\) vanish simultaneously along a continuous *critical fixed-line sheet*. This sheet forms a geometric boundary separating two distinct IR attractor basins. The inter-trajectory variance remains finite (\(\sim 0.52\)), confirming that the flow does not collapse to a unique point but instead spans a continuum of fixed-line configurations.
+
+The resulting RG geometry is:
+
+```
+A₄ ↑
+    |      /  Phase 1: Compact C-Core Sector (Track A)
+    |     /
+    |    /
+    |   /---- Critical Fixed-Line Sheet (β = 0)
+    |  /
+    | /
+    |/   Phase 2: Extended E-Core Sector (Track B)
+    +----------------------------------------------→ A₂
+```
+
+#### 11.6.3 Phase 1: Compact C-Core Sector (Track A)
+
+This attractor is dominated by the mass-gap potential term:
+
+- high \(A_4\),
+- strong localising pressure,
+- dense, compact baryon cores,
+- short coherence length.
+
+The soliton concentrates its energy into a tightly bound central region, producing a high-frequency internal spectrum.
+
+#### 11.6.4 Phase 2: Extended E-Core Sector (Track B)
+
+This attractor is governed by the Skyrme-trace geometry:
+
+- elevated \(A_2\),
+- dominant non-linear winding contributions,
+- extended soliton horizon,
+- distributed energy density.
+
+The soliton relaxes into a broader spatial footprint with reduced central compression.
+
+#### 11.6.5 Universality Class Hierarchy
+
+The stratified RG structure implies that CCEF is not a single finely tuned effective field theory. Instead, it defines an entire *universality class hierarchy*:
+
+- identical operator basis \((\nabla^2, \nabla^4, \omega^2, \sin^2 f)\),
+- identical constrained-field ontology,
+- but distinct IR phases selected by boundary conditions and the chosen length-scale token \(L_0\).
+
+The continuum therefore supports multiple, internally consistent IR behaviours without requiring metric primitives or external geometric assumptions.
+
+#### 11.6.6 Final Structural Interpretation
+
+The RG phase diagram exposes the true architecture of the CCEF backbone:
+
+- a redundant UV direction (\(A_3\)),
+- a two-dimensional fixed-line manifold (\(A_2, A_4\)),
+- bifurcated IR attractor basins (C-Core and E-Core),
+- and a stratified universality hierarchy determined by variational balance and homotopy constraints.
+
+This structure is intrinsic to the continuum and emerges without invoking curvature, quantum operators, or external geometric frameworks.
+
+
 ### 11.1a — Tightened Superhorizon Scaling and Slip Regularity in CCEF
 
 We refine the ζ̇ ≈ 0 proof by explicitly deriving the superhorizon scaling of δ_m from the CCEF kernel closures plus metric regularity, instead of assuming it.

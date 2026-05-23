@@ -86,6 +86,36 @@ $$g_{\text{weak}} = \int n \, \Phi_{\text{weak}}$$
 
 $$g_{\text{grav}} = \int n \, \Phi_{\text{grav}}$$
 
+### 4.1 Structural Coupling Interpretation (Physical Branch)
+
+The soliton energy density uses the standard CCEF form:
+
+$$
+\mathcal{E} = \frac{A_1}{2} |\nabla n|^2 + \frac{A_2}{2} (\partial_i n \times \partial_j n)^2 + \frac{A_3}{2} (\nabla^2 n)^2 + \frac{A_4}{2} (1 - n \cdot n_{\text{vac}})^2 .
+$$
+
+The Wilsonian coarse‑graining analysis updates the interpretation of the couplings:
+
+**$A_1$ — Gradient stiffness**  
+Axiomatic spatial normalisation.
+
+**$A_2$ — Topological Skyrme channel**  
+Locked to the invariant ratio of the minimised $Q=1$ core:  
+$$A_2 = I_2 / I_4.$$
+
+**$A_3$ — Microscopic UV regulator**  
+Not a derived curvature invariant.  
+The RG flow closes on a 2‑dimensional invariant manifold, making $A_3$ a redundant operator direction with no independent flow generator.  
+Its physical value must be microscopically small to preserve graphene sub‑lattice symmetry.
+
+**$A_4$ — Vacuum mass‑gap channel**  
+Locked to the potential‑sector invariant:  
+$$A_4 = \frac{1}{6} \, \frac{I_2}{I_{\text{pot}}}.$$
+
+Thus the soliton sector is governed by the pair $(A_2, A_4)$ on a co‑dimension‑1 RG fixed manifold, with $A_3$ acting purely as a UV trace.
+
+
+
 ---
 
 ## 5. Texture Exclusion Principle

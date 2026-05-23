@@ -33,7 +33,12 @@ $$S[n]=\int d^4x\left[\frac{Z_t}{2}(1+\chi\mathcal{E}[n])(\partial_t n)^2-\mathc
 
 $$\mathcal{E}[n]=A_1(\nabla n)^2+A_3(\nabla^2 n)^2$$
 
-with updated parameters $A_1=1.0$, $A_3=2.8\times10^{-6}$, $A_4=0.018$, $Z_t=1.0$.
+with updated physical-branch parameters
+
+$$A_1 = 1.0,\quad A_2 = 0.3268,\quad A_3 \approx 10^{-6},\quad A_4 = 3.5553,\quad Z_t = 1.0.$$
+
+Here $A_3$ is not a derived curvature invariant. The Wilsonian RG flow closes on a 2-dimensional invariant manifold in coupling space, making $A_3$ a redundant UV regulator with no independent flow generator; its value is fixed microscopically (to preserve graphene sub-lattice symmetry) and does not participate in macroscopic dynamics.
+
 
 ---
 

@@ -1,8 +1,19 @@
 # CCEF‑Continuum‑Cosmology  
 ### Continuum‑Coupled Emergent Framework (CCEF‑Lite v3.0)
 
-### 🌐 Project Navigation
-* 🧮 [Minimal Mathematical Backbone](./Docs/CCEF%20%E2%80%94%20Minimal%20Mathematical%20Backbone.md)
+## CCEF‑Lite v3.1 Microsector Update
+
+Use the following **hedgehog‑derived natural couplings** in place of all legacy parameters in earlier CCEF‑Lite docs:
+
+```
+A1 = 1.0
+A2 = 3.24475
+A3 = 0.775512
+A4 = 0.18899
+Zt = 1.0
+```
+
+All soliton, kernel, growth, and stochastic calculations must be regenerated using these updated constants.
 
 ---
 

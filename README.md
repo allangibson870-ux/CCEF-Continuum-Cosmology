@@ -14,6 +14,7 @@ Zt = 1.0
 ```
 
 All soliton, kernel, growth, and stochastic calculations must be regenerated using these updated constants.
+Please refer to here - Docs/Derived Parameters.md
 
 ---
 

@@ -6,11 +6,30 @@
 Use the following **hedgehog‑derived natural couplings** in place of all legacy parameters in earlier CCEF‑Lite docs:
 
 ```
-A1 = 1.0
-A2 = 3.24475
-A3 = 0.775512
-A4 = 0.18899
-Zt = 1.0
+* **$A_1 = 1.0$**  
+  → Quadratic gradient tension $|\nabla n|^2$.  
+  **Axiomatic spatial normalization.**
+
+* **$A_2 = 0.3268$**  
+  → Topological Skyrme channel ($\omega^2$).  
+  **Derived from locked core invariants:**  
+  $$A_2 = I_2 / I_4$$
+
+* **$A_3 \approx 10^{-6}$**  
+  → Microscopic biharmonic UV trace $(\nabla^2 n)^2$.  
+  **Not a derived invariant.**  
+  **Wilsonian RG result:**  
+  The full coarse‑graining flow closes on a **2‑dimensional invariant manifold**, rendering $A_3$ a **redundant operator direction** with no independent flow generator.  
+  Physically required to be tiny to preserve graphene sub‑lattice topological symmetry.
+
+* **$A_4 = 3.5553$**  
+  → Vacuum mass-gap channel.  
+  **Derived from locked core invariants:**  
+  $$A_4 = \tfrac{1}{6} I_2 / I_{\text{pot}}$$
+
+* **$Z_t = 1.0$**  
+  → Kinetic time-scale normalization.  
+  **Axiomatic temporal normalization.**
 ```
 
 All soliton, kernel, growth, and stochastic calculations must be regenerated using these updated constants.

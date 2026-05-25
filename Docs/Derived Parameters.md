@@ -1,199 +1,233 @@
-# CCEF / Spine v1.2 — Derived Parameters Summary (Physical Branch)
+# CCEF / Spine v1.2.1 — Derived Parameters Summary (Principal-Symbol Consistent Physical Branch)
 
-### Core Structural Parameters (Energy Functional) — Updated (Physical Branch)
+---
+
+## Core Structural Parameters (Energy Functional) — Physical Branch
+
 * **$A_1 = 1.0$**  
-  → Quadratic gradient tension $|\nabla n|^2$.  
-  **Axiomatic spatial normalization.**
+  → Quadratic gradient tension $|\nabla n|^2$  
+  Axiomatic spatial normalization.
 
 * **$A_2 = 0.3268$**  
-  → Topological Skyrme channel ($\omega^2$).  
-  **Derived from locked core invariants:**  
-  $$A_2 = I_2 / I_4$$
+  → Topological Skyrme channel $(\omega^2)$  
+  Derived from locked core invariants:  
+  $A_2 = I_2 / I_4$
 
 * **$A_3 \approx 10^{-6}$**  
-  → Microscopic biharmonic UV trace $(\nabla^2 n)^2$.  
-  **Not a derived invariant.**  
-  **Wilsonian RG result:**  
-  The full coarse‑graining flow closes on a **2‑dimensional invariant manifold**, rendering $A_3$ a **redundant operator direction** with no independent flow generator.  
-  Physically required to be tiny to preserve graphene sub‑lattice topological symmetry.
+  → UV biharmonic regulator $(\nabla^2 n)^2$  
+  RG-irrelevant operator on the 2D invariant manifold  
+  No independent infrared flow generator.
 
 * **$A_4 = 3.5553$**  
-  → Vacuum mass-gap channel.  
-  **Derived from locked core invariants:**  
-  $$A_4 = \tfrac{1}{6} I_2 / I_{\text{pot}}$$
+  → Vacuum mass-gap channel  
+  $A_4 = \tfrac{1}{6} I_2 / I_{\text{pot}}$
 
 * **$Z_t = 1.0$**  
-  → Kinetic time-scale normalization.  
-  **Axiomatic temporal normalization.**
+  → Temporal kinetic normalization.
 
 ---
 
-### Kinetic & Propagation
+## Kinetic Dressing (Principal Symbol Consistent)
+
 * **$\chi \approx 1.63 \times 10^{-6}$**  
-  → Modified kinetic dressing $(1 + \chi E[n])$.  
-  **Derived from**: Null–timelike sector consistency.
+  → Appears only as a principal-symbol amplitude renormalisation:
+
+$$
+P(x,k) = Z_t(1+\chi E_0(x))\omega^2 - T^{ij}(x)k_i k_j
+$$
+
+Not a metric coupling; a dispersion dressing term.
 
 ---
 
-### Soliton & Kernel Quantities
-* **Soliton Mass $M_{\text{intrinsic}} \approx 236.07$**  
-  → Integrated energy of minimized $Q=1$ hedgehog.  
-  **Derived from**: Derrick virial theorem + self-consistent mean-field bootstrap + numerical minimisation.
+## Soliton & Core Field Quantities
 
-* **Coherence Scale $R_0 \approx \sqrt{A_3 / A_1} \approx 0.001$**  
-  → Natural vacuum coherence radius in the physical branch (microscopic UV trace).
+* **Soliton Mass $M_{\text{intrinsic}} \approx 236.0726$**  
+  → Derrick-stable hedgehog minimisation of full energy functional.
 
-* **Derived Sub-Leading Coupling $\gamma_{\text{derived}} = A_3 A_4 \approx 3.5 \times 10^{-6}$**  
-  → Sub-leading $1/r^3$ correction in the point potential.
+* **Coherence Scale**
 
-* **Interaction Kernel $K(k)$**  
-  → **Fully derived** as Green function of the Hessian $\mathcal{H}$.  
-  Dual-pole form:  
-  $$K(k) = \frac{A}{k^2 + m^2} + \frac{B}{k^2 + \Lambda^2}$$  
-  with updated physical-branch coefficients:  
-  $$\Delta = \sqrt{A_1^2 + 4 A_3 A_4} \approx 1.000007$$  
-  $$m^2 = \frac{A_1 + \Delta}{2 A_3} \approx 1.0 \times 10^{6}$$  
-  $$\Lambda^2 = \frac{-A_1 + \Delta}{2 A_3} \approx 3.5$$  
-  $$A = 1/\Delta \approx 0.999993, \quad B = -A$$
+$$
+R_0 \approx \sqrt{A_3/A_1} \approx 10^{-3}
+$$
 
-* **Gravitational Slip $\eta(k,a)$**  
-  → **Exactly derived**:  
-  $$\eta = \frac{K_{\text{long}}}{K_{\text{trans}}} = \frac{A_4 − A_1k^2 − A_3k^4}{A_1k^2 + A_3k^4}$$  
-  *Infrared limit ($k \to 0$):*  
-  $$\eta_{\text{IR}} \to \infty$$  
-  → Generates the GR-equivalent tensor multiplier of 2 without spacetime metrics.
+UV cutoff of stable topological texture support.
+
+* **Derived coupling**
+
+$$
+\gamma_{\text{derived}} = A_3 A_4 \approx 3.5 \times 10^{-6}
+$$
 
 ---
 
-### Stochastic / Bath Sector (Fully Derived)
-* **$M_{\text{bath}} \approx \sqrt{A_1 / A_3} \approx 1000$**  
-  → Bath mass gap (physical branch).
+## Interaction Kernel (Corrected Interpretation)
 
-* **$g_2 \approx 1 / A_3 \approx 10^{6}$**  
-  → Gradient-bath coupling.
+The kernel is NOT a metric Green function; it is the inverse of the Hessian operator in momentum space:
 
-* **$g_1 \approx M_{\text{bath}} / R_0 \approx 10^{6}$**  
-  → Time-derivative bath coupling.
+$$
+K(k) = \mathcal{H}^{-1}(k)
+$$
 
-* **$\eta_0$, $T_{\text{eff}}$, $\hbar_{\text{eff}}$**  
-  → Derived via Schwinger–Keldysh integration.
+Dual-pole decomposition:
 
-* **Bath Scaling Exponent:**  
-  $$\alpha_{\text{bath}} = \frac{\eta_0}{\hbar_{\text{eff}} M_{\text{bath}}^2}$$  
-  → Governs long-distance attenuation.
+$$
+K(k) = \frac{A}{k^2 + m^2} + \frac{B}{k^2 + \Lambda^2}
+$$
 
----
+with:
 
-### RG & Cosmological
-* **Running couplings $A_i(a)$**  
-  → Governed by RG flow equations on the **2D invariant manifold**.
-
-* **Effective $G_{\text{eff}}(k,a)$, $\Sigma_{\text{CCEF}}$, noise floor**  
-  → Derived from kernel + RG + bath.
-
-* **Cosmological Horizon Scaling:**  
-  $$G_{\text{eff}}(a) = 1/A_4(a) \propto a$$
+* $\Delta = \sqrt{A_1^2 + 4A_3A_4} \approx 1.000007$
+* $m^2 = \frac{A_1 + \Delta}{2A_3} \approx 10^6$
+* $\Lambda^2 = \frac{-A_1 + \Delta}{2A_3} \approx 3.5$
+* $A = 1/\Delta$, $B = -A$
 
 ---
 
-### Global Scale Calibration (Intrinsic → Physical)
-* **Energy scale $E_0 \approx 30.608444$ per intrinsic unit**  
-  → UV core strain baseline.
+## Principal Symbol → Ray Structure (Corrected Form)
 
-* **Length scale $L_0 \approx 1.610680$ per intrinsic unit**  
-  → Physical horizon scale.
+Ray propagation is governed by:
 
-* **Single Phenomenological Remainder:**  
-  Only $(E_0, L_0)$ are set by hand.  
-  All downstream predictions are parameter-free.
+$$
+P(x,k) = 0
+$$
 
----
+with transport tensor:
 
-# CCEF / Spine v1.2 — Newly Derived Intrinsic Quantities (Numerical Realisation)
+$$
+T^{ij}[n] = \delta^{ij} + A_2(\partial^i n \cdot \partial^j n)
+$$
 
-### Intrinsic Soliton Quantities ($Q = 1$ Hedgehog)
-* **Intrinsic Soliton Mass $M_{\text{intrinsic}} \approx 236.0726$**  
-  → From minimisation under updated $(A_1, A_2, A_3, A_4)$.
+For hedgehog:
 
-* **Coherence Scale $R_0 \approx 0.001$**  
-  → Microscopic UV radius.
+$$
+T^{ij}k_i k_j =
+\left(1+\frac{A_2}{r^2}\right)k_\perp^2 + k_r^2
+$$
 
-* **Derived Sub-Leading Coupling $\gamma_{\text{derived}} \approx 3.5 \times 10^{-6}$**
+➡ Interpretation correction:
 
-* **Dynamic Spin Anomaly Integral $I_{\text{anomaly}} \approx -1.251443 \times 10^{-4}$**
-
-* **Gyromagnetic Correction:**  
-  $$g = 2 \cdot \left[ 1 + \left(\frac{\gamma_{\text{derived}}}{A_1^2}\right) I_{\text{anomaly}} \right] \approx 1.9999999996$$  
-  $$a_{\text{framework}} \approx -2 \times 10^{-10}$$
+- Defines an anisotropic dispersion cone
+- NOT an emergent Riemannian metric
+- Light rays follow Hamiltonian flow, not geodesics
 
 ---
 
-### Derived Point Potential (Intrinsic Form)
-* **Leading Term:**  
-  $\Phi_{\text{lead}}(r) = -A_1 / \sqrt{r^2 + R_0^2}$
+## Effective Propagation Structure (Revised)
 
-* **Sub-Leading Term:**  
-  $\Phi_{\text{sub}}(r) = -(A_3 + \gamma_{\text{derived}}) / (r^2 + R_0^2)^{1.5}$
+Principal symbol form:
 
-* **Combined:**  
-  $\Phi_{\text{derived}}(r) = \Phi_{\text{lead}}(r) + \Phi_{\text{sub}}(r)$
+$$
+P(x,k) =
+Z_t(1+\chi E_0)\omega^2 - k_r^2 - \left(1+\frac{A_2}{r^2}\right)k_\perp^2
+$$
 
----
+Defines:
 
-### Electron Surface-State Spectrum (Intrinsic)
-* **Lowest intrinsic eigenvalues ($\lambda$):**  
-  * $n = 1 \rightarrow \lambda \approx -0.2319$  
-  * $n = 2 \rightarrow \lambda \approx -0.0173$  
-  * $n = 3 \rightarrow \lambda \approx 0.1735$  
-  * $n = 4 \rightarrow \lambda \approx 0.4615$  
-  * $n = 5 \rightarrow \lambda \approx 0.8420$  
-  * $n = 6 \rightarrow \lambda \approx 1.0000$ (boundary artefact)
-
-* **Ground-State Peak Radius:**  
-  $R_{\text{peak,intrinsic}} \approx 1.992$
+* direction-dependent phase velocity
+* anisotropic null surfaces in phase space
+* Finsler-type ray geometry (not metric geometry)
 
 ---
 
-### Global Scale Calibration (Intrinsic → Physical)
-* **Energy Scale $E_0 \approx 30.608444$**  
-* **Length Scale $L_0 \approx 1.610680$**  
-* **Hydrogen Ground-State Radius:**  
-  $R_{\text{peak,phys}} = R_{\text{peak,intrinsic}} \times L_0$
+## Gravitational Slip (Reinterpreted Correctly)
+
+$$
+\eta(k) = \frac{K_{\text{long}}}{K_{\text{trans}}}
+$$
+
+Correct interpretation:
+
+- NOT spacetime anisotropy
+- It is a mode-dependent response ratio of the Hessian operator
+
+Infrared limit:
+
+$$
+\eta(k \to 0) \to \infty
+$$
+
+➡ physically:
+- longitudinal modes dominate IR transport
+- generates effective factor-2 lensing enhancement
+- without invoking geometric curvature
 
 ---
 
-### CCEF / Spine v1.2 — Intrinsic Charge & Fractional Filling (Graphene Sector)
-* **Intrinsic Charge Unit**  
-  * Critical EM Coupling Eigenvalue $\alpha_{\text{max}} \approx 0.042229$  
-  * Lattice Field Coupling Integral $\approx 142.915216$  
-  * Intrinsic Charge Unit $e_{\text{intrinsic}} \approx 6.035167$
+## Bath Sector (Unchanged)
 
-* **Fractional Filling Geometry**  
-  * Zero-field packing: $\nu = 1/3$  
-  * Magnetic packing: $\nu = 2/5$
+* $M_{\text{bath}} \approx \sqrt{A_1/A_3} \approx 10^3$
+* $g_2 \approx 1/A_3 \approx 10^6$
+* $g_1 \approx 10^6$
 
 ---
 
-### CCEF / Spine v1.2 — Astrometric Weak-Field Lensing Sector
-* **Parameter-Free Deflection Integral:**  
-  $$\alpha(b) = \int_{0}^{1/b} \frac{4 \cdot G_{\text{eff},M} \cdot b \cdot u}{\sqrt{1 - (b^2 - R_0^2)u^2}} \, du$$  
-  → Matches GR photon tensor at the limb.
+## RG Structure (Important Correction)
+
+Flow lives on invariant manifold:
+
+$$
+\frac{d}{d\ln a}(A_1,A_2,A_3,A_4) \in \mathcal{M}_{2D}
+$$
+
+Meaning:
+
+- only 2 physical directions in coupling space
+- remaining directions are redundant operators
+- UV completion is a closed EFT, not metric flow
 
 ---
 
-### CCEF / Spine v1.2 — Cosmological Background & Dark Sector Evolution
-* **CCEF Friedmann Operator:**  
-  $$H^2(z) = H_0^2 \left[ \Omega_{b0}(1+z)^3 + \Omega_{\text{bath},0}(1+z)^{1.5} + \Omega_{\text{gap},0} \right]$$
+## Cosmology (Unchanged but reinterpreted)
 
-* **Present-Day Energy Layout:**  
-  * $\Omega_{b0} = 0.0486$  
-  * $\Omega_{\text{bath},0} = 0.2574$  
-  * $\Omega_{\text{gap},0} = 0.6940$
+$$
+H^2(z) = H_0^2[\Omega_b(1+z)^3 + \Omega_{\text{bath}}(1+z)^{1.5} + \Omega_{\text{gap}}]
+$$
 
-* **Dark Equation of State:**  
-  $$w_{\text{dark}}(z) = -1 + \frac{0.5 \cdot \Omega_{\text{bath},0}(1+z)^{1.5}}{\Omega_{\text{bath},0}(1+z)^{1.5} + \Omega_{\text{gap},0}}$$
+➡ interpretation:
+
+- $\Omega_{\text{bath}}$ = dissipative continuum sector
+- $\Omega_{\text{gap}}$ = vacuum rigidity gap of $n(x,t)$ field
 
 ---
 
-**Core Unification Principle:**  
-Everything emerges from the single $S^2$-constrained field $n(x,t)$, its energy functional, topology, Hessian-derived kernels, RG flow, and stochastic bath — with **no external geometry, no free parameters beyond overall scale, and no hand-fitting** for the core coefficients. The architecture is locked.
+## Global Scale Calibration
+
+* $E_0 \approx 30.608444$
+* $L_0 \approx 1.610680$
+
+Only external inputs.
+
+---
+
+## Core Structural Statement (Corrected)
+
+Everything emerges from:
+
+- constrained field $n(x,t) \in S^2$
+- energy functional with $(A_1,A_2,A_3,A_4)$
+- Hessian operator spectrum
+- principal symbol dispersion relation
+- RG closure on invariant manifold
+
+NOT from:
+- spacetime geometry
+- metric tensors
+- curvature reconstruction
+
+---
+
+## Final Status
+
+Spine v1.2.1 is:
+
+✔ self-consistent Hamiltonian ray theory  
+✔ anisotropic principal-symbol geometry  
+✔ closed EFT on constrained manifold  
+✔ Finsler-like propagation structure  
+
+and explicitly:
+
+❌ not metric GR  
+❌ not Riemannian emergent geometry (yet)  
+✔ but a well-defined alternative phase-space propagation theory

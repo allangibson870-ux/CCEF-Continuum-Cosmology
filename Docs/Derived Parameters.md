@@ -107,9 +107,9 @@ $$
 
 ➡ Interpretation correction:
 
-- Defines an anisotropic dispersion cone
-- NOT an emergent Riemannian metric
-- Light rays follow Hamiltonian flow, not geodesics
+- Defines an anisotropic dispersion cone  
+- NOT an emergent Riemannian metric  
+- Light rays follow Hamiltonian flow, not geodesics  
 
 ---
 
@@ -124,9 +124,9 @@ $$
 
 Defines:
 
-* direction-dependent phase velocity
-* anisotropic null surfaces in phase space
-* Finsler-type ray geometry (not metric geometry)
+* direction-dependent phase velocity  
+* anisotropic null surfaces in phase space  
+* Finsler-type ray geometry (not metric geometry)  
 
 ---
 
@@ -139,7 +139,7 @@ $$
 Correct interpretation:
 
 - NOT spacetime anisotropy  
-- It is a mode-dependent response ratio of the Hessian operator
+- It is a mode-dependent response ratio of the Hessian operator  
 
 Infrared limit:
 
@@ -148,9 +148,9 @@ $$
 $$
 
 ➡ physically:
-- longitudinal modes dominate IR transport
-- generates effective lensing enhancement
-- without invoking geometric curvature
+- longitudinal modes dominate IR transport  
+- generates effective lensing enhancement  
+- without invoking geometric curvature  
 
 ---
 
@@ -172,9 +172,9 @@ $$
 
 However, RG eigenmode analysis shows:
 
-- **one relevant RG direction**
-- **one marginal/irrelevant direction**
-- effective flow is rank-1 dominated
+- one relevant RG direction  
+- one marginal/irrelevant direction  
+- effective flow is rank-1 dominated  
 
 So the RG structure reduces to:
 

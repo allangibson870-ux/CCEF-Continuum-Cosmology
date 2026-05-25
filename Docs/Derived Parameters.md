@@ -15,7 +15,7 @@
 
 * **$A_3 \approx 10^{-6}$**  
   → UV biharmonic regulator $(\nabla^2 n)^2$  
-  RG-irrelevant operator on the 2D invariant manifold  
+  RG-irrelevant operator on the invariant manifold  
   No independent infrared flow generator.
 
 * **$A_4 = 3.5553$**  
@@ -138,7 +138,7 @@ $$
 
 Correct interpretation:
 
-- NOT spacetime anisotropy
+- NOT spacetime anisotropy  
 - It is a mode-dependent response ratio of the Hessian operator
 
 Infrared limit:
@@ -149,7 +149,7 @@ $$
 
 ➡ physically:
 - longitudinal modes dominate IR transport
-- generates effective factor-2 lensing enhancement
+- generates effective lensing enhancement
 - without invoking geometric curvature
 
 ---
@@ -162,23 +162,31 @@ $$
 
 ---
 
-## RG Structure (Important Correction)
+## RG Structure (UPDATED — CRITICAL REVISION)
 
-Flow lives on invariant manifold:
+Flow lives on an invariant manifold:
 
 $$
 \frac{d}{d\ln a}(A_1,A_2,A_3,A_4) \in \mathcal{M}_{2D}
 $$
 
-Meaning:
+However, RG eigenmode analysis shows:
 
-- only 2 physical directions in coupling space
-- remaining directions are redundant operators
-- UV completion is a closed EFT, not metric flow
+- **one relevant RG direction**
+- **one marginal/irrelevant direction**
+- effective flow is rank-1 dominated
+
+So the RG structure reduces to:
+
+> a single effective deformation mode driven by $\chi E_0$
+
+No exact fixed points exist; instead:
+
+> the system flows toward a stable IR attractor manifold (phase-1 dominance)
 
 ---
 
-## Cosmology (Unchanged but reinterpreted)
+## Cosmology (Reinterpreted IR Consistently)
 
 $$
 H^2(z) = H_0^2[\Omega_b(1+z)^3 + \Omega_{\text{bath}}(1+z)^{1.5} + \Omega_{\text{gap}}]
@@ -186,8 +194,9 @@ $$
 
 ➡ interpretation:
 
-- $\Omega_{\text{bath}}$ = dissipative continuum sector
-- $\Omega_{\text{gap}}$ = vacuum rigidity gap of $n(x,t)$ field
+- $\Omega_{\text{bath}}$ = dissipative continuum sector  
+- $\Omega_{\text{gap}}$ = vacuum rigidity gap of $n(x,t)$ field  
+- IR behaviour governed by RG attractor regime (phase-1)
 
 ---
 
@@ -200,7 +209,7 @@ Only external inputs.
 
 ---
 
-## Core Structural Statement (Corrected)
+## Core Structural Statement (UPDATED)
 
 Everything emerges from:
 
@@ -208,7 +217,7 @@ Everything emerges from:
 - energy functional with $(A_1,A_2,A_3,A_4)$
 - Hessian operator spectrum
 - principal symbol dispersion relation
-- RG closure on invariant manifold
+- RG flow toward a rank-1 attractor manifold
 
 NOT from:
 - spacetime geometry
@@ -217,17 +226,18 @@ NOT from:
 
 ---
 
-## Final Status
+## Final Status (UPDATED)
 
 Spine v1.2.1 is:
 
 ✔ self-consistent Hamiltonian ray theory  
 ✔ anisotropic principal-symbol geometry  
-✔ closed EFT on constrained manifold  
-✔ Finsler-like propagation structure  
+✔ closed EFT with RG flow to IR attractor  
+✔ rank-1 universality class system  
+✔ UV phase complexity that renormalises away  
 
 and explicitly:
 
 ❌ not metric GR  
-❌ not Riemannian emergent geometry (yet)  
-✔ but a well-defined alternative phase-space propagation theory
+❌ not Riemannian emergent geometry  
+✔ a nonlinear EFT with single-mode RG dominance

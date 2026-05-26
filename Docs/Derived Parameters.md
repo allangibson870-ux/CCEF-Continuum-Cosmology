@@ -219,6 +219,32 @@ $$\lim_{k \to 0} \eta(k) \to \infty$$
 
 This infinite limit confirms that longitudinal modes completely dominate large-scale macroscopic transport, supporting the non-metric foundation of the theory.
 
+## Real-Space Potential Derivation from Dual-Pole Kernel
+
+### 1. 3D Fourier Transform Execution
+The real-space interaction kernel $K(r)$ is the 3D Fourier transform of the momentum-space dual-pole propagator:
+$$K(r) = \frac{1}{(2\pi)^3} \int d^3k \, e^{i \mathbf{k} \cdot \mathbf{r}} \left( \frac{A}{k^2 + m^2} + \frac{B}{k^2 + \Lambda^2} \right)$$
+
+Using the standard spherically symmetric Yukawa transform identity, this integrates term-by-term to yield:
+$$K(r) = A \cdot \frac{e^{-m r}}{4\pi r} + B \cdot \frac{e^{-\Lambda r}}{4\pi r}$$
+
+### 2. Final Real-Space Operator Identity
+Substituting the explicitly derived residues $A = 1/\Delta$ and $B = -1/\Delta$:
+$$\boxed{K(r) = \frac{1}{4\pi \Delta \, r} \left( e^{-m r} - e^{-\Lambda r} \right)}$$
+
+where the parameters map directly to your locked core invariants:
+* $m \approx 10^3$ (Ultra-heavy UV regulator scale)
+* $\Lambda \approx 1.88$ (Light macroscopic IR screening scale)
+* $\Delta \approx 1.000007$
+
+### 3. Physical Regimes
+* **Macroscopic Scales ($r \gg 1/m$):** The heavy regulator term decays exponentially ($e^{-mr} \to 0$). The kernel is dominated entirely by the light mass scale, yielding a clean, long-range Yukawa-screened gravity profile:
+$$K(r) \approx -\frac{e^{-\Lambda r}}{4\pi \Delta \, r}$$
+
+* **Microscopic Scales ($r \to 0$):** Expanding the exponentials reveals that the $1/r$ coordinate singularity cancels out perfectly. The potential heals into a completely finite, regular value at the core origin:
+$$\lim_{r \to 0} K(r) = \frac{\Lambda - m}{4\pi \Delta}$$
+
+This finite limit proves that the biharmonic regulator eliminates infinite gravitational self-energy, ensuring that $Q=1$ hedgehog soliton cores remain stable and smooth.
 
 
 

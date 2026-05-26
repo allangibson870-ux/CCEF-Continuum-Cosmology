@@ -76,9 +76,9 @@ Flow lives on a 2D invariant manifold. Effective dynamics reduce to a **rank-1 d
 
 ---
 ## Emergent Time from Soliton Condensation
-In the pre-condensation regime the continuum field $n(x,t) \in S^2$ is in a near-homogeneous, high-symmetry state with vanishing topological charge density. Global time translations are a coordinate redundancy with no physical clock.
+In the pre-condensation regime the continuum field $n(x,t) \in S^2$ exists in a near-homogeneous, high-symmetry state with vanishing topological charge density. Global time translations are a coordinate redundancy with no physically meaningful clock — the system is effectively timeless.
 
-Time becomes physically meaningful only when topological solitons ($Q=1$ hedgehogs) condense. These stable, localized structures:
+Time becomes physically relevant only when topological solitons ($Q=1$ hedgehogs) condense due to the vacuum mass-gap $A_4$ and Skyrme term $A_2$. These stable, localized structures:
 
 * Break global symmetry and create permanent texture-exclusion boundaries.
 * Possess internal dynamics (breathing zero-modes, surface oscillations with eigenvalues $\lambda_n$).
@@ -86,20 +86,32 @@ Time becomes physically meaningful only when topological solitons ($Q=1$ hedgeho
 
 **Relational Emergent Time Definition**
 
-We define the emergent time coordinate $\tau$ via cumulative topological activity and entropy production:
+To avoid circularity with a background coordinate time, we define emergent time $\tau$ directly from the rate of change of the total topological + stochastic activity across the manifold.
+
+Let the **topological activity functional** be
+$$\mathcal{A}[n] = \int d^3x \left( |\rho_{\rm top}(x)| + \alpha \, \sigma_\alpha^2(x) \right)$$
+
+
+where $\rho_{\rm top}$ is the topological charge density and $\sigma_\alpha^2$ is the stochastic variance from the bath. The emergent time differential is then given by the normalized change in activity:
 
 $$
-d\tau \propto \left( \sum_i \dot{S}_i + \dot{S}_{\rm bath} \right) dt_{\rm coord}
+d\tau = \frac{d\mathcal{A}}{\langle \mathcal{A} \rangle}
 $$
 
-where $\dot{S}_i$ includes contributions from core mergers, texture-exclusion enforced decoherence, and stochastic floor dissipation. The correlation length $\xi_R(a)$ growth in the RG flow provides a monotonic background parameter.
+with $\langle \mathcal{A} \rangle$ a slowly varying global average. This definition is strictly relational and internal to the theory.
 
-Thus:
-* **Pre-condensation**: Timeless, high-symmetry phase.
-* **Post-condensation**: Relational time emerges with a clear thermodynamic arrow driven by soliton-bath irreversibility.
-* **Cosmological implication**: The acoustic peaks and damping tail in the CMB may encode the soliton condensation epoch.
+**Avoidance of Time Pockets**
 
-This construction is strictly internal to the CCEF ontology.
+Localized differences in activity are suppressed by:
+* Long-range kernel coupling $K(r)$, which enforces global coherence.
+* The universal stochastic bath, which provides a baseline fluctuation rate everywhere.
+* Topological protection and gradient energy cost, which penalize large desynchronization.
+
+As a result, a coherent global emergent time $\tau$ forms after sufficient soliton condensation, while still allowing for mild relational variations in high-density regions.
+
+**Cosmological Implication**
+
+The transition from the timeless symmetric phase to the soliton-condensed regime defines a physical epoch that can influence the sound horizon, early Integrated Sachs-Wolfe effect, and the overall acoustic structure observed in the CMB.
 
 ---
 ## Cosmology (Reinterpreted IR Consistently)

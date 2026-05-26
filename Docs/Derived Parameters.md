@@ -172,7 +172,7 @@ $$A_4 = 3.5553$$
 Within the non-metric cosmological framework:
 $$H^2(z) = H_0^2 \left[ \Omega_{\rm b} (1+z)^3 + \Omega_{\rm bath} (1+z)^{1.5} + \Omega_{\rm gap} \right]$$
 
-The parameter $\Omega_{\rm gap}$ functions as the dark energy surrogate, rigorously derived from the second variation of the energy functional. The vacuum mass-gap channel contributes a derivative-independent scalar floor to the Hessian operator:
+The parameter $\Omega_{\rm gap}$ functions as the dark energy surrogate, derived from the second variation of the energy functional. The vacuum mass-gap channel contributes a derivative-independent scalar floor to the Hessian operator:
 $$\frac{\delta^2 E_{\rm pot}}{\delta n^2} \propto A_4$$
 
 This term acts as a global restoring force. Any late-stage field perturbation $\delta n$ away from the stable IR attractor manifold incurs an energy cost proportional to $A_4 (\delta n)^2$. Rather than driving a metric expansion of space, $\Omega_{\rm gap}$ represents the irreducible vacuum rigidity floor of the constrained $n(x,t) \in S^2$ field. This mathematically penalizes further global transformations and locks the system into its final, frozen phase-1 dominance.
@@ -191,7 +191,7 @@ This term acts as a global restoring force. Any late-stage field perturbation $\
 Only external inputs.
 
 ---
-## Core Structural Statement (UPDATED)
+## Core Structural Statement 
 Everything emerges from:
 * constrained field $n(x,t) \in S^2$
 * energy functional with $(A_1,A_2,A_3,A_4)$
@@ -206,7 +206,7 @@ NOT from:
 * curvature reconstruction
 
 ---
-## Final Status (UPDATED)
+## Final Status
 Spine v1.2.1 is:
 * self-consistent Hamiltonian ray theory
 * anisotropic principal-symbol geometry

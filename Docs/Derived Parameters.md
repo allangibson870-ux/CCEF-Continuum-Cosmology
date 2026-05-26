@@ -38,7 +38,7 @@ $$K(k) = \frac{A}{k^2 + m^2} + \frac{B}{k^2 + \Lambda^2}$$
 with $\Delta = \sqrt{A_1^2 + 4A_3A_4} \approx 1.000007$, $m^2 \approx 10^6$, $\Lambda^2 \approx 3.5$, $A = 1/\Delta$, $B = -A$.
 
 ---
-## Principal Symbol → Ray Structure (Corrected Form)
+## Principal Symbol → Ray Structure 
 Ray propagation is governed by $P(x,k) = 0$ with transport tensor:  
 $$T^{ij}[n] = \delta^{ij} + A_2(\partial^i n \cdot \partial^j n)$$  
 For hedgehog:  
@@ -50,7 +50,7 @@ $$T^{ij}k_i k_j = \left(1 + \frac{A_2}{r^2}\right)k_\perp^2 + k_r^2$$
 * Light rays follow Hamiltonian flow, not geodesics
 
 ---
-## Effective Propagation Structure (Revised)
+## Effective Propagation Structure 
 Principal symbol form:  
 $$P(x,k) = Z_t(1+\chi E_0)\omega^2 - k_r^2 - \left(1+\frac{A_2}{r^2}\right)k_\perp^2$$  
 Defines:
@@ -71,7 +71,7 @@ Infrared limit: $\eta(k \to 0) \to \infty$ → longitudinal modes dominate IR tr
 * $g_1 \approx 10^6$
 
 ---
-## RG Structure (UPDATED)
+## RG Structure 
 Flow lives on a 2D invariant manifold. Effective dynamics reduce to a **rank-1 dominant mode** driven by $\chi E_0$. The system flows toward a stable IR attractor manifold (phase-1 dominance).
 
 ---
@@ -113,10 +113,31 @@ The transition from the timeless symmetric phase to the soliton-condensed regime
 
 
 ---
-## Cosmology (Reinterpreted IR Consistently)
+## Cosmology 
 $$
 H^2(z) = H_0^2 \left[ \Omega_b (1+z)^3 + \Omega_{\rm bath} (1+z)^{1.5} + \Omega_{\rm gap} \right]
 $$
+
+### Acoustic Damping and the Bath Sector
+The damping tail of the acoustic spectrum is governed by the interaction between the primary field and the dissipative continuum sector ($\Omega_{\rm bath}$). The spatial damping cutoff scale $k_D$ scales relationally with the topological activity $\mathcal{A}$:
+
+$$k_D^2(\mathcal{A}) = \frac{\mathcal{A}^{1.5}}{g_2 \sqrt{1 + \chi E_0(\mathcal{A})}}$$
+
+As the universe transitions through the condensation epoch, the rapid drop in phase velocity $v_p$ combined with the dilution of bath dominance freezes out the damping scale. This mechanism generates the high-frequency exponential suppression (damping tail) observed in the CMB spectrum through the UV regulator pole ($m^2 \approx 10^6$) of the Hessian kernel, completely independent of space expansion metric adjustments.
+
+---
+
+### Late-Stage Stability and the Vacuum Mass-Gap ($\Omega_{\rm gap}$)
+In the late-stage post-condensation universe, as the topological activity stabilizes ($\mathcal{A} \to \infty$) and the bath sector dilutes ($\Omega_{\rm bath} \to 0$), the cosmological evolution is dominated by the vacuum mass-gap channel:
+
+$$A_4 = 3.5553$$
+
+Within the non-metric cosmological framework:
+
+$$H^2(z) = H_0^2 \left[ \Omega_b (1+z)^3 + \Omega_{\rm bath} (1+z)^{1.5} + \Omega_{\rm gap} \right]$$
+
+the parameter $\Omega_{\rm gap}$ functions as the dark energy surrogate. Rather than driving a metric expansion of space, $\Omega_{\rm gap}$ represents the irreducible vacuum rigidity floor of the constrained $n(x,t) \in S^2$ field. This vacuum mass gap penalizes further global transformations, stabilizing the rank-1 attractor manifold against late-stage fluctuations and locking the infrared structure into its final, frozen phase-1 dominance.
+
 
 **Interpretation:**
 * $\Omega_{\rm bath}$ = dissipative continuum sector

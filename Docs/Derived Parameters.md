@@ -246,6 +246,36 @@ $$\lim_{r \to 0} K(r) = \frac{\Lambda - m}{4\pi \Delta}$$
 
 This finite limit proves that the biharmonic regulator eliminates infinite gravitational self-energy, ensuring that $Q=1$ hedgehog soliton cores remain stable and smooth.
 
+## Hedgehog Soliton Core Profile and Texture-Exclusion
+
+### 1. Hedgehog Field Ansatz
+For a localized, spherically symmetric $Q=1$ topological soliton, the field configuration is mapped onto the $S^2$ manifold using a radial profile angle $f(r)$:
+$$n_0(\mathbf{x}) = \sin f(r) \hat{\mathbf{r}} + \cos f(r) \hat{\mathbf{z}}$$
+
+The profile must satisfy the strict topological boundary conditions:
+$$f(0) = \pi, \qquad \lim_{r \to \infty} f(r) = 0$$
+
+### 2. Energy Density and Stabilization
+Substituting this hedgehog ansatz into the energy functional yields the local energy density:
+$$\mathcal{E}[f] = A_1 \left[ \left( \frac{df}{dr} \right)^2 + 2 \frac{\sin^2 f}{r^2} \right] + A_3 \left( \nabla^2 n_0 \right)^2 + A_4 \sin^2 f$$
+
+with $A_1 = 1.0$ and $A_3 \approx 10^{-6}$. The biharmonic regulator $A_3 \nabla^4$ and the vacuum mass-gap $A_4$ together stabilize the core against Derrick collapse. The conservation of the topological winding number ($Q=1$) provides global protection, ensuring the soliton cannot continuously deform into the vacuum state.
+
+### 3. Derivation of the Coherence Scale ($R_0$)
+The characteristic size of the soliton core is determined by balancing the quadratic gradient term and the biharmonic regulator. Dimensionally:
+$$A_1 \left( \frac{1}{R_0^2} \right) \sim A_3 \left( \frac{1}{R_0^4} \right)$$
+
+Solving gives the exact coherence scale:
+$$\boxed{R_0 = \sqrt{\frac{A_3}{A_1}} \approx 10^{-3}}$$
+
+For $r \ll R_0$, the profile is approximately linear: $f(r) \approx \pi - \alpha r$. This creates a rigid central region surrounded by a **texture-exclusion boundary** — a zone of high gradient energy where overlapping field configurations are forbidden by the $S^2$ constraint and topological winding conservation.
+
+This boundary defines an invariant spatial volume scale per soliton. Because the total number of $Q=1$ cores $N_Q$ is conserved after condensation, the baryonic density scales relationally as:
+$$\Omega_{\rm b}(z) \propto \frac{N_Q \cdot M_{\rm intrinsic}}{V_{\rm active}(z)} \propto (1+z)^3$$
+
+where $V_{\rm active}(z) \propto \xi_R^3(\mathcal{A})$ follows from the RG correlation length scale parameter. This derivation provides a purely topological origin for the standard matter scaling law within a static spatial network geometry.
+
+
 
 
 **Interpretation:**

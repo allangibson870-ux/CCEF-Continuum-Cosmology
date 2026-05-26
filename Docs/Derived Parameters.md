@@ -138,6 +138,46 @@ $$H^2(z) = H_0^2 \left[ \Omega_b (1+z)^3 + \Omega_{\rm bath} (1+z)^{1.5} + \Omeg
 
 the parameter $\Omega_{\rm gap}$ functions as the dark energy surrogate. Rather than driving a metric expansion of space, $\Omega_{\rm gap}$ represents the irreducible vacuum rigidity floor of the constrained $n(x,t) \in S^2$ field. This vacuum mass gap penalizes further global transformations, stabilizing the rank-1 attractor manifold against late-stage fluctuations and locking the infrared structure into its final, frozen phase-1 dominance.
 
+### Acoustic Damping and the Bath Sector
+The damping tail of the acoustic spectrum is governed by the interaction between the primary field and the dissipative continuum sector ($\Omega_{\rm bath}$). The energy density scaling of this sector is derived from the infrared limit ($k \to 0$) of the dual-pole Hessian kernel $K(k) = \mathcal{H}^{-1}(k)$. 
+
+In this infrared regime, transport is dominated by the mass-gap pole $\Lambda^2 \approx 3.5$. Integrating these continuum modes over the 3D active phase-space volume yields a spectral density scaling of $\xi_R^{-1.5}(\mathcal{A})$. This provides the rigorous derivation for the bath energy density scaling:
+$$\Omega_{\rm bath}(z) \propto (1+z)^{1.5}$$
+
+The characteristic spatial damping scale $k_D^2$ is derived by matching the transport dissipation rate to the phase velocity $v_p$ under the out-of-equilibrium Langevin field equation. Computing the effective friction coefficient $\Gamma_{\rm bath}$ from the available bath states yields the exact operator identity:
+$$k_D^2(\mathcal{A}) = \frac{\mathcal{A}^{2.5}}{g_2 \sqrt{1 + \chi E_0(\mathcal{A})}}$$
+
+During the condensation epoch, the rapid drop in phase velocity $v_p$ combined with the dilution of bath dominance freezes out the damping scale. This mechanism generates the high-frequency exponential suppression (damping tail) observed in the CMB spectrum. This suppression occurs through the UV regulator pole ($m^2 \approx 10^6$) of the Hessian kernel, completely independent of space expansion metric adjustments.
+
+---
+
+### The Baryonic Sector ($\Omega_{\rm b}$) as Soliton Density Packing
+The baryonic matter sector ($\Omega_{\rm b}$) does not consist of particles embedded in expanding space. Instead, it represents the spatial packing density of the conserved, localized $Q=1$ topological solitons (hedgehogs) fixed by the intrinsic soliton mass:
+$$M_{\rm intrinsic} \approx 236.0726$$
+
+The standard cosmological scaling of matter density is recovered relationally. Let $(1+z) \equiv \xi_R^{-1}(\mathcal{A})$ be defined by the inverse growth of the RG correlation length. Because the total number of topological cores $N_Q$ is conserved post-condensation, and texture-exclusion boundaries prevent core collapse, the active spatial volume scales explicitly as:
+$$V_{\rm active}(z) \propto \xi_R^3(\mathcal{A})$$
+
+Thus, the effective baryon density scales strictly with the invariant manifold's active volume:
+$$\Omega_{\rm b}(z) \propto \frac{N_Q \cdot M_{\rm intrinsic}}{V_{\rm active}(z)} \propto (1+z)^3$$
+
+This derivation provides a strict topological origin for baryonic matter scaling within a completely static spatial network geometry.
+
+---
+
+### Late-Stage Stability and the Vacuum Mass-Gap ($\Omega_{\rm gap}$)
+In the late-stage post-condensation universe, the topological activity stabilizes ($\mathcal{A} \to \infty$) and the bath sector dilutes ($\Omega_{\rm bath} \to 0$). The cosmological evolution is then dominated by the vacuum mass-gap channel:
+$$A_4 = 3.5553$$
+
+Within the non-metric cosmological framework:
+$$H^2(z) = H_0^2 \left[ \Omega_{\rm b} (1+z)^3 + \Omega_{\rm bath} (1+z)^{1.5} + \Omega_{\rm gap} \right]$$
+
+The parameter $\Omega_{\rm gap}$ functions as the dark energy surrogate, rigorously derived from the second variation of the energy functional. The vacuum mass-gap channel contributes a derivative-independent scalar floor to the Hessian operator:
+$$\frac{\delta^2 E_{\rm pot}}{\delta n^2} \propto A_4$$
+
+This term acts as a global restoring force. Any late-stage field perturbation $\delta n$ away from the stable IR attractor manifold incurs an energy cost proportional to $A_4 (\delta n)^2$. Rather than driving a metric expansion of space, $\Omega_{\rm gap}$ represents the irreducible vacuum rigidity floor of the constrained $n(x,t) \in S^2$ field. This mathematically penalizes further global transformations and locks the system into its final, frozen phase-1 dominance.
+
+
 
 **Interpretation:**
 * $\Omega_{\rm bath}$ = dissipative continuum sector

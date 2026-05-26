@@ -177,6 +177,49 @@ $$\frac{\delta^2 E_{\rm pot}}{\delta n^2} \propto A_4$$
 
 This term acts as a global restoring force. Any late-stage field perturbation $\delta n$ away from the stable IR attractor manifold incurs an energy cost proportional to $A_4 (\delta n)^2$. Rather than driving a metric expansion of space, $\Omega_{\rm gap}$ represents the irreducible vacuum rigidity floor of the constrained $n(x,t) \in S^2$ field. This mathematically penalizes further global transformations and locks the system into its final, frozen phase-1 dominance.
 
+## Hessian Kernel Dual-Pole Structure
+
+### 1. Origin from the Hessian Operator
+The dual-pole kernel arises from the second functional variation of the energy functional around a background configuration. The linearized operator acting on small perturbations $\pi$ (where $\pi \cdot n = 0$) in Fourier space simplifies to the momentum-space Hessian:
+$$\mathcal{H}(k) = A_1 k^2 + A_3 k^4 + A_4$$
+
+The interaction kernel (Green's function) is the direct inverse of this operator:
+$$K(k) = \mathcal{H}^{-1}(k) = \frac{1}{A_4 + A_1 k^2 + A_3 k^4}$$
+
+### 2. Explicit Residue Derivation
+Substituting the axiomatic parameters ($A_1=1.0$, $A_3=10^{-6}$, $A_4=3.5553$), the denominator forms a quadratic in $s = k^2$:
+$$A_3 s^2 + A_1 s + A_4 = 0$$
+
+Solving for the roots yields:
+$$s_{\pm} = \frac{-A_1 \pm \Delta}{2 A_3}, \quad \text{where } \Delta = \sqrt{A_1^2 - 4 A_3 A_4} \approx 1.000007$$
+
+This reveals two distinct mass scales:
+* **Lighter Root:** $s_+ = -\Lambda^2 \approx -3.5553 \implies \Lambda \approx 1.88$
+* **Heavier Root:** $s_- = -m^2 \approx -10^6 \implies m \approx 10^3$
+
+Using the Heaviside cover-up method to perform a partial fraction decomposition:
+$$K(k) = \frac{A}{k^2 + \Lambda^2} + \frac{B}{k^2 + m^2}$$
+
+The residues $A$ and $B$ are explicitly derived as:
+$$A = \frac{1}{A_3(s_+ - s_-)} = \frac{1}{\Delta} \approx 0.999993$$
+$$B = \frac{1}{A_3(s_- - s_+)} = -\frac{1}{\Delta} \approx -0.999993$$
+
+### 3. Physical Regimes
+Because interaction range is inversely proportional to mass ($r \sim 1/\text{mass}$), the poles split the theory into two cleanly separated physical regimes:
+
+* **The Infrared Regime ($\Lambda$-pole):** Governed by the light mass scale $\Lambda \approx 1.88$. It dictates long-range Yukawa-like screening profiles across macroscopic distances.
+* **The Ultraviolet Regime ($m$-pole):** Governed by the ultra-heavy regulator scale $m \approx 10^3$. It generates a regularizing counter-term that cancels out small-scale spatial singularities, ensuring stable topological hedgehog cores.
+
+### 4. Gravitational Slip Behavior
+The gravitational slip $\eta(k)$ is extracted directly from the channel decomposition of the Hessian operator:
+$$\eta(k) = \frac{K_{\rm long}(k)}{K_{\rm trans}(k)} = \frac{A_4 + A_1 k^2 + A_3 k^4}{A_1 k^2 + A_3 k^4}$$
+
+In the long-range infrared limit, the derivative terms vanish:
+$$\lim_{k \to 0} \eta(k) \to \infty$$
+
+This infinite limit confirms that longitudinal modes completely dominate large-scale macroscopic transport, supporting the non-metric foundation of the theory.
+
+
 
 
 **Interpretation:**

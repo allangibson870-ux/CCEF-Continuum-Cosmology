@@ -275,6 +275,42 @@ $$\Omega_{\rm b}(z) \propto \frac{N_Q \cdot M_{\rm intrinsic}}{V_{\rm active}(z)
 
 where $V_{\rm active}(z) \propto \xi_R^3(\mathcal{A})$ follows from the RG correlation length scale parameter. This derivation provides a purely topological origin for the standard matter scaling law within a static spatial network geometry.
 
+## The Action and Projected Euler-Lagrange Equations
+
+### 1. The Action and Energy Functional
+The full 4D action of the theory is defined by:
+$$S[n] = \int d^4x \left[ \frac{Z_t}{2} (\partial_t n)^2 - \mathcal{E}[n] \right]$$
+
+where the local energy density functional $\mathcal{E}[n]$ is given by:
+$$\mathcal{E}[n] = \frac{A_1}{2} |\partial_i n|^2 + \frac{A_2}{4} |\partial_i n \times \partial_j n|^2 + \frac{A_3}{2} |\nabla^2 n|^2 + \frac{A_4}{2} \left(1 - (n \cdot n_0)^2\right)$$
+
+The field satisfies the strict $S^2$ target space constraint:
+$$|n(x,t)|^2 = 1 \quad \implies \quad n \cdot \delta n = 0, \quad n \cdot \partial_\mu n = 0$$
+
+### 2. Projected Variational Principle
+To preserve the target space constraint during variation, we apply the projected variational principle. The variation $\delta n$ must remain strictly orthogonal to $n$:
+$$\delta S = \int d^4x \, \delta n \cdot \left( \frac{\delta \mathcal{L}}{\delta n} \right) = 0 \quad \forall \, \delta n \perp n$$
+
+This restricts the physical equations of motion to the tangent plane of the $S^2$ sphere via the projection operator:
+$$P_\perp \left( \frac{\delta \mathcal{L}}{\delta n} \right) = 0, \quad \text{where } P_\perp(V) = V - (n \cdot V) n$$
+
+### 3. Functional Derivatives
+Varying the Lagrangian density term-by-term with respect to $n$ yields the following operator contributions:
+* **Kinetic Operator:** $\frac{\delta \mathcal{L}_{\rm kin}}{\delta n} = - Z_t \partial_t^2 n$
+* **Gradient Tension:** $\frac{\delta \mathcal{L}_{\rm grad}}{\delta n} = - A_1 \nabla^2 n$
+* **Skyrme Channel:** $\frac{\delta \mathcal{L}_{\rm Skyrme}}{\delta n} = - A_2 \partial_i \left[ (\partial_j n \times \partial_i n) \times \partial_j n \right]$
+* **Biharmonic Regulator:** $\frac{\delta \mathcal{L}_{\rm bihar}}{\delta n} = - A_3 \nabla^4 n$
+* **Vacuum Potential:** $\frac{\delta \mathcal{L}_{\rm pot}}{\delta n} = A_4 (n \cdot n_0) n_0$
+
+### 4. Full Constrained Equation of Motion
+Combining these functional derivatives and isolating the second-order temporal derivative yields the complete, non-linear, projected Euler-Lagrange equation:
+$$\boxed{\partial_t^2 n = \frac{1}{Z_t} P_\perp \Bigl( A_1 \nabla^2 n + A_2 \partial_i [(\partial_j n \times \partial_i n) \times \partial_j n] - A_3 \nabla^4 n + A_4 (n \cdot n_0) n_0 \Bigr) - |\partial_t n|^2 n}$$
+
+### 5. Geodesic Constraint Enforcement
+The term $-|\partial_t n|^2 n$ arises naturally as a geometric centering force by differentiating the constraint $n \cdot \partial_t n = 0$ twice with respect to coordinate time:
+$$n \cdot \partial_t^2 n + |\partial_t n|^2 = 0 \quad \implies \quad n \cdot \partial_t^2 n = -| \partial_t n |^2$$
+
+This term ensures that the numerical and analytical trajectories of the field are strictly confined to the $S^2$ manifold for all $t$.
 
 
 

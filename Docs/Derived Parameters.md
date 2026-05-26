@@ -30,7 +30,7 @@
   $$\gamma_{\rm derived} = A_3 A_4 \approx 3.5 \times 10^{-6}$$
 
 ---
-## Interaction Kernel (Corrected Interpretation)
+## Interaction Kernel 
 The kernel is the inverse of the Hessian operator:  
 $$K(k) = \mathcal{H}^{-1}(k)$$  
 Dual-pole decomposition:  
@@ -59,13 +59,13 @@ Defines:
 * Finsler-type ray geometry (not metric geometry)
 
 ---
-## Gravitational Slip (Reinterpreted Correctly)
+## Gravitational Slip 
 $$\eta(k) = \frac{K_{\rm long}}{K_{\rm trans}}$$  
 Correct interpretation: mode-dependent response ratio of the Hessian operator.  
 Infrared limit: $\eta(k \to 0) \to \infty$ → longitudinal modes dominate IR transport.
 
 ---
-## Bath Sector (Unchanged)
+## Bath Sector 
 * $M_{\rm bath} \approx \sqrt{A_1/A_3} \approx 10^3$
 * $g_2 \approx 1/A_3 \approx 10^6$
 * $g_1 \approx 10^6$
@@ -75,43 +75,42 @@ Infrared limit: $\eta(k \to 0) \to \infty$ → longitudinal modes dominate IR tr
 Flow lives on a 2D invariant manifold. Effective dynamics reduce to a **rank-1 dominant mode** driven by $\chi E_0$. The system flows toward a stable IR attractor manifold (phase-1 dominance).
 
 ---
+
 ## Emergent Time from Soliton Condensation
 In the pre-condensation regime the continuum field $n(x,t) \in S^2$ exists in a near-homogeneous, high-symmetry state with vanishing topological charge density. Global time translations are a coordinate redundancy with no physically meaningful clock — the system is effectively timeless.
 
 Time becomes physically relevant only when topological solitons ($Q=1$ hedgehogs) condense due to the vacuum mass-gap $A_4$ and Skyrme term $A_2$. These stable, localized structures:
-
 * Break global symmetry and create permanent texture-exclusion boundaries.
 * Possess internal dynamics (breathing zero-modes, surface oscillations with eigenvalues $\lambda_n$).
 * Generate irreversible entropy production through mergers, surface-mode excitations, and stochastic bath interactions.
 
-**Relational Emergent Time Definition**
-
-To avoid circularity with a background coordinate time, we define emergent time $\tau$ directly from the rate of change of the total topological + stochastic activity across the manifold.
-
-Let the **topological activity functional** be
+### Relational Emergent Time Definition
+To avoid circularity with a background coordinate time, we define emergent time through the topological activity functional:
 $$\mathcal{A}[n] = \int d^3x \left( |\rho_{\rm top}(x)| + \alpha \, \sigma_\alpha^2(x) \right)$$
 
+where $\rho_{\rm top}$ is the topological charge density and $\sigma_\alpha^2$ is the stochastic variance from the bath. The emergent time differential is defined as:
+$$\bar{d}\tau = \frac{d\mathcal{A}}{\langle \mathcal{A} \rangle}$$
 
-where $\rho_{\rm top}$ is the topological charge density and $\sigma_\alpha^2$ is the stochastic variance from the bath. The emergent time differential is then given by the normalized change in activity:
+This is an inexact differential (denoted $\bar{d}\tau$) because the stochastic bath term $\alpha \sigma_\alpha^2(x)$ undergoes persistent local fluctuations even in the homogeneous phase. These fluctuations ensure a non-zero, positive global differential $d\mathcal{A} > 0$, preventing a "frozen" timeless state and providing the primordial drive for soliton condensation.
 
-$$
-d\tau = \frac{d\mathcal{A}}{\langle \mathcal{A} \rangle}
-$$
-
-with $\langle \mathcal{A} \rangle$ a slowly varying global average. This definition is strictly relational and internal to the theory.
-
-**Avoidance of Time Pockets**
-
+### Avoidance of Time Pockets
 Localized differences in activity are suppressed by:
 * Long-range kernel coupling $K(r)$, which enforces global coherence.
 * The universal stochastic bath, which provides a baseline fluctuation rate everywhere.
 * Topological protection and gradient energy cost, which penalize large desynchronization.
 
-As a result, a coherent global emergent time $\tau$ forms after sufficient soliton condensation, while still allowing for mild relational variations in high-density regions.
+As a result, a coherent global emergent time $\tau$ forms after sufficient soliton condensation.
 
-**Cosmological Implication**
+### Post-Condensation Dispersion Relations
+In the post-condensation regime, frequencies appearing in the principal symbol (e.g. $\omega^2$) are understood with respect to the emergent time $\tau$:
+$$\omega_\tau = \frac{\partial}{\partial \tau}$$
 
+The dispersion relation is therefore rewritten as:
+$$P(x,k) = Z_t(1+\chi E_0)\omega_\tau^2 - k_r^2 - \left(1+\frac{A_2}{r^2}\right)k_\perp^2$$
+
+### Cosmological Implication
 The transition from the timeless symmetric phase to the soliton-condensed regime defines a physical epoch that can influence the sound horizon, early Integrated Sachs-Wolfe effect, and the overall acoustic structure observed in the CMB.
+
 
 ---
 ## Cosmology (Reinterpreted IR Consistently)

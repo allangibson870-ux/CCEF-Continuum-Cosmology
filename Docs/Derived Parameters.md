@@ -312,6 +312,42 @@ $$n \cdot \partial_t^2 n + |\partial_t n|^2 = 0 \quad \implies \quad n \cdot \pa
 
 This term ensures that the numerical and analytical trajectories of the field are strictly confined to the $S^2$ manifold for all $t$.
 
+## Derrick Scaling Analysis and UV Regulator Independence of $A_2$
+
+### 1. True Spatial Rescaling of the Energy Functional
+Under a global spatial scaling transformation $x \to \lambda x$, the four distinct energy operators in the 3D energy density functional transform according to their derivative and volume dimensions:
+
+
+
+| Functional Term | Operator Expression | Power of $\lambda$ |
+| :--- | :--- | :--- |
+| **Gradient Tension ($E_2$)** | $\int \lvert \partial_i n \rvert^2 \, d^3x$ | $\lambda^{+3} \cdot \lambda^{-2} = \lambda^{+1}$ |
+| **Skyrme Channel ($E_4$)** | $\int \lvert \partial_i n \times \partial_j n \rvert^2 \, d^3x$ | $\lambda^{+3} \cdot \lambda^{-4} = \lambda^{-1}$ |
+| **Biharmonic Regulator ($E_{\rm bih}$)** | $\int \lvert \nabla^2 n \rvert^2 \, d^3x$ | $\lambda^{+3} \cdot \lambda^{-4} = \lambda^{-1}$ |
+| **Vacuum Mass-Gap ($E_{\rm pot}$)** | $\int \left(1 - (n \cdot n_0)^2\right) \, d^3x$ | $\lambda^{+3} \cdot \lambda^0 = \lambda^{+3}$ |
+
+
+The total integrated energy as a function of the scale parameter $\lambda$ is:
+$$E(\lambda) = A_1 E_2 \lambda^{+1} + A_2 E_4 \lambda^{-1} + A_3 E_{\rm bih} \lambda^{-1} + A_4 E_{\rm pot} \lambda^{+3}$$
+
+Derrick's theorem requires the stable soliton configuration to be a stationary point under scaling dilation, satisfying the virial identity $\frac{dE}{d\lambda}\bigr\rvert_{\lambda=1} = 0$:
+
+$$A_1 E_2 - A_2 E_4 - A_3 E_{\rm bih} + 3 A_4 E_{\rm pot} = 0$$
+
+
+### 2. Proof of $A_2$ Desensitization to the UV Regulator
+Because the biharmonic regulator parameter is exceptionally small ($A_3 \approx 10^{-6}$), its numerical contribution is strictly localized to the ultra-short coherence scale:
+$$r \sim R_0 = \sqrt{A_3/A_1} \approx 10^{-3}$$
+
+For the macroscopic bulk of the hedgehog profile ($r \ge R_0$), where the overwhelming majority of the integrated energy is stored, the $A_3 E_{\rm bih}$ operator can be safely neglected. To leading order, the virial equilibrium simplifies to a balance between the gradient, Skyrme, and vacuum potential channels:
+$$A_1 E_2 - A_2 E_4 + 3 A_4 E_{\rm pot} \approx 0 \implies A_2 \approx \frac{A_1 E_2 + 3 A_4 E_{\rm pot}}{E_4}$$
+
+### 3. Quantitative Robustness
+This scaling relationship yields two critical conclusions for the parameter architecture:
+* **Decoupled Core Physics:** The parameter $A_2 \approx 0.3268$ is fixed by the macro-scale equilibrium between spatial tension and vacuum potential tracking. 
+* **Regulator Independence:** Modifying the value of $A_3$ shifts the total integrated soliton mass slightly due to localized core adjustments, but it introduces zero leading-order instability to the global virial framework. 
+
+Consequently, $A_2$ is an EFT coupling constant that is robustly stable against changes in the UV regularization scheme, provided $A_3$ remains small enough to isolate its dynamics to the $R_0$ core.
 
 
 **Interpretation:**

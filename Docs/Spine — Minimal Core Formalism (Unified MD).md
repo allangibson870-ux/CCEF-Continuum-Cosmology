@@ -278,8 +278,6 @@ This spectral reduction holds under:
 
 ---
 
----
-
 ## 9. Stochastic Quantum Floor
 
 Irreducible fluctuations emerge internally from the stochastic variance sector:

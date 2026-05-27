@@ -189,7 +189,7 @@ without dark matter primitives.
 
 Electrons emerge as constrained surface modes bound to a $Q=1$ topological soliton background. Linearisation is performed on the tangent bundle of the $S^2$ manifold, so fluctuations must remain orthogonal to the background field.
 
-The perturbation ansatz is:
+tangent-space linearisation of constrained fluctuations:
 
 $$n(\mathbf{x},t)=n_{\rm sol}(r)+\psi(\mathbf{x},t), \qquad n_{\rm sol}\cdot \psi = 0$$
 

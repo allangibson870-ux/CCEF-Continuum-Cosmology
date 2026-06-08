@@ -175,6 +175,8 @@ The v2.3 soliton background was evolved under full nonlinear relaxation dynamics
 ### Interpretation
 The system converges to a stable nonlinear field configuration with no evidence of runaway energy growth or numerical blow-up in the relaxation regime.
 
+Note - "The minimal Spine action with unified v2.3 parameters (A₁=1, A₂=4, A₄=0.5) yields a static Q=1 soliton of mass M ≈ 375 via direct solution of the radial hedgehog ODE. The value M ≈ 3696 used in orbital dynamics corresponds to an overall multiplicative rescaling of the energy density by a factor ≈ 9.85. This rescaling can be absorbed into a global unit choice or linked to the stochastic floor / ensemble averaging in future work."
+
 ---
 
 ## 6.2 Hessian Spectrum and Linear Stability

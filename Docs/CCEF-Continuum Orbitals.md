@@ -10,25 +10,22 @@ This update incorporates the parameters and structural constraints defined in th
 
 To achieve complete internal consistency across both documents, the following consolidated parameter array should be implemented for all localized timelike and null geodesic simulations. This resolves the conflicting definitions of \(A_4\) and assigns an explicit, stable value to the stochastic floor variance \(\sigma_\alpha^2\).
 
+# Unified v2.3 Continuum Model Parameter Array 
 ```python
-# Unified v2.3 Continuum Model Parameter Array (GitHub Reference)
 CCEF_PARAMETERS = {
-    # Action Sector (Spine Sec. 1)
-    'A1': 1.0,                  # Gradient stiffness multiplier
-    'A2': 4.0,                  # Topological interaction scale (Upgraded from 0.3268)
-    'A3': 2.8e-6,               # Fixed via RG-Locked Invariant (Pi = g2 * A3)
-    'A4': 0.5,                  # Unified Vacuum Constraint Coefficient
-    'Z_t': 1.0,                 # Kinetic scaling factor
-    
-    # Orbitals Information Window (Spine Sec. 6 / Orbitals Sec. 11)
-    'c_eff': 44000.0,           # Characteristic local wave propagation speed
-    'R_p0': 0.005,              # Hyper-compact rest radius footprint
-    'gamma_halo': 0.35,         # Core-halo coupling dimension exponent
-    'sigma_alpha_sq': 0.05,     # Stochastic floor variance constant
+    'A1': 1.0,
+    'A2': 2.3877,
+    'A3': 2.8e-6,
+    'A4': 0.5576,
+    'Z_t': 1.0,
+    'c_eff': 44000.0,
+    'R_p0': 0.005,
+    'gamma_halo': 0.35,
+    'sigma_alpha_sq': 0.05
 }
 ```
 
----
+
 
 ### 2. Analytical Refinements & GitHub File Patches
 

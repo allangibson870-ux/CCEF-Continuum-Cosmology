@@ -248,15 +248,15 @@ This connects the mass dressing directly to σ²_α = 0.05 from v2.3.
 
 ### 4.3 Connection to the 9.85× Mass Rescaling
 
-The mass rescaling problem (M_orbital ≈ 9.85 × M_hedge) now has a pilot-wave interpretation:
+The mass rescaling problem (M_orbital ≈ 9.85 × M_hedge) acts as a strict structural boundary constraint on the field's normal modes:
 
-M_orbital is not the **bare hedgehog mass**. It is the mass of the soliton **after being dressed by its own θ_sync wave field** across all orbital shells accumulated during the nonlinear relaxation. The relaxation dynamics (Sec 6.1: E₀ ≈ 2917 → E_∞ = 3696) is precisely the process by which the wave field settles into its lowest Bessel mode, and the 9.85× factor is the cumulative dressing factor from the full spectral sum:
+M_orbital is not generated from scratch by an unweighted wave field. It is anchored directly to the **baryon core topology**, where converged 3D grid invariants (I₂ ≈ 68.617, I₄ ≈ 28.738, I_pot ≈ 20.511) lock the primary couplings (A₂ ≈ 2.3877, A₄ ≈ 0.5576) and yield a stable baseline energy-to-scale ratio (E_static / R_sol ≈ 86.88). The role of the θ_sync field is to govern the localized, periodic fluctuations around this fixed point, where the cumulative dressing factor converges through the exact spectral sum:
 
-    M_orbital / M_bare = 1 + Σ_n [E_wave^(n) · occupation(n)] / (M_bare c²_eff)
+    M_eff / M_bare = 1 + Σ_n [A_n² · ∫_0^{R_sol} E_n(r) r dr] / M_bare
 
-The stochastic floor provides the occupation numbers via Bose-Einstein statistics at T_eff = ℏ_eff/τ_c.
+The stochastic floor provides the boundaries for these modes, where reciprocal root series collapse into exact, rational geometric constants (such as 1/4 and 1/32) via Rayleigh sum rules.
 
-**This is the bridge the theory needed: the 9.85× factor is the signature of the soliton riding its own Bessel wave field — a cosmological walking droplet.**
+**: the 9.85× factor is the intrinsic signature of the rotating hedgehog configuration, with θ_sync providing the self-regulating pilot-wave envelope around it.**
 
 ---
 

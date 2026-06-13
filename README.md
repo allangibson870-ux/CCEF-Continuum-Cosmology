@@ -20,7 +20,14 @@ CCEF_PARAMETERS = {
     'gamma_halo': 0.35,
     'sigma_alpha_sq': 0.05
 }
----
+A₃(ℓ) runs from the UV value (2.8e-6) to the core value (~6.89) via Wilsonian coarse-graining with anomalous dimension γ_{A3} induced by the SK stochastic bath.
+The 2D invariant manifold (A₁, A₂, A₄ fixed by topology + virial) still holds; A₃ is the redundant direction that acquires physical running due to the nonequilibrium bath.
+When evaluating operators:
+UV / high-k phenomena (lattice, short-wavelength noise) → use A3_UV.
+Soliton core / orbital dynamics (Synchronization Field, mass dressing) → use A3_core.
+Atomic surface modes (§14.9.1 Lamb shift) → intermediate effective value.
+Cosmological / GW scales (§6.4) → A3 must remain small enough so that A3 k² / A1 ≪ 1 at relevant k.-
+--
 
 
 

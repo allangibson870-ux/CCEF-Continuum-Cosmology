@@ -71,6 +71,19 @@ This scale-dependent valuation is **derived** from the existing SK bath and does
 
 **Cross-References**: See Minimal Mathematical Backbone (RG closure) and Synchronization Field §6.4 (GW safety).
 
+#### Extracted Multi-Scale Values ($\gamma_{A3}$)
+
+The table below tracks the independent contributions of the stochastic bath engine and the topological Skyrme channel across the continuum landscape ($c_{\text{nl}} \approx 8$):
+
+| Regime | $A_3$ Value | $\rho / \rho_{\text{crit}}$ | $\gamma_{A3}$ (Bath Component) | Total $\gamma_{A3}$ | Scale Feedback Behavior |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **UV / Lattice (Voids)** | $2.8 \times 10^{-6}$ | $0.0$ | $\sim 226.163$ | **$226.284$** | Maximum initial kick |
+| **UV / Lattice (Halo)** | $2.8 \times 10^{-6}$ | $1.0$ | $\sim 147.006$ | **$147.127$** | Shielded initialization |
+| **Atomic Surface** | $0.0095$ | $0.5$ | $\sim 0.055$ | **$0.176$** | Moderated wave breathing |
+| **Soliton Core (Voids)** | $6.89$ | $0.0$ | $\sim 0.00009$ | **$0.121$** | Skyrme-dominated plateau |
+| **Soliton Core (Halo)** | $6.89$ | $1.0$ | $\sim 0.00006$ | **$0.121$** | Asymptotic core lock |
+
+
 
 ## 1. Field and Kernel Foundations
 

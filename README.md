@@ -8,41 +8,101 @@
 Use the following **hedgehog‑derived natural couplings** in place of all legacy parameters in earlier CCEF‑Lite docs:
 
 ```
+# CCEF Parameters & Scale-Dependent Invariants
+
+This document outlines the verified baseline parameters, scale-specific behaviors, and numerical constraints for the **CCEF (RG-Consistent Operator Backbone)** framework.
+
+---
+
+## 1. Verified Core Parameters
+
+The dictionary below defines the exact parameter baseline derived from the latest **v3.0** physical invariants and field constraints.
+
+```python
 CCEF_PARAMETERS = {
-    'A1': 1.0,           # Gradient stiffness (fixed)
-    'A2': 2.3877,        # Skyrme topological channel (virial lock from I₂/I₄)
-    'A3_UV': 2.8e-6,     # Microscopic / lattice UV regulator (ℓ→0)
-    'A3_core': 6.89,     # Effective value at soliton-core scale (ℓ=ℓ*) — from numerical stability
-    'A4': 0.5576,        # Vacuum potential channel (fixed by I_pot invariant)
-    'Z_t': 1.0,
-    'c_eff': 44000.0,    # Long-wavelength limit
-    'R_p0': 0.005,       # UV coherence radius ~ sqrt(A3_UV / A1)
-    'gamma_halo': 0.35,
-    'sigma_alpha_sq': 0.05
+    'A1': 1.0,            # Gradient stiffness (canonical normalization)
+    'A2': 2.3877,         # Fixed by virial ratio: A2 = I2 / I4
+    'A3_UV': 2.8e-6,      # UV-scale regulator boundary value
+    'A3_core': 6.89,      # Soliton-core-scale effective value
+    'A4': 0.5576,         # Fixed by potential invariant: A4 = I2 / (6 * I_pot)
+    'Z_t': 1.0,           # Frequency sector normalization constant
+    'c_eff': 44000.0,     # Long-wavelength macroscale propagation speed
+    'R_p0': 0.005,        # UV coherence radius ~ sqrt(A3_UV / A1)
+    'gamma_halo': 0.35,   # Boundary halo parameter configuration
+    'sigma_alpha_sq': 0.05 # Variance threshold for the tangent bundle projection
 }
+```
 
-### A₃(ℓ) RG Trajectory (Physical Branch)
+---
 
-- **ℓ → 0 (UV / Lattice)**: **A3_UV = 2.8 × 10^{-6}**  
-  High-k noise filtering, sub-lattice symmetry preservation.
+## 2. Scale-Specific Use of $A_3$
 
-- **ℓ_atom (Atomic / Surface Scale)**: **A3_atom ≈ 0.0095**  
-  Relevant for hydrogenic surface modes and Lamb-shift analogue (§14.9.1).
+The biharmonic elasticity coupling behaves as a **dependent, slaved graphic functional** rather than an autonomous running coupling. It maps onto discrete effective values when filtered at specific physical scales:
 
-- **ℓ* (Soliton Core / Orbital Scale)**: **A3_core ≈ 6.89**  
-  Required for baryon/soliton stability and Synchronization Field regulator (§1.3, §7.1).
+*   **UV / Lattice Cutoff**: `A3_UV = 2.8e-6`
+*   **Atomic / Surface Layer Scale**: `A3_atom ≈ 0.0095`
+*   **Soliton Core Volume**: `A3_core ≈ 6.89`
+*   **Cosmological IR Macroscale**: Small enough that $A_3 k^2 \ll A_1$ at all observable momentum modes ($k$).
 
-- **ℓ → ∞ (Cosmological / Far-IR)**: **A3_IR ≪ 1** (effectively small)  
-  Ensures v_GW ≈ c_eff with negligible dispersion at observable wavenumbers (§6.4).
+> [!IMPORTANT]
+> These coordinates represent discrete **effective values** optimized for their respective physical regimes. No continuous running function $A_3(\ell)$ has been derived analytically or verified via continuum flow equations.
 
+---
 
-A₃(ℓ) runs from the UV value (2.8e-6) to the core value (~6.89) via Wilsonian coarse-graining with anomalous dimension γ_{A3} induced by the SK stochastic bath.
-The 2D invariant manifold (A₁, A₂, A₄ fixed by topology + virial) still holds; A₃ is the redundant direction that acquires physical running due to the nonequilibrium bath.
-When evaluating operators:
-UV / high-k phenomena (lattice, short-wavelength noise) → use A3_UV.
-Soliton core / orbital dynamics (Synchronization Field, mass dressing) → use A3_core.
-Atomic surface modes (§14.9.1 Lamb shift) → intermediate effective value.
-Cosmological / GW scales (§6.4) → A3 must remain small enough so that A3 k² / A1 ≪ 1 at relevant k.-
+## 3. Cutoff-Dependent Invariants
+
+The spatial volume element boundaries scale explicitly as a function of the upper integration cutoff length $L$. The integral volumes are governed by:
+
+$$I_2(L) = 4\pi \int_0^L r^2 (\nabla n)^2\,dr$$
+$$I_4(L) = 4\pi \int_0^L r^2 \omega^2\,dr$$
+$$I_{\text{pot}}(L) = 4\pi \int_0^L r^2 \sin^2 f(r)\,dr$$
+
+The exact differential scaling trajectories with respect to the cutoff boundary are locked by the local field values at the boundary limit $L$:
+
+$$\frac{dI_2}{dL} = 4\pi L^2 (\nabla n(L))^2$$
+$$\frac{dI_4}{dL} = 4\pi L^2 \omega(L)^2$$
+$$\frac{dI_{\text{pot}}}{dL} = 4\pi L^2 \sin^2 f(L)$$
+
+These differential expressions constitute the only mathematically rigorous scale-dependent relations established prior to exporting the complete nonlinear soliton profile.
+
+---
+
+## 4. Fixed-Point Numerical Results ($U_2$ Attractor)
+
+Field relaxation over a multi-dimensional basin search shows that the system firmly converges toward a stable infrared attractor node ($U_2$) embedded within the parameter manifold sheet:
+
+*   $A_2^* = 8.97052429$
+*   $A_3^* = 1.68430668$
+*   $A_4^* = 0.54158231$
+
+*Convergences achieved to 8 significant digits within 10 iterations.*
+
+### Numerical Jacobian Limitations
+Computing the system Jacobian by finite-differencing ($\varepsilon$) through the optimization landscape triggers numerical instability. Because the underlying field invariants are processed by an L-BFGS-B minimizer, the optimization tolerance floor (`ftol ~ 1e-13`) acts as a noise background that compromises second-order variations. 
+
+At a sample step-size configuration ($\varepsilon = 10^{-5}$), the extracted ambient eigenvalues resolve to:
+*   $\lambda_1 = 0.734863$
+*   $\lambda_2 = 0.013697$
+*   $\lambda_3 = 0.001859$
+
+Applying the Lifshitz-type temporal split dispersion mapping ($\omega^2 \propto \lambda$), the derived scaling ratio evaluates to:
+
+$$\theta = \frac{\omega_{\text{slow}}}{\omega_{\text{fast}}} = \sqrt{\frac{\lambda_2}{\lambda_1}} = 0.13652$$
+
+> [!WARNING]
+> This numerical value is **highly sensitive to finite-difference step-sizes and solver tolerances**. Changing $\varepsilon$ shifts the eigenvalue results significantly. Testing or confirming the universal attractor scaling threshold ($\theta_{\text{universal}} \approx 0.1478$) requires an analytic Jacobian framework to isolate the true physical signal from the optimization noise floor.
+
+---
+
+## 5. Outstanding Work & Next Milestones
+
+To close the remaining mathematical loops in the v3 invariant completion, the following tasks must be completed:
+
+*   **Derive $A_3(\ell)$ Explicitly**: Formulate the analytical continuum flow path connecting the UV lattice scale to the macroscale IR.
+*   **Construct an Analytic Jacobian**: Implement an adjoint sensitivity equation or apply implicit differentiation directly to the L-BFGS-B stationarity conditions ($\nabla_n S = 0$) to bypass finite-differencing noise.
+*   **Export the Soliton Profile $f(r)$**: Generate the raw numeric grid arrays for the field profile to construct the complete, continuous curves for $I_i(L)$.
+*   **Stabilize the Local Phase Spectrum**: Isolate the stable invariant eigenvalues before attempting to interpret or map universal scaling ratios to continuum dynamics.
+
 --
 
 

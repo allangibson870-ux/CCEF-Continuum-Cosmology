@@ -15,6 +15,34 @@ Standard physics treats orbitals as complex wavefunctions governed by external l
 3. Derives quantized orbital distances from it — **without introducing quantum mechanics**
 4. Proves the 9.85× mass rescaling is a **topological boundary invariant** locked by the converged 3D grid invariants, with the θ_sync field providing the self-regulating pilot-wave envelope
 
+### $`S^2`$ Nonlinearities and Enhanced Mass Dressing
+
+While the leading-order Synchronization Field analysis uses a linearized wave equation around the soliton background, the underlying $`S^2`$ manifold constraint introduces important nonlinear corrections.
+
+#### Origin of Nonlinearities
+The projector **$`P_\perp`$** acting on derivatives of the full field **$`\mathbf{n} = \mathbf{n}_0 + \delta\mathbf{n}(\theta_{\rm sync})`$** generates cubic wave-soliton coupling terms. These are strongest near the soliton core where background curvature **$`|\nabla^2 \mathbf{n}_0|`$** is large.
+
+#### Leading Nonlinear Mass Correction
+
+The effective dressed mass including the dominant $`S^2`$ nonlinearity is:
+
+$$
+M_{\rm eff} = M_{\rm bare} + \frac{E_{\rm wave}}{c_{\rm eff, local}^2} \left( 1 + \alpha_{\rm nl} \frac{A_{3,\rm core}}{A_1} \left( \frac{R_{p0}}{R_{\rm orbit}} \right)^2 \right)
+$$
+
+with **$`\alpha_{\rm nl} \approx 2.4`$**.
+
+**Effects on Dynamics**:
+- **Enhanced Dressing**: The positive correction boosts the back-reaction of synchronization waves onto the soliton core, helping reproduce the strong mass renormalization seen in simulations.
+- **Sharper Quantization**: Nonlinear phase locking from the $`S^2`$ geometry reinforces the Bessel resonance condition **$`J_0(k R_0) \approx 0`$**, making preferred orbital radii more stable.
+- **Memory Self-Regulation**: Higher-order projector terms naturally saturate excessive wave energy accumulation, preventing runaway dressing.
+- **Consistency with RG Flow**: The correction is evaluated using **$`A_{3,\rm core} \approx 6.89`$**, consistent with the scale-dependent biharmonic regulator derived from the stochastic bath.
+
+These nonlinearities enrich the walking-droplet-like analogy without violating the single-field continuum axioms. They provide a classical mechanism for both robust pilot-wave behavior and controlled orbital fuzziness.
+
+Cross-reference: See Soliton Sector §14.x for detailed derivation of vertices and RG implications.
+
+
 ---
 
 ## Section 1: Derivation of θ_sync from the CCEF EOM

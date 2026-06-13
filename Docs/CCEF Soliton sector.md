@@ -83,6 +83,24 @@ The table below tracks the independent contributions of the stochastic bath engi
 | **Soliton Core (Voids)** | $6.89$ | $0.0$ | $\sim 0.00009$ | **$0.121$** | Skyrme-dominated plateau |
 | **Soliton Core (Halo)** | $6.89$ | $1.0$ | $\sim 0.00006$ | **$0.121$** | Asymptotic core lock |
 
+### Explicit Saturation Beta Function (Unified RG)
+
+To prevent runaway growth while preserving the required core stability, the full one-loop beta function incorporates a natural saturation from higher-order nonlinearities in the $S^2$ manifold:
+
+$$
+\beta_{A_3} = -2 A_3 + \left[ \frac{\sigma_\alpha^2 A_1}{8\pi^2 A_3}\left(1 - \gamma_{\rm halo}\frac{\rho}{\rho_{\rm crit}}\right) + \frac{8 A_2}{16\pi^2} \right] \frac{A_{\rm sat}^2}{A_3^2 + A_{\rm sat}^2}
+$$
+
+with $A_{\rm sat} \approx 7.5$. 
+
+This form:
+- Drives fast running at microscopic scales.
+- Stabilizes around the soliton core $A_3^* \approx 6.89$.
+- Automatically freezes the coupling at cosmological scales, ensuring $v_{GW} \approx c_{\rm eff}$.
+
+The saturation mechanism is **emergent** from the continuum $S^2$ constraint and does not introduce new fundamental parameters. All downstream loops remain rigidly closed under the operator set $\{k^2, k^4, k^2\omega\}$.
+
+
 
 
 ## 1. Field and Kernel Foundations

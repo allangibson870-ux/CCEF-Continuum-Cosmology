@@ -23,6 +23,55 @@ All content remains strictly within CCEF ontology:
 
 ---
 
+### A₃ RG Flow and Scale-Dependent Biharmonic Regulator (Summary)
+
+The biharmonic coupling **$A_3$** in the energy functional
+
+$$
+\mathcal{E} = \frac{A_1}{2} |\nabla \mathbf{n}|^2 + \frac{A_2}{2} (\partial_i \mathbf{n} \times \partial_j \mathbf{n})^2 + \frac{A_3}{2} (\nabla^2 \mathbf{n})^2 + \frac{A_4}{2} (1 - \mathbf{n}\cdot\mathbf{n}_{\rm vac})^2
+$$
+
+plays a dual role: microscopic UV regulator and macroscopic core stabilizer. Numerical soliton relaxations reveal a clear tension — the microscopic UV value required for lattice completion differs significantly from the effective value needed for stable $Q=1$ hedgehog attractors.
+
+#### A₃(ℓ) Scale Ladder
+
+- **$\ell \to 0$ (UV / Lattice)**: **$A_{3,\text{UV}} = 2.8 \times 10^{-6}$** — high-$k$ noise filtering and sub-lattice symmetry preservation.
+- **$\ell_{\text{atom}}$ (Atomic Surface Scale)**: **$A_{3,\text{atom}} \approx 0.0095$** — governs hydrogenic surface modes and Lamb-shift analogue (§14.9.1).
+- **$\ell^*$ (Soliton Core / Orbital Scale)**: **$A_{3,\text{core}} \approx 6.89$** — required for baryon/soliton structural stability and Synchronization Field biharmonic damping (§1.3, §7.1).
+- **$\ell \to \infty$ (Cosmological / Far-IR)**: **$A_{3,\text{IR}}$** remains small ($\ll 1$) — ensures consistency with GW dispersion bounds (§6.4).
+
+#### Wilsonian RG Flow
+
+The running is sourced by the one-loop Schwinger–Keldysh stochastic bath ($\sigma_\alpha^2$ floor) together with projection and Skyrme nonlinearities. Introduce RG time $t = \ln(\Lambda_0 / \Lambda)$ (increasing toward the IR) and dimensionless coupling $\tilde{A}_3 = A_3 \Lambda^2$.
+
+**Dimensionless Beta Function** (leading order):
+
+$$
+\beta_{\tilde{A}_3} = (2 + \gamma_{A3}) \tilde{A}_3
+$$
+
+**Anomalous Dimension** (with explicit vertex contributions):
+
+$$
+\gamma_{A3}(\rho, \sigma_\alpha^2) = \frac{\sigma_\alpha^2}{8\pi^2} \frac{\tilde{A}_1}{\tilde{A}_3} \left(1 - \gamma_{\rm halo} \frac{\rho}{\rho_{\rm crit}}\right) + \frac{8 \tilde{A}_2}{16\pi^2}
+$$
+
+- The classical term **$+2$** arises from the engineering dimension of $A_3$ ([length]²).
+- The **stochastic bath term** (first summand) drives positive running in low-density regions.
+- The **nonlinear term** (coefficient 8) originates from projection constraint vertices and Skyrme ($A_2$) cross terms, providing topological stabilization.
+
+#### Physical Implications for Solitons
+
+- **Core Stability**: Larger $A_{3,\text{core}}$ strengthens the $(\nabla^4 \mathbf{n})$ regulator inside the soliton, balancing the potential sector and enabling persistent $Q=1$ attractors with the observed physical width.
+- **Synchronization Field**: Use $A_{3,\text{core}}$ in the $\theta_{\text{sync}}$ wave equation biharmonic damping terms around the dressed soliton.
+- **Atomic Sector**: Intermediate $A_{3,\text{atom}}$ controls the magnitude of the Lamb-shift analogue breathing modes.
+- **Cosmology**: The flow must saturate or $\gamma_{A3} \to 0$ at large scales to preserve GW propagation near $c_{\text{eff}}$.
+
+This scale-dependent valuation is **derived** from the existing SK bath and does not introduce new free parameters. All downstream expressions invoking the biharmonic operator must evaluate $A_3$ at the appropriate physical scale $\ell$.
+
+**Cross-References**: See Minimal Mathematical Backbone (RG closure) and Synchronization Field §6.4 (GW safety).
+
+
 ## 1. Field and Kernel Foundations
 
 ### 1.1 Continuum Field

@@ -20,6 +20,22 @@ CCEF_PARAMETERS = {
     'gamma_halo': 0.35,
     'sigma_alpha_sq': 0.05
 }
+
+### A₃(ℓ) RG Trajectory (Physical Branch)
+
+- **ℓ → 0 (UV / Lattice)**: **A3_UV = 2.8 × 10^{-6}**  
+  High-k noise filtering, sub-lattice symmetry preservation.
+
+- **ℓ_atom (Atomic / Surface Scale)**: **A3_atom ≈ 0.0095**  
+  Relevant for hydrogenic surface modes and Lamb-shift analogue (§14.9.1).
+
+- **ℓ* (Soliton Core / Orbital Scale)**: **A3_core ≈ 6.89**  
+  Required for baryon/soliton stability and Synchronization Field regulator (§1.3, §7.1).
+
+- **ℓ → ∞ (Cosmological / Far-IR)**: **A3_IR ≪ 1** (effectively small)  
+  Ensures v_GW ≈ c_eff with negligible dispersion at observable wavenumbers (§6.4).
+
+
 A₃(ℓ) runs from the UV value (2.8e-6) to the core value (~6.89) via Wilsonian coarse-graining with anomalous dimension γ_{A3} induced by the SK stochastic bath.
 The 2D invariant manifold (A₁, A₂, A₄ fixed by topology + virial) still holds; A₃ is the redundant direction that acquires physical running due to the nonequilibrium bath.
 When evaluating operators:

@@ -40,6 +40,23 @@ with **$`\alpha_{\rm nl} \approx 2.4`$**.
 
 These nonlinearities enrich the walking-droplet-like analogy without violating the single-field continuum axioms. They provide a classical mechanism for both robust pilot-wave behavior and controlled orbital fuzziness.
 
+### Final Dimensionally Consistent Mass Dressing Layout
+
+Compiling these corrected terms into a single, unified expression where the wave energy factor $`\frac{E_{\rm wave}}{c_{\rm eff, local}^{2}}`$ acts as the global linear baseline multiplier, the formula simplifies to:
+
+$$
+M_{\rm eff} = M_{\rm bare} + \frac{E_{\rm wave}}{c_{\rm eff, local}^{2}} \left[ 1 + \alpha_{\rm nl} \frac{A_{3,\rm core}}{A_{1} R_{\rm orbit}^{2}} + \beta_{\rm nl} \frac{A_{3,\rm core}}{A_{1}^{2} R_{p0}^{2}} E_{\rm wave} \right]
+$$
+
+Alternatively, to keep the core radius ratio $`\left(\frac{R_{p0}}{R_{\rm orbit}}\right)^{2}`$ explicitly isolated in the cubic term to mirror the earlier layout, the matching configuration reads:
+
+$$
+M_{\rm eff} = M_{\rm bare} + \frac{E_{\rm wave}}{c_{\rm eff, local}^{2}} \left[ 1 + \alpha_{\rm nl} \left(\frac{A_{3,\rm core}}{A_{1} R_{p0}^{2}}\right) \left( \frac{R_{p0}}{R_{\rm orbit}} \right)^{2} + \beta_{\rm nl} \left(\frac{A_{3,\rm core}}{A_{1}^{2} R_{p0}^{2}}\right) E_{\rm wave} \right]
+$$
+
+Every component inside these brackets reduces to a pure, dimensionless number, resolving the unit constraints while preserving the derived numerical constants ($`\alpha_{\rm nl} \approx 2.4`$, $`\beta_{\rm nl} \approx 1.85`$).
+
+
 Cross-reference: See Soliton Sector §14.x for detailed derivation of vertices and RG implications.
 
 

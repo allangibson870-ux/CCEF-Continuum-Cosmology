@@ -9,15 +9,17 @@ Use the following **hedgehog‑derived natural couplings** in place of all legac
 
 ```
 CCEF_PARAMETERS = {
-    'A1': 1.0,           # Gradient stiffness (k² term) — axiomatic spatial normalization
-    'A2': 2.3877,        # Topological Skyrme term (ω²) — fixed by hedgehog energy minimization I₂/I₄
-    'A3': 2.8e-6,        # Biharmonic regulator (k⁴ term) — UV / lattice scale (see RG flow below)
-    'A4': 0.5576,        # Vacuum mass-gap / potential channel — fixed by potential-sector invariant
-    'Z_t': 1.0,          # Temporal inertia / kinetic normalization
-    'c_eff': 44000.0,    # Effective propagation speed (derived from A1/Z_t in long-wavelength limit)
-    'R_p0': 0.005,       # Characteristic soliton core / coherence radius ~ sqrt(A3/A1)
-    'gamma_halo': 0.35,  # Halo texture suppression factor (σ_α² reduction in overdense regions)
-    'sigma_alpha_sq': 0.05  # Stochastic quantum floor amplitude (primordial variance in voids ~0.36)
+    'A1': 1.0,           # Gradient stiffness (fixed)
+    'A2': 2.3877,        # Skyrme topological channel (virial lock from I₂/I₄)
+    'A3_UV': 2.8e-6,     # Microscopic / lattice UV regulator (ℓ→0)
+    'A3_core': 6.89,     # Effective value at soliton-core scale (ℓ=ℓ*) — from numerical stability
+    'A4': 0.5576,        # Vacuum potential channel (fixed by I_pot invariant)
+    'Z_t': 1.0,
+    'c_eff': 44000.0,    # Long-wavelength limit
+    'R_p0': 0.005,       # UV coherence radius ~ sqrt(A3_UV / A1)
+    'gamma_halo': 0.35,
+    'sigma_alpha_sq': 0.05
+}
 ---
 
 

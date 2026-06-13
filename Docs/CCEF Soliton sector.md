@@ -709,6 +709,37 @@ True quantum decoherence—the washing out of the interference fringes into a br
 
 The Section 11 stochastic quantum floor ($\sigma_\alpha^2$) can only dehere the system if the noise itself travels as smooth, topologically protected texture waves. This ensures that the phase relationships between the two slit fronts are scrambled in a manner that remains dimensionally safe and bounded by the continuum grid rules.
 
+### 15.4 $`S^2`$ Manifold Nonlinearities and Leading Mass Correction
+
+The hard topological constraint **$`|\mathbf{n}(x,t)| = 1`$** (with projector **$`P_\perp = \mathbb{I} - \mathbf{n}\mathbf{n}^T`$**) is the primary source of non-perturbative nonlinearities in CCEF. These nonlinearities are not added by hand but emerge directly from the geometry of the target manifold $`S^2`$.
+
+#### Key Nonlinear Mechanisms
+- **Projection of derivatives**: **$`P_\perp(\nabla^2 \mathbf{n})`$** and **$`P_\perp(\nabla^4 \mathbf{n})`$** generate cubic and quartic vertices.
+- **Geometric centrifugal term**: **$`|\dot{\mathbf{n}}|^2 \mathbf{n}`$**.
+- **Skyrme cross terms**: Rich structure of angular momentum-like interactions.
+
+These terms are essential for **topological protection** of **$`Q=1`$** hedgehog solitons and provide natural self-regulation at strong field gradients.
+
+#### Leading Nonlinear Mass Correction
+
+In the soliton core, the interaction between the background hedgehog texture **$`\mathbf{n}_0`$** and the synchronization phase **$`\theta_{\rm sync}`$** produces a leading nonlinear correction to the wave energy back-reaction.
+
+The improved mass dressing formula, including the dominant $`S^2`$ nonlinearity, is:
+
+$$
+M_{\rm eff} = M_{\rm bare} + \frac{E_{\rm wave}}{c_{\rm eff, local}^2} \left( 1 + \alpha_{\rm nl} \frac{A_{3,\rm core}}{A_1} \left( \frac{R_{p0}}{R_{\rm orbit}} \right)^2 \right)
+$$
+
+where **$`\alpha_{\rm nl} \approx 2.4`$** (from angular-averaged projection + Skyrme vertices).
+
+**Physical Implications**:
+- **Positive Feedback**: The correction is **positive** and strongest for tight orbits, enhancing mass dressing toward the numerically observed **$`\sim 9.85\times`$** factor.
+- **Scale Inheritance**: Uses **$`A_{3,\rm core} \approx 6.89`$**, explaining why soliton stability requires a significantly larger biharmonic regulator than the UV value.
+- **Geometric Saturation**: Provides natural saturation at high accumulated wave energy via higher-order $`S^2`$ projector terms.
+
+This nonlinear enhancement is fully emergent from the continuum $`S^2`$ geometry and strengthens the consistency between analytical mass dressing and numerical soliton relaxations.
+
+
 ## 16. Structural Non-Locality and the Bypass of Bell's Theorem
 
 ### 16.1 The Point-Particle Localised Fallacy

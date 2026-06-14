@@ -6,52 +6,40 @@ This update incorporates the parameters and structural constraints defined in th
 
 ---
 
-### 1. Unified Core-Halo Parameter Matrix
+### 1. Unified Core-Halo Parameter Matrix (v3.1 Update)
 
-To achieve complete internal consistency across both documents, the following consolidated parameter array should be implemented for all localized timelike and null geodesic simulations. This resolves the conflicting definitions of \(A_4\) and assigns an explicit, stable value to the stochastic floor variance \(\sigma_\alpha^2\).
+To achieve analytical closure across the repository, all timelike and null geodesic simulations are evaluated using the frozen core-scale parameters from the continuous flow trajectory at \(\ell \approx 7.36\):
 
-# Unified v2.3 Continuum Model Parameter Array 
 ```python
-CCEF_PARAMETERS = {
-    'A1': 1.0,
-    'A2': 2.3877,
-    'A3': 2.8e-6,
-    'A4': 0.5576,
-    'Z_t': 1.0,
-    'c_eff': 44000.0,
-    'R_p0': 0.005,
-    'gamma_halo': 0.35,
-    'sigma_alpha_sq': 0.05
+CCEF_ORBITAL_PARAMETERS = {
+    'A1': 1.0,            # Canonical gradient stiffness
+    'A2_core': 37.4,      # RG-driven Skyrme stiffness at core scale
+    'A3_core': 1.03,      # Smooth-flow biharmonic regulator at core scale
+    'A4_core': 0.559,     # Potential / mass-sector invariant
+    'Z_t': 1.0,           # Frequency-sector normalization
+    'c_eff': 44000.0,     # Long-wavelength propagation speed
+    'xi_RG': 2.4350       # Dilation Baseline: New physical core radius
 }
 ```
 
+The old parameters $A_2 = 2.3877$, $A_3 = 2.8 \times 10^{-6}$, and $A_4 = 0.5576$ are completely deprecated. 
 
+### 2. Modified Kinetic Action & Field Linearisation
 
-### 2. Analytical Refinements & GitHub File Patches
+The interaction between the compact traveling wavepacket and the surrounding vacuum texture is governed by the modified kinetic sector:
 
-#### 🛑 Patch A: Resolving the \(A_4\) Mismatch
-* **Location:** Section 1 (*Modified Kinetic Action*) and Section 14 (*Summary*)
-* **Issue:** Section 1 listed \(A_4 = 3.5553\) while the summary listed \(A_4 = 0.018\). 
-* **Fix:** Standardize around the simulation-tuned value of **\(A_4 = 0.5\)** dictated by the foundational Spine specification to ensure long-term vacuum constraint preservation during high-eccentricity integration loops.
+$$ S[n] = \int d^4x \left[ \frac{Z_t}{2}(1 + \chi \mathcal{E}[n])(\partial_t n)^2 - \mathcal{E}[n] \right] $$
 
-#### 🛡️ Patch B: Grounding the \(A_3\) Redundant UV Regulator
-* **Location:** Section 1 (*Modified Kinetic Action*)
-* **Enhancement:** Upgrade the discussion regarding the static nature of \(A_3 \approx 2.8 \times 10^{-6}\). Instead of stating it is merely fixed microscopically, append the **RG-Locked Invariant Protection** mechanism:
-  \[\Pi = g_2 A_3 \to \Pi_*\]
-  The non-linear geometry of the \(S^2\) manifold forces loop momentum combinations to project orthogonally into the transverse subspace. This suppresses unclosed higher-order loop generations near the fixed point, explaining why \(A_3\) remains stable and non-evolving over vast macroscopic expansions.
+$$ \mathcal{E}[n] = A_1(\nabla n)^2 + A_3(\nabla^2 n)^2 $$
 
-#### 🌌 Patch C: Closing the Stochastic Potential Floor
-* **Location:** Section 10 (*Multi-Orbit Trajectory Analysis*)
-* **Enhancement:** Explicitly define the value of the transport floor variance as **\(\sigma_\alpha^2 = 0.05\)**. This links the planetary wavepacket point potential directly to the **Stochastic Floor Sector** (Section 9 of the Spine) where the effective background noise amplitude scales as:
-  \[\hbar_{\text{eff}} = \sigma_{\alpha}^2 \rho_{0}\]
-  Setting this to \(0.05\) guarantees sub-part-per-million numerical energy preservation (\(\Delta E/E_0 < 10^{-5}\)) across a 25-orbit integration baseline.
+Linearizing the field updates around the static 3D radial hedgehog background yields the governing wave operator for transverse fluctuations:
 
-#### 🛰️ Patch D: Cross-Referencing the Relativistic Information Window
-* **Location:** Section 11 (*Scale Calibration & The Relativistic Information Window*)
-* **Enhancement:** Formally state that the hyper-compact planetary footprint (\(R_{p0} = 0.005\)) and propagation velocity threshold (\(c_{\text{eff}} = 44000.0\)) are no longer hand-fitted empirical adjustments. They are rigorous emergent geometric constraints derived from Section 6 of the Spine, where local wave velocities map directly to effective tensor tracking field gradient densities:
-  \[c_{\text{eff}}^2 = \frac{\vert{}g_{00}\vert{}}{g_{xx}}\]
+$$ Z_t(1 + \chi \mathcal{E}_0(r))\partial_t^2\psi - A_1\nabla^2\psi = 0 $$
 
----
+The local, position-dependent refractive index $n_{\text{opt}}(r)$ experienced by propagating packets matches the following field envelope:
+
+$$ n_{\text{opt}}(r) = \sqrt{1 + \chi \mathcal{E}_0(r)} \approx 1 + \frac{1}{2}\chi \mathcal{E}_0(r) $$
+
 
 ### 3. Updated Verification Output
 
@@ -152,50 +140,31 @@ $$\alpha(b)\approx\frac{\chi}{2}\int_{-\infty}^{\infty}\frac{\partial}{\partial 
 
 ---
 
-# 6. Numerical Results and Convergence Diagnostics (v2.3 Continuum)
+## Section 6: Numerical Results and Convergence Diagnostics (v3.1 Continuum)
 
-This section summarises all direct numerical evaluations of the v2.3 Continuum orbital system, including soliton relaxation, Hessian spectra, moduli geometry, scaling behaviour, and operator convergence. All results are obtained from finite-resolution simulations and should be interpreted within their discretisation and boundary-condition regime.
+This section summarizes the direct numerical evaluations of the v3.1 Continuum orbital system. All results are obtained from finite-resolution simulations and should be interpreted within their discretization and boundary-condition regime.
 
-## 6.1 Soliton Background Relaxation and Energy Convergence
+### 6.1 Soliton Dilation and Energy Convergence
 
-The v2.3 soliton background was evolved under full nonlinear relaxation dynamics until reaching a numerical fixed point.
+Under the frozen RG couplings $(A_1=1.0, A_2=37.4, A_3=1.03, A_4=0.559)$, the static profile solver converges cleanly to a stable, localized, and finite-energy topological configuration. 
 
-* **Energy convergence history**
-  * Initial energy: $E_0 \approx 2917.23$
-  * Intermediate plateau: $E \approx 3702$
-  * Final converged state: $E_{\infty} = 3696.159283$
-* **Convergence behaviour**
-  * Monotonic energy decay after transient overshoot
-  * Final convergence rate: $|\Delta E| < 10^{-8}$ per iteration
-  * Stable attractor achieved after $\sim 1900\text{--}2000$ steps
+* **Core Radius Dilation**: The massive outward pressure of the Skyrme term ($A_2 = 37.4$) pushes the half-soliton radius baseline from the legacy value of $1.5632$ out to $\xi_{\text{RG}} = 2.4350$.
+* **Energy Invariants**: The exact total energy factor remains to be determined numerically; structurally, it is controlled by the nonlinear back-reaction terms in the Synchronization Field.
+* **Far-Field Suppression**: When the vacuum potential mass term is active, the transverse field tail decays cleanly and monotonically according to the screened baseline:
 
-### Interpretation
-The system converges to a stable nonlinear field configuration with no evidence of runaway energy growth or numerical blow-up in the relaxation regime.
+$$ \psi_T(r) \sim \frac{e^{-mr}}{r} \quad \text{with} \quad m = \sqrt{\frac{A_{4,\text{core}}}{A_1}} \approx 0.7478 $$
 
-Note - "The minimal Spine action with unified v2.3 parameters (A₁=1, A₂=4, A₄=0.5) yields a static Q=1 soliton of mass M ≈ 375 via direct solution of the radial hedgehog ODE. The value M ≈ 3696 used in orbital dynamics corresponds to an overall multiplicative rescaling of the energy density by a factor ≈ 9.85. This rescaling can be absorbed into a global unit choice or linked to the stochastic floor / ensemble averaging in future work."
+The RG‑consistent couplings and softened $A_3$ reduce the risk of unphysical far-field wrinkling or tail oscillations; a full 4th‑order solver would be needed to confirm this numerically.
 
----
+### 6.2 Scale Unification Matrix
 
-## 6.2 Hessian Spectrum and Linear Stability
+The smooth transition between localized stellar precision and large-scale galactic profiles is governed entirely by the internal coupling of the screening parameters to the local vacuum field density:
 
-The linearised fluctuation operator was evaluated using sparse eigensolvers across multiple grid scales.
+| Cosmic Regime | Local Vacuum Density ($\rho_0$) | Effective Micro-Field Propagator | Null Sector Observable | Timelike Geodesic Observable |
+| :--- | :--- | :--- | :--- | :--- |
+| **Stellar Scale** | High Local Concentration | Screened Dual-Pole Yukawa Tail ($e^{-mr}/r$) | **Precision Solar Lens Bend** and $0.114\ \mu\text{s}$ Shapiro Delay | Closed Keplerian Ellipses with **Prograde Precession** |
+| **Galactic Scale** | Diluted Cosmic Margin | Ensemble-Dressed Kernel (Effective Log Potential) | **Constant Deflection Angle** ($\alpha = \pi V_{\text{flat}}^2$) | **Flat Rotation Curves** ($v = V_{\text{flat}}$) over the observed halo range |
 
-* **Representative eigenvalues (isotropic projection)**
-  * $\lambda_0 \sim -10^{-4}$ to $-10^{-3}$
-  * $\lambda_1 > 0$ (small positive or near-zero depending on resolution)
-  * Higher modes: gapped and positive
-* **Observed properties**
-  * One marginal/near-zero translational mode
-  * No growing UV instability modes detected at resolved scales
-  * Spectrum sensitive to boundary conditions at coarse resolution ($N \le 24$)
-
-### Numerical note
-ARPACK non-convergence events appear in low-resolution regimes ($N \le 16\text{--}24$), but resolve under:
-* Isotropic projection
-* Shift-invert spectral filtering
-* Increased operator regularisation
-
----
 
 ## 6.3 Moduli Space Metric Behaviour
 

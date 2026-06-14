@@ -106,9 +106,8 @@ Locked to the invariant ratio of the minimised $Q=1$ core:
 $$A_2 = I_2 / I_4.$$
 
 **$A_3$ — Microscopic UV regulator**  
-Not a derived curvature invariant.  
-The RG flow closes on a 2‑dimensional invariant manifold, making $A_3$ a redundant operator direction with no independent flow generator.  
-Its physical value must be microscopically small to preserve graphene sub‑lattice symmetry.
+*"A3 is a redundant direction — it has no independent RG flow and is slaved to A2 via A3∗=κA2∗A_3^* = \kappa\sqrt{A_2^*}
+A3∗​=κA2∗​​ (κ ≈ 0.562 at the reference scale) — but its fixed-point value is finite, participating in the soliton energy at 31.6% weight equal to the Skyrme term. It is not zero and not negligible; it is determined, not free."*
 
 **$A_4$ — Vacuum mass‑gap channel**  
 Locked to the potential‑sector invariant:  

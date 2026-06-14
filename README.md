@@ -221,6 +221,51 @@ $$\sum_{n=1}^{\infty} \frac{1}{\tilde{x}_{0,n}^2} = \sum_{n=1}^{\infty} \frac{1}
 * **Spectral Leakage**: The loop-dressed mass gap siphons phase-locking energy out of the primary channel by exactly $\frac{1}{32} M_{\text{eff}}^2 R_0^2$.
 * **Phase Stability**: This correction factor dynamically stabilizes the pilot-wave envelope by linking multi-loop microscopic fluctuations directly to macroscale orbital shell constraints.
 
+---
+
+# Sync Field Addendum — Numeric Shift of the $9.85\times$ Factor under Backbone v3.0
+
+This addendum tracks the formal propagation of the Backbone v3.0 loop-dressed scale shift into the $9.85\times$ topological boundary constraint factor documented in Section 4.3.
+
+---
+
+## 1. Frozen Boundary Inputs
+
+The numeric evaluation relies on the frozen structural constants from the v3.1 production branch:
+*   **Effective Mass-Gap Scale**: $M_{\text{eff}}^2 = M_{\text{bath, pole}}^2 + \delta M_{\text{loops}}^2 \approx 1.03$
+*   **UV Coherence Core Radius**: $R_{p0} = 0.005$
+*   **Legacy Constraint Reference**: $\mathcal{F}_0 = 9.85$
+
+---
+
+## 2. Derivation of Fractional Spectral Leakage
+
+The Shifted Rayleigh Identity establishes that the sum of the eigenvalues' reciprocals drops when screened by the loop-dressed bath. Isolating the fractional spectral leakage ($\Delta_{\text{leak}}$) relative to the primary $1/4$ baseline yields:
+
+$$\Delta_{\text{leak}} = \frac{\frac{1}{32} M_{\text{eff}}^2 R_{p0}^2}{\frac{1}{4}} = \frac{1}{8} M_{\text{eff}}^2 R_{p0}^2$$
+
+Substituting the frozen values:
+
+$$\Delta_{\text{leak}} = \frac{1}{8} \cdot (1.03) \cdot (0.005)^2 = 3.21875 \times 10^{-6}$$
+
+---
+
+## 3. Corrected Boundary Factor $\mathcal{F}_{\text{v3.1}}$
+
+Because the envelope factor tracks the localized spectral stiffness of the pilot-wave boundary, the fractional leakage acts as a direct linear reduction:
+
+$$\mathcal{F}_{\text{v3.1}} = \mathcal{F}_0 \cdot \left(1 - \Delta_{\text{leak}}\right) = 9.85 \cdot \left(1 - 3.21875 \times 10^{-6}\right)$$
+
+$$\mathcal{F}_{\text{v3.1}} = 9.85 - 0.0000317 = \mathbf{9.8499683}$$
+
+---
+
+## 4. Structural Conclusions
+
+*   **Topological Rigidity**: The loop-dressed crossover causes a minor downward shift ($\approx 0.00032\%$). The $9.85\times$ boundary factor is highly robust against multi-loop corrections.
+*   **Micro-to-Macro Isolation**: Because the UV coherence length scale is tightly bounded ($R_{p0} = 0.005$), ultraviolet loop corrections to the stochastic bath are heavily suppressed at macroscopic phase boundaries. This confirms that macroscale orbital synchronization remains decoupled from high-frequency quantum-analogue noise.
+
+---
 
 
 CCEF‑Continuum‑Cosmology presents a mechanism‑driven cosmological framework built from a single constrained continuum field:

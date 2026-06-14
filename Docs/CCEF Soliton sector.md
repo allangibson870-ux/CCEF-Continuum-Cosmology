@@ -291,28 +291,35 @@ $$\frac{dm_i}{d\ell} = \alpha_K K(k\to 0) - \alpha_\xi \xi_R^{-1} + \alpha_\sigm
 ## 11. v1.2 — Stochastic Response System (Quantum Floor)
 Irreducible fluctuations of the soliton gas enter the transport equations. No Hilbert space. No GR. No external QFT. All stochasticity arises from $\sigma_\alpha^2(a)$.
 
-### §11.2  Redshift evolution of σ_α² (proposed ansatz)
+### §11.2 Redshift Evolution of σ_α² and the Crossover Scaling
 
-The current CCEF framework treats σ_α² as an environmental parameter with no 
-specified redshift law. The constraint from §11 — that ℏ_eff = σ_α² ρ₀ 
-decreases slower than ρ₀ itself — restricts the density scaling to
+The flat-space FRW linearisation demonstrates that $\sigma_\alpha^2$ cannot be treated as a static environmental constant, nor does it follow an arbitrary spatial density power law. Instead, its cosmic evolution is governed by the competition between the infrared (mass-gap) and ultraviolet (biharmonic) sectors of the dispersion relation:
 
-    σ_α² ∝ ρ^β   with  β ∈ (−1, 0]
+$$\omega_k^2(a) = \frac{1}{Z_t}\left(A_4 + \frac{A_1 k^2}{a^2} + \frac{A_3 k^4}{a^4}\right)$$
 
-The simplest ansatz consistent with soliton-exclusion geometry is β = −2/3:
+Evaluating the Fluctuation-Dissipation Relation (FDR) under cosmic expansion ($H \propto a^{-3/2}$) yields the exact dynamic evolution equation for the field variance:
 
-    σ_α²(x, a) = σ_α0² (ρ̄₀ / ρ(x, a))^{2/3}            [Eq. σ1 — ansatz]
+$$\frac{d\sigma_\alpha^2}{d\ln a} = \sigma_\alpha^2 \cdot \left[\frac{3}{2} - \frac{d\ln\omega_k^2}{d\ln a}\right] - 3\sigma_\alpha^2$$
 
-giving ℏ_eff ∝ ρ^{1/3} ∝ a^{-1} in matter domination.  This implies:
-- At z=1000: σ_α² ~ 5×10⁻⁸  (CMB is effectively classical)  
-- At z=0, voids (δ = −0.9): σ_α² ≈ 0.23  
-- Void/halo contrast (δ_halo=200): 159×, redshift-independent
+#### 1. The Crossover Coincidence
+When evaluated using the fixed-point parameters ($A_1=1$, $A_3^*=1.684$, $A_4^*=0.542$), the physical boundaries for the wave regimes reveal a striking structural alignment:
+*   **IR Mass-Gap Boundary:** $k_{\rm phys} \sim \sqrt{A_4/A_1} = 0.736$
+*   **UV Biharmonic Boundary:** $k_{\rm phys} \sim \sqrt{A_1/A_3} = 0.770$
+*   **Soliton Core Scale:** $k_{\rm sol} = 0.754$
 
-**The exponent 2/3 is a prediction to be constrained by data, not a 
-derived quantity.** It can be measured from the amplitude ratio of P_noise 
-at two different density environments (e.g., void vs. wall power spectra 
-from DESI or Euclid). A full derivation requires solving the linearised 
-CCEF field equations in FRW with stochastic source — pending.
+Because the soliton core radius sits precisely at this intersection, the system experiences competing power laws: the IR modes dictate a decay ($\sigma_\alpha^2 \propto a^{-3/2}$), while the UV modes drive an explosion ($\sigma_\alpha^2 \propto a^{+5/2}$). 
+
+#### 2. The Derived Homogeneous Law
+At the precise scale of the soliton ($k_{\rm sol}$), the competing rates partially cancel out. The net growth rate is exactly $+0.50$, defining the honest, unforced cosmological scaling law for the mean-density, homogeneous background:
+
+$$\sigma_\alpha^2(a) \propto a^{1/2}$$
+
+#### 3. Current Limitations & Open Tasks
+While the linearised FRW theory rigorously fixes the *rate of change* ($\sigma_\alpha^2 \propto a^{1/2}$), the **absolute baseline amplitude remains undetermined** by the linear theory alone. 
+
+Because $\sigma_\alpha^2$ acts simultaneously as the solved-for variable and the amplitude of the driving noise, it cancels out of both sides of the quasi-static self-consistency equation. Closing the system completely and fixing the absolute scale of the variance requires completing one of two tasks:
+1.  **A One-Loop Renormalisation Calculation:** Analytically computing the $\delta A_3 / A_3$ integral to determine how sub-soliton fluctuations actively renormalise the biharmonic elasticity.
+2.  **Primordial Initial Conditions:** Specifying a strict boundary value for $\sigma_\alpha^2$ inherited from a pre-CCEF cosmic epoch.
 
 
 ### Quantum‑Corrected Coupling Perturbation

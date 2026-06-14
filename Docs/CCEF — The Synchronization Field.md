@@ -1,129 +1,111 @@
-# CCEF — The Synchronization Field θ_sync
+# CCEF — The Synchronization Field $\theta_{\text{sync}}$
+
 ## Soliton Phase-Locking, Pilot-Wave Quantisation, and Walking Droplet Dynamics at Cosmological Scale
 
-**Version:** 2.0 — Updated to CCEF-Lite v3.0 parameters (A2=2.3877, A4=0.5576)
-**Status:** Active theoretical sector — extends the orbital framework without modifying canonical parameters
+**Version:** 3.1 — Updated to CCEF v3.1 Smooth Flow Parameters ($A_{2,\text{core}}=37.4, A_{4,\text{core}}=0.559$)  
+**Status:** Active theoretical sector — extends the orbital framework under core spatial dilation.
 
 ---
 
 ## Preamble: Why This Development Is Internal to CCEF
 
-Standard physics treats orbitals as complex wavefunctions governed by external linear operators. CCEF instead treats orbitals as **geometric/topological resonance configurations** of the single field n(x,t) ∈ S². The Synchronization Field θ_sync is not added from outside — it is a sub-field that already exists inside the linearisation of the CCEF equation of motion around any soliton background (Orbitals Sec 2). This document:
+Standard physics treats orbitals as complex wavefunctions governed by external linear operators. CCEF instead treats orbitals as **geometric/topological resonance configurations** of the single field $n(x,t) \in S^2$. The Synchronization Field $\theta_{\text{sync}}$ is not added from outside — it is a sub-field that already exists inside the linearisation of the CCEF equation of motion around any soliton background. This document:
 
-1. Derives θ_sync explicitly from the existing EOM
-2. Shows it generates a pilot-wave mechanism structurally identical to Couder-Fort walking droplets
-3. Derives quantized orbital distances from it — **without introducing quantum mechanics**
-4. Proves the 9.85× mass rescaling is a **topological boundary invariant** locked by the converged 3D grid invariants, with the θ_sync field providing the self-regulating pilot-wave envelope
+1. Derives $\theta_{\text{sync}}$ explicitly from the existing EOM.
+2. Shows it generates a pilot-wave mechanism structurally identical to Couder-Fort walking droplets.
+3. Derives quantized orbital distances from it — **without introducing quantum mechanics**.
+4. Proves the mass rescaling is a **topological boundary invariant** locked by the converged 3D grid invariants, with the $\theta_{\text{sync}}$ field providing the self-regulating pilot-wave envelope.
 
-### $`S^2`$ Nonlinearities and Enhanced Mass Dressing
+### $S^2$ Nonlinearities and Enhanced Mass Dressing
 
-While the leading-order Synchronization Field analysis uses a linearized wave equation around the soliton background, the underlying $`S^2`$ manifold constraint introduces important nonlinear corrections.
+While the leading-order Synchronization Field analysis uses a linearized wave equation around the soliton background, the underlying $S^2$ manifold constraint introduces important nonlinear corrections.
 
 #### Origin of Nonlinearities
-The projector **$`P_\perp`$** acting on derivatives of the full field **$`\mathbf{n} = \mathbf{n}_0 + \delta\mathbf{n}(\theta_{\rm sync})`$** generates cubic wave-soliton coupling terms. These are strongest near the soliton core where background curvature **$`|\nabla^2 \mathbf{n}_0|`$** is large.
+The projector $P_{\perp}$ acting on derivatives of the full field $n = n_0 + \delta n(\theta_{\text{sync}})$ generates cubic wave-soliton coupling terms. These are strongest near the soliton core where background curvature $|\nabla^2 n_0|$ is large.
 
 #### Leading Nonlinear Mass Correction
-
-The effective dressed mass including the dominant $`S^2`$ nonlinearity is:
+The effective dressed mass including the dominant $S^2$ nonlinearity is:
 
 $$
-M_{\rm eff} = M_{\rm bare} + \frac{E_{\rm wave}}{c_{\rm eff, local}^2} \left( 1 + \alpha_{\rm nl} \frac{A_{3,\rm core}}{A_1} \left( \frac{R_{p0}}{R_{\rm orbit}} \right)^2 \right)
+M_{\text{eff}} = M_{\text{bare}} + \frac{E_{\text{wave}}}{c_{\text{eff, local}}^2} \left[ 1 + \alpha_{\text{nl}} \frac{A_{3,\text{core}}}{A_1} \left( \frac{\xi_{\text{RG}}}{R_{\rm orbit}} \right)^2 \right]
 $$
 
-with **$`\alpha_{\rm nl} \approx 2.4`$**.
+with $\alpha_{\text{nl}} \approx 2.4$.
 
-**Effects on Dynamics**:
-- **Enhanced Dressing**: The positive correction boosts the back-reaction of synchronization waves onto the soliton core, helping reproduce the strong mass renormalization seen in simulations.
-- **Sharper Quantization**: Nonlinear phase locking from the $`S^2`$ geometry reinforces the Bessel resonance condition **$`J_0(k R_0) \approx 0`$**, making preferred orbital radii more stable.
-- **Memory Self-Regulation**: Higher-order projector terms naturally saturate excessive wave energy accumulation, preventing runaway dressing.
-- **Consistency with RG Flow**: The correction is evaluated using **$`A_{3,\rm core} \approx 6.89`$**, consistent with the scale-dependent biharmonic regulator derived from the stochastic bath.
-
-These nonlinearities enrich the walking-droplet-like analogy without violating the single-field continuum axioms. They provide a classical mechanism for both robust pilot-wave behavior and controlled orbital fuzziness.
+* **Enhanced Dressing**: The positive correction boosts the back-reaction of synchronization waves onto the soliton core, helping reproduce the strong mass renormalization seen in simulations.
+* **Sharper Quantization**: Nonlinear phase locking from the $S^2$ geometry reinforces the Bessel resonance condition $J_0(k R_0) \approx 0$, making preferred orbital radii more stable.
+* **Memory Self-Regulation**: Higher-order projector terms naturally saturate excessive wave energy accumulation, preventing runaway dressing.
+* **Consistency with RG Flow**: The correction is evaluated using $A_{3,\text{core}} \approx 1.03$, consistent with the scale-dependent biharmonic regulator derived from the smooth flow crossover.
 
 ### Final Dimensionally Consistent Mass Dressing Layout
 
-Compiling these corrected terms into a single, unified expression where the wave energy factor $`\frac{E_{\rm wave}}{c_{\rm eff, local}^{2}}`$ acts as the global linear baseline multiplier, the formula simplifies to:
+Compiling these corrected terms into a single, unified expression where the wave energy factor $\frac{E_{\rm wave}}{c_{\rm eff, local}^{2}}$ acts as the global linear baseline multiplier, the formula reads:
 
 $$
-M_{\rm eff} = M_{\rm bare} + \frac{E_{\rm wave}}{c_{\rm eff, local}^{2}} \left[ 1 + \alpha_{\rm nl} \frac{A_{3,\rm core}}{A_{1} R_{\rm orbit}^{2}} + \beta_{\rm nl} \frac{A_{3,\rm core}}{A_{1}^{2} R_{p0}^{2}} E_{\rm wave} \right]
+M_{\text{eff}} = M_{\text{bare}} + \frac{E_{\text{wave}}}{c_{\text{eff, local}}^{2}} \left[ 1 + \alpha_{\text{nl}} \left(\frac{A_{3,\text{core}}}{A_{1} \xi_{\text{RG}^{2}}}\right) \left( \frac{\xi_{\text{RG}}}{R_{\rm orbit}} \right)^2 + \beta_{\text{nl}} \left(\frac{A_{3,\text{core}}}{A_{1}^{2} \xi_{\text{RG}}^{2}}\right) E_{\rm wave} \right]
 $$
 
-Alternatively, to keep the core radius ratio $`\left(\frac{R_{p0}}{R_{\rm orbit}}\right)^{2}`$ explicitly isolated in the cubic term to mirror the earlier layout, the matching configuration reads:
-
-$$
-M_{\rm eff} = M_{\rm bare} + \frac{E_{\rm wave}}{c_{\rm eff, local}^{2}} \left[ 1 + \alpha_{\rm nl} \left(\frac{A_{3,\rm core}}{A_{1} R_{p0}^{2}}\right) \left( \frac{R_{p0}}{R_{\rm orbit}} \right)^{2} + \beta_{\rm nl} \left(\frac{A_{3,\rm core}}{A_{1}^{2} R_{p0}^{2}}\right) E_{\rm wave} \right]
-$$
-
-Every component inside these brackets reduces to a pure, dimensionless number, resolving the unit constraints while preserving the derived numerical constants ($`\alpha_{\rm nl} \approx 2.4`$, $`\beta_{\rm nl} \approx 1.85`$).
-
-
-Cross-reference: See Soliton Sector §14.x for detailed derivation of vertices and RG implications.
-
+Every component inside these brackets reduces to a pure, dimensionless number, resolving the unit constraints while preserving the derived numerical constants ($\alpha_{\text{nl}} \approx 2.4, \beta_{\text{nl}} \approx 1.85$).
 
 ---
 
-## Section 1: Derivation of θ_sync from the CCEF EOM
+## Section 1: Derivation of the Synchronization Field from the CCEF EOM
 
 ### 1.1 The CCEF Field and Its Linearisation
 
-The CCEF field n(x,t) ∈ S² satisfies (Backbone Sec 0):
+The fundamental field satisfies the following relation:
 
-    ∂²_t n = (1/Z_t) P_⊥[ A1∇²n − A3∇⁴n + A4(n·n₀)n₀ ] + |∂_t n|² n
+$$ \partial^2_t n = \frac{1}{Z_t} P_{\perp} [ A_1\nabla^2 n - A_3\nabla^4 n + A_4(n\cdot n_0)n_0 ] + |\partial_t n|^2 n $$
 
-Around any static soliton background n_sol(r), write n(x,t) = n_sol(r) + ψ(x,t). The linearised transverse fluctuation ψ satisfies (Orbitals Sec 2):
+Around a static background, the field can be expanded by adding a small perturbation:
 
-    Z_t(1 + χε₀(r)) ∂²_t ψ − A1∇²ψ + A3∇⁴ψ = 0
+$$ n(x,t) = n_{\text{sol}}(r) + \psi(x,t) $$
 
-where ε₀(r) = A1(∇n_sol)² + A3(∇²n_sol)² is the background energy density.
+The linearized transverse fluctuation satisfies the following differential equation:
+
+$$ Z_t(1 + \chi \varepsilon_0(r)) \partial^2_t \psi - A_1\nabla^2\psi + A_3\nabla^4\psi = 0 $$
+
+The background energy density term is explicitly defined as:
+
+$$ \varepsilon_0(r) = A_1(\nabla n_{\text{sol}})^2 + A_3(\nabla^2 n_{\text{sol}})^2 $$
 
 ### 1.2 Madelung Decomposition — Extracting the Phase
 
-Write the transverse fluctuation as:
+The transverse fluctuation is decomposed into amplitude and phase components:
 
-    ψ(x,t) = R(x,t) · ε_⊥(r) · exp(i θ_sync(x,t))
+$$ \psi(x,t) = R(x,t) \cdot \epsilon_{\perp}(r) \cdot \exp(i \theta_{\text{sync}}(x,t)) $$
 
-where ε_⊥(r) is the unit transverse basis vector fixed by n_sol, R is the amplitude, and **θ_sync is the synchronisation phase field**.
+Substituting this form and separating the real and imaginary parts yields two governing relations.
 
-Substituting and separating real and imaginary parts gives:
+The amplitude equation is given by:
 
-**Amplitude equation:**
+$$ Z_t c^2_{\text{eff}}(r) \partial^2_t R - A_1\nabla^2R + [A_1(\nabla\theta_{\text{sync}})^2 + A_3\nabla^4\text{-terms}] R = 0 $$
 
-    Z_t c²_eff(r) ∂²_t R − A1∇²R + [A1(∇θ_sync)² + A3∇⁴-terms] R = 0
+The phase equation defines the master Synchronization Field Equation:
 
-**Phase equation — the Synchronisation Field Equation:**
+$$ \partial^2_t \theta_{\text{sync}} = c^2_{\text{eff}}(r) \nabla^2\theta_{\text{sync}} $$
 
-    ┌─────────────────────────────────────────────────────────────────┐
-    │  ∂²_t θ_sync = c²_eff(r) ∇²θ_sync                             │
-    │                                                                 │
-    │  c²_eff(r) = A1 / [Z_t(1 + χε₀(r))],    c₀ = √(A1/Z_t) = 1  │
-    └─────────────────────────────────────────────────────────────────┘
+The position-dependent local propagation speed matches the following baseline:
 
-This is a position-dependent wave equation where the local propagation speed is modulated by the soliton's own energy density. It is not added to CCEF — it is already present inside the linearised EOM.
+$$ c^2_{\text{eff}}(r) = \frac{A_1}{Z_t(1 + \chi\varepsilon_0(r))} $$
 
-### 1.3 The Full θ_sync Equation with Source
+This local speed is modulated by the soliton's own energy density. It is not added to CCEF from the outside; it emerges directly from the linearized equations of motion.
 
-When the soliton itself is in motion (the orbital case), it acts as a source of θ_sync waves. Including the A4 vacuum restoring force and the moving-soliton source:
+### 1.3 The Full Phase Equation with Source
 
-    Z_t(1+χε₀) ∂²_t θ_sync − A1∇²θ_sync + A3∇⁴θ_sync + m²_eff(r) θ_sync = S_walk(r,t)
+When the soliton is in motion, it drives the field as a moving localized source. Including the restoring force and the source term yields the complete wave equation:
 
-where:
+$$ Z_t(1+\chi\varepsilon_0) \partial^2_t \theta_{\text{sync}} - A_1\nabla^2\theta_{\text{sync}} + A_3\nabla^4\theta_{\text{sync}} + m^2_{\text{eff}}(r) \theta_{\text{sync}} = S_{\text{walk}}(r,t) $$
 
-    m²_eff(r) = A4 · cos(2f(r))     [position-dependent mass; with v3.0 A4=0.5576]
+The position-dependent mass parameter is governed by the core coupling:
 
-    S_walk(r,t) = −(M_sol/c²_eff) · a_s(t) · δ²(r − r_s(t))    [pilot source]
+$$ m^2_{\text{eff}}(r) = A_{4,\text{core}} \cdot \cos(2f(r)) \quad \text{with} \quad A_{4,\text{core}}=0.559 $$
 
-This is the CCEF analogue of the Faraday wave equation in Couder-Fort experiments:
+The walking pilot source function maps to the localized particle trajectory:
 
-| Couder-Fort (laboratory) | CCEF (cosmological) |
-|---|---|
-| Vibrating oil bath | Background n(x,t) ∈ S² continuum |
-| Surface height h(x,t) | θ_sync(x,t) phase field |
-| Bouncing droplet | Orbiting Q=1 soliton |
-| Faraday wave source | S_walk = −(M/c²_eff) a_s δ² |
-| Wave memory | Retarded Green's function G_ret |
-| Quantized orbits | Bessel resonance condition k R₀ = x_{0,n} |
+$$ S_{\text{walk}}(r,t) = -\frac{M_{\text{sol}}}{c^2_{\text{eff}}} \cdot a_s(t) \cdot \delta^2(r - r_s(t)) $$
 
----
+This serves as the exact continuum field analogue to the macroscopic Faraday wave equations observed in walking droplet fluid experiments.
 
 ## Section 2: The Retarded Green's Function and Memory Integral
 

@@ -291,6 +291,30 @@ $$\frac{dm_i}{d\ell} = \alpha_K K(k\to 0) - \alpha_\xi \xi_R^{-1} + \alpha_\sigm
 ## 11. v1.2 — Stochastic Response System (Quantum Floor)
 Irreducible fluctuations of the soliton gas enter the transport equations. No Hilbert space. No GR. No external QFT. All stochasticity arises from $\sigma_\alpha^2(a)$.
 
+### §11.2  Redshift evolution of σ_α² (proposed ansatz)
+
+The current CCEF framework treats σ_α² as an environmental parameter with no 
+specified redshift law. The constraint from §11 — that ℏ_eff = σ_α² ρ₀ 
+decreases slower than ρ₀ itself — restricts the density scaling to
+
+    σ_α² ∝ ρ^β   with  β ∈ (−1, 0]
+
+The simplest ansatz consistent with soliton-exclusion geometry is β = −2/3:
+
+    σ_α²(x, a) = σ_α0² (ρ̄₀ / ρ(x, a))^{2/3}            [Eq. σ1 — ansatz]
+
+giving ℏ_eff ∝ ρ^{1/3} ∝ a^{-1} in matter domination.  This implies:
+- At z=1000: σ_α² ~ 5×10⁻⁸  (CMB is effectively classical)  
+- At z=0, voids (δ = −0.9): σ_α² ≈ 0.23  
+- Void/halo contrast (δ_halo=200): 159×, redshift-independent
+
+**The exponent 2/3 is a prediction to be constrained by data, not a 
+derived quantity.** It can be measured from the amplitude ratio of P_noise 
+at two different density environments (e.g., void vs. wall power spectra 
+from DESI or Euclid). A full derivation requires solving the linearised 
+CCEF field equations in FRW with stochastic source — pending.
+
+
 ### Quantum‑Corrected Coupling Perturbation
 $$\beta' + [\Gamma_\alpha + D_\alpha k^2/a^2]\beta = s(a)\delta + P(k,a)$$
 

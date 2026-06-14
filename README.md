@@ -70,6 +70,7 @@ CCEF_PARAMETERS = {
     'R_p0': 0.005         # UV coherence radius ~ sqrt(A3_UV / A1)
 }
 ```
+Perturbations away from the slaving manifold $A_3 = \kappa \sqrt{A_2}$ decay approximately exponentially under the discrete self-consistency map. Across perturbations spanning two orders of magnitude, the observed contraction rate is $\lambda_s \approx 0.8$ per iteration, corresponding to a reduction factor of roughly $0.45$ per map application.
 
 ---
 

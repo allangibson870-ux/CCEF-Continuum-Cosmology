@@ -3,6 +3,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20069546.svg)](https://doi.org/10.5281/zenodo.20069546)
 
+*Please Note- the readme file is being used as temp location file until new documents are formatted 
+
 ## CCEF‑Lite v3.1 Microsector Update
 
 Use the following **hedgehog‑derived natural couplings** in place of all legacy parameters in earlier CCEF‑Lite docs:

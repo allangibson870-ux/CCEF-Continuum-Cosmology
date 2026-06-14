@@ -186,6 +186,42 @@ Substituting the verified system parameters:
 * **Dynamic Cushioning**: The higher-loop terms function as a dynamic cushion that shifts the effective screening threshold up to $\approx 1.03$ exactly when the system enters the crossover phase.
 * **Manifold Consistency**: Because the loop corrections scale directly with $A_2$, the screening threshold automatically adapts to changes in the topological background density without requiring external fine-tuning.
 
+---
+
+# Sync Field Addendum — Shifted Rayleigh Spectral Sums under Backbone v3.0
+
+This note maps how the higher-loop mass-dressing shifts the core Rayleigh spectral identities within the synchronization field quantization framework.
+
+---
+
+## 1. Classical Baseline Identity
+
+In the un-deformed, un-screened vacuum sector, the sync field $\theta_{\text{sync}}$ obeys a linear, scale-invariant Bessel wave equation. The boundary constraints pin the zeroes of $J_0(x_{0,n})$, yielding the rigid topological identity:
+
+$$\sum_{n=1}^{\infty} \frac{1}{x_{0,n}^2} = \frac{1}{4}$$
+
+---
+
+## 2. Loop-Dressed Scale Shift
+
+The higher-loop dressing of Backbone v3.0 introduces an effective screening mass gap $M_{\text{eff}}^2 = M_{\text{bath, pole}}^2 + \delta M_{\text{loops}}^2 \approx 1.03$. This modifies the linear wave operator into a screened Helmholtz form, shifting the transcendental eigenvalue spectrum:
+
+$$\tilde{x}_{0,n}^2 = x_{0,n}^2 + M_{\text{eff}}^2 R_0^2$$
+
+---
+
+## 3. Shifted Rayleigh Identity
+
+Expanding the shifted denominators using the classical Rayleigh invariants ($\sum x_{0,n}^{-2} = 1/4$ and $\sum x_{0,n}^{-4} = 1/32$) isolates the structural spectral leakage caused by the loop-dressed bath:
+
+$$\sum_{n=1}^{\infty} \frac{1}{\tilde{x}_{0,n}^2} = \sum_{n=1}^{\infty} \frac{1}{x_{0,n}^2 + M_{\text{eff}}^2 R_0^2} \approx \frac{1}{4} - \frac{1}{32} M_{\text{eff}}^2 R_0^2$$
+
+### Structural Interpretation
+
+* **Spectral Leakage**: The loop-dressed mass gap siphons phase-locking energy out of the primary channel by exactly $\frac{1}{32} M_{\text{eff}}^2 R_0^2$.
+* **Phase Stability**: This correction factor dynamically stabilizes the pilot-wave envelope by linking multi-loop microscopic fluctuations directly to macroscale orbital shell constraints.
+
+
 
 CCEF‑Continuum‑Cosmology presents a mechanism‑driven cosmological framework built from a single constrained continuum field:
 

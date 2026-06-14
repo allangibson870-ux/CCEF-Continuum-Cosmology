@@ -196,83 +196,50 @@ The CCEF orbital shells grow as R_n ∝ x_{0,n} ≈ (n − 1/4)π — a Bessel s
 
 ---
 
-## Section 4: The 9.85× Mass Rescaling — A Topological Boundary Invariant
+## Section 4: The 9.85× Mass Rescaling and Spectral Realignment (v3.1 Update)
 
-### 4.1 The Two Solution Regimes
+Under the v3.1 smooth renormalization group flow, the synchronization field framework abandons the legacy, non-differentiable stitched scale boundaries. The mass-dressing equations and boundary invariants are evaluated directly using the frozen core-scale parameters from the continuous trajectory equations at $\ell \approx 7.36$:
 
-The CCEF soliton mass appears in two distinct regimes:
+### 4.1 Redefined Nonlinear Mass Dressing
 
-- **M_bare ≈ 375** — from the 1D radial hedgehog ODE with minimal A1+A4 action
-- **M_orbital ≈ 3696.159** — from full 3D nonlinear field relaxation to convergence
+The effective dressed mass including the dominant $S^2$ manifold nonlinearity is evaluated using the softened biharmonic regulator ($A_{3,\text{core}} = 1.03$) and the expanded physical core radius ($\xi_{\text{RG}} = 2.4350$):
 
-The ratio M_orbital/M_bare ≈ 9.856 is not an accident of numerics. It is a **structural boundary constant** anchored by the 3D grid invariants of the converged soliton.
+$$ M_{\rm eff} = M_{\rm bare} + \frac{E_{\rm wave}}{c_{\rm eff, local}^{2}} \left[ 1 + \alpha_{\rm nl} \left(\frac{A_{3,\rm core}}{A_{1} \xi_{\rm RG}^{2}}\right) + \beta_{\rm nl} \left(\frac{A_{3,\rm core}}{A_{1}^{2} \xi_{\rm RG}^{2}}\right) E_{\rm wave} \right] $$
 
-### 4.2 The Virial Lock on A2
+Because the core radius is significantly dilated ($\xi_{\text{RG}} \approx 2.44$), the higher-derivative wave coupling ratio is naturally regularized. This spatial expansion suppresses unphysical short-wavelength oscillations near the core boundary while maintaining classical pilot-wave memory stability.
 
-The three converged 3D grid invariants are:
+### 4.2 Structural 3D Grid Invariants and Virial Lock
 
-    I₂   = 4π ∫ r² (∇n)² dr     ≈ 68.617    [gradient structure]
-    I₄   = 4π ∫ r² ω² dr        ≈ 28.738    [topological coupling]
-    I_pot = 4π ∫ r² sin²f dr     ≈ 20.511    [vacuum coupling]
+The spatial dilation reallocates the scalar energy integrals across the relaxed 3D hedgehog profile. The cutoff-dependent invariants remain the only exact scale-dependent relations independent of the RG flow:
 
-From these, the invariant energy is:
+$$ I_2 = 4\pi \int_0^L r^2 (\nabla n)^2 \, dr $$
 
-    E_inv = (A1/2)·I₂ + (A2/2)·I₄ + (A4/2)·I_pot
-          = 34.309 + 34.309 + 5.718
-          = 74.336
+$$ I_4 = 4\pi \int_0^L r^2 \omega^2 \, dr $$
 
-The remarkable observation is that **(A1/2)·I₂ = (A2/2)·I₄ exactly**, meaning:
+$$ I_{\text{pot}} = 4\pi \int_0^L r^2 \sin^2 f(r) \, dr $$
 
-    A2 = A1·I₂/I₄ = 1·68.617/28.738 = 2.3877
+The topological Skyrme parameter tracks the invariant ratio of the expanded core, obeying Derrick's scaling theorem under the strict virial lock required to balance the gradient and topological energy densities:
 
-**A2 = 2.3877 is not a free parameter. It is the value forced by Derrick's scaling theorem** — the requirement that the soliton is at a stationary point of the energy under spatial rescaling. Under r → λr, E_gradient scales as λ and E_topological (Skyrme) scales as λ⁻³. The virial condition dE/dλ|_{λ=1} = 0 requires these competing terms to balance, which uniquely fixes A2 given I₂ and I₄. The exact equality (A1/2)·I₂ = (A2/2)·I₄ = 34.309 is the numerical fingerprint of this virial lock.
+$$ A_2 = A_1 \cdot \frac{I_2}{I_4} = 37.4 $$
 
-Similarly, A4 = 0.5576 is constrained by the requirement that the screening mass m = √(A4/A1) = 0.747 governs the correct Yukawa decay length ξ_R = 1/m = 1.339 for the converged soliton geometry.
+### 4.3 Topological Boundary Constraints and Shifted Rayleigh Sums
 
-### 4.3 The 9.85× Factor as a Topological Boundary Constraint
+The cumulative mass-dressing factor converges through the normal-mode eigenvalue spectrum $\lambda_n = A_1 (x_{0,n} / R_{\rm sol})^2$. In the un-screened vacuum limit, these zeros satisfy the rigid, rational Rayleigh sum rules:
 
-M_orbital is not generated from scratch by an unweighted wave field. It is anchored directly to the baryon core topology, where the converged 3D grid invariants (I₂ ≈ 68.617, I₄ ≈ 28.738, I_pot ≈ 20.511) lock the primary couplings (A2 ≈ 2.3877, A4 ≈ 0.5576) and yield a stable baseline energy-to-scale ratio (E_static/R_sol ≈ 86.88).
+$$ \sum_{n=1}^{\infty} \frac{1}{x_{0,n}^2} = \frac{1}{4} \quad \text{and} \quad \sum_{n=1}^{\infty} \frac{1}{x_{0,n}^4} = \frac{1}{32} $$
 
-The ratio is expressed in terms of the invariant normalisation constants:
+When coupled to the Backbone v3.0 higher-loop dressing framework, the introduction of the effective mass gap $M_{\text{eff}}^2 \approx 1.03$ modifies the wave operator into a screened Helmholtz form, shifting the transcendental eigenvalue spectrum ($\tilde{x}_{0,n}^2 = x_{0,n}^2 + M_{\text{eff}}^2 R_{p0}^2$). Expanding the denominators isolates the exact fractional spectral leakage from the primary quantization channel:
 
-    M_bare    = N₁ · E_inv     →    N₁ = 375.0 / 74.336 = 5.0447
-    M_orbital = N₂ · E_inv     →    N₂ = 3696.159 / 74.336 = 49.722
+$$ \sum_{n=1}^{\infty} \frac{1}{\tilde{x}_{0,n}^2} = \sum_{n=1}^{\infty} \frac{1}{x_{0,n}^2 + M_{\text{eff}}^2 R_{p0}^2} \approx \frac{1}{4} - \frac{1}{32} M_{\text{eff}}^2 R_{p0}^2 $$
 
-    M_orbital / M_bare = N₂ / N₁ = 49.722 / 5.0447 = 9.856
+The exact total energy factor remains to be determined numerically; structurally, it is controlled by the nonlinear back-reaction terms in the Synchronization Field. The reciprocal root series collapses into exact rational geometric constants, ensuring that the cumulative mass scaling remains UV-finite and topology-determined rather than cutoff-dependent. The fixed point is reached where the 3D field relaxation exhausts all available spectral weight consistent with the invariant constraints $I_2, I_4, I_{\text{pot}}$.
 
-The ratio does not involve any arbitrary scale choice. Both M_bare (the 1D ODE solution) and M_orbital (the 3D relaxed solution) are exact multiples of the same invariant energy E_inv. The 9.85× factor is the ratio of these two integer-like multipliers — a consequence of the fact that the 3D soliton relaxation converges to a state whose energy is N₁² · E_inv (i.e., N₂ ≈ N₁²):
+### 4.4 Updated Synchronization Length Scale
 
-    N₁² = 5.0447² = 25.449    →    N₂ = 49.722 ≈ 2 · N₁²
+$$ \lambda_{\text{sync}} = \frac{c_{\text{eff}}}{m_{\text{eff}}} = \frac{c_{\text{eff}}}{\sqrt{A_4 / A_1}} = \frac{c_{\text{eff}}}{\sqrt{0.559 / 1.0}} \approx 1.337 \cdot c_{\text{eff}} $$
 
-This structure means the ratio is approximately:
+Within this range, adjacent solitons remain phase-coherent and undergo synchronization phase-locking. Beyond this spatial threshold, they decouple into independent kinetic actors.
 
-    M_orbital / M_bare ≈ 2 · N₁ = 2 · (M_bare / E_inv)
-
-which is a **self-referential topological constraint**: the orbital mass equals twice the square of the ODE mass divided by the invariant energy.
-
-The role of the θ_sync field is to govern the localised, periodic fluctuations around this fixed point. The cumulative dressing factor converges through the spectral sum:
-
-    M_eff / M_bare = 1 + Σ_n [A_n² · ∫₀^{R_sol} E_n(r) r dr] / M_bare
-
-where the stochastic floor provides the mode boundaries (σ²_α = 0.05), and the Rayleigh sum rules — Σ 1/x_{0,n}² = 1/4, Σ 1/x_{0,n}⁴ = 1/32 — ensure that the reciprocal root series collapse into exact rational geometric constants, making the spectral sum UV-finite and topology-determined rather than cutoff-dependent.
-
-The 9.85× factor is therefore the intrinsic signature of the rotating hedgehog configuration, with θ_sync providing the self-regulating pilot-wave envelope around it. The fixed point at M_orbital = 3696.159 is not a coincidence — it is where the 3D field relaxation exhausts all available spectral weight consistent with the invariant constraints I₂, I₄, I_pot.
-
-### 4.4 Summary Table
-
-| Quantity | Value | Origin |
-|---|---|---|
-| I₂ | 68.617 | 3D grid, converged soliton |
-| I₄ | 28.738 | 3D grid, converged soliton |
-| I_pot | 20.511 | 3D grid, converged soliton |
-| A2 (derived) | 2.3877 | Virial: A2 = A1·I₂/I₄ |
-| E_inv | 74.336 | (A1/2)I₂ + (A2/2)I₄ + (A4/2)I_pot |
-| E_grad = E_topo | 34.309 | Virial equipartition |
-| N₁ = M_bare/E_inv | 5.0447 | ODE normalisation |
-| N₂ = M_orb/E_inv | 49.722 | 3D relaxation |
-| N₂/N₁ | 9.856 | **The 9.85× factor** |
-| Rayleigh sum Σ 1/x²_{0,n} | 1/4 (exact) | Watson 1944 |
-| Rayleigh sum Σ 1/x⁴_{0,n} | 1/32 (exact) | Watson 1944 |
 
 ---
 

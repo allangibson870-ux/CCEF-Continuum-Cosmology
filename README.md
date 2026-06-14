@@ -167,7 +167,7 @@ The physical operating point A1 = 1 sits well within the competitive regime. The
 1. **Sharpness Ceiling**: A stochastic lensing grain places an irreducible, non-zero limit on the angular resolution of high-redshift point sources.
 2. **Void–Halo Texture Asymmetry**: Cosmic voids exhibit higher residual field variance and blurriness compared to the dense cores of dark matter halos.
 3. **Early Maturity Plateau**: Galaxies at high redshift undergo an accelerated internal correlation maturity boost before converging with standard evolutionary tracks.
-4. **Acoustic Asymmetry**: Primordial field variance dampens high-frequency modes, suppressing the relative power of the higher acoustic peaks in the microwave background.
+4. **Acoustic Asymmetry**: Primordial field variance dampens high-frequency modes, suppressing the relative power of the higher acoustic peaks in the microwave background. | σ_α²(ρ) exponent | β = −2/3 (ansatz) | Void/wall P(k) amplitude ratio | Euclid void statistics 2026+ |
 5. **Stochastic Noise Floor**: The matter power spectrum inherits a scale-dependent, irreducible background graininess directly from the underlying stochastic bath.
 
 ---

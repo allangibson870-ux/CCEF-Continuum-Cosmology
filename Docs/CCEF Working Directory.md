@@ -32,8 +32,6 @@ CCEF is a classical field theory of a unit vector field n(x,t) in S². There is 
 spacetime — the metric, gravity, and all observed low-energy structure emerge from
 correlations in n.
 
-Working principle: The theory speaks for itself, right or wrong. If it fails, it fails.
-No hand-fitting to produce convenient results.
 
 Every result in this document is labelled:
   SOLID    — derived directly from the action and fixed-point parameters

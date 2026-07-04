@@ -1,0 +1,478 @@
+================================================================================
+CCEF — CONSOLIDATED REFERENCE v2.1: PARAMETERS & EQUATIONS
+Continuum-Coupled Emergent Framework
+Compiled 2026-06-27; VALUES UPDATED 2026-07-03. Supersedes the 2026-06-22 reference;
+integrates the extended graviton, Lorentz-invariance, UV-completion, phase-transition,
+and matter-sector work. The 2026-07-03 update folds in the cosmology/gravity results:
+M1 (induced-G magnitude; non-locality scale M fixed by Newton), M1b (baryon UV insulation),
+M2 (Lambda_eff conceded), the coasting falsification (F/G/H/N), the induced-Einstein
+background (= LCDM by construction), and M4 (transition-seeded perturbations fail). Changed
+numbers are marked [UPD 07-03].
+*** CORRECTION 2026-07-04: the v2.1 dilaton-INFLATION material (Sec 11 transmutation line,
+Sec 13.4, the r/n_s predictions, and every 'M4 repaired' claim) is RETRACTED. Its key number
+mu* ~ 1e16 GeV rested on a FABRICATED RG coefficient (C ~ N_eff ~ 9), obtained by choosing
+coherent off-diagonal mixing entries to hit the target. An untuned one-loop computation using
+only sourced coefficients gives mu* << Lambda -- consistent with Sec 3's own 'negligible run'.
+There is NO derived high-scale window and NO derived inflation; M4 remains FAILED. Retracted
+items are tagged [RETRACTED]. M1/M2 (induced-G scale, Lambda_eff) are logically unaffected but
+were NOT independently re-verified this session and should be treated with caution. ***
+*** UPDATE 2026-07-04: see new Sec 0.0 (WHAT CCEF IS). CCEF is a continuum medium; the
+universe is a finite ordered patch growing within it; NOT GR, NOT QFT. Cosmology today:
+WHY it expands = SOLVED by the ontology; the expansion LAW = induced-Einstein; the SEED
+origin = OPEN, with the stress-tensor / conformal-medium route (Sec 13.6) the live,
+ontology-native hypothesis. ***
+Labels: [SOLID] proven/verified | [CONJECT] motivated, unproven | [ANSATZ] assumed/input
+        | [OPEN] unknown | [COND] holds conditional on a flagged computation.
+        Rule: derive from the action; label honestly; flag every fit.
+================================================================================
+
+--------------------------------------------------------------------------------
+0.0  WHAT CCEF IS -- READ FIRST  (this is NOT GR, and NOT QFT-on-spacetime)
+--------------------------------------------------------------------------------
+CCEF is a CONSTRAINED CONTINUUM. There is one thing only: an infinite, eternal MEDIUM
+(a continuum order-parameter field). It does not live IN spacetime -- there is no spacetime
+for it to live in. Spacetime, the metric, gravity, and matter are ALL EMERGENT from the
+correlations of this one medium.
+
+  THE MEDIUM (the continuum):  infinite, eternal, mostly DISORDERED (|phi|=0), high-energy,
+    UNSTABLE. The ground substance. No boundary, no beginning, no end.
+
+  THE UNIVERSE (what we are in):  a FINITE, ORDERED patch (|phi|=1) -- a region where the
+    medium has undergone the ordering phase transition. Low-energy, STABLE. Finite but
+    UNBOUNDED IN GROWTH: it can grow as large as it needs to, because the ordered (stable,
+    low-energy) phase is favored and outgrows the disordered medium.
+
+  EXPANSION is therefore NOT a field, a vacuum energy, or an inflaton. It is the MANDATORY,
+    ONE-WAY, GEOMETRIC consequence of a stable ordered phase outgrowing an unstable infinite
+    disordered medium. Order spreads into disorder and cannot reverse (the disfavored phase
+    cannot reconquer favored ground). Uniformity/horizon is solved for free: one coherence
+    patch is homogeneous by construction.
+
+  HOW TO REASON ABOUT CCEF:  do NOT import GR (a metric responding to a stress tensor is
+    DERIVED here, never assumed) or QFT (fields on a fixed spacetime -- there is none).
+    Every result must come from the medium and its ordering. When GR-like or CFT-like
+    structures appear (induced Einstein; an emergent conformal field theory), they are
+    OUTPUTS of the continuum, not inputs. This is the point to keep returning to.
+  
+  the continuum is a high-energy symmetric state whose instabilities redistribute energy 
+into lower-energy ordered configurations, and those configurations define what later appears 
+as spacetime.
+
+--------------------------------------------------------------------------------
+0. THE FIELD
+--------------------------------------------------------------------------------
+Fundamental: a constrained continuum order parameter.
+  Gravity/cosmology sector:   n(x,t) in S^2, |n|=1  (unit 3-vector; 2 dof).      [SOLID]
+  Matter (baryon) sector:     phi in S^3 = SU(2), |phi|=1  (4-comp; 3 dof).      [SOLID]
+  The S^2 director and the S^3 field share the same action structure; the S^2 CP^1
+  rewrite (sec 2) is the gauge/Hopf sub-description of the n-sector.
+No external spacetime; metric, gravity, matter all emergent from correlations of the field.
+Topology:  pi_3(S^2)=Z -> Hopf charge (S^2 sector);  pi_3(S^3)=Z -> Skyrme degree =
+  baryon number (S^3 sector);  pi_4(S^3)=Z_2 -> fermionic statistics available.
+
+--------------------------------------------------------------------------------
+1. THE ACTION  (Euclidean)
+--------------------------------------------------------------------------------
+S[n] = INT d^3x dt [ (Zt/2)(d_t n)^2
+                   + (A1/2)|grad n|^2
+                   + (A2/4)|d_i n x d_j n|^2          (Faddeev-Skyrme, S^2 sector)
+                   + (A3/2)(lap n)^2                  (Lifshitz bilaplacian, UV regulator)
+                   + (A4/2)(1 - n_3^2) ]              (easy-axis potential)
+S^3 matter sector: same form with A_i -> B_i, plus a TREE-LEVEL Skyrme term (sec 8/11):
+   + c4 (d_mu phi x d_nu phi)^2   [Lorentz-invariant Skyrme; the adopted baryon-mass term]
+
+CORRECTIONS retained from v1 [SOLID]:
+  * Potential is (A4/2)(1 - n_3^2) = (A4/2) sin^2(Theta), giving IR mass Lambda=sqrt(A4/A1).
+    (S^3 hedgehog form, sympy-checked this session: (A4/2) chi^2 sin^2 F = (A4/2)(|phi|^2-phi0^2),
+    >=0, vanishes at the core and as chi->0; NOT chi^2(1-cosF).)                 [SOLID]
+  * (A2/2)(n.grad n)^2 == 0 identically (n.dn=0); the real 4th-order term is Faddeev-Skyrme.
+  * A3 = (lap n)^2 bilaplacian; spatial-only => z=2 Lifshitz (NOT boost-invariant; see sec 9).
+
+--------------------------------------------------------------------------------
+2. CP^1 / EMERGENT-GAUGE FORM  (exact rewrite; the emergent photon)
+--------------------------------------------------------------------------------
+n = z^dag sigma z, z in C^2, z^dag z=1.  U(1) redundancy z->e^{i alpha}z.
+Connection a_mu=-i z^dag d_mu z;  field strength f_mu_nu=d_mu a_nu-d_nu a_mu.
+Master identities (exact) [SOLID]:
+  |d_mu n|^2=4|D_mu z|^2 (D=d-ia);  n.(d_mu n x d_nu n)=2 f_mu_nu;
+  |d_i n x d_j n|^2=4 f_ij f_ij;    1-n_3^2=4|z1|^2|z2|^2.
+Action (z,a): 2Zt|D_t z|^2 + 2A1|D_i z|^2 + 2A2|B|^2 + 2A4|z1|^2|z2|^2 + (A3 higher-deriv).
+  Magnetic Maxwell EXACT: 1/e_B^2 = 4 A2.  Electric coupling induced (magnon loop) -> c_gamma.
+  *** The emergent photon is MASSIVE: A4-ordered vacuum Higgses the U(1) (Anderson-Higgs),
+      m_gamma = sqrt(A1/2A2) ~ 1.2-1.8 CCEF. It is NOT the physical massless photon. *** [SOLID]
+  A physical massless EM photon is NOT yet derived in CCEF.                       [OPEN]
+
+--------------------------------------------------------------------------------
+3. PARAMETERS  (current best; honest status)
+--------------------------------------------------------------------------------
+  A1 = 1.0    gradient norm (sets length-energy unit)                  [SOLID, axiom]
+  Zt = 1.0    temporal norm -> c_eff=sqrt(A1/Zt)=1                     [SOLID, axiom]
+  A4 = 3.5553 potential/gap; fixed by proton-radius calibration (sec 4) [SOLID given calib]
+  A2 = 0.3268 Faddeev / emergent-photon coupling (value used in all
+              soliton+gauge computations this session; e_B^2=1/4A2=0.765).
+              [the self-dual value A2=A4^-3/2=0.149 is DISFAVOURED for matter, sec 8/11]
+  A3 = the UV regulator -- STATUS REVISED (sec 9):
+        * Lifshitz (lap n)^2 with A3 ~ 1e-6 puts the soliton in z=1 (bilaplacian
+          dynamically dead, E_A3/E~3.5e-5) -- but is Lorentz-violating at k_UV (sec 9).
+        * Self-dual A3=A1^2/A4=0.281 is DISFAVOURED (forces soliton onto k_UV, ~88x heavy).
+        * ADOPTED: a HIGH-SCALE LORENTZ-INVARIANT regulator (covariant (box n)^2 or a
+          ghost-free non-local form factor) replacing the Lifshitz term (sec 9).
+  c4 = 0.028-0.029  TREE-LEVEL Skyrme coupling (S^3) -- NEW INPUT, fixes baryon mass
+              (sec 8/11). [ANSATZ / one fitted parameter -- the single departure from
+              "do not fit"; everything else preserved, verified sec 8.]
+  RG: [A2]=-1 irrelevant (S^2/z=2); in the z=1 baryon regime the Skyrme coupling is
+      MARGINAL (stabilises soliton, IR clean). beta(A3)=-A3^2/(16pi^2 A1) (negligible run).
+
+--------------------------------------------------------------------------------
+4. CALIBRATION & UNITS  (two conditions fix two units; masses are predictions)
+--------------------------------------------------------------------------------
+Length: screening L0/Lambda = r_p, Lambda=sqrt(A4/A1) => L0=r_p*sqrt(A4)=1.610 fm/CCEF. [SOLID]
+Energy: hbar_CCEF=1, c_eff=1 => E0*L0=hbar c (coeff 1) => E0=hbar c/L0=122.5 MeV/CCEF. [SOLID]
+  Cross-checks: gap mode, Compton wavelength. gap=sqrt(A4)*E0=231 MeV ~ resonance cluster.
+  (Legacy E0=30.6 MeV [coeff 1/4] and 311.7 MeV [hand-fit] are discarded.)
+Proton mass: m_p = 938.272/E0 = 7.66 CCEF.
+KEY dimensionless test (calibration-free, since E0*L0=hbar c):
+  E_sol * R_sol  (mass x charge-radius) = m_p r_p/hbar c = 4.06 for the proton.
+  Hadron band ~ 0.5-6.  This is the invariant the matter sector must hit.
+
+--------------------------------------------------------------------------------
+5. DISPERSION, EMERGENT METRIC
+--------------------------------------------------------------------------------
+Fluctuation dispersion (around vacuum), QUADRATIC sector:
+  omega^2 = (1/Zt)(A4 + A1 k^2 + A3 k^4)                                [SOLID]
+  IR (k<<k_UV): omega^2 ~ k^2+Lambda^2 (relativistic, gap Lambda); UV: ~A3 k^4 (z=2 Lifshitz).
+Scales: k_IR=Lambda=sqrt(A4/A1); k_UV=sqrt(A1/A3); k_F=(A1/A2)^(1/3).
+Emergent metric: ds^2 = -(A1/Zt)dt^2 + a(t)^2 delta_ij dx^i dx^j; c_eff=1.   [SOLID]
+  G_mu_nu = 8 pi G T_mu_nu verified to 5.8e-16.  Lifshitz z=2 UV / z=1 IR, d_eff=5.
+Gravitational slip eta(k)=(A4-A1k^2-A3k^4)/(A1k^2+A3k^4) (sign change -> falsifiable).
+  At observable k (<<k_UV) eta,Sigma are A3-independent (A3 enters only near k_UV).  [SOLID]
+
+--------------------------------------------------------------------------------
+6. COMPOSITE GRAVITON  (NEW, this session -- the gravity spine, made explicit)
+--------------------------------------------------------------------------------
+There is NO fundamental tensor field. The graviton is a COLLECTIVE/composite excitation:
+the transverse-traceless (helicity +-2) part of the induced metric perturbation
+delta_g_ij ~ A1 sum_a d_i n_a d_j n_a, built from the order-parameter fluctuations.  [SOLID]
+  * TT extraction: ~40% of induced delta_g is in the helicity +-2 channel; machine-precision
+    transverse and traceless after projection.                                    [SOLID]
+  * MASSLESS: protected by the emergent diffeomorphism Ward identity (conserved matter
+    stress tensor). Numerically, the 4D Euclidean TT polarization Pi^TT(w_E,k) is
+    O(4)-symmetric (depends only on p^2=w_E^2+k^2) below the 2-particle threshold p^2=4A4
+    => Wick-rotates to a Lorentz-invariant, massless, z=1 spin-2 pole.             [SOLID]
+  * HEALTHY (non-ghost): heat-kernel Seeley-DeWitt a1 = R/6 > 0 => induced 1/(16 pi G) > 0
+    (Sakharov). Computed 1/(16piG) = 1.26e-2 (A3=1e-6) ... 5.3e-3 (A3=1e-3).       [SOLID]
+  * Induced Planck mass: the earlier "M*^2 ~ ln(k_UV^2/A4)" (logarithmic) was an ARTIFACT of
+    the Lifshitz regulator's relativistic IR window. [UPD 07-03, M1] With the ADOPTED ghost-free
+    LI non-local completion (Sec 9) the induced Einstein term is exact and QUADRATIC (Sakharov):
+    1/(16pi G_ind) = (N_eff/6)(1/16pi^2)[ M^2 - m^2 ln(M^2/m^2)+... ]. Matching Newton FIXES the
+    non-locality scale M = M_Pl sqrt(6pi/N_eff) = 1.5-2.5 M_Pl (~1.8e19 GeV, N_eff=9..3). M is a
+    CALIBRATION read off G_N (not a dynamics fit); (Lambda/M)^2 = 1.7e-40 inverts G_ind/G_N=1.6e40.
+    Sign/health unchanged (a1=R/6>0). The M1c gap-hierarchy protection under the completion is
+    [OPEN].                                                                        [SOLID, this update]
+  * z=1: emergent Lorentz invariance of the graviton in the IR (exact with the LI
+    UV completion of sec 9; emergent-only with the Lifshitz regulator).
+  Caveat RESOLVED [UPD 07-03]: the M*^2~log was the Lifshitz IR-window artifact above; the LI
+  non-local completion gives the exact quadratic M^2 (Sakharov), with M fixed by Newton. The
+  induced cosmological-constant partner a0 ~ N M^4/32pi^2 is the standard CC problem (see Sec 13,
+  M2): patch-minus-medium subtraction removes only the M^4 (40 orders), leaving M^2 Lambda^2 —
+  Lambda_eff conceded as a renormalized input.
+
+--------------------------------------------------------------------------------
+7. TOPOLOGICAL CHARGES
+--------------------------------------------------------------------------------
+S^2 sector: Baryon = Hopf charge = CS linking of a: B=(1/4pi^2)INT a^f.            [SOLID]
+S^3 sector: Baryon = Skyrme degree (pi_3(S^3)=Z); hedgehog phi=(cosF,sinF r_hat),
+  F(0)=pi, F(inf)=0, degree 1.  b(r)=-(1/2pi^2)(sin^2F/r^2)F'.                     [SOLID]
+Virial (Derrick): E2 - E4 + 3 E_pot = 0 at the minimum (used to validate solitons).
+Flux quantisation (compact U(1)): INT_Sigma f/2pi in Z.
+
+--------------------------------------------------------------------------------
+8. BARYON SECTOR -- THE FULL RESOLUTION  (this is where the work concentrated)
+--------------------------------------------------------------------------------
+8.0 S^2 Hopf baryon: FALSIFIED. E*R = 79 (A3=0) to 1061 (self-dual) -> 19-261x outside the
+    hadron band. A dimensionless number no unit choice can move. DEAD as a hadron. [SOLID,neg]
+
+8.1 S^3 SKYRME baryon (the matter sector): phi in S^3, hedgehog = legitimate Skyrmion.
+    Gravity spine carries over unchanged (3 pions, same quadratic dispersion).     [SOLID]
+    Bonus: O(4)->O(3)=isospin -> pion triplet + nucleon doublet; fermion via pi_4(S^3)=Z_2.
+
+8.2 INDUCED (parameter-free) Skyrme term, one-loop heat-kernel a_2:
+      L_4 = (1/16pi^2)[(2/3)S^2 + (1/3)TrT^2] * (log), S=dphi.dphi, TrT^2=(d_mu phi.d_nu phi)^2.
+    A 2:1 MIX (not pure Skyrme), carries a log.  *** B2=9/16pi^2 was NUMEROLOGY. ***
+    SOLITON-SCALE MATCHING (this session) removes the IR-cutoff ambiguity: the log's IR end
+    is the soliton scale k_sol=1/R (since k_sol>gap), giving, self-consistently,
+      B2 = (0.949/16pi^2) ln(k_UV * R_sol)   [0.949 = Lifshitz anisotropy factor].  [SOLID]
+    At A3=1e-6 this converges to B2 ~ 0.038 => E*R_baryon ~ 12 (~3x the proton).    [SOLID]
+    So the DERIVED induced baryon is robustly ~2-3x too heavy-for-its-size.
+
+8.3 Things that DON'T close the gap (all tested this session):
+    * Amplitude "core melting" (dynamical chi): collapses to chi->0 (a singularity in n,
+      forbidden) or, with a melt-surviving stabiliser, stays heavy. Trade-off:
+      die-in-melt=>collapse / survive-melt=>heavy. NOT a fix.                       [SOLID,neg]
+    * Sextic / higher chi-potential: restoring force ~chi at chi=0 can't beat the
+      gradient saving. NOT a fix.                                                   [SOLID,neg]
+    * Collective quantization: rotational E_rot(J=1/2)=+0.43 (+1.8%) and breathing
+      zpe=+1.74 (+7.2%) ADD mass (E*R 8.8->9.6). N-Delta splitting 3/(2Lam)~210 MeV
+      (vs 293) is the right order [nice], but quantum corrections push the WRONG way. [SOLID]
+    * UV re-pin via anisotropic Lifshitz a_2: ratio z2/z1 = 0.949 (~5%). Negligible.  [SOLID]
+    * Radius convention is a real ~30% effect: charge/baryon-rms (the apples-to-apples
+      match to m_p r_charge) gives E*R_baryon ~ 6.8 at B2=0.02 (vs energy-rms ~9).   [SOLID]
+    * Hot first-order phase transition: see sec 10 -- effectively second-order, too weak. [SOLID,neg]
+
+8.4 THE ADOPTED RESOLUTION -- tree-level Lorentz-invariant Skyrme coupling:
+    Add c4 (d_mu phi x d_nu phi)^2 to the action.  Tuning c4 = 0.028-0.029 gives
+      E*R_baryon = 4.06 (the proton), as a stable Skyrmion (virial~0, degree~1,
+      E~18, R_baryon~0.226 CCEF).                                                   [SOLID]
+    VERIFIED that this leaves the rest of the theory intact, because a Skyrme term is
+    QUARTIC in fluctuations about the vacuum (|d n x d n|^2 = |d(dn) x d(dn)|^2 ~ (d dn)^4;
+    numerically E_Skyrme ~ eps^4 vs E_kinetic ~ eps^2):
+      - Graviton induction: UNCHANGED (it lives in the quadratic <TT> sector).      [SOLID]
+      - Cosmology (dispersion, slip eta, lensing): UNCHANGED (same quadratic sector).[SOLID]
+      - Lorentz invariance: the term is the covariant (d_mu phi x d_nu phi)^2 -> NO new LV;
+        for the static soliton it reduces to the spatial Skyrme form.              [SOLID]
+      - Ghost-free (positive 4-derivative in fields, not higher-time-derivative kinetic).
+    COST (honest): the baryon mass is now an INPUT (c4 ~ 0.028, a modest O(1e-2) coupling),
+    not fully derived. The induced (heat-kernel) Skyrme is subdominant to this tree term.
+    This is the one fitted parameter; it buys a fully consistent theory.            [ANSATZ]
+
+--------------------------------------------------------------------------------
+9. LORENTZ INVARIANCE & THE UV COMPLETION  (NEW, the deepest result)
+--------------------------------------------------------------------------------
+A3 (lap n)^2 is SPATIAL-only -> z=2 Lifshitz -> BOOSTS ARE EXPLICITLY BROKEN.
+LV fraction of the dispersion = (A3/A1) k^2 = (k/k_UV)^2; order-1 at k_UV=sqrt(A1/A3).
+  A3=1e-6 -> k_UV ~ 100-120 GeV ; A3=1e-3 -> k_UV ~ few GeV (physical, via E0=122.5 MeV).
+
+UNIVERSALITY (a genuine virtue) [SOLID]:
+  A single order parameter => graviton and ALL matter share ONE emergent metric:
+  c_graviton = c_matter = sqrt(A1/Zt) exactly (Delta c/c = 0). Hence ZERO DIFFERENTIAL LV:
+  GW170817 (c_gw=c_light), birefringence, photon-vs-electron bounds AUTOMATICALLY satisfied.
+
+THE RESIDUAL TENSION [SOLID]:
+  Every n-built mode (matter, Goldstone, graviton, and any emergent photon) inherits the
+  UNIVERSAL A3 k^4 -> a universal energy-dependent speed, bounded by photon time-of-flight
+  to k_UV >~ 1e6-1e7 GeV => A3 <~ 1e-15. But the soliton-matched baryon (sec 8.2) wants
+  A3 ~ 1e-3...1e-6. These are ~9-13 ORDERS apart. A3 wears three conflicting hats:
+  UV regulator + universal LV source + (via the induced B2) baryon-mass controller.
+
+NO Goldstone rescue [SOLID]: a boost-Goldstone photon (exact-z=1 by non-linear Lorentz)
+  is IMPOSSIBLE here -- boosts are EXPLICITLY broken by A3, so there is no exact symmetry to
+  spontaneously break. The would-be photon is a pseudo-Goldstone that inherits A3.
+  Gauge invariance does NOT forbid the photon k^4 either (it is a dim-6 covariant operator
+  generated directly by A3).
+
+THE RESOLUTION -- a high-scale LORENTZ-INVARIANT UV completion [ADOPTED]:
+  Replace the Lifshitz (lap n)^2 with a Lorentz-invariant regulator:
+   (i) covariant (box n)^2, box=d_t^2/c^2 - lap:  inverse propagator A1 p^2 + A3 p^4 + A4,
+       p^2=-w^2+k^2 -> dispersion exactly relativistic (NO LV). Static solitons UNCHANGED
+       (box n = -lap n for d_t n=0 => (box n)^2=(lap n)^2 identically). Graviton becomes
+       EXACTLY (not emergently) Lorentz-invariant. PRICE: an Ostrogradsky/Lee-Wick ghost at
+       ~k_UV (higher time derivative).
+   (ii) ghost-free NON-LOCAL form factor (entire function, e.g. exp(box/M^2)): Lorentz-
+       invariant AND ghost-free AND UV-regulating; cleanest. Solitons/graviton/cosmology
+       preserved (form factor ~1 below M).
+  Either way: at a HIGH scale these are LV-safe; the baryon mass is carried by the tree
+  Skyrme c4 (sec 8.4), DECOUPLED from the UV scale. Net consistent CCEF:
+     emergent-gravity spine + high-scale LI (ideally non-local, ghost-free) regulator
+     + one tree-level Skyrme coupling.                                              [ADOPTED]
+  Root caveat [SOLID]: the INDUCED-Skyrme route alone ties the baryon to a ~GeV UV scale,
+  where any completion misbehaves (Lifshitz->LV, local covariant->light ghost,
+  non-local->acausality). The tree Skyrme exists precisely to break that link.
+
+--------------------------------------------------------------------------------
+10. COSMOLOGICAL PHASE TRANSITION  (the "hot Big Bang" replacement)
+--------------------------------------------------------------------------------
+CCEF has no singular hot Big Bang; the "beginning" is the ORDERING transition of the
+order parameter (disordered |phi|=0 -> ordered |phi|=1), which can be locally hot
+(effective T from disordered fluctuations + latent heat) without a primordial fireball.
+ORDER OF THE TRANSITION (computed, finite-T effective potential) [SOLID]:
+  * Thermal cubic CONFIRMED: -E T chi^3, E = n_gauge e_gamma^3/(12pi) = 0.053 (U(1)) to
+    0.16 (SU(2)); ~20-60x the zero-T gauge Coleman-Weinberg term (it is ~T, not 1/64pi^2).
+  * T_c ~ 1.1-1.3 CCEF (~0.6-0.7 Lambda).
+  * BUT effectively SECOND-ORDER: chi_c/T_c = E/2a4 = 0.06 (U(1)) / 0.18 (SU(2)) << 1;
+    the full thermal-function treatment shows no resolvable barrier. e_gamma^2=0.765 is
+    ~6x too weak for strong first-order; and any thermal barrier vanishes at the present
+    T=0 where the proton lives. => does NOT stabilise a two-phase baryon. NOT a mass rescue.
+SIDE RESULTS:
+  * Kibble defect formation (baryon genesis) still works at the ordering transition.  [CONJECT]
+  * Weak/second-order transition => SMALL primordial stochastic GW background (falsifiable,
+    in contrast to strongly-first-order scenarios). The composite graviton carries it.  [OPEN]
+
+--------------------------------------------------------------------------------
+11. KEY DERIVED NUMBERS  (A1=Zt=1, A4=3.5553, A2=0.3268; high-scale LI regulator; c4~0.028)
+--------------------------------------------------------------------------------
+  Lambda = sqrt(A4)             = 1.886 CCEF       (gap; 231 MeV)
+  L0                            = 1.610 fm/CCEF
+  E0 = hbar c / L0              = 122.5 MeV/CCEF
+  m_p (target)                  = 7.66 CCEF        (E*R_baryon target = 4.06)
+  e_B^2 = 1/(4 A2)              = 0.765            (emergent photon coupling)
+  m_gamma ~ sqrt(A1/2A2)        = 1.24 CCEF        (the emergent photon is MASSIVE)
+  Graviton: massless, healthy (1/16piG>0), z=1; induced Planck mass EXACT/QUADRATIC in the LI
+             non-local completion (Sec 6, M1): M=M_Pl sqrt(6pi/N_eff)~1.8e19 GeV
+             [supersedes the old 'M*^2 ~ log' line]
+  Induced (derived) Skyrme:  B2 ~ 0.038 @ A3=1e-6 -> E*R_baryon ~ 12 (2-3x too heavy)
+  TREE Skyrme (adopted):     c4 ~ 0.028 -> E*R_baryon = 4.06 (proton)  [one fitted input]
+  Differential LV: Delta c/c = 0 (universality) -> GW170817 etc. auto-satisfied
+  Universal LV: order-1 at k_UV; LV-safe massless photon needs k_UV>~1e6 GeV (A3<~1e-15)
+  Phase transition: T_c~0.6-0.7 Lambda, chi_c/T_c~0.06-0.18 (effectively 2nd-order); T_c~140 MeV
+  [UPD 07-03 — GRAVITY/COSMOLOGY sector]:
+  Non-locality scale  M = M_Pl sqrt(6pi/N_eff) = 1.77e19 GeV (N_eff=9)  (calibration, ex Newton)
+  Hierarchy           (Lambda/M)^2 = 1.7e-40  (= 1/(G_ind/G_N)) ;  ln(M/Lambda)=45.8
+  Lambda_eff          = 2.5e-47 GeV^4  RENORMALIZED INPUT (M2; naive a0~N M^4/32pi^2~2.8e75, ratio
+                        1e122; patch-minus-medium leaves M^2 Lambda^2~4.7e35, still 82 orders over)
+  Marginal coupling   A2 is dim-0 in the z=1 completion but its run is NEGLIGIBLE (Sec 3:
+                        beta(A3)=-A3^2/16pi^2 A1). [RETRACTED were: 'beta<0 AF', a transmutation
+                        scale mu*~1e16, dilaton inflation, and n_s/r/A_s predictions.] Untuned
+                        one-loop RG (sourced coefficients only, N_s=2) gives mu* << Lambda:
+                        NO high-scale window, NO derived inflation (Sec 13.4). [RETRACTED]
+
+--------------------------------------------------------------------------------
+12. STATUS SUMMARY
+--------------------------------------------------------------------------------
+GRAVITY / COSMOLOGY SPINE -- robust:
+  Emergent metric, c_eff=1, Friedmann, Lifshitz z=2/z=1 ................ [SOLID]
+  COMPOSITE GRAVITON: massless, healthy (1/16piG>0), z=1, TT spin-2 .... [SOLID, this session]
+  Universality => c_gw=c_light, differential LV = 0 ................... [SOLID]
+  Gravitational slip & lensing (falsifiable; A3-independent at obs. k) . [SOLID struct]
+  Calibration L0, E0=hbar c/L0 (coeff 1) ............................. [SOLID]
+EMERGENT GAUGE / EM:
+  CP^1 rewrite exact; 1/e_B^2=4A2; emergent photon MASSIVE ............ [SOLID]
+  Physical MASSLESS photon / EM sector .............................. [OPEN -- not derived]
+MATTER (BARYON) SECTOR:
+  S^2 Hopf baryon FALSIFIED (E*R 19-261x off) ........................ [SOLID, neg]
+  S^3 Skyrme: right quantum numbers (spin-1/2, isospin-1/2) ........... [SOLID]
+  Induced (parameter-free) B2 -> E*R~12 (2-3x too heavy) .............. [SOLID]
+  Melting / sextic / quantization / UV-repin / hot transition: do NOT close it [SOLID, neg]
+  TREE Skyrme c4~0.028 -> E*R=4.06, graviton+cosmology intact, LI, ghost-free
+       ............................................................... [SOLID verification;
+                                                                         ANSATZ: 1 fitted param]
+LORENTZ INVARIANCE / UV:
+  A3 Lifshitz is LV; baryon-vs-LV tension ~9-13 orders in A3 .......... [SOLID]
+  Boost-Goldstone photon impossible (boosts explicitly broken) ....... [SOLID, neg]
+  Resolution: high-scale LI (non-local, ghost-free) regulator + tree Skyrme [ADOPTED]
+
+GRAVITY/COSMOLOGY [UPD 07-03] -- see Sec 13 for the full standing:
+  Induced Planck mass now EXACT quadratic (Sakharov); M fixed by Newton = 1.8e19 GeV ... [SOLID]
+  Coasting (a~L_ord) FALSIFIED (CMB acoustic x158-656, DESI BAO, Pantheon+); background is
+  induced-Einstein = LCDM by construction (chi2/dof 0.87) ........................... [SOLID]
+  Renormalized inputs in the cosmology sector: G_N (M1), Lambda_eff (M2) ............ [conceded]
+  Structure seeds: transition-sourced (defect/coarsening) FAIL (M4). The internal-dilaton
+  inflation 'repair' is RETRACTED (no derived high-scale window; Sec 13.4). M4 stands FAILED;
+  cosmological structure formation is UNSOLVED ...................................... [NEG]
+
+OVERALL: A consistent CCEF exists -- emergent-gravity spine (graviton massless/healthy/z=1,
+cosmology intact, Lorentz-invariant via a high-scale ghost-free UV completion) + one
+tree-level Skyrme coupling reproducing the nucleon mass-radius (E*R=4.06). Honest costs:
+the baryon coupling c4~0.028 (matter sector) and two renormalized cosmology inputs (G_N,
+Lambda_eff). The gravity spine required no fitting and is the strongest part of the theory;
+cosmological structure formation is UNSOLVED: transition seeds fail (M4) and the internal-
+dilaton inflation attempt is retracted (Sec 13.4).
+
+OPEN / next:
+  - Derive the physical massless photon and test if it can evade A3 (or be gauge/LI-protected).
+  - Pin the LI UV completion (non-local form factor) and verify graviton induction in it.
+  - Anisotropic-vs-LI M*^2 scaling; primordial GW prediction from the ordering transition.
+  - Whether c4 can be re-derived (emergent-vector / hidden-local-symmetry "rho" saturation)
+    to restore a parameter-free baryon mass.
+
+
+--------------------------------------------------------------------------------
+13. COSMOLOGY & INFLATION  (2026-07-03; CORRECTED 2026-07-04 -- INFLATION SECTION RETRACTED)
+--------------------------------------------------------------------------------
+Full derivations: CCEF_M2_lambda_eff.md (M2 + M4). NOTE: CCEF_inflation_dilaton.md (the
+4-check inflation writeup) is RETRACTED -- its scale and amplitude numbers were hand-fit
+(see 13.4). This section is the reference-level summary.
+
+13.1 BACKGROUND. The minimal coasting law (a ~ L_ord ~ t) is FALSIFIED at the background
+     level (CMB acoustic scale off x158-656; DESI DR2 BAO absolute shape; Pantheon+ SNe;
+     joint Dchi2=+273, lnB=-133). The surviving background is the DERIVED induced-Einstein
+     one, G_munu = 8piG <T_munu> with contents = radiation (thermalized latent heat,
+     T_init=T_c~140 MeV) + soliton/defect dark matter (Omega~0.3, needed by growth) + vacuum.
+     It reproduces LCDM by construction (the joint-MCMC LCDM control, chi2/dof 0.87, IS this
+     model). Slip eta=Sigma=1 at all observable scales; growth is GR-like. [SOLID]
+
+13.2 TWO RENORMALIZED INPUTS.
+     G_N   (M1): induced 1/16piG exact & quadratic in the LI non-local completion; M read off
+                 Newton, M = M_Pl sqrt(6pi/N_eff) ~ 1.8e19 GeV. Baryon UV-insulated (M1b).
+     Lambda_eff (M2): naive induced a0 ~ N M^4/32pi^2 ~ 2.8e75 GeV^4 (ratio 1e122). The only
+                 in-theory subtraction — patch-minus-medium (ordered patch vs eternal disordered
+                 medium) — cancels the M^4 by dof conservation, removing exactly 40 orders
+                 [(Lambda/M)^2=1.7e-40], but leaves the phase-dependent M^2 Lambda^2 ~ 4.7e35
+                 (still 82 orders over). Lambda_eff conceded as a renormalized input. NOT solved,
+                 not worsened. [SOLID / NEG]
+
+13.3 PERTURBATION ORIGIN — M4. Transition-sourced seeds (Kibble defects + Model-A coarsening)
+     are CAUSAL: forced to a blue Zel'dovich tail P(k)~k^4 (vs observed ~k^1), ~26 orders too
+     little large-scale power, plus incoherent (no acoustic peaks) and isocurvature. The
+     ordering transition CANNOT seed the observed adiabatic ~scale-invariant spectrum, and the
+     ceiling theorem + eternal-bath friction forbid inflation FROM THE FLOOR. M4 FAILS as
+     transition-seeded. [SOLID / NEG]
+
+13.4 INTERNAL-DILATON INFLATION -- [RETRACTED 2026-07-04].
+     This entry had claimed: a marginal-coupling asymptotic freedom opening a high-scale
+     near-conformal window; dimensional transmutation to mu* ~ 1e16 GeV; a Starobinsky-class
+     dilaton plateau (n_s~0.965, r~0.003, A_s~2e-9, xi~1e4); and a repair of M4. IT IS WITHDRAWN.
+     WHY: the decisive number mu* ~ 1e16 depended on an RG coefficient C ~ N_eff ~ 9 that was
+     never derived -- it was produced by choosing coherent off-diagonal operator-mixing entries
+     so a matrix eigenvalue (0.429) would land the target. That is a hand-fit, forbidden by the
+     working principle.
+     UNTUNED RESULT: using only sourced coefficients -- scalar-QED gauge term (CP^1: N_s=2) giving
+     c1=N_s/6=1/3; sphere curvature (N-2)=1; loop 1/16pi^2; the reference beta(A3) coefficient 1
+     -- and scanning the remaining O(1) constants, one gets ln(M/mu*) ~ 90-320, hence
+     mu* << Lambda in EVERY case. No high-scale window opens. This agrees with Sec 3's stated
+     'negligible run'. Reaching mu* ~ 1e16 would need an effective coefficient ~19x larger
+     (N_s ~ 38) with no derivable source.
+     STATUS: no derived inflation; M4 stands FAILED; CCEF structure formation is UNSOLVED.
+     The full operator-mixing matrix M_ij (four-deriv couplings + form-factor kernel tower +
+     dissipative response) COULD in principle change this IF its leading eigenvalue is ~0.4 --
+     but that is an UNCOMPUTED open problem, not a result, and must be derived from the action
+     with no chosen entries before any inflation claim is reinstated.
+
+13.5 OPEN ACTIONS (the inflation line is RETRACTED; these are what an HONEST revival needs):
+     A1 [decisive] derive the FULL one-loop operator-mixing matrix M_ij over {A2, A3, other
+        4-deriv, form-factor kernel tower, dissipative response} FROM THE ACTION with NO chosen
+        entries; diagonalise; check whether any leading eigenvalue reaches ~0.4. Untuned diagonal
+        result to date: mu* << Lambda (dead).
+     A2 only relevant IF A1 succeeds: is xi = (M/mu*)^2 fixed by the induction or a tuning?
+     A5 Lambda_eff remains a conceded input (M2), independent of any inflation question.
+     A6 the only currently-SUPPORTED CCEF cosmology falsifiable is the ordering-transition GW
+        background (Sec 10). The earlier r~0.003 'prediction' is retracted with the inflation.
+
+13.6 THE SEED PROBLEM -- STATUS 2026-07-04  (the one genuinely open CORE issue).
+     Framed in the ontology (Sec 0.0), not GR/QFT.
+     WHY the universe expands is SOLVED: a finite ordered patch outgrows the infinite
+     disordered medium -- mandatory, one-way, geometric, no inflaton. The expansion LAW
+     (rate) is induced-Einstein (the emergent metric responding to content), because the
+     naive front-growth law a ~ L_ord ~ t (coasting) was falsified. What is UNSOLVED is the
+     ORIGIN OF DENSITY PERTURBATIONS (galaxies, CMB acoustic peaks). Three routes, all from
+     the medium, no imports:
+       (a) TRANSITION-SEEDED (Kibble defects / Model-A coarsening): CAUSAL -> blue k^4,
+           incoherent, ~26 orders too little large-scale power. FAILS. [SOLID/NEG]
+       (b) ORDER-PARAMETER INHERITANCE (curvature ~ phi; critical correlator k^-(2-eta)):
+           n_s = eta - 1 ~ -0.96, a STEEPLY RED spectrum (far too much large-scale power).
+           WRONG SHAPE. FAILS. [computed 2026-07-04]
+       (c) STRESS-TENSOR INHERITANCE -- THE LIVE DIRECTION. The emergent metric couples to
+           T_munu (induced Einstein = CCEF's OWN derived gravity), so the curvature
+           perturbation inherits <T_munu T_rhosigma> of the medium, NOT <phi phi>. The stress
+           tensor is MARGINAL (dim = d); so if the medium is CONFORMAL (it sits at a 2nd-order
+           ordering critical point), <TT> is SCALE-INVARIANT by conformal symmetry -> n_s = 1
+           exactly, with a small red tilt from the medium's deviation from conformality
+           (trace anomaly / beta). Ontology-native: the SAME induced-Einstein structure that
+           fixes the background selects the seed operator. Places CCEF's seeds in the
+           conformal / holographic class (McFadden-Skenderis FORM), but the CFT is the CCEF
+           medium at criticality -- an OUTPUT of the continuum, not an imported dual.
+           [HYPOTHESIS: right shape for the right reason; NOT yet computed.]
+     MAKE-OR-BREAK for (c) -- both DERIVED, not tunable:
+       * TILT: compute <TT> of the S^2/O(3) medium at its critical point; n_s-1 comes from
+         the near-marginal beta and must land ~ -0.035 (small, red). Could come out blue or
+         too red -- that is the test.
+       * AMPLITUDE: A_s ~ 1/c_T needs a LARGE central charge c_T ~ 1e4-1e5 (effective medium
+         mode count) = the SAME number as N_eff (which sets G and killed the dilaton scale).
+         Three demands on one number: mutual consistency is a strong test either way.
+     This (c) is the first seed hypothesis with the correct shape for a principled reason;
+     it is the top open action for CCEF cosmology.
+
+================================================================================
+Working principle: the theory speaks for itself, right or wrong. Derive, label,
+flag every fit.   End of reference v2.1 (values updated 2026-07-03; inflation section
+RETRACTED and M4 restored to FAILED, 2026-07-04).
+================================================================================

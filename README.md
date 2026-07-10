@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20069546.svg)](https://doi.org/10.5281/zenodo.20069546)
 
 ## Please Note - Documents are being updated daily and will not match below until completion
-**Please refer to the CCEF V2 folder above for latest updates**
+**Please refer to the CCEF V2 folder or the reference.txt file above for latest updates**
 
 CCEF presents a mechanism‑driven cosmological framework built from a single constrained continuum field where matter, inertia, gravity, and cosmic expansion emerge from internal transport and response dynamics rather than geometric spacetime curvature.
 

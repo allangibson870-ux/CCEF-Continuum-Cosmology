@@ -1,0 +1,233 @@
+================================================================================
+CCEF SESSION 2026-07-17 — C1 WORKED: THE M-SECTOR LEPTON SPECTRUM
+Proposed as PART X / Sec 21 of the consolidated reference (v3.8 -> v3.9)
+================================================================================
+TASK (Part IX C1, [HIGHEST]): fix the psi chiral content, identify the protecting
+chiral symmetry, and test whether it yields e/mu/tau + neutrino masses through the
+seesaw f = sqrt(M Lam). Inputs: 17.3 (SU(2)_M candidate, [ANSATZ]), 17.7 (portal
+f = sqrt(M Lam) = 2.0e9 GeV), 20.14 (leptons = UV fermions, chiral protection).
+Everything below is CONDITIONAL on the 17.3 ansatz. Working principle observed:
+nothing tuned to a lepton mass; every fit flagged.
+
+HEADLINE: the minimal anomaly-consistent mixed multiplet is the nonet
+lambda^{a,alpha} = (flavor-vector 3_F) x (SU(2)_M adjoint 3_G), kept massless by a
+chiral U(1)_lambda that IS lepton number. Its decomposition under the surviving
+symmetries is EXACTLY the observed lepton census: THREE generations, each one
+charged Dirac fermion + one Majorana neutrino — N_g = 3 = dim(adj SU(2)_M),
+derived, not counted in. Mass scales land on the geometric ladder
+M -> f -> Lam -> Lam^2/f: charged leptons at f^2/M = Lam (exact identity;
+m_mu = 0.46 Lam), neutrinos at Lam^2/f = 0.026 eV (eq. 24 of the overview, now
+owned by a specific field). The e:mu:tau RATIOS remain [OPEN].
+
+--------------------------------------------------------------------------------
+21.1 CHIRAL CONTENT FIXED BY THE WITTEN ANOMALY                            [SOLID]
+--------------------------------------------------------------------------------
+The 17.3 fermions are flavor-vector x SU(2)_M: the flavor index a = 1,2,3 runs
+over the O(3) vector (the order-parameter flavor space; the instanton output IS
+the easy-axis in this space, so a is the n-target index). The SU(2)_M rep is then
+forced:
+  * DOUBLET RULED OUT: a flavor-vector of Weyl doublets is THREE doublets — an odd
+    number. pi_4(SU(2)) = Z_2 (Witten anomaly) makes the gauge theory INCONSISTENT.
+    The SAME Z_2 that makes the baryon a fermion (pi_4(S^3), Sec 20.4) forbids the
+    half-integer option here. No appeal to phenomenology needed.
+  * SINGLET RULED OUT: gauge singlets carry no instanton zero modes; the a<->alpha
+    locking of 17.3 (the entire point of the mixed fermions) is impossible.
+  * MINIMAL SURVIVOR: the ADJOINT. Integer isospin (Witten-safe), zero modes
+    present (index 2T(adj) = 4 per Weyl flavor -> 12 per instanton: the 't Hooft
+    vertex is (psi psi)^6, strongly irrelevant — protection is not endangered).
+CONTENT: nonet psi-type fields lambda^{a,alpha} in 3_F x 3_G, nine Weyl fermions.
+(The alpha on psi^{a,alpha} in 17.3 was already the adjoint index of Phi^alpha;
+this section shows that reading is the only consistent one.)
+
+--------------------------------------------------------------------------------
+21.2 NO-YUKAWA LEMMA (all-or-nothing tree spectrum)                        [SOLID]
+--------------------------------------------------------------------------------
+For the nonet, EVERY gauge-invariant, flavor-singlet Yukawa coupling vanishes
+identically:
+  (a) with the adjoint Higgs: the candidate is eps_{alpha beta gamma} delta_{ab}
+      lambda^{a alpha} lambda^{b beta} Phi^gamma. The Weyl bilinear is SYMMETRIC
+      under exchange of the two fermions; delta_{ab} (x) eps_{alpha beta gamma}
+      is ANTISYMMETRIC -> the term is identically zero. SU(2) has no symmetric
+      d-symbol to rescue it (d_{abc} = 0 for SU(2), unlike SU(3)).
+  (b) with any doublet scalar: 3 x 3 x 2 contains no singlet (integer x
+      half-integer). Zero.
+The ONLY flavor-singlet bilinear is the bare Majorana mass delta_{ab}
+delta_{alpha beta} lambda lambda (symmetric x symmetric: allowed).
+=> The tree spectrum of a nonet is ALL-OR-NOTHING: all nine at the bare-mass
+scale, or all nine massless if the bare mass is forbidden. No partial multiplets,
+no tree-level splitting from <Phi>. This is the structural reason the lepton
+sector arrives as a COMPLETE census (21.4) rather than field-by-field.
+NOTE (the locking vertex): one more invariant exists because antisym x antisym =
+sym:  y eps_{abc} eps_{alpha beta gamma} psi^{a alpha} psi^{b beta} Phi^gamma n^c.
+This is the perturbative vehicle of the instanton axis output: in ordinary
+diagrams it CANNOT leak the gauge vev into a flavor axis (contractions give
+eps_{abc} eps_{abc'} = 2 delta_{cc'} -> only O(3)-invariant potentials; no mixed
+flavor-gauge invariant tensor exists), consistent with 17.3's instanton-only
+transmission; in the instanton background the zero modes correlate a with alpha
+and the vertex converts <Phi> || e_3 into the flavor easy-axis. It is ALLOWED for
+the heavy psi (which do the 17.3 job) and FORBIDDEN for the light lambda by the
+same U(1)_lambda that forbids their mass (21.3) — one symmetry, two protections.
+
+--------------------------------------------------------------------------------
+21.3 THE PROTECTING SYMMETRY: U(1)_lambda = LEPTON NUMBER   [SOLID structure;
+                                                     charge bookkeeping ANSATZ]
+--------------------------------------------------------------------------------
+TWO-MULTIPLET STRUCTURE (forced by 21.2): the 17.3 sector splits into
+  * HEAVY psi^{a,alpha}: bare Majorana mass ~ M allowed; carries the locking
+    vertex; does the instanton (easy-axis) and portal jobs of 17.3/17.7 unchanged.
+  * LIGHT lambda^{a,alpha}: a chiral U(1)_lambda (lambda -> e^{i theta} lambda,
+    psi/Phi/scalars appropriately neutral) forbids BOTH the bare mass AND the
+    locking vertex.
+This is not new ontology: 20.14 already demanded new light UV fermions; this
+fixes their representation and count. Cost recorded: one additional nonet.
+PROTECTION QUALITY: U(1)_lambda is anomalous only under SU(2)_M instantons, which
+are FROZEN at S(M) = 91.6 (17.3, EW-style, no IR leak). Induced masses:
+  m ~ M e^{-S(M)} = M (Lam/M)^2 = Lam^2/M = 3.0e-21 GeV  ~  ZERO.
+The lepton lightness against M ~ 1.8e19 GeV is protected by the SAME e^{-91.6}
+that protects the gap hierarchy — one mechanism, two jobs, no tuning. This is
+precisely the "chirally protected, exactly as every SM fermion is light against
+the Planck scale" of 20.14, now with an explicit symmetry.
+IDENTIFICATION: U(1)_lambda IS lepton number. L-conservation is not imposed — it
+is the protection symmetry itself; it is broken only by (i) frozen instantons
+(negligible) and (ii) the Majorana/seesaw sector at f (21.5) -> standard
+lepton-number violation at the seesaw level, nothing else.
+
+--------------------------------------------------------------------------------
+21.4 THE LEPTON CENSUS: THREE GENERATIONS DERIVED         [SOLID given 21.1-21.3]
+--------------------------------------------------------------------------------
+Below M the gauge bosons are gone (fully Higgsed); the adjoint index alpha becomes
+an inert replication label. The surviving flavor symmetry of the melt is
+U(1)_3 x Z2 (17.3). Decompose each gauge copy of the light flavor triplet under
+U(1)_3 (rotations about the axis):
+  lambda^{+-} = (lambda^1 -+ i lambda^2)/sqrt2 : charges +-1  -> ONE CHARGED DIRAC
+                                                                 FERMION
+  lambda^{3}                                   : charge 0     -> ONE NEUTRAL
+                                                                 MAJORANA FERMION
+Three inert gauge copies (alpha = 1,2,3) => THREE identical families.
+  CENSUS: 3 x (charged Dirac + Majorana neutral) = 9 Weyl fermions
+        = 3 generations x (charged lepton + neutrino).
+This is EXACTLY the observed lepton content, including its Weyl count.
+  N_g = 3 = dim(adjoint of SU(2)_M): the generation number is the GAUGE
+  multiplicity of the light nonet — an output of 21.1, not an input.
+GENERATION-MULTIPLICITY THEOREM [SOLID]: generations could never have been a
+FLAVOR multiplicity — any O(3) representation contains at most ONE state of each
+U(1)_3 charge (charges in an ell-rep are -ell..+ell, each once), and higher reps
+add wrong states (ell = 2 predicts a doubly-charged lepton: [NEG] against
+observation). Replication had to come from a non-flavor index; the adjoint gauge
+index is the only one the 17.3 content owns. Old Task 8 (generations): from
+[OPEN] to DERIVED-within-17.3.
+CHARGE IDENTIFICATION [CONJECT, gated by C3]: U(1)_3 flavor charge <-> electric
+charge, via the right-iso-3 fiber gauging of 20.6. The parity puzzle (C3) and
+this identification stand or fall together. (Note U(1)_3 is also the DM/L3
+charge direction (16.13.2); whether lepton U(1)_3 and vorton U(1)_3 are the same
+conserved quantity or two commuting ones is part of the C3 audit.)
+
+--------------------------------------------------------------------------------
+21.5 MASS SCALES: THE GEOMETRIC LADDER, AND THE SEESAW TESTED
+                                              [SOLID scales, O(1) coefficients]
+--------------------------------------------------------------------------------
+U(1)_lambda must break for leptons to be massive at all. The theory carries
+exactly ONE flavor-singlet scale between Lam and M: the portal/seesaw scale
+f = sqrt(M Lam) = 2.0e9 GeV (the 17.7 uniqueness argument, reused verbatim).
+Assign the breaking there [ANSATZ: the portal scalar carries L]. Then:
+  * CHARGED LEPTONS: leading allowed operator is dimension-5,
+      (S^2/M) lambda lambda ,  <S> ~ f
+    =>  m_ell ~ f^2/M = Lam  EXACTLY (algebraic identity of f = sqrt(M Lam)).
+    The charged-lepton mass scale is the GAP SCALE Lam = 231 MeV, derived from
+    pure UV data {M (Newton), Lam (proton)}. Data in Lam units:
+      m_mu = 0.457 Lam  [O(1): the scale is RIGHT]
+      m_tau = 7.69 Lam  [O(1) strained; note m_tau ~ m_p = 7.66 CCEF — recorded,
+                         not claimed]
+      m_e  = 0.0022 Lam [the strain: needs the 21.6 texture]
+  * NEUTRINOS: the neutral component lambda^3 additionally couples to the heavy
+    Majorana psi sector through the same portal -> seesaw with m_D = f^2/M = Lam
+    and m_R = f:
+      m_nu = (f^2/M)^2 / f = Lam^2/f = Lam^(3/2)/M^(1/2) = 0.026 eV.
+    This REPRODUCES eq. (24) of the overview (0.03 eV vs sqrt(dm2_atm) = 0.05 eV)
+    — but the Dirac entry m_D = Lam is now DERIVED (it is f^2/M), not assumed.
+    The seesaw test of C1: PASSED at the structural level.
+  * THE LADDER: M -> f -> Lam -> m_nu is a geometric progression of ratio
+    sqrt(Lam/M) = 1.14e-10 (check: 1.77e19 -> 2.02e9 -> 0.231 -> 2.6e-11 GeV).
+    Charged leptons sit ON rung 3, neutrinos ON rung 4. Consistency:
+    m_nu/m_ell ~ Lam/f = 1.1e-10 vs observed m_nu/m_mu = 4.7e-10 — same order,
+    O(1) coefficients absorb the rest. Nothing aimed at a lepton mass.
+
+--------------------------------------------------------------------------------
+21.6 GENERATION SPLITTING: WHAT IS DERIVED, WHAT IS OPEN
+--------------------------------------------------------------------------------
+  (a) NON-DEGENERACY IS A COROLLARY OF FULL HIGGSING [SOLID]: the generation-
+      space (gauge-space) mass matrix can be built only from delta_{alpha beta},
+      u_alpha u_beta (adjoint axis), and w_alpha (the second scalar's breaking
+      direction). With u alone: eigenvalues (A, A, A+B) — an EXACT 2+1 degeneracy
+      to all orders (u u^T is idempotent up to normalization; no third invariant
+      exists). The second scalar — required INDEPENDENTLY to fully Higgs the
+      sector and freeze the instantons (17.3) — supplies w != u, and a generic
+      real symmetric matrix in {delta, uu^T, uw^T+wu^T, ww^T} has THREE distinct
+      eigenvalues. The same ingredient that protects the hierarchy splits the
+      generations. A partially-Higgsed SU(2)_M would have predicted two exactly
+      degenerate charged leptons: [NEG] avoided by structure already present.
+  (b) HIERARCHY DIRECTION [CONJECT]: if the delta-term is subleading (U(1)_lambda
+      charge assignments can force the leading operator to carry Phi insertions),
+      the matrix is rank-ordered: rank-1 (uu^T) -> tau; the w-direction lifts a
+      second state -> mu; interference/higher order -> e. Qualitatively matches
+      tau > mu >> e. Not computed.
+  (c) THE RATIOS [OPEN — the residual of C1]: e : mu : tau = 0.0022 : 0.46 : 7.7
+      (in Lam units) are eigenvalues of an O(1) matrix spread over 3.5 decades;
+      m_e is the strain. This is now the sharply-posed remnant: compute the
+      gauge-space operator set with explicit U(1)_lambda bookkeeping and the
+      't Hooft-saddle corrections (ties to 17.4 item 4). NOT a dial — the matrix
+      elements are fixed by the completion, we have not computed them.
+  (d) RADIATIVE FLOOR [flag]: heavy-W_M loops split the gauge copies by
+      ~ g^2(M)/16pi^2 x (m/M-suppressed) amounts; small, but a floor exists —
+      exact degeneracy is not a prediction even before (b).
+
+--------------------------------------------------------------------------------
+21.7 CONSISTENCY AUDIT AND HONEST COSTS
+--------------------------------------------------------------------------------
+  * Witten anomaly: adjoints exempt [SOLID]. 't Hooft vertex (lambda lambda)^6:
+    irrelevant, protection intact [SOLID].
+  * The melt is the DISORDERED phase (<n> = 0): even where operators couple
+    lambda bilinears to n, no lepton mass from the order parameter — leptons are
+    light partly BECAUSE the universe is the melt. (In the frozen ordered bulk
+    the locking-vertex structure would gap them: leptons are a melt phenomenon —
+    recorded as a curiosity, not load-bearing.)
+  * BBN/N_eff: the census adds exactly 3 light neutrinos [OK, standard]; charged
+    states are the actual e/mu/tau [OK]. No extra light species: the ninth-Weyl
+    accounting closes.
+  * COSTS (flagged): (1) one new nonet lambda beyond 17.3's psi (mandated by
+    20.14, rep now fixed); (2) U(1)_lambda charge assignments across {S, portal,
+    Phi} are bookkeeping ANSAETZE, not derived; (3) the electric-charge
+    identification rides on C3; (4) everything is conditional on 17.3 [ANSATZ].
+  * NOTHING TUNED: the two quantitative successes (m_ell-scale = Lam giving
+    m_mu = 0.46 Lam; m_nu = 0.026 eV) use ONLY pre-existing derived scales
+    {M, Lam, f = sqrt(M Lam)}; no coefficient was chosen to hit a lepton mass.
+
+--------------------------------------------------------------------------------
+21.8 WHAT MOVED (C1 scorecard)
+--------------------------------------------------------------------------------
+  GENERATIONS (old Task 8):   [OPEN] -> N_g = 3 = dim(adj SU(2)_M)  [SOLID given
+                              17.3; the census is exact]
+  FLAVOR (old Task 9):        lepton flavor = the O(3) vector under U(1)_3;
+                              charge pattern (+1,-1,0) per family derived; the
+                              generation-multiplicity theorem closes the "flavor
+                              multiplet" route permanently [SOLID/NEG]
+  MASS SPECTRUM (old Task 13): SCALES derived (m_ell ~ f^2/M = Lam;
+                              m_nu = Lam^2/f); RATIOS e:mu:tau [OPEN] (21.6c)
+  NEUTRINOS (old Task 14):    seesaw structure DERIVED (m_D = f^2/M = Lam,
+                              m_R = f); value 0.026 eV vs 0.05 eV observed;
+                              lepton-number violation localized at f
+  NEW:                        lepton number = U(1)_lambda, the protection
+                              symmetry itself [SOLID structure]
+  RANKED NEXT (replaces C1 at the top): (C1') the gauge-space mass texture —
+  compute the operator set with U(1)_lambda bookkeeping and extract e:mu:tau;
+  decisive number: m_e/m_tau = 2.9e-4 from an O(1) completion matrix. Gates:
+  C3 (charge/parity identification) unchanged; C2, C4-C7 unchanged.
+
+ONE-LINE UPDATE FOR PART IX E: matter is two-origin and the lepton half now has a
+DERIVED skeleton — nonet content forced by pi_4 Z_2 + zero modes, lightness =
+lepton number = instanton-frozen chiral U(1), THREE generations = the adjoint
+dimension, charged leptons at f^2/M = Lam, neutrinos at Lam^2/f = 0.026 eV;
+only the e:mu:tau texture is still owed.
+================================================================================
+End of session 2026-07-17 (C1). Nothing tuned; costs flagged in 21.7.
+================================================================================

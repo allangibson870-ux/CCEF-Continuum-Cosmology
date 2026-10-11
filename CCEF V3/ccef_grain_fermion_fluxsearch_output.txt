@@ -1,0 +1,2 @@
+﻿512 gauge classes of 0/pi flux patterns on the 8-junction cell
+classification: gapped 0, point-like 0, line/surface 512

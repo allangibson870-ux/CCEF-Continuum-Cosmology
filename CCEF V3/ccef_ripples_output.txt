@@ -1,0 +1,36 @@
+﻿targets: A_s = 2.1e-09 (-> Delta^2_Phi = 9.3e-10), n_s = 0.965, r < 0.036
+
+M1. Poisson (random) fluctuations in the number of grains (causal-set / everpresent-Lambda style)
+   region of 1e+10 grain lengths: delta N / N ~ 1e-15
+   region of 1e+30 grain lengths: delta N / N ~ 1e-45
+   region of 1e+60 grain lengths: delta N / N ~ 1e-90
+   -> spectrum Delta^2 ~ k^3 (white noise, n_s = 4): wrong shape, and negligible on cosmic scales  [FAILS]
+
+M2. Area-law ('holographic') thermal fluctuations frozen when non-locality ends
+   if the heat capacity of a region scales with its AREA (the same entanglement area law that gives gravity),
+   dM^2 = T^2 c (R/ell)^2 and Phi = G dM / R  ->  Phi^2 = c (T/M)^2 / (16 eta^2): INDEPENDENT of R (scale-invariant)
+   amplitude: Delta^2_Phi = 4.39 c (T_f/M)^2;  needed 9.3e-10
+   -> freeze-out temperature T_f = 2.6e+14 GeV / sqrt(c)   (c = O(1) area-law coefficient)
+   if frozen at crystallisation, T_RH ~ 0.5 M           : A_s ~ 2e+00 x c   (too big)
+   if frozen at Branch L3 switch-on, Lambda* = 7.7e10   : A_s ~ 2e-16 x c   (too small)
+   if frozen at Branch M switch-on, Lambda* >= 4e15     : A_s ~ 5e-07 x c   (too big)
+   c =  1.00: needed T_f = 2.6e+14 GeV
+   c =  0.10: needed T_f = 8.2e+14 GeV
+   c =  0.01: needed T_f = 2.6e+15 GeV
+   tilt: exactly scale-invariant at leading order. A red tilt needs larger scales to freeze slightly hotter, e.g.
+     T_f proportional to [ln(R/ell)]^2.0:  n_s - 1 = -2q/ln(R/ell) = -0.029,  running = -2.0e-04   (form assumed, not derived)
+     T_f proportional to [ln(R/ell)]^2.5:  n_s - 1 = -2q/ln(R/ell) = -0.036,  running = -2.6e-04   (form assumed, not derived)
+   status: right SHAPE naturally; amplitude fixes the freeze-out scale; tilt not derived  [PARTIAL]
+
+M3. Roughness of the crystallisation front (arrival-time delays, zeta = H dt)
+   2-D front in 3-D space: Edwards-Wilkinson growth -> log-rough -> scale-invariant (!);
+   KPZ growth (the generic case) -> roughness exponent ~0.39 -> n_s - 1 ~ -0.78 (far too red); KPZ is also non-Gaussian
+   anisotropy: a mode of transverse size L stays correlated over a distance ~ v L^2/nu along the growth direction;
+   for cosmic L ~ 1e+60 ell that is ~1e+60 times longer than wide -> extreme statistical anisotropy
+   amplitude: H ~ M at crystallisation, so zeta = H dt ~ 1 unless the front is smoother than ~5e-5 Planck times per scale
+   status: shape possible (EW), but anisotropy and non-Gaussianity rule out a single propagating front  [FAILS]
+
+SUPER-HORIZON COHERENCE: correlations must exist before the hot phase on scales far beyond c*t.
+   CCEF: the pre-geometric tangle is non-local (everything a few links from everything) -> satisfied by M1-M3 setups.
+TENSORS: thermal area-law mechanisms (string-gas precedent) predict a slightly BLUE tensor tilt (n_t ~ -(n_s-1) > 0),
+   unlike inflation's red tilt; a distinctive test if r is ever measured.

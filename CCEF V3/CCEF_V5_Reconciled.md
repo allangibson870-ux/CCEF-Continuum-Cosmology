@@ -183,7 +183,8 @@ Constant G means constant ℓ, so expansion requires recruiting grains. A finite
    - grains are qubit-relations, joined at 4-grain junctions;
    - Ĥ = geometry (rings − crowding − over-connection) + rewiring + spin-ice Gauss law + exchange;
    - Monte Carlo: rings alone crumple space; with no-crowding (W ≥ 4), random relations self-assemble to locally exact 3-D diamond (glassy);
-   - light = quantum-spin-ice photon (crossover switch-on); Λ*/M from J_±/J_zz ≈ 7×10⁻⁴.
+   - light = quantum-spin-ice photon (crossover switch-on); ~~Λ*/M from J_±/J_zz ≈ 7×10⁻⁴~~ (retracted: J_ring ~ M by unit consistency, `CCEF_reheat.md`).
+   - **Reheating:** crystallisation latent heat gives T_RH ≈ 10¹⁹ GeV; space re-melts unless the geometry coupling is ≳ 0.1 M. Consequences: the Janus-state CP phase is erased; ΔN_eff ≈ 0.14–0.19.
 
    Open: α, SU(2)×SU(3), light fermions, graviton.
    **Electrons added** (`CCEF_grain_electrons.md`):
@@ -194,6 +195,10 @@ Constant G means constant ℓ, so expansion requires recruiting grains. A finite
    - three-generation reading [CONJECT].
 
    Open: chirality (mirror gapping, needs ν^c), Higgs-linked masses, a common speed with light.
+   **Ground state** (`CCEF_geometry_groundstate.md`, 2026-10-12):
+   - as written, refuted: tiny tori Z³/3Z³ reach −18 (= proven bound) vs diamond −12, so the true ground state is crumpled;
+   - with the angle rule (≤ 2 rings per grain-pair) E/N ≥ −12 is proved and diamond is a ground state (unique in the exhaustive folded family; polytypes excluded by θ);
+   - kinetics: classical annealing, simulated quantum annealing, staged and ramped schedules all freeze at ≈ −7 (extended defects; no downhill 2-move paths). Quantum rewiring does not help.
 4. **Primordial spectrum without inflation:** both amplitude and tilt (now strongly constrained by the running relation).
 5. **The photon fork:** realise Fork B's string-net photon, or resolve Fork A's phase contradiction.
 6. **Recalibrate the hadronic EFT** to the vector-meson spectrum, and recompute v3.9's HLM numbers and the 17.5 lock with the corrected mass.

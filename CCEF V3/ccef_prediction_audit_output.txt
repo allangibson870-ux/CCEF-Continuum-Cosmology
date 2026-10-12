@@ -1,0 +1,57 @@
+﻿0. FREEZE-RECORD INTEGRITY (recorded SHA-256 vs files on disk)
+   CCEF_DESI_prereg_hash.txt                CCEF_DESI_preregistration.md: ok; ccef_recruitment_prediction.json: ok; ccef_recruitment_w.py: ok
+   CCEF_dark_matter_prereg_hash.txt         ccef_dark_matter.py: ok; ccef_dark_matter_output.txt: ok
+   CCEF_dirac_neutrino_prereg_hash.txt      ccef_dirac_neutrino.py: ok; ccef_dirac_neutrino_output.txt: ok
+   CCEF_length_noise_prereg_hash.txt        ccef_length_noise.py: ok; ccef_length_noise_prediction.json: ok
+   CCEF_numass_fit_prereg_hash.txt          ccef_numass_fit.py: ok
+   CCEF_proton_decay_prereg_hash.txt        ccef_proton_decay.py: ok; ccef_proton_decay_prediction.json: ok
+   CCEF_s8_prereg_hash.txt                  ccef_s8_lensing.py: ok; ccef_s8_lensing_output.txt: ok; ccef_s8_prediction.json: ok
+
+1. GRAIN SCALE  (l = sqrt(N_eff/6 pi) l_P, M = hbar c / l)
+   assumed (frozen)         N_eff =   9: l = 1.12e-35 m, M = 1.77e+19 GeV
+   computed, no mirrors     N_eff = 278: l = 6.21e-35 m, M = 3.18e+18 GeV
+   computed, full content   N_eff = 495: l = 8.28e-35 m, M = 2.38e+18 GeV
+
+2. BRANCH L3: crossover Lambda* = M y^(2/3) (Dirac dilution, p = 3/2, c = 1)  ->  axion f_a = Lambda*
+   assumed (frozen)         Lambda* = 7.7e+10 GeV (1e+10-4e+11);  m_a =    74 micro-eV (14-398),   18 GHz (3-96);  misalignment Omega h^2 = 0.0387 (strings x3)
+   computed, no mirrors     Lambda* = 1.4e+10 GeV (3e+09-7e+10);  m_a =   411 micro-eV (76-2212),   99 GHz (18-535);  misalignment Omega h^2 = 0.0053 (strings x23)
+   computed, full content   Lambda* = 1.0e+10 GeV (2e+09-6e+10);  m_a =   548 micro-eV (101-2951),  133 GHz (25-714);  misalignment Omega h^2 = 0.0038 (strings x32)
+   frozen: m_a = 74 micro-eV (14-400), 3.4-100 GHz.  Post-inflation DM windows quoted in the frozen code:
+   40-180 (Buschmann+22), 95-450 (Saikawa+24), >~500 micro-eV (Gorghetto+21)
+   Lorentz gamma_min = 23/log10(M/Lambda*) is unchanged (M/Lambda* = y^(-2/3) is fixed)
+
+3. REHEATING AND RELIC RADIATION
+   assumed (frozen)         T_RH ~ 5.3e+18 - 3.4e+19 GeV;  gravitons thermalise only above ~3.1e+19 GeV -> marginal;  black-hole remnant mass ~ M = 31.5 micro-g
+   computed, no mirrors     T_RH ~ 9.5e+17 - 6.0e+18 GeV;  gravitons thermalise only above ~3.1e+19 GeV -> NO;  black-hole remnant mass ~ M = 5.7 micro-g
+   computed, full content   T_RH ~ 7.1e+17 - 4.5e+18 GeV;  gravitons thermalise only above ~3.1e+19 GeV -> NO;  black-hole remnant mass ~ M = 4.2 micro-g
+   nu^c Delta N_eff = 0.14 needs only T_RH >> Lambda* (ratio unchanged) -> UNCHANGED; the '+0.05 thermal
+   graviton' increment (0.14 -> 0.19) becomes doubtful
+
+4. BRANCH M (Lambda* fixed by neutrino masses = v^2/m3, independent of M)
+   assumed (frozen)         ripples A_s = (9/4) c (Lambda*/M)^2/(16 eta^2) needs area-law coefficient c = 0.182;  Lorentz gamma >= 5.15
+   computed, no mirrors     ripples A_s = (9/4) c (Lambda*/M)^2/(16 eta^2) needs area-law coefficient c = 5.618;  Lorentz gamma >= 6.18
+   computed, full content   ripples A_s = (9/4) c (Lambda*/M)^2/(16 eta^2) needs area-law coefficient c = 10.004;  Lorentz gamma >= 6.40
+   proton decay (tau depends on Lambda* only), Majorana anarchy, m_bb, leptogenesis: UNCHANGED
+
+5. PROTON-DECAY FREEZE ROWS (tau = 8.7e35 yr (Lambda*/1e16)^4, C = 1; Super-K limit 2.4e34 yr)
+   assumed (frozen)         gamma = 3: 2e+18 yr, gamma = 5: 3e+30 yr, neutrino link: 1e+31 yr, SM at grain scale: 8e+48 yr
+   computed, no mirrors     gamma = 3: 2e+15 yr, gamma = 5: 4e+27 yr, neutrino link: 1e+31 yr, SM at grain scale: 9e+45 yr
+   computed, full content   gamma = 3: 6e+14 yr, gamma = 5: 1e+27 yr, neutrino link: 1e+31 yr, SM at grain scale: 3e+45 yr
+   verdicts unchanged: Mechanism-A rows excluded either way; grain-scale row unobservable either way
+
+6. FINITE VOLUME / DARK-ENERGY MAGNITUDE  (rho_L ~ beta / (l^2 sqrt V4); L_max = A(N) beta^(2/3) D_LSS)
+   assumed (frozen)         median L_max = 1.042 D_LSS;  P(L_max >= 1 D_LSS) = 5.26e-01;  rho_L for a fixed 4-volume x1.000 of the frozen value
+   computed, no mirrors     median L_max = 0.106 D_LSS;  P(L_max >= 1 D_LSS) = 1.66e-85;  rho_L for a fixed 4-volume x0.032 of the frozen value
+   computed, full content   median L_max = 0.072 D_LSS;  P(L_max >= 1 D_LSS) = 9.58e-267;  rho_L for a fixed 4-volume x0.018 of the frozen value
+   frozen: 'finite volume ~(1-1.5 D_LSS)^3'.  With N_eff ~ 500 the same formula forces a universe ~0.07 D_LSS
+   across, which existing CMB topology searches exclude; equivalently the everpresent-Lambda magnitude falls
+   ~55x short for an observed-size universe.
+
+7. LENGTH NOISE
+   Channel A (KPZ paths, dL ~ l (L/l)^chi, chi = 0.24): amplitude x4.6 - still far below any test
+   Channel A (KPZ paths, dL ~ l (L/l)^chi, chi = 0.33): amplitude x3.8 - still far below any test
+   Channel B (Verlinde-Zurek, <dL^2> = c_B l_P L): uses the Planck length, not l -> UNCHANGED (GQuEST row)
+
+8. INDEPENDENT OF l / M / N_eff (no change): no phantom crossing and the recruitment w(z) locus; f sigma8;
+   S8; Branch L3 no proton decay / no 0nubb / normal ordering; sum m_nu = 72 meV, m_beta = 12.5 meV;
+   Delta N_eff = 0.14 (nu^c); hybrid asymmetric dark matter 2.5-10 GeV

@@ -1,0 +1,4 @@
+﻿big seed: 62% of junctions in registry; registry front 144 junctions
+  template size 1: 120 trials, swaps per move ~2.0; dE median +0, min -52; fraction downhill 0.38
+  template size 2: 120 trials, swaps per move ~7.9; dE median -25, min -112; fraction downhill 0.77
+  template size 3: 120 trials, swaps per move ~25.6; dE median -62, min -194; fraction downhill 0.89

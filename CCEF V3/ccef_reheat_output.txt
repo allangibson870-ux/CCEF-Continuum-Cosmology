@@ -1,0 +1,27 @@
+﻿latent heat per junction (units of K): random tangle -0.12 -> crystal -12: dE = 11.9;  relaxed glass -8.4 -> -12: dE = 3.6
+junction density n_J = 0.65 / ell^3
+
+ kappa = K/M     g*   T_RH (GeV), dE = 3.6 .. 12     T_RH / Lambda*      T_RH / K  (melts space if >~ 2.7)
+     1.0e+00      2     2.4e+19 ..   3.3e+19         3.2e+08 ..   4.2e+08     1.4e+00 ..   1.9e+00
+     1.0e+00    107     9.0e+18 ..   1.2e+19         1.2e+08 ..   1.6e+08     5.1e-01 ..   6.8e-01
+     1.0e+00   1000     5.1e+18 ..   6.9e+18         6.7e+07 ..   9.0e+07     2.9e-01 ..   3.9e-01
+     1.0e-01      2     1.4e+19 ..   1.8e+19         1.8e+08 ..   2.4e+08     7.7e+00 ..   1.0e+01
+     1.0e-01    107     5.0e+18 ..   6.8e+18         6.6e+07 ..   8.8e+07     2.9e+00 ..   3.9e+00
+     1.0e-01   1000     2.9e+18 ..   3.9e+18         3.7e+07 ..   5.1e+07     1.6e+00 ..   2.2e+00
+     4.4e-09      2     2.0e+17 ..   2.7e+17         2.6e+06 ..   3.5e+06     2.5e+06 ..   3.4e+06
+     4.4e-09    107     7.3e+16 ..   9.9e+16         9.5e+05 ..   1.3e+06     9.4e+05 ..   1.3e+06
+     4.4e-09   1000     4.2e+16 ..   5.6e+16         5.4e+05 ..   7.3e+05     5.4e+05 ..   7.2e+05
+     1.0e-20      2     2.4e+14 ..   3.3e+14         3.2e+03 ..   4.2e+03     1.4e+15 ..   1.9e+15
+     1.0e-20    107     9.0e+13 ..   1.2e+14         1.2e+03 ..   1.6e+03     5.1e+14 ..   6.8e+14
+     1.0e-20   1000     5.1e+13 ..   6.9e+13         6.7e+02 ..   9.0e+02     2.9e+14 ..   3.9e+14
+     1.0e-32      2     2.4e+11 ..   3.3e+11         3.2e+00 ..   4.2e+00     1.4e+24 ..   1.9e+24
+     1.0e-32    107     9.0e+10 ..   1.2e+11         1.2e+00 ..   1.6e+00     5.1e+23 ..   6.8e+23
+     1.0e-32   1000     5.1e+10 ..   6.9e+10         6.7e-01 ..   9.0e-01     2.9e+23 ..   3.9e+23
+
+T_RH would stay below Lambda* only if kappa < 2e-33 (K < 3e-14 GeV per junction)
+no re-melting (T_RH <= 2.7 K) requires kappa >= 0.16  (g* = 107)
+no re-melting (T_RH <= 2.7 K) requires kappa >= 0.08  (g* = 1000)
+
+Consequences if kappa ~ 1 (natural): T_RH ~ 0.3 - 0.9 M ~ 1e18 - 1e19 GeV (~1e31 - 1e32 K)
+   right-handed neutrinos (3 Weyl)  thermalised then decoupled above Lambda*: Delta N_eff = 0.141
+   gravitons (2 bosonic)            thermalised then decoupled above Lambda*: Delta N_eff = 0.054

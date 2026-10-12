@@ -1,0 +1,29 @@
+﻿PART 1. VALLEYS AS GENERATIONS
+   conventional 8-site cell at k = 0: 12 zero modes (3 valleys x 4 Dirac components)
+   primitive translations split them into 3 valleys of sizes [4, 4, 4]
+   Dirac mass terms for 3 flavours: 18 (expected 18 = 9 P-even + 9 P-odd)
+   inversion-even (P-even, 'A') masses: 9;  inversion-odd ('B', the theta-bar direction): 9
+   (a) uniform bond-direction distortions (FCC-periodic)          mass span  3/18 (P-even 3/9, P-odd 0/9); valley mixing no
+   (b) 8-site-periodic, inversion- and T-symmetric                mass span  6/18 (P-even 6/9, P-odd 0/9); valley mixing YES
+   (c) 8-site-periodic, inversion-symmetric, incl. complex (T-odd) mass span  9/18 (P-even 9/9, P-odd 0/9); valley mixing YES
+   (d) 8-site-periodic, everything                                mass span 18/18 (P-even 9/9, P-odd 9/9); valley mixing YES
+   reading: P-even span 9/9 = a general HERMITIAN 3x3 flavour matrix (3 masses + 3 angles + phases) with
+   theta-bar = arg det M = 0 automatically when the P-odd part is absent (the strong-CP parity solution)
+
+PART 2. EDGE ENTANGLEMENT OF THE SU(2) AND SU(3) RELATION BUNDLES
+   free lattice gauge field on the diamond (hexagon plaquettes): c_E = <Pi^2> per link = 0.8520 (L=3), 0.8529 (L=4)
+   group    g^2  link states   H(p)   <ln dim R>   edge/link   <C2> reached
+   SU(2)   0.25        2e+02    1.59       1.68       3.26        8.1 /  10.2
+   SU(2)   0.25        2e+03    2.31       1.68       4.00       10.2 /  10.2
+   SU(2)   0.40        2e+02    1.79       1.52       3.31        6.4 /   6.4
+   SU(2)   0.40        2e+03    2.09       1.46       3.54        6.4 /   6.4
+   SU(3)   0.25        3e+04    2.69       3.76       6.46       13.8 /  27.3
+   SU(3)   0.25        6e+06    4.23       4.64       8.87       27.3 /  27.3
+   SU(3)   0.40        3e+04    2.69       3.76       6.46       13.8 /  17.1
+   SU(3)   0.40        6e+06    3.81       3.96       7.77       17.1 /  17.1
+   per cut relation: SU(2)+SU(3) edge 9.7-12.9 nats (crude bound was up to 25.6)
+   -> eta_g(edge, non-abelian) = 5.23-7.95  (N_ent 395-600; correlation factor 0.87 applied at the low end)
+
+UPDATED N_ent (valleys = generations; fields + U(1) edge + non-abelian edge):
+   low  : eta_g = 11.64  N_ent =   878  l = 6.82 l_P  M = 1.79e+18 GeV
+   high : eta_g = 14.36  N_ent =  1083  l = 7.58 l_P  M = 1.61e+18 GeV

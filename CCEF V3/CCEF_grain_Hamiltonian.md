@@ -51,7 +51,10 @@ On the diamond relational graph, Ĥ_ice + Ĥ_ex is exactly **quantum spin ice**.
   - a stable phase for J_±/J_zz ≲ 0.05;
   - entry into the Coulomb liquid by **thermal crossover**, as quantum Monte Carlo reports.
 - **The monopole condition is met.** Light "switches on gently", which is the condition `CCEF_monopole_problem.md` needed.
-- **The hierarchy:** with M ↔ J_zz and Λ* ↔ J_ring, Λ*/M = 4.4×10⁻⁹ requires **J_±/J_zz ≈ 7×10⁻⁴**. The enormous ratio between the grain and crossover scales comes from **a cube of one modest small number**, deep inside the Coulomb phase.
+- ~~**The hierarchy:** with M ↔ J_zz and Λ* ↔ J_ring, Λ*/M = 4.4×10⁻⁹ requires J_±/J_zz ≈ 7×10⁻⁴.~~ **[RETRACTED 2026-10-12, `CCEF_reheat.md`]**
+  - The emergent light speed is c ~ J_ring·a, so with grain spacing a = ℓ the ring scale must be J_ring ~ ħc/ℓ = M, not Λ*.
+  - The cubed ratio only makes the bare Gauss-law charges super-Planckian (J_zz ≫ M).
+  - The M/Λ* hierarchy is unexplained.
 - **Consistency:** square-ring exchange would appear at second order (≈ 10⁻⁶ M ≈ 2×10¹³ GeV) and would favour crumpling. The no-crowding penalty U must exceed that, and U ~ M does.
 
 ## 4. Scorecard
@@ -62,16 +65,16 @@ On the diamond relational graph, Ĥ_ice + Ĥ_ex is exactly **quantum spin ice**.
 | Emergent photon (U(1)) | ✅ known physics of quantum spin ice on this graph |
 | 3-D space from random relations | ✅ **locally**: needs the no-crowding/no-over-connection terms. ⚠️ glassy (defected polycrystal), ground state not proven |
 | Gentle switch-on of light (monopoles) | ✅ crossover in quantum spin ice |
-| Λ*/M hierarchy | ✅ from J_±/J_zz ≈ 7×10⁻⁴, cubed |
+| Λ*/M hierarchy | ❌ unexplained (the "cubed ratio" claim was retracted: J_ring ~ M by unit consistency) |
 | Fine-structure constant | ❌ quantum spin ice's emergent α ≈ 0.08 (literature, from memory); hypercharge needs α_Y(Λ*) ≈ 0.013 [OPEN] |
-| SU(2) × SU(3) | ❌ not yet. Route: bundles of grains per relation (rishon quantum-link construction) |
+| SU(2) × SU(3) | ✅ built via rishon quantum links on grain-made fermions (`CCEF_nonabelian.md`; exact small-system checks). Needs ~20–50 grains per relation for the real couplings; large-scale dynamics not simulated |
 | Light charged fermions (electrons, quarks) | ❌ spin-ice charges are heavy bosons. Route: Levin–Wen 2003 lattice-spin models with emergent fermions as string ends |
 | A single speed of light for all species | ⚠️ one photon speed; matter needs V5 Mechanism A |
 | Lorentz symmetry vs a crystal lattice | ⚠️ a perfect diamond is a preferred frame. The glassy/defected outcome may actually help ("random grains") [OPEN] |
-| Gravity (Jacobson area law) | ⚠️ a local Ĥ gives area-law entanglement (compatible); a graviton from Γ-fluctuations is not shown |
+| Gravity (Jacobson area law) | ⚠️ a local Ĥ gives area-law entanglement (compatible). **Graviton** (`CCEF_graviton.md`): background independence forces the linearised Einstein energy and exactly 2 helicity-2 waves; the extra scalar needs a *local* time constraint at every junction (not yet in Ĥ) |
 
 ## Bottom line
 - This version builds, from **one type of qubit-relation**, a Hamiltonian whose low-energy world is 3-D space with light in it.
-- It explains the 10⁹ gap between the grain scale and the crossover as a cubed small coupling, and it meets the "gentle switch-on" condition the monopole analysis needed.
+- It meets the "gentle switch-on" condition the monopole analysis needed. *(An earlier claim that it also explains the 10⁹ gap between grain and crossover scales was retracted on unit-consistency grounds; see `CCEF_reheat.md`.)*
 - The numerics show **3-D is not automatic**: a pure light term crumples space. The extra ingredient is a rule against crowding and over-connection.
 - Still missing: the weak and strong forces, light charged matter, the right value of α, and gravity's graviton.

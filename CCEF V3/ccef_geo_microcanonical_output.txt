@@ -1,0 +1,45 @@
+﻿TINY seed, 1,728 junctions, light starts cold; energy conserved (geometry + light)
+
+light modes per junction c=1   (85 s; total-energy drift -3.6e-12)
+       0 star moves (accepted    0): E_geo/N =   -0.030  in registry   0.5%  perfect   0.0%   light temperature T =  0.000
+     625 star moves (accepted  426): E_geo/N =   -8.634  in registry  79.7%  perfect  38.2%   light temperature T =  8.604
+    1250 star moves (accepted  543): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T = 11.970
+    1875 star moves (accepted  549): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T = 11.970
+    2500 star moves (accepted  552): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T = 11.970
+    3125 star moves (accepted  554): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T = 11.970
+    3750 star moves (accepted  557): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T = 11.970
+    4375 star moves (accepted  559): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T = 11.970
+    5000 star moves (accepted  561): E_geo/N =  -11.958  in registry  99.8%  perfect  97.7%   light temperature T = 11.928
+
+light modes per junction c=3   (89 s; total-energy drift -3.6e-12)
+       0 star moves (accepted    0): E_geo/N =   -0.030  in registry   0.5%  perfect   0.0%   light temperature T =  0.000
+     625 star moves (accepted  414): E_geo/N =   -8.804  in registry  81.1%  perfect  39.8%   light temperature T =  2.925
+    1250 star moves (accepted  517): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  3.990
+    1875 star moves (accepted  517): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  3.990
+    2500 star moves (accepted  517): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  3.990
+    3125 star moves (accepted  517): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  3.990
+    3750 star moves (accepted  517): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  3.990
+    4375 star moves (accepted  517): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  3.990
+    5000 star moves (accepted  517): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  3.990
+
+light modes per junction c=9   (89 s; total-energy drift +7.3e-12)
+       0 star moves (accepted    0): E_geo/N =   -0.030  in registry   0.5%  perfect   0.0%   light temperature T =  0.000
+     625 star moves (accepted  374): E_geo/N =   -7.807  in registry  73.1%  perfect  35.5%   light temperature T =  0.864
+    1250 star moves (accepted  518): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  1.330
+    1875 star moves (accepted  518): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  1.330
+    2500 star moves (accepted  518): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  1.330
+    3125 star moves (accepted  518): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  1.330
+    3750 star moves (accepted  518): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  1.330
+    4375 star moves (accepted  518): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  1.330
+    5000 star moves (accepted  518): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  1.330
+
+light modes per junction c=30   (89 s; total-energy drift +0.0e+00)
+       0 star moves (accepted    0): E_geo/N =   -0.030  in registry   0.5%  perfect   0.0%   light temperature T =  0.000
+     625 star moves (accepted  389): E_geo/N =   -7.844  in registry  74.2%  perfect  31.8%   light temperature T =  0.260
+    1250 star moves (accepted  529): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  0.399
+    1875 star moves (accepted  529): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  0.399
+    2500 star moves (accepted  529): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  0.399
+    3125 star moves (accepted  529): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  0.399
+    3750 star moves (accepted  529): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  0.399
+    4375 star moves (accepted  529): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  0.399
+    5000 star moves (accepted  529): E_geo/N =  -12.000  in registry 100.0%  perfect 100.0%   light temperature T =  0.399

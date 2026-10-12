@@ -1,0 +1,16 @@
+﻿Physical (freely moving) modes of an emergent symmetric tensor on the grains, plane wave K, |K| = 1 and 2
+
+DIFF: 1 independent first-derivative potentials invariant under it
+   potential (a, b, c, d) = [ 0.25 -0.5   0.5  -0.25]
+      helicity 0: omega^2 = -0.250  -> UNSTABLE (omega^2 < 0)
+      helicity 2: omega^2 = +0.250  -> wave, omega^2 grows x4 when k doubles -> omega ~ k
+      helicity 2: omega^2 = +0.250  -> wave, omega^2 grows x4 when k doubles -> omega ~ k
+
+TDIFF+WEYL: 1 independent first-derivative potentials invariant under it
+   potential (a, b, c, d) = [ 0.25   -0.5     0.3333 -0.1389]
+      helicity 0: omega^2 = -0.083  -> UNSTABLE (omega^2 < 0)
+      helicity 2: omega^2 = +0.250  -> wave, omega^2 grows x4 when k doubles -> omega ~ k
+      helicity 2: omega^2 = +0.250  -> wave, omega^2 grows x4 when k doubles -> omega ~ k
+
+DIFF+WEYL: 0 independent first-derivative potentials invariant under it
+   none -> no relativistic (k^2) energy exists; only higher-derivative (non-relativistic) dynamics

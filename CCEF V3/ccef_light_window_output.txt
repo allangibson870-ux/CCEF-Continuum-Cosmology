@@ -1,0 +1,33 @@
+﻿1. LIGHT EXISTS ONLY FOR x = J_pm/J_zz < x_c ~ 0.052 (quantum spin ice Coulomb phase, QMC; |J_perp|/J < 0.104)
+   x = 0.052: R = J_zz/J_ring =    593;  median L_max = 1.93 / 2.07 / 2.20 D_LSS (n = 25 / 31 / 37)  <- edge of the photon phase
+   x = 0.040: R = J_zz/J_ring =   1302;  median L_max = 2.51 / 2.69 / 2.86 D_LSS (n = 25 / 31 / 37)
+   x = 0.030: R = J_zz/J_ring =   3086;  median L_max = 3.34 / 3.59 / 3.81 D_LSS (n = 25 / 31 / 37)
+   x = 0.020: R = J_zz/J_ring =  10417;  median L_max = 5.01 / 5.38 / 5.71 D_LSS (n = 25 / 31 / 37)
+   -> wherever light exists, the rishon-splitting universe is >~ 1 D_LSS: the rescue condition is the photon's own
+      existence condition, not an extra tuning.  Prediction (N_ent = 495): L ~ 2.1 (x_c / x) D_LSS; with N_ent
+      880-1080 (CCEF_valleys_edges.md) the edge value is 1.2-1.4 D_LSS: still >~ 1 D_LSS wherever light exists
+
+2a. SPEED: charges hop at first order (J_pm), light is third-order ring exchange (J_ring = 12 J_pm^3/J_zz^2)
+    x = 0.052: charge hopping / light scale = 1/(12 x^2) =  30.8
+    x = 0.030: charge hopping / light scale = 1/(12 x^2) =  92.6
+    -> spin-ice charges are generically FASTER than spin-ice light (they Cherenkov-radiate; known in the QSI
+       literature).  Electrons that are bare spin-ice charges would break the one-light-cone requirement.
+
+2b. MOTT: grain electron (spin-1/2 FKM, lambda = 1/4, t = 1), 32768 k-points; half filling check: 2.00 filled bands of 4
+    staggered (A up, B down)   sigma_x: chi = 0.404 per site -> mean-field U_c =  4.95 t
+    staggered (A up, B down)   sigma_y: chi = 0.404 per site -> mean-field U_c =  4.95 t
+    staggered (A up, B down)   sigma_z: chi = 0.404 per site -> mean-field U_c =  4.95 t
+    uniform (ferro)            sigma_x: chi = 0.136 per site -> mean-field U_c = 14.68 t
+    uniform (ferro)            sigma_y: chi = 0.136 per site -> mean-field U_c = 14.68 t
+    uniform (ferro)            sigma_z: chi = 0.136 per site -> mean-field U_c = 14.68 t
+    lowest mean-field U_c = 4.95 t (mean field underestimates U_c; true value likely 1.5-2x larger)
+    the charge cost in spin ice (J_zz Q^2/2) acts as an on-site repulsion U ~ J_zz between two charges on one
+    junction (O(1) factor depends on the spin-1/2 encoding); charge hopping t ~ J_pm:
+    x = 0.052: U/t ~ 1/x =  19.2  vs U_c ~ 5.0-9.9  -> MOTT INSULATOR (electrons gapped)
+    x = 0.030: U/t ~ 1/x =  33.3  vs U_c ~ 5.0-9.9  -> MOTT INSULATOR (electrons gapped)
+    with one light cone imposed (t matched to light, t ~ J_ring): U/t ~ J_zz/J_ring = R >~ 590 -> deeper still
+
+VERDICT: the photon phase automatically delivers the rishon-splitting rescue (good), but in that same phase
+electrons built as bare spin-ice charges are too fast AND Mott-gapped (bad).  The electron construction must change:
+matter as separate constituents of the relation bundle, with the Gauss law div E = rho (no on-site J_zz penalty)
+and a gauge-covariant hop whose speed matches light.

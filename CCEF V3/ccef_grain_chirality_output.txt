@@ -1,0 +1,45 @@
+﻿cluster: 16 grains, 8 junctions, Sz=0 sector dim 12870
+
+Jpm = +0.05 (ring scale ~ 1.5e-03)  [35s]
+   lowest energies [-4.2686 -4.1716 -4.1716 -4.1716 -4.1716 -4.1716]; ground degeneracy 1
+   ground state: <chi_t^2> = 0.408; UNIFORM (CP-odd) S = 0.22; STAGGERED (CP-even) S = 0.22   (1 = uncorrelated, 8 = all junctions locked)
+   uniform chirality X within ground space: [0.]
+   T ~ 1.746: uniform S = 1.01, staggered S = 1.00
+   T ~ 0.454: uniform S = 1.00, staggered S = 1.00
+   T ~ 0.206: uniform S = 0.99, staggered S = 0.99
+   T ~ 0.098: uniform S = 0.94, staggered S = 0.94
+   T ~ 0.050: uniform S = 0.82, staggered S = 0.82
+   T ~ 0.020: uniform S = 0.33, staggered S = 0.33
+
+Jpm = -0.05 (ring scale ~ 1.5e-03)  [36s]
+   lowest energies [-4.1575 -4.1156 -4.1156 -4.1156 -4.1156 -4.1156]; ground degeneracy 1
+   ground state: <chi_t^2> = 1.394; UNIFORM (CP-odd) S = 0.04; STAGGERED (CP-even) S = 0.04   (1 = uncorrelated, 8 = all junctions locked)
+   uniform chirality X within ground space: [-0.]
+   T ~ 1.724: uniform S = 1.01, staggered S = 1.00
+   T ~ 0.448: uniform S = 1.01, staggered S = 1.00
+   T ~ 0.203: uniform S = 0.99, staggered S = 0.99
+   T ~ 0.102: uniform S = 0.96, staggered S = 0.96
+   T ~ 0.050: uniform S = 0.88, staggered S = 0.88
+   T ~ 0.020: uniform S = 0.61, staggered S = 0.61
+
+Jpm = -0.15 (ring scale ~ 4.0e-02)  [34s]
+   lowest energies [-4.9429 -4.7851 -4.7851 -4.7851 -4.7851 -4.712 ]; ground degeneracy 1
+   ground state: <chi_t^2> = 1.738; UNIFORM (CP-odd) S = 0.01; STAGGERED (CP-even) S = 0.01   (1 = uncorrelated, 8 = all junctions locked)
+   uniform chirality X within ground space: [0.]
+   T ~ 1.890: uniform S = 1.01, staggered S = 1.00
+   T ~ 0.494: uniform S = 1.00, staggered S = 1.00
+   T ~ 0.202: uniform S = 0.90, staggered S = 0.91
+   T ~ 0.101: uniform S = 0.68, staggered S = 0.68
+   T ~ 0.050: uniform S = 0.30, staggered S = 0.30
+   T ~ 0.020: uniform S = 0.02, staggered S = 0.02
+
+Jpm = -0.50 (ring scale ~ 1.5e+00)  [34s]
+   lowest energies [-8.8091 -8.4407 -8.4407 -8.4407 -8.4407 -7.9144]; ground degeneracy 1
+   ground state: <chi_t^2> = 1.878; UNIFORM (CP-odd) S = 0.01; STAGGERED (CP-even) S = 0.01   (1 = uncorrelated, 8 = all junctions locked)
+   uniform chirality X within ground space: [0.]
+   T ~ 2.738: uniform S = 1.02, staggered S = 1.01
+   T ~ 0.489: uniform S = 0.94, staggered S = 0.93
+   T ~ 0.199: uniform S = 0.60, staggered S = 0.60
+   T ~ 0.100: uniform S = 0.28, staggered S = 0.28
+   T ~ 0.050: uniform S = 0.05, staggered S = 0.05
+   T ~ 0.025: uniform S = 0.01, staggered S = 0.01

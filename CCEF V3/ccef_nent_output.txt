@@ -1,0 +1,32 @@
+﻿A. PER-FIELD AREA-LAW COEFFICIENTS eta_g (per grain area l^2 = 3), exact Gaussian states, two cuts per slab
+   (001)                              grains cut per l^2 = 0.750:  scalar 0.0288 (0.0384 per cut grain)   grain Dirac fermion 0.3599 (0.480 per cut grain)
+   (110)                              grains cut per l^2 = 0.530:  scalar 0.0253 (0.0477 per cut grain)   grain Dirac fermion 0.3270 (0.617 per cut grain)
+   (111) narrow gap (3 grains/site)   grains cut per l^2 = 1.299:  scalar 0.0416 (0.0320 per cut grain)   grain Dirac fermion 0.4569 (0.352 per cut grain)
+   (111) wide gap (1 grain/site)      grains cut per l^2 = 0.433:  scalar 0.0218 (0.0503 per cut grain)   grain Dirac fermion 0.2953 (0.682 per cut grain)
+   (111) position-weighted: scalar 0.0268, fermion 0.3357, grains cut 0.650/l^2
+   orientation-averaged (weights 3:6:4 for the plane families): grains cut 0.618/l^2 (isotropic geometric value 0.650)
+   -> scalar eta = 0.0266 (N_ent 2.00);  grain Dirac fermion eta = 0.3373 (N_ent 25.43)
+   fermion spread over orientations: 0.327-0.360 (10%)
+
+C. EDGE ENTROPY OF THE GRAINS' OWN GAUSS LAW (spin-ice U(1)): Monte Carlo of the ice manifold
+   64 grains cross a (001) plane of the 1,024-grain ice; 30000 ice states (loop algorithm)
+   block entropy H(k) of k neighbouring cut grains: 0.69, 2.65, 5.27, 7.58  (k = 1, 4, 8, 12)
+   entropy per cut grain: single grain 0.692 (ln2 = 0.693); large-block slope 0.603
+   -> each U(1) grain crossing a surface carries ~0.60 nats of shared flux label
+
+B. FIELD CONTENT OF THE CURRENT GRAIN THEORY and the resulting N_ent = 24 pi eta_g
+   fermions, valleys = generations (16 grain Dirac fields)    eta =  5.396   N_ent =  406.9
+   gauge bosons: light 2 + SU(2) 6 + SU(3) 16 polarisations   eta =  0.637   N_ent =   48.1
+   (Higgs, if added: 4 real scalars)                          eta =  0.106   N_ent =    8.0
+   (if valleys are NOT generations: 48 grain Dirac fields)    eta = 16.188   N_ent = 1220.6
+   edge, U(1) grains (1-4 per relation, computed per grain): eta = 0.37-1.49  N_ent = 28-112
+   edge, SU(2)+SU(3) bundles (bounds 0 .. n ln2, n <= 37):   eta = 0-15.8  N_ent = 0-1194
+
+RESULT  (l = sqrt(4 eta_g) l_P,  M = hbar c / l)
+   fields only (minimal content)          eta_g =   6.03  N_ent =    455:  l =  4.91 l_P,  M = 2.49e+18 GeV
+   fields + U(1) edge (computed)          eta_g =   6.41  N_ent =    483:  l =  5.06 l_P,  M = 2.41e+18 GeV
+   fields + U(1) edge (4 U(1) grains)     eta_g =   7.52  N_ent =    567:  l =  5.49 l_P,  M = 2.23e+18 GeV
+   fields + all edges (upper bound)       eta_g =  23.36  N_ent =   1762:  l =  9.67 l_P,  M = 1.26e+18 GeV
+   non-minimal fermions + U(1) edge       eta_g =  17.20  N_ent =   1297:  l =  8.29 l_P,  M = 1.47e+18 GeV
+
+total 12 s

@@ -1,0 +1,24 @@
+﻿
+A. GRAVITON MODES (plane wave, |K| = 1)
+   (i)   coordinate freedom only                  3 modes -> helicity 0: omega^2 -0.250 (UNSTABLE), helicity 2: 
+omega^2 +0.250, helicity 2: omega^2 +0.250
+   (ii)  + one GLOBAL clock (acts only at K = 0)  3 modes -> helicity 0: omega^2 -0.250 (UNSTABLE), helicity 2: 
+omega^2 +0.250, helicity 2: omega^2 +0.250
+   (iii) + a LOCAL clock at every point           2 modes -> helicity 2: omega^2 +0.250, helicity 2: omega^2 +0.250
+   -> a single global clock cannot remove the unstable scalar (it only constrains the uniform K = 0 mode);
+      a clock at every point removes it, leaving exactly the 2 graviton polarisations.
+   point mass, potential at r = 1.0: Phi = -0.9995   (Newton -G M / r = -1.0000)
+   point mass, potential at r = 2.0: Phi = -0.5095   (Newton -G M / r = -0.5000)
+   point mass, potential at r = 4.0: Phi = -0.2423   (Newton -G M / r = -0.2500)
+   -> Newton's 1/r attraction is exactly the content of the local time constraint (it is a constraint, not a wave)
+B. GRAIN LEVEL (ring of 6 grains)
+   (1) continuous-time local terms: max |[h_v, h_w]| = 1.40 (neighbours 1.40)
+       -> local constraints C_v = p_v + h_v do not commute: no consistent 'clock per junction' this way
+   (2) local update events (brickwork of 12 two-grain gates):
+       269 distinct causally-allowed update orders (different 'global time slicings'); max state difference among them 
+= 5.0e-16
+       an order that violates the causal order: state difference 1.48
+       -> with local update events, the state depends only on each junction's own clock reading (how many
+          updates it has had), never on a global time order: a consistent clock at every junction.
+
+

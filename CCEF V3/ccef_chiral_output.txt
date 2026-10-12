@@ -1,0 +1,29 @@
+﻿1. ANOMALIES OF ONE GENERATION (the mirror copy has the same, sign-flipped)
+   WITHOUT right-handed neutrino (15 Weyl fermions):
+      U(1)_Y^3                           0
+      grav^2 U(1)_Y                      0
+      SU(2)^2 U(1)_Y                     0
+      SU(3)^2 U(1)_Y                     0
+      SU(3)^3                            0
+      Witten SU(2) (doublets mod 2)      0
+      X = 5(B-L)-4Y mod 4 (each Weyl)    [1]
+      Z16: Weyl count mod 16             15
+   with right-handed neutrino (16 Weyl fermions):
+      U(1)_Y^3                           0
+      grav^2 U(1)_Y                      0
+      SU(2)^2 U(1)_Y                     0
+      SU(3)^2 U(1)_Y                     0
+      SU(3)^3                            0
+      Witten SU(2) (doublets mod 2)      0
+      X = 5(B-L)-4Y mod 4 (each Weyl)    [1]
+      Z16: Weyl count mod 16             0
+   -> all perturbative gauge anomalies cancel either way, but the Z16 count (spin-Z4 symmetry X) is 15 without nu^c
+      and 0 with it: a mirror generation can be gapped symmetrically (keeping X) ONLY if it has 16 Weyl fermions.
+
+2. SYMMETRIC MASS GENERATION, exact: n Majoranas, T forbids all bilinear masses, random T-symmetric quartic terms
+   n =  4 Majoranas (2 complex fermions): unique gapped ground state in 0/40 random cases; typical gap 1.34
+   n =  8 Majoranas (4 complex fermions): unique gapped ground state in 40/40 random cases; typical gap 1.78
+   n = 12 Majoranas (6 complex fermions): unique gapped ground state in 0/40 random cases; typical gap 1.21
+   n = 16 Majoranas (8 complex fermions): unique gapped ground state in 12/12 random cases; typical gap 0.40
+   -> interactions alone (no bilinear masses) give a unique gapped state only for n = 8, 16 (multiples of 8):
+      the Fidkowski-Kitaev 'mod 8' rule, the low-dimensional analogue of '16 Weyl per generation' in 3+1-d.

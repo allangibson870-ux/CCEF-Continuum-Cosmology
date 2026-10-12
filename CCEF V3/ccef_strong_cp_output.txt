@@ -1,0 +1,27 @@
+﻿1. theta term:  C even, P odd, T odd  ->  CP odd, CPT even.  A CPT-symmetric (Janus) universe does NOT constrain theta.
+
+2. grain Dirac fermion at X: |H(X)| = 2.4e-16 (4-fold zero, as found before)
+   Hermitian 4x4 mass matrices anticommuting with all velocities: 2 (expected 2: scalar and pseudoscalar)
+   (a) inversion-symmetric perturbations (incl. complex / CP-violating hoppings):
+      rms mass along type-1 3.48e-02, along type-2 4.37e-18
+   (b) inversion-BREAKING perturbations:
+      rms mass along type-1 1.75e-02, along type-2 1.71e-02
+   -> with inversion intact only ONE mass type is ever generated: that is the P-even scalar mass; the P-odd
+      'i gamma5' mass (the fermion's contribution to theta_bar) is forbidden, even with complex couplings.
+      Breaking inversion generates both types -> an arbitrary chiral phase -> theta_bar ~ O(1).
+
+3. COSMOLOGY: parity must be broken somewhere (the weak force is chiral).  If it is broken SPONTANEOUSLY at scale v
+   after the Planck-hot start, domain walls form (tension ~v^3).  Walls must be removed by a small explicit bias eps,
+   which feeds theta_bar ~ kappa * eps (kappa = loop factor).  Wall removal before domination needs eps >~ (v/M_P)^2:
+   v = 1e+12 GeV: eps >~ 7e-15; theta_bar < 1e-10 needs loop factor kappa <~ 1e+04
+   v = 1e+14 GeV: eps >~ 7e-11; theta_bar < 1e-10 needs loop factor kappa <~ 1e+00
+   v = 1e+15 GeV: eps >~ 7e-09; theta_bar < 1e-10 needs loop factor kappa <~ 1e-02
+   v = 1e+16 GeV: eps >~ 7e-07; theta_bar < 1e-10 needs loop factor kappa <~ 1e-04
+   -> fine for v <~ 1e14 GeV (kappa ~ 1); at v ~ Lambda* ~ 1e15 needs kappa <~ 0.01.
+   Alternative [CONJECT]: if the P-breaking choice is inherited from the single crystal seed (which survives T_RH),
+   there is one domain and no walls at all.
+
+4. PREDICTION if this is the solution: no strong-CP axion; theta_bar is generated only radiatively -> a neutron EDM
+   theta_bar = 1e-11: d_n ~ 2.4e-27 e cm  (current limit 1.8e-26; n2EDM-class goal ~1e-27)
+   theta_bar = 5e-11: d_n ~ 1.2e-26 e cm  (current limit 1.8e-26; n2EDM-class goal ~1e-27)
+   theta_bar = 1e-10: d_n ~ 2.4e-26 e cm  (current limit 1.8e-26; n2EDM-class goal ~1e-27)

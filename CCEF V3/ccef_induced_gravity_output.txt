@@ -1,0 +1,29 @@
+﻿diamond universe 216 junctions, 432 grains: E/N = -12.000, perfect junctions 216/216
+
+B1. SLIP A WHOLE PLANE OF SPACE by a lattice vector (2,2,0)
+    grains rewired: 36 (8% of all grains); every junction still has 4: True
+    energy change +0.000; perfect junctions 216/216
+    -> a large rewiring with zero cost: it is a change of coordinates (a large diffeomorphism), not physics
+
+B2. DO GEOMETRY DEFECTS FEEL EACH OTHER AT A DISTANCE?
+    one switch defect costs +36.0 (geometry units)
+    defects 0 steps apart: 12 pairs, interaction energy  max |I| = 48.00  (mean -1.17)
+    defects 1 steps apart: 12 pairs, interaction energy  max |I| = 30.00  (mean -8.17)
+    defects 2 steps apart: 12 pairs, interaction energy  max |I| = 16.00  (mean -1.33)
+    defects 3 steps apart: 12 pairs, interaction energy  max |I| = 0.00  (mean +0.00)
+    defects 4 steps apart: 12 pairs, interaction energy  max |I| = 0.00  (mean +0.00)
+    defects 5 steps apart: 12 pairs, interaction energy  max |I| = 0.00  (mean +0.00)
+    defects 6 steps apart:  2 pairs, interaction energy  max |I| = 0.00  (mean +0.00)
+    -> contact interaction only, nothing beyond a few steps: the bare geometry has NO elasticity, so it cannot
+       produce the long-range (Einstein / Fierz-Pauli) stiffness by itself
+
+B3. ENTANGLEMENT AREA LAW of the fields living on the grains (slab cut; exact Gaussian states)
+    grain electron chain check: 32 of 64 states filled (half filling)
+    transverse 6x6 cells, depth 6: eta_g(scalar) = 0.0287   eta_g(grain electron) = 0.3587
+    transverse 10x10 cells, depth 8: eta_g(scalar) = 0.0289   eta_g(grain electron) = 0.3599
+    transverse 14x14 cells, depth 10: eta_g(scalar) = 0.0290   eta_g(grain electron) = 0.3603
+    as N_eff = 24 pi eta_g:  one scalar (one photon polarisation) 2.18;  grain electron 27.17
+    CCEF assumed N_eff ~ 9 (eta_g = 0.119)
+    photon (2 polarisations) + grain electron: N_eff = 31.53
+
+total 23 s

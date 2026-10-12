@@ -1,0 +1,33 @@
+﻿1. DO HEAVY FIELDS COUNT?  (masses in grain units: 1 = the grain scale M)
+   scalar, mass  0.0:                 eta_g = 0.0289   N_eff =  2.18
+   scalar, mass  0.1:                 eta_g = 0.0284   N_eff =  2.14
+   scalar, mass  0.3:                 eta_g = 0.0257   N_eff =  1.94
+   scalar, mass  1.0:                 eta_g = 0.0145   N_eff =  1.09
+   grain fermion, dimerisation 0.0 (gap 0.88): eta_g = 0.3599   N_eff = 27.13
+   grain fermion, dimerisation 0.3 (gap 1.04): eta_g = 0.3341   N_eff = 25.19
+   grain fermion, dimerisation 0.6 (gap 1.45): eta_g = 0.3056   N_eff = 23.04
+   -> fields far lighter than the grain scale count fully (all SM fields and the mirror partners at ~1e13 GeV)
+
+2. SENSITIVITY OF THE GRAIN ELECTRON TO SPIN-ORBIT STRENGTH
+   lambda = 0.10: eta_g = 0.3559   N_eff = 26.84
+   lambda = 0.25: eta_g = 0.3599   N_eff = 27.13
+   lambda = 0.50: eta_g = 0.3840   N_eff = 28.95
+
+3. FULL CONTENT AS BUILT IN CCEF
+   fermions: 16 grain Dirac fields (each SM Weyl + mirror; 3 valleys = 3 generations)     N_eff =  434.1  (429-463)
+   gauge bosons: 12 x 2 polarisations (scalar proxy)                                      N_eff =   52.3  (52-52)
+   Higgs doublet: 4 real scalars                                                          N_eff =    8.7  (9-9)
+   TOTAL N_eff = 495  (range 490-524 from lambda);  without mirror partners (8 fields): 278
+
+   grain size and grain scale  (l = sqrt(N_eff / 6 pi) l_P,  M = hbar c / l):
+   assumed so far               N_eff =    9.0: l =  0.69 l_P = 1.12e-35 m,  M = 1.77e+19 GeV
+   light + grain electron       N_eff =   31.5: l =  1.29 l_P = 2.09e-35 m,  M = 9.45e+18 GeV
+   full content, no mirrors     N_eff =  278.1: l =  3.84 l_P = 6.21e-35 m,  M = 3.18e+18 GeV
+   FULL CONTENT (with mirrors)  N_eff =  495.2: l =  5.13 l_P = 8.28e-35 m,  M = 2.38e+18 GeV
+   range high                   N_eff =  524.3: l =  5.27 l_P = 8.52e-35 m,  M = 2.32e+18 GeV
+
+4. GRAIN BUDGET CROSS-CHECK (rough): this cut crosses 0.75 relations per l^2; a bundle of n grains carries
+   <~ n ln2 across the cut -> N_eff <~ 24 pi x 0.75 x n ln2 = 39.2 n
+   full content needs n >~ 13 grains per relation; CCEF_nonabelian estimated ~25-37 (U(1) 1-4 + SU(2) 8-11 + SU(3) 15-22): consistent
+
+total 26 s

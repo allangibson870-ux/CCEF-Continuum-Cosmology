@@ -1,0 +1,36 @@
+﻿
+BIG_T0.6  (88s)
+       0 collective moves (accepted    0): E/N = -7.030  in registry  62.5%  perfect  45.8%  perfect-profile [0.0, 0.0, 0.5, 1.0, 1.0, 0.25]
+     833 collective moves (accepted  174): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    1666 collective moves (accepted  174): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    2499 collective moves (accepted  174): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    3332 collective moves (accepted  174): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    4165 collective moves (accepted  174): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    4998 collective moves (accepted  174): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
+BIG_T1.5  (87s)
+       0 collective moves (accepted    0): E/N = -7.030  in registry  62.5%  perfect  45.8%  perfect-profile [0.0, 0.0, 0.5, 1.0, 1.0, 0.25]
+     833 collective moves (accepted  177): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    1666 collective moves (accepted  177): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    2499 collective moves (accepted  177): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    3332 collective moves (accepted  177): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    4165 collective moves (accepted  177): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    4998 collective moves (accepted  177): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
+TINY_T0.6  (92s)
+       0 collective moves (accepted    0): E/N = -0.030  in registry   0.5%  perfect   0.0%  perfect-profile [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+     833 collective moves (accepted  527): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    1666 collective moves (accepted  527): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    2499 collective moves (accepted  527): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    3332 collective moves (accepted  527): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    4165 collective moves (accepted  527): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    4998 collective moves (accepted  527): E/N = -12.000  in registry 100.0%  perfect 100.0%  perfect-profile [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
+CTRL_T0.6  (100s)
+       0 collective moves (accepted    0): E/N = -7.030  in registry  62.5%  perfect  45.8%  perfect-profile [0.0, 0.0, 0.5, 1.0, 1.0, 0.25]
+     833 collective moves (accepted   28): E/N = -7.471  in registry  61.1%  perfect  43.6%  perfect-profile [0.0, 0.0, 0.39, 1.0, 1.0, 0.23]
+    1666 collective moves (accepted   44): E/N = -7.604  in registry  60.1%  perfect  43.0%  perfect-profile [0.0, 0.0, 0.38, 1.0, 0.99, 0.2]
+    2499 collective moves (accepted   52): E/N = -7.720  in registry  59.8%  perfect  43.0%  perfect-profile [0.0, 0.0, 0.38, 1.0, 0.99, 0.2]
+    3332 collective moves (accepted   60): E/N = -7.788  in registry  59.4%  perfect  42.7%  perfect-profile [0.0, 0.0, 0.38, 1.0, 0.99, 0.19]
+    4165 collective moves (accepted   72): E/N = -7.839  in registry  59.4%  perfect  42.7%  perfect-profile [0.0, 0.0, 0.38, 1.0, 0.99, 0.19]
+    4998 collective moves (accepted   76): E/N = -7.862  in registry  59.4%  perfect  42.7%  perfect-profile [0.0, 0.0, 0.38, 1.0, 0.99, 0.19]

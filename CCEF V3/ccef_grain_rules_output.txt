@@ -1,0 +1,19 @@
+﻿diamond patch: 8 junctions, 16 grains, 96 six-rings
+1. LIGHT events: 96 ring updates; max violation of the Gauss law at any junction = 0.0e+00
+   8 ring events: 3 disjoint pairs (commute), 25 overlapping pairs (order matters)
+2. CAUSAL INVARIANCE with real light events: 4 distinct causal orders -> max state difference 5.4e-18;
+   reversing two overlapping events (violating cause-and-effect): 23 of 25 swaps change the state (largest difference 0.04)
+3. ELECTRON events: 4 bond-direction layers (each junction updates one bond per layer) + 6 spin-orbit layers
+   continuous time: 4-fold zero (massless Dirac) at X
+   step eps = 0.05 sequential: lowest |quasi-energy| at X = 0.0e+00 (x4 zero), min nearby 0.0e+00; cone speeds v_x 3.99, v_y 3.80  (anisotropy 0.0505)
+   step eps = 0.05 symmetric : lowest |quasi-energy| at X = 0.0e+00 (x4 zero), min nearby 0.0e+00; cone speeds v_x 3.99, v_y 4.00  (anisotropy 0.0017)
+   step eps = 0.05 RANDOM order : gap 5.3e-17; cone speeds v_x 3.98, v_y 3.98  (anisotropy 0.0010)
+   step eps = 0.10 sequential: lowest |quasi-energy| at X = 0.0e+00 (x4 zero), min nearby 0.0e+00; cone speeds v_x 3.97, v_y 3.61  (anisotropy 0.1006)
+   step eps = 0.10 symmetric : lowest |quasi-energy| at X = 0.0e+00 (x4 zero), min nearby 0.0e+00; cone speeds v_x 3.97, v_y 4.00  (anisotropy 0.0067)
+   step eps = 0.10 RANDOM order : gap 7.5e-17; cone speeds v_x 3.93, v_y 3.94  (anisotropy 0.0025)
+   step eps = 0.20 sequential: lowest |quasi-energy| at X = 0.0e+00 (x4 zero), min nearby 0.0e+00; cone speeds v_x 3.89, v_y 3.29  (anisotropy 0.1846)
+   step eps = 0.20 symmetric : lowest |quasi-energy| at X = 0.0e+00 (x4 zero), min nearby 0.0e+00; cone speeds v_x 3.89, v_y 4.00  (anisotropy 0.0266)
+   step eps = 0.20 RANDOM order : gap 6.0e-17; cone speeds v_x 3.75, v_y 3.78  (anisotropy 0.0072)
+   step eps = 0.40 sequential: lowest |quasi-energy| at X = 1.4e-16 (x4 zero), min nearby 1.4e-16; cone speeds v_x 3.59, v_y 3.14  (anisotropy 0.1430)
+   step eps = 0.40 symmetric : lowest |quasi-energy| at X = 0.0e+00 (x4 zero), min nearby 0.0e+00; cone speeds v_x 3.59, v_y 4.01  (anisotropy 0.1059)
+   step eps = 0.40 RANDOM order : gap 9.4e-17; cone speeds v_x 3.15, v_y 3.24  (anisotropy 0.0292)

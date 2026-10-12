@@ -1,0 +1,37 @@
+﻿universe: 6x6x6 diamond torus, 1728 junctions; tangle = cells 0-1, crystal = cells 2-5
+
+T = 0.3  (494s)
+     0.0 sweeps: E/N = -7.030  perfect 45.8%  profile by cell [0.0, 0.0, 0.5, 1.0, 1.0, 0.25]
+    10.0 sweeps: E/N = -8.017  perfect 45.0%  profile by cell [0.0, 0.0, 0.46, 1.0, 1.0, 0.24]
+    20.0 sweeps: E/N = -8.208  perfect 44.5%  profile by cell [0.0, 0.0, 0.45, 1.0, 1.0, 0.22]
+    30.0 sweeps: E/N = -8.315  perfect 44.2%  profile by cell [0.0, 0.0, 0.44, 1.0, 1.0, 0.21]
+    40.0 sweeps: E/N = -8.367  perfect 44.1%  profile by cell [0.0, 0.0, 0.44, 1.0, 1.0, 0.21]
+    50.0 sweeps: E/N = -8.442  perfect 44.3%  profile by cell [0.0, 0.0, 0.44, 1.0, 1.0, 0.21]
+    60.0 sweeps: E/N = -8.487  perfect 43.9%  profile by cell [0.0, 0.0, 0.44, 1.0, 1.0, 0.19]
+
+T = 0.6  (488s)
+     0.0 sweeps: E/N = -7.030  perfect 45.8%  profile by cell [0.0, 0.0, 0.5, 1.0, 1.0, 0.25]
+    10.0 sweeps: E/N = -7.946  perfect 42.1%  profile by cell [0.0, 0.0, 0.45, 0.96, 0.96, 0.15]
+    20.0 sweeps: E/N = -8.075  perfect 41.5%  profile by cell [0.0, 0.0, 0.44, 0.96, 0.96, 0.14]
+    30.0 sweeps: E/N = -8.166  perfect 41.4%  profile by cell [0.0, 0.0, 0.43, 0.96, 0.96, 0.14]
+    40.0 sweeps: E/N = -8.265  perfect 41.5%  profile by cell [0.0, 0.0, 0.43, 0.96, 0.96, 0.14]
+    50.0 sweeps: E/N = -8.333  perfect 41.5%  profile by cell [0.0, 0.0, 0.44, 0.96, 0.96, 0.13]
+    60.0 sweeps: E/N = -8.383  perfect 41.6%  profile by cell [0.0, 0.0, 0.44, 0.96, 0.96, 0.13]
+
+T = 1.0  (489s)
+     0.0 sweeps: E/N = -7.030  perfect 45.8%  profile by cell [0.0, 0.0, 0.5, 1.0, 1.0, 0.25]
+    10.0 sweeps: E/N = -7.853  perfect 42.2%  profile by cell [0.0, 0.0, 0.44, 1.0, 0.92, 0.17]
+    20.0 sweeps: E/N = -8.035  perfect 41.7%  profile by cell [0.0, 0.0, 0.43, 1.0, 0.92, 0.15]
+    30.0 sweeps: E/N = -8.182  perfect 41.8%  profile by cell [0.0, 0.0, 0.44, 1.0, 0.92, 0.15]
+    40.0 sweeps: E/N = -8.257  perfect 41.8%  profile by cell [0.0, 0.0, 0.44, 1.0, 0.92, 0.15]
+    50.0 sweeps: E/N = -8.307  perfect 41.8%  profile by cell [0.0, 0.0, 0.44, 1.0, 0.92, 0.15]
+    60.0 sweeps: E/N = -8.365  perfect 41.8%  profile by cell [0.0, 0.0, 0.44, 1.0, 0.92, 0.15]
+
+T = 1.5  (489s)
+     0.0 sweeps: E/N = -7.030  perfect 45.8%  profile by cell [0.0, 0.0, 0.5, 1.0, 1.0, 0.25]
+    10.0 sweeps: E/N = -7.885  perfect 40.6%  profile by cell [0.0, 0.0, 0.39, 0.89, 0.94, 0.22]
+    20.0 sweeps: E/N = -8.071  perfect 40.6%  profile by cell [0.0, 0.0, 0.39, 0.89, 0.94, 0.22]
+    30.0 sweeps: E/N = -8.177  perfect 40.7%  profile by cell [0.0, 0.0, 0.39, 0.89, 0.94, 0.22]
+    40.0 sweeps: E/N = -8.278  perfect 40.6%  profile by cell [0.0, 0.0, 0.39, 0.89, 0.94, 0.22]
+    50.0 sweeps: E/N = -8.310  perfect 40.4%  profile by cell [0.0, 0.0, 0.38, 0.89, 0.94, 0.22]
+    60.0 sweeps: E/N = -8.358  perfect 39.9%  profile by cell [0.0, 0.0, 0.35, 0.89, 0.94, 0.21]

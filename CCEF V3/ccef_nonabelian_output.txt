@@ -1,0 +1,27 @@
+﻿SU(2): one relation + 2 junctions (8 fermion modes = 8 grains' worth of qubits):
+   Lie algebra at a junction [G^a,G^b] = i f^abc G^c : max error 0.0e+00  (3 generators)
+   matter hopping psi^dag U psi gauge-invariant: max |[H, G^a]| = 0.0e+00
+SU(3): one relation + 2 junctions (12 fermion modes = 12 grains' worth of qubits):
+   Lie algebra at a junction [G^a,G^b] = i f^abc G^c : max error 4.4e-16  (8 generators)
+   matter hopping psi^dag U psi gauge-invariant: max |[H, G^a]| = 0.0e+00
+
+SU(2) plaquette (4 relations, 16 rishon modes): plaquette term gauge-invariant: max |[H, G^a_x]| = 0.0e+00
+   sector with 2 rishons per relation: 1296 states; colour-singlet at all 4 junctions: 17 physical states
+   spectrum of -J(tr U_p + h.c.) in the physical sector: [-5.657  0.     0.     0.     0.     0.     0.     0.     0.     0.
+  0.     0.     0.     0.     0.     0.     5.657]
+   (3s so far)
+
+GRAINS PER RELATION at mu = 8e+10 GeV (one-loop SM couplings g2^2 = 0.31, g3^2 = 0.40):
+   SU(2) weak   truncation ~2/g (j_max ~ 3.6): link states ~204 -> ~8 qubits (grains)
+   SU(2) weak   truncation ~4/g (j_max ~ 7.1): link states ~1,240 -> ~10 qubits (grains)
+   SU(3) strong truncation ~2/g (j_max ~ 3.2): link states ~27,468 -> ~15 qubits (grains)
+   SU(3) strong truncation ~4/g (j_max ~ 6.3): link states ~2,012,920 -> ~21 qubits (grains)
+
+GRAINS PER RELATION at mu = 1e+15 GeV (one-loop SM couplings g2^2 = 0.28, g3^2 = 0.30):
+   SU(2) weak   truncation ~2/g (j_max ~ 3.8): link states ~285 -> ~8 qubits (grains)
+   SU(2) weak   truncation ~4/g (j_max ~ 7.5): link states ~1,496 -> ~11 qubits (grains)
+   SU(3) strong truncation ~2/g (j_max ~ 3.7): link states ~67,320 -> ~16 qubits (grains)
+   SU(3) strong truncation ~4/g (j_max ~ 7.3): link states ~5,673,648 -> ~22 qubits (grains)
+   + U(1) hypercharge (spin-ice grain, ~1-4 qubits)  ->  a relation is a bundle of roughly 20-50 grains
+
+(total 3s)

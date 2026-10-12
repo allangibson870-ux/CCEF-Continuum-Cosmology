@@ -1,0 +1,41 @@
+﻿1. DOES COUNTING SUB-GRAINS SHRINK THE 4-VOLUME NOISE?  (relative noise of the volume estimate, 20,000 trials)
+   (a) random bundles, rigid (n each)           sigma(V4)/V4 = 1.58e-02
+   (b) random bundles, random occupancy         sigma(V4)/V4 = 1.61e-02
+   (c) crystal of bundles, random sub-events    sigma(V4)/V4 = 2.88e-03
+   reference: 1/sqrt(bundles) = 1.58e-02;  1/sqrt(sub-grains) = 2.89e-03
+   -> finer counting helps ONLY if the bundle (junction) count does not itself fluctuate: a crystal, which is
+      what one-seed growth produces (hyperuniform: count noise only from the boundary).  Then Lambda gains sqrt(n4).
+
+2. REQUIREMENT  (frozen formula with counting length l_c^2 = l^2 / sqrt(n4), n4 = independent elements per l^4)
+   median L_max = 0.0719 x n4^(1/3) D_LSS
+   L_max = 1.00 D_LSS needs n4 =   2689
+   L_max = 1.04 D_LSS needs n4 =   3025
+   L_max = 1.50 D_LSS needs n4 =   9076
+   (exact restoration of the frozen numbers: n4 = (N_eff/9)^2 = 3025)
+
+3. SOURCES OF ELEMENTS:  n4 = 1.3 n (sub-grains per l^3; 0.65 junctions x 2 relations x n)  x  R (events per crossing)
+   n = 25: spatial bundling alone (R = 1): n4 =   32 -> median L_max = 0.23 D_LSS  (still excluded)
+   n = 31: spatial bundling alone (R = 1): n4 =   40 -> median L_max = 0.25 D_LSS  (still excluded)
+   n = 37: spatial bundling alone (R = 1): n4 =   48 -> median L_max = 0.26 D_LSS  (still excluded)
+   with microscopic events: quantum spin ice light is the slow 3rd-order ring exchange, so each grain is updated
+   R = J_zz/J_ring = (J_zz/J_pm)^3/12 times per light-crossing time.  Then  L_max ~ 0.072 (1.3 n/12)^(1/3) (J_zz/J_pm) D_LSS
+    J_pm/J_zz       R   median L_max (D_LSS) for n = 25 / 31 / 37
+         0.03    3086    3.34 /  3.59 /  3.81
+         0.05     667    2.00 /  2.15 /  2.28
+         0.08     163    1.25 /  1.35 /  1.43
+         0.10      83    1.00 /  1.08 /  1.14
+         0.15      25    0.67 /  0.72 /  0.76
+         0.20      10    0.50 /  0.54 /  0.57
+   quantum spin ice's Coulomb (photon) phase needs small J_pm/J_zz (reported edge ~0.05-0.2; quoted from memory)
+   -> for J_pm/J_zz <~ 0.1 (deep in the photon phase) the universe comes out ~1-3.5 D_LSS: the frozen finite-volume
+      range is RESTORED; for 0.15-0.2 it stays too small.  The cosmic size becomes tied to the light sector's
+      coupling ratio: L ~ 0.1 (J_zz/J_pm) D_LSS
+
+4. SIDE EFFECT: AXION.  Dirac dilution y = (cells' worth of grains)^(-1/2); if the gauge-singlet nu^c spreads over
+   sub-grains, grains per crossover cell = 1.3 n (M/Lambda*)^3  ->  Lambda* = M y^(2/3) (1.3 n)^(1/3)
+   no sub-grains (audit)  Lambda* = 1.04e+10 GeV -> m_a =  546 micro-eV (132 GHz)
+   n = 25                 Lambda* = 3.33e+10 GeV -> m_a =  171 micro-eV (41 GHz)   inside frozen 14-400 band
+   n = 31                 Lambda* = 3.58e+10 GeV -> m_a =  159 micro-eV (38 GHz)   inside frozen 14-400 band
+   n = 37                 Lambda* = 3.79e+10 GeV -> m_a =  150 micro-eV (36 GHz)   inside frozen 14-400 band
+
+5. UNCHANGED: N_eff (fields still live on the junction lattice) and M = 2.4e18 GeV; Branch L3 Lorentz bound.

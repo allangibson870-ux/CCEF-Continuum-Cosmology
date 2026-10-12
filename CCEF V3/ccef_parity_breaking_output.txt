@@ -1,0 +1,21 @@
+﻿1. GEOMETRIC (breathing) INVERSION BREAKING on the grain Dirac fermion at X
+   no breaking                           : scalar mass +0.0e+00, theta-type mass +0.0e+00;  zero-energy points near X: 1 (multiplicity [4]), max separation 0.000;  min |E| sampled 2.5e-16
+   staggered on-site V = 0.02            : scalar mass +0.0e+00, theta-type mass +0.0e+00;  zero-energy points near X: 4 (multiplicity [2]), max separation 0.010;  min |E| sampled 2.0e-02
+   staggered on-site V = 0.05            : scalar mass +0.0e+00, theta-type mass +0.0e+00;  zero-energy points near X: 4 (multiplicity [2]), max separation 0.025;  min |E| sampled 3.8e-02
+   spin-orbit breathing dlambda = 0.02   : scalar mass +0.0e+00, theta-type mass +0.0e+00;  zero-energy points near X: 1 (multiplicity [4]), max separation 0.000;  min |E| sampled 2.4e-16
+   spin-orbit breathing dlambda = 0.05   : scalar mass +0.0e+00, theta-type mass +0.0e+00;  zero-energy points near X: 1 (multiplicity [4]), max separation 0.000;  min |E| sampled 2.5e-16
+   reading: breathing breaks P but not T, so it cannot create the theta-type mass (which is P- AND T-odd).
+   Instead each 4-fold Dirac point splits into 2-fold WEYL points: the left- and right-handed halves are pulled
+   apart in momentum - the first step toward a chiral (left/right-distinguishing) low-energy world.
+
+2. WHERE: the left-right breaking scale v_R
+    v_R (GeV)  seesaw y^2/f  walls: eps >=  theta ok if kappa <=  Z2-string G mu
+        1e+04       1.7e-11          7e-31                 1e+20           7e-31
+        1e+10       1.7e-05          7e-19                 1e+08           7e-19
+        1e+12       1.7e-03          7e-15                 1e+04           7e-15
+        1e+13       1.7e-02          7e-13                 1e+02           7e-13
+        1e+14       1.7e-01          7e-11                 1e+00           7e-11
+        1e+15       1.7e+00          7e-09                 1e-02           7e-09
+   LHC: W_R heavier than ~6 TeV.  Pulsar timing limits stable strings to G mu <~ 1e-10 (if B-L breaks to Z2).
+   Natural window: v_R ~ 1e13 - 1e14 GeV  (seesaw couplings ~0.02-0.2; walls removable with theta_bar ~ 1e-12-1e-10;
+   strings G mu ~ 7e-13 - 7e-11, below the pulsar limit and inside LISA / future-detector reach).

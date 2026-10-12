@@ -1,0 +1,29 @@
+﻿1. SYMMETRY AUDIT of the 4-grain junction (quantum-spin-ice sector). Only gauge-invariant data count:
+   the flux through each triangle of grains (edge phases that are pure gauge can be removed by rephasing grains)
+   real couplings (grain Hamiltonian v1)          triangle fluxes [0.0, 0.0, 0.0, 0.0]  -> physical T (and CP) conserved
+   pure-gauge phases (phi_ij = a_i - a_j)         triangle fluxes [0.0, 0.0, 0.0, 0.0]  -> physical T (and CP) conserved
+   phases with net flux through triangles         triangle fluxes [0.4, 0.2, 0.0, 0.2]  -> physical T (and CP) VIOLATED
+   real Hamiltonian: C = True , P = True , T = True  -> v1 conserves C, P, T separately
+   CHI (junction scalar chirality): C-even: True  T-odd: True  P-odd: True  -> CHI is CP-odd
+   note: the 4 faces of a junction form a closed surface, so edge-phase fluxes through them sum to zero:
+   edge phases can bias a single face's chirality but NOT the junction's total chirality CHI
+
+2. SPONTANEOUS ROUTE: ground states of one junction, Jzz = 1
+   Jpm = +0.05 (unfrustrated): ground energy -0.2000, degeneracy 1, gap 0.2000; chirality values in ground space [0.]
+   Jpm = -0.05 (frustrated): ground energy -0.1000, degeneracy 2, gap 0.1000; chirality values in ground space [-1.7321  1.7321]
+
+3. EXPLICIT ROUTE: a three-grain chiral coupling  H' = lambda * CHI  (T-odd, P-odd, CP-odd) on the frustrated junction
+   lambda = +0e+00: doublet splitting 2.78e-17, ground-state chirality <CHI> = +0.000
+   lambda = +1e-04: doublet splitting 3.46e-04, ground-state chirality <CHI> = -1.732
+   lambda = +1e-03: doublet splitting 3.46e-03, ground-state chirality <CHI> = -1.732
+   lambda = -1e-03: doublet splitting 3.46e-03, ground-state chirality <CHI> = +1.732
+   -> any CP-odd coupling, however small, picks one handedness for every junction (linear splitting)
+
+4. WHERE IRREMOVABLE PHASES CAN LIVE
+   1 generation(s): CP phases in the quark junction (Yukawa) amplitudes = (N-1)(N-2)/2 = 0
+   2 generation(s): CP phases in the quark junction (Yukawa) amplitudes = (N-1)(N-2)/2 = 0
+   3 generation(s): CP phases in the quark junction (Yukawa) amplitudes = (N-1)(N-2)/2 = 1
+   4 generation(s): CP phases in the quark junction (Yukawa) amplitudes = (N-1)(N-2)/2 = 3
+   -> Branch L3's anomaly condition forces N = 3: exactly the minimum for one Kobayashi-Maskawa phase.
+   Delta B = 2 six-quark junction (u d d)(u d d) with 3 generations: many independent complex flavour coefficients;
+   only one overall phase can be removed (baryon-number rephasing) -> new CP phases at Lambda* are allowed, unconstrained.

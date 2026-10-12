@@ -1,0 +1,33 @@
+﻿DARK SECTOR TEMPERATURE: SM and dark sector share T at ~M, decouple when portal junctions (dim-6 at Lambda*) freeze
+   portal freeze-out T ~ (Lambda*^4 H-factor / M_P)^(1/3) ~ 1e+14 GeV (all SM species still relativistic)
+   later SM entropy dumps cool the dark sector relative to photons: T_D/T_gamma ~ 0.33 (x self-heating factors)
+
+H1. SECLUDED THERMAL RELIC (chi chi-bar -> A'A', sigma v = pi alpha_D^2 / m^2)
+   xi = 1.00, alpha_D = 0.003: m_chi ~   0.12 TeV
+   xi = 1.00, alpha_D = 0.010: m_chi ~   0.41 TeV
+   xi = 1.00, alpha_D = 0.030: m_chi ~   1.23 TeV
+   xi = 1.00, alpha_D = 0.100: m_chi ~   4.09 TeV
+   xi = 0.45, alpha_D = 0.003: m_chi ~   0.18 TeV
+   xi = 0.45, alpha_D = 0.010: m_chi ~   0.61 TeV
+   xi = 0.45, alpha_D = 0.030: m_chi ~   1.83 TeV
+   xi = 0.45, alpha_D = 0.100: m_chi ~   6.09 TeV
+   ('WIMPless miracle': m/alpha_D fixed; any alpha_D works, mass not predicted)
+   massive dark photon m_A' =    10 MeV must decay before BBN (<1 s): kinetic mixing eps >~ 2e-10
+   massive dark photon m_A' =   100 MeV must decay before BBN (<1 s): kinetic mixing eps >~ 5e-11
+   massive dark photon m_A' =  1000 MeV must decay before BBN (<1 s): kinetic mixing eps >~ 2e-11
+   massless dark photon instead -> dark radiation:
+      Delta N_eff(dark photon, heated by chi annihilation) ~ 0.21  (+ gravitons 0.05 -> ~0.26: disfavoured by CMB)
+   -> H1 prefers a MASSIVE dark photon (secluded / Pospelov-Ritz-Voloshin type)
+
+H2. ASYMMETRIC DARK MATTER (portal junction shares B-L from leptogenesis with chi, then freezes)
+   n_chi/n_B = 0.5:  m_chi = (Omega_DM/Omega_b) m_p / ratio = 10.0 GeV
+   n_chi/n_B = 1.0:  m_chi = (Omega_DM/Omega_b) m_p / ratio =  5.0 GeV
+   n_chi/n_B = 2.0:  m_chi = (Omega_DM/Omega_b) m_p / ratio =  2.5 GeV
+   symmetric part must annihilate away: m = 2.5 GeV needs alpha_D >~ 1e-04 (easy)
+   symmetric part must annihilate away: m = 5.0 GeV needs alpha_D >~ 2e-04 (easy)
+   -> explains why dark matter and ordinary matter have similar densities (both from the same leptogenesis);
+      the dark mass ~2-10 GeV itself is not predicted (could be a dark-confinement scale)
+
+BOTH: relic radiation Delta N_eff ~ 0.05 (gravitons; massive dark photon); Branch M package otherwise unchanged.
+STRONG CP: no axion at Lambda* (it would overproduce); an axion with f_a ~ 1e9-1e11 (sub-dominant DM) or another
+   solution is still needed - open.

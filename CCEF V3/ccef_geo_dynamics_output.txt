@@ -1,0 +1,16 @@
+﻿SA10   : final E/N = -6.944 (ground state -12)  perfect junctions 0%  [144s]
+         defect types: {'perfect (diamond)': 0, 'stacking-type (theta>0, 12 rings)': 0, 'missing rings (hex<12)': 213, 'squares': 0, 'angle excess (wrap-type)': 3}
+         defect clusters (sizes): [216]  (1 clusters)
+         shells [1.0, 4.0, 12.0, 29.0, 54.57, 67.24, 40.36]
+SA30   : final E/N = -7.324 (ground state -12)  perfect junctions 0%  [366s]
+         defect types: {'perfect (diamond)': 0, 'stacking-type (theta>0, 12 rings)': 0, 'missing rings (hex<12)': 211, 'squares': 0, 'angle excess (wrap-type)': 5}
+         defect clusters (sizes): [216]  (1 clusters)
+         shells [1.0, 4.0, 12.0, 28.58, 53.12, 66.01, 41.69]
+SQA_s1 : final E/N = -6.731 (ground state -12)  perfect junctions 0%  [363s]
+         defect types: {'perfect (diamond)': 0, 'stacking-type (theta>0, 12 rings)': 0, 'missing rings (hex<12)': 212, 'squares': 0, 'angle excess (wrap-type)': 4}
+         defect clusters (sizes): [216]  (1 clusters)
+         shells [1.0, 4.0, 12.0, 29.19, 56.1, 68.24, 38.85]
+SQA_s2 : final E/N = -6.722 (ground state -12)  perfect junctions 0%  [360s]
+         defect types: {'perfect (diamond)': 0, 'stacking-type (theta>0, 12 rings)': 0, 'missing rings (hex<12)': 207, 'squares': 0, 'angle excess (wrap-type)': 9}
+         defect clusters (sizes): [216]  (1 clusters)
+         shells [1.0, 4.0, 12.0, 29.11, 54.24, 66.35, 40.65]

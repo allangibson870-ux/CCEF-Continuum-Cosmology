@@ -1,0 +1,44 @@
+﻿1. NEUTRINO MASS SETS THE CROSSOVER: Weinberg operator / seesaw at Lambda*, m3 = k v^2 / Lambda*
+   k = 0.3: Lambda* = 1.8e+14 GeV
+   k = 1.0: Lambda* = 6.0e+14 GeV
+   k = 3.0: Lambda* = 1.8e+15 GeV
+
+2. PROTON DECAY  tau = 8.7e35 yr (Lambda*/1e16)^4 / C^2   (C = junction coefficient)
+   Lambda* = 1.8e+14: Super-K needs C <= 0.002; Hyper-K discovers it if C >= 0.001  -> window 0.001 < C < 0.002
+   Lambda* = 6.0e+14: Super-K needs C <= 0.022; Hyper-K discovers it if C >= 0.012  -> window 0.012 < C < 0.022
+   Lambda* = 1.8e+15: Super-K needs C <= 0.198; Hyper-K discovers it if C >= 0.108  -> window 0.108 < C < 0.198
+
+3. PRIMORDIAL RIPPLES (area-law, frozen at T_f = Lambda*):  A_s = 9.9 c (Lambda*/M)^2 = 2.1e-9
+   Lambda* = 1.8e+14: needs c = 2.019
+   Lambda* = 6.0e+14: needs c = 0.182
+   Lambda* = 1.8e+15: needs c = 0.020
+
+4. LORENTZ PROTECTION (Mechanism A): gamma >= 23 / log10(M / Lambda*)
+   Lambda* = 1.8e+14: gamma >= 4.61
+   Lambda* = 6.0e+14: gamma >= 5.15
+   Lambda* = 1.8e+15: gamma >= 5.77
+
+5. MATTER-ANTIMATTER: thermal leptogenesis (Majorana nu^c, M1 ~ 0.1-1 Lambda*, T_RH ~ 1e19 >> M1)
+   M1 = 6.0e+13 GeV: Davidson-Ibarra eps_max = 0.01; washout K ~ 46 -> efficiency ~3e-04; max eta_B ~ 2e-08 (needed 6e-10) -> WORKS
+   M1 = 6.0e+14 GeV: Davidson-Ibarra eps_max = 0.06; washout K ~ 46 -> efficiency ~3e-04; max eta_B ~ 2e-07 (needed 6e-10) -> WORKS
+
+6. NEUTRINOS: Majorana anarchy (flavour-blind grains), 4e6 random complex-symmetric mass matrices
+   ordering odds normal : inverted = 26.3 : 1
+   normal ordering: sum m_nu = [66.2 76.9 94.5] meV (16/50/84%); lightest [ 5.5 11.3 19.4] meV
+   neutrinoless double-beta m_bb = [ 8.6 18.4 32.6] meV;  P(m_bb > 10 meV) = 0.79,  P(m_bb > 20 meV) = 0.45  (LEGEND-1000 / nEXO reach ~10-20 meV)
+   inverted ordering (less likely): m_bb median 29 meV
+
+7. DARK MATTER AND STRONG CP
+   axion with f_a = Lambda* = 1.8e+14 (post-inflation, forced by T_RH >> f_a): overproduces dark matter ~x4e+03
+   axion with f_a = Lambda* = 6.0e+14 (post-inflation, forced by T_RH >> f_a): overproduces dark matter ~x2e+04
+   axion with f_a = Lambda* = 1.8e+15 (post-inflation, forced by T_RH >> f_a): overproduces dark matter ~x6e+04
+   -> Branch M cannot use f_a = Lambda*: needs a separate PQ scale ~1e10-1e11 GeV (unexplained) or another DM
+   heavy right-handed neutrino DM (Boyle-Finn-Turok style, ~5e8 GeV): thermalised at T_RH ~ M, cannot annihilate -> overcloses
+
+8. RELIC RADIATION: nu^c are heavy (Majorana) -> no nu^c contribution; thermal gravitons Delta N_eff ~ 0.05
+
+9. BOTH BRANCHES - Planck-mass black-hole remnants after a Planck-hot start:
+   T_RH = 0.3 M: grain-count fluctuations delta ~ 0.16 -> formation fraction ~1e-04 (DM allows ~1e-28)
+   T_RH = 0.5 M: grain-count fluctuations delta ~ 0.35 -> formation fraction ~7e-02 (DM allows ~1e-28)
+   -> if Planck-scale black holes leave STABLE remnants, a Planck-hot start overcloses the universe by ~1e26:
+      CCEF needs complete evaporation (no stable remnants); the 'remnant dark matter' option is excluded in both branches

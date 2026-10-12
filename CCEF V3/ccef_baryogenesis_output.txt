@@ -1,0 +1,37 @@
+﻿TARGET: eta_B = 6.1e-10, Y_B = 8.7e-11
+
+A. Standard (Majorana) thermal leptogenesis
+   Branch L3: needs Delta L = 2 (Majorana nu^c) -> FORBIDDEN by Z3 lepton triality.
+   Branch M : allowed; Davidson-Ibarra needs M_N >~ 1e9 GeV <= T_max -> WORKS in the standard way (not CCEF-specific)
+
+B. Dirac leptogenesis (Dick-Lindner-Ratz-Wright; Murayama-Pierce)
+   hiding condition: nu_R must not equilibrate before sphalerons stop: y <~ 1e-8 (lit.);  CCEF y = 2.9e-13  -> SATISFIED (y^2 T/16pi / H at T_sph = 9e-12)
+   parent's other couplings ~1.0: branching into L nu^c <= 8e-26; CP asymmetry eps <= BR -> Y_B <= 3e-28  (needed 9e-11) -> FAILS by 1e17
+   parent's other couplings ~0.1: branching into L nu^c <= 8e-24; CP asymmetry eps <= BR -> Y_B <= 3e-26  (needed 9e-11) -> FAILS by 1e15
+   (the dilution that makes Dirac neutrinos light also starves every nu^c channel)
+   heavy grain modes of nu^c as parent: lifetime 3e-09 s -> decay at T ~ 14 GeV < T_sph = 131.7 GeV -> too late for sphalerons -> FAILS
+
+C. Electroweak baryogenesis: needs a first-order EW transition (m_H <~ 70 GeV in the SM); m_H = 125 GeV gives a
+   smooth crossover and SM CP violation is ~1e-20 too small; CCEF adds nothing at the EW scale -> FAILS
+
+D. Delta B = 2 baryon violation (6-quark uddudd junction at Lambda*), allowed in Branch L3
+   thermal washout: rate ~ c T^11 / Lambda*^10 (c = unknown phase-space/coupling factor); in equilibrium above T_f:
+      c =   1e+00: T_f = 0.23 Lambda*
+      c =   1e-02: T_f = 0.35 Lambda*
+      c =   1e-04: T_f = 0.54 Lambda*
+      c =   1e-06: T_f = 0.82 Lambda*
+      c =   1e-08: T_f = 1.24 Lambda*   (never in equilibrium below Lambda*: no washout)
+   -> an asymmetry made at T_after survives if T_after < T_f; sphalerons then share it between B and L (B-L conserved by them)
+   neutron-antineutron oscillation: tau ~ hbar Lambda*^5 / Lambda_QCD^6 ~ 2e+26 yr (limit ~ 3 yr): untestable
+
+E. Front-driven baryogenesis at geometrogenesis (Sakharov 3 = the advancing crystal front)
+   T just behind the front = 0.20 Lambda*: needs (Delta B = 2 events per cell) x (CP bias) ~ 3e-11
+   T just behind the front = 0.50 Lambda*: needs (Delta B = 2 events per cell) x (CP bias) ~ 5e-10
+   T just behind the front = 0.95 Lambda*: needs (Delta B = 2 events per cell) x (CP bias) ~ 3e-09
+   -> a tiny CP bias per event suffices, IF grain-level CP violation exists (unknown) and T behind the front < T_f.
+   One seed -> one sign of asymmetry everywhere: no matter/antimatter domains (required: none seen out to ~Gpc,
+   and the CCEF universe is only ~1 CMB diameter across).
+
+SUMMARY (Branch L3):  Majorana leptogenesis forbidden | Dirac leptogenesis starved by dilution (fails by ~1e16) |
+  EW baryogenesis fails | Delta B = 2 front mechanism ALLOWED but needs an unknown grain-level CP source.
+Branch M: standard Majorana leptogenesis available.

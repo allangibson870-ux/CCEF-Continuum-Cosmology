@@ -1,0 +1,36 @@
+﻿diamond universe: 216 junctions, 432 grains; ice-rule light state (2 in / 2 out at every junction)
+   local switch moves available in diamond: 5832;  allowed by the electric flux (equal flux on both grains): 2808 (48%)
+   flippable light rings in this state: 78 of 432
+   energy cost of one switch in perfect diamond (rings lost): Delta E = +6 .. +10 (U4 = K6 = 1)
+
+1. GEOMETRY EVENTS keep the rules (14 events: 10 switches + 4 light rings, near one junction)
+   branches of the superposition: 1128 (328 distinct geometries); norm = 1.000000000000
+   branches violating 4-grains-per-junction / bipartite / no double links: 0
+   largest Gauss-law violation (electric charge created) in any branch: 0
+   FLUX-BLIND switches (10 events): weight of branches with created charges = 0.67  -> geometry may only rewire grains carrying equal electric flux
+
+2. REACH of one geometry event: it reads every junction within 2 steps of its 4 anchor junctions
+   footprint 42.8 junctions on average (a light event: 6); it writes only 2 grain ends
+
+3. CAUSAL RELATIONS in a superposition of geometries
+   (a) footprint = everything an event reads or writes (a conservative light cone):
+       footprints overlap never            :  135 pairs; order matters in    0; max |E1E2 - E2E1|psi = 1.8e-16
+       footprints overlap always           :  101 pairs; order matters in   43; max |E1E2 - E2E1|psi = 1.8e-01
+       footprints overlap in some branches :    4 pairs; order matters in    0; max |E1E2 - E2E1|psi = 1.5e-16
+   (b) branch by branch (pairs acting on a superposition of >1 geometry):
+       order matters in no branch  :  197 pairs
+       in every branch             :   42 pairs
+       in SOME branches only       :    1 pairs
+   (33 s)
+
+4. SLICING INDEPENDENCE with geometry changing under the events
+   causal links present only in the quantum geometry (not implied by the diamond's): [(4, 6)]
+   searched 44 neighbourhoods; one where the quantum geometry adds a causal link the classical diamond does not imply: FOUND
+   8 events (switches and light rings, all different grains) in one neighbourhood, acting on a superposition of 4 geometries
+   causal order from grain labels only (old rule)              :  0 ordered pairs, 149 distinct orders -> max state difference 5.5e-01
+   causal order from footprints (conservative light cone)      : 10 ordered pairs,  49 distinct orders -> max state difference 2.9e-16
+   causal order from classical diamond: where order matters    :  5 ordered pairs, 144 distinct orders -> max state difference 2.1e-03
+   causal order from self-consistent: where order matters in the state:  6 ordered pairs, 132 distinct orders -> max state difference 3.2e-16
+   (96 s)
+
+total 132 s

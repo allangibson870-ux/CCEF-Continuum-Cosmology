@@ -1,0 +1,12 @@
+﻿1. GRAIN CHECK: junction Hamiltonian + 0.01 * chirality (CP-odd coupling)
+   C: True   P: False   T: False   CP: False   CPT: True
+   -> CP and T are broken, CPT holds: a CP-violating grain universe can still be CPT-symmetric about a Janus point
+
+2. JANUS TOY (CPT-invariant laws and CPT-invariant state at t = 0)
+   CPT invariance of the laws: CP-symmetric True, CP-violating True
+   (a) CP-symmetric laws, CP-symmetric Janus state      <B>(0) = -2.9e-20;  our side late <B> = +0.0000 (spread 0.0000);  mirror side late <B> = +0.0000
+   (b) CP-symmetric laws, CP-odd phase in Janus state   <B>(0) = +1.2e-19;  our side late <B> = +0.0004 (spread 0.0000);  mirror side late <B> = -0.0004
+   (c) CP-violating laws, CP-symmetric Janus state      <B>(0) = -2.9e-20;  our side late <B> = +0.0227 (spread 0.0000);  mirror side late <B> = -0.0227
+   (d) as (b), baryon violation NEVER switches off      <B>(0) = +1.2e-19;  our side late <B> = -0.0024 (spread 0.0050);  mirror side late <B> = +0.0024
+   (in (d) the 'late' value is a time average while baryon violation stays on)
+   long-time (diagonal-ensemble) <B> with baryon violation always on: -2.0e-15  (CPT forces eigenstates to have <B> = 0)

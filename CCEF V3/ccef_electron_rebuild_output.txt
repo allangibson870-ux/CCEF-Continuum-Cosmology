@@ -1,0 +1,33 @@
+﻿1. GAUGE INVARIANCE AND THE ON-SITE REPULSION  (one hexagonal ring: 6 junctions, 6 grains, spin-1/2 matter)
+   [H_hop, G_v] max violation 0.0e+00;  [H_ring, G_v] 0.0e+00  (exact gauge invariance)
+   physical states (all G_v = 0): 730;  of these with a doubly occupied junction: 602;  J_G sum G^2 on them: max 0.0
+   OLD rule (J_zz Q_v^2 on the light's own charge, matter = spin-ice charges): mean cost of states with a
+   doubly occupied junction 2.41 J_zz vs none 0.00 J_zz;  NEW rule: 0 and 0  -> the on-site U from the light sector is GONE
+
+2. RESIDUAL COULOMB REPULSION (photon exchange) vs the Mott threshold
+   diamond lattice Green function: G(0) = 0.4460;  r G(r) -> C = 0.2659 (continuum 1/pi = 0.3183)
+   photon speed of the lattice gauge field (unit couplings): v = 3.898 (lattice units; L = 4)
+   electron cone speed = 4 t (FKM, lambda = 1/4) -> ONE LIGHT CONE requires t = c/4 = 3.898 sqrt(U K) / 4
+   alpha = 0.0800: U_eff / t = 4 alpha G(0)/C = 0.537   (Mott needs >~ 5)
+   alpha = 0.0130: U_eff / t = 4 alpha G(0)/C = 0.087   (Mott needs >~ 5)
+   alpha = 0.0073: U_eff / t = 4 alpha G(0)/C = 0.049   (Mott needs >~ 5)
+   -> far below the Mott threshold at any realistic coupling
+
+3. MASSLESSNESS IN THE LIGHT'S BACKGROUND FLUX  (spin-1/2 FKM, lambda = 1/4, gauge-covariant hops, torus)
+   pi-flux pattern on the L = 4 torus: found; check product round every hexagon = -1: True
+   L = 4 0-flux (unfrustrated spin ice)  exact zero modes (X points on the grid)  12;  fraction of states below |E| = 0.02/0.05/0.1/0.2: 0.0000 / 0.0000 / 0.0000 / 0.0000
+   L = 4 pi-flux (frustrated spin ice)   exact zero modes (X points on the grid)  40;  fraction of states below |E| = 0.02/0.05/0.1/0.2: 0.0023 / 0.0059 / 0.0169 / 0.0635
+   L = 6 0-flux (unfrustrated spin ice)  exact zero modes (X points on the grid)  12;  fraction of states below |E| = 0.02/0.05/0.1/0.2: 0.0000 / 0.0000 / 0.0000 / 0.0000
+   L = 6 pi-flux (frustrated spin ice)   exact zero modes (X points on the grid)  32;  fraction of states below |E| = 0.02/0.05/0.1/0.2: 0.0017 / 0.0064 / 0.0200 / 0.0570
+   0-flux: exactly 12 zero modes = 3 Dirac points x 4, no states nearby -> RELATIVISTIC (as before)
+   pi-flux: dozens of zero modes and a finite density of low-energy states, N(E) ~ E^(1.1-1.6) -> NOT relativistic
+   CCEF's grain Hamiltonian writes -J_pm (s+s- + h.c.) with J_pm > 0: the UNFRUSTRATED sign -> 0-flux spin ice
+
+4. SPEED MATCHING with the quantum Monte Carlo photon (Kato & Onoda 2015)
+   their H = J s^z s^z + J_perp (s^x s^x + s^y s^y), i.e. J_pm = -J_perp/2: photon phase for J_pm/J_zz < 0.052
+   (= |J_perp|/J < 0.104); ring scale g = 3 J_perp^3/(2 J^2) = 12 J_pm^3/J_zz^2; photon speed c = 1.49 a g
+   in these units (bond (1,1,1), cubic a = 4): c = 5.96 g;  electron cone speed 4 t  ->  one light cone at t = 1.49 g = 1.49 J_ring
+   -> the matter hop must sit at ~1.5x the ring-exchange scale: an independent coupling of the bundle constituent
+      (no longer tied to J_pm, so no 'faster than light' charges)
+
+total 134 s
